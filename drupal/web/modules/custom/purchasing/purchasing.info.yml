@@ -1,0 +1,22 @@
+name: Purchasing
+description: 'HCPSS Purchasing site configuration.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - comment
+  - field
+  - field_group
+  - file
+  - help
+  - image
+  - menu_ui
+  - node
+  - options
+  - path
+  - search
+  - system
+  - text
+  - user
+  - views
+version: 8.x-1.0

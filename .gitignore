@@ -1,0 +1,8 @@
+# IDE
+.buildpath
+.project
+.settings
+nbproject
+
+# Docker
+.data

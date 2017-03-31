@@ -1,0 +1,53 @@
+<h2 id="banking">Banking and Trade</h2>
+
+<p>For a certificate of Sales Tax Exemption and Business Credit, please contact
+the Purchasing Office at (410) 313-6644.</p>
+
+<h2 id="vendor">Vendor Registration</h2>
+
+<p>Please complete the following forms:</p>
+
+<ul>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/supplier-registration-application.pdf">Supplier Registration Application</a></li>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/w-9-form.pdf">W-9 Form</a></li>
+</ul>
+
+<p>You may mail, fax, or email the completed form and W-9 to:</p>
+
+<address>
+  Howard County Public School System<br>
+  Purchasing Office<br>
+  10910 Clarksville Pike<br>
+  Ellicott City, MD 21042<br>
+  fax: 410-313-6789<br>
+  email: purchasing@hcpss.org<br>
+</address>
+
+<h2 id="pcard">Purchasing Card</h2>
+
+<ul>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/purchasing-card-manual.pdf">Training Manual</a></li>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/purchasing-card-guidelines.pdf">Purchasing Card Guidelines</a></li>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/purchasing-card-test.pdf">Training Session Test</a></li>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/purchasing-card-request.pdf">Purchasing Card Request</a></li>
+</ul>
+
+<h2>Procedures</h2>
+
+<ul>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/request-formal-bid-rfp-process.pdf">Purchasing Services Request Form to perform a Formal Bid/RFP</a></li>
+  <li><a href="http://www.hcpss.org/f/board/policies/4050.pdf">Policy 4050: Procurement of Goods and/or Services</a></li>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/procurement-manual.pdf">Procurement Manual</a></li>
+</ul>
+
+<h2>Single/Sole Source Justification</h2>
+
+<ul>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/single-sole-source.pdf">Single/Sole Source Form</a></li>
+</ul>
+
+<h2>Vehicle Purchase</h2>
+
+<ul>
+  <li><a href="http://www.hcpss.org/f/aboutus/purchasing/forms/vehicle-purchase-request.pdf">Vehicle Purchase Request Form</a></li>
+</ul>

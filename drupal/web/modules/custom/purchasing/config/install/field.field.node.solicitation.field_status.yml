@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_status
+    - node.type.solicitation
+  module:
+    - options
+id: node.solicitation.field_status
+field_name: field_status
+entity_type: node
+bundle: solicitation
+label: Status
+description: 'A solicitation is open if bids are still being accepted and closed if they are not.'
+required: true
+translatable: false
+default_value:
+  -
+    value: open
+default_value_callback: ''
+settings: {  }
+field_type: list_string

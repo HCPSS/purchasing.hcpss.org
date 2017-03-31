@@ -1,0 +1,109 @@
+- bid_number: 028.17.B4
+  title: Playground Equipment, Installation & Surfacing On-Call
+  body: "<p>Bids Due: April 18, 2017 at 10:00 a.m.</p>"
+  files:
+    - name: Invitation to Bid
+      file: 028.17.B4-playground-equipment-install-invitation.pdf
+  status: open
+- bid_number: 034.17.B3
+  title: Food Service, Non Food Supplies
+  files:
+    - name: Bid Tab
+      file: 034.17.B3-non-food-supplies-bid-tab.pdf
+  status: open
+- bid_number: 035.17.B3
+  title: Produce
+  files:
+    - name: Bid Tab
+      file: 035.17.B3-produce-bid-tab.pdf
+  status: open
+- bid_number: 033.17.B7
+  title: Voluntary Benefits for Howard County Public School System
+  body: >
+    <p>Prebid Meeting: Monday, March 13, 2017 at 10:00 a.m.<br>
+    Bids Due: Friday, March 31, 2017 at 3:00 p.m.</p>
+  files:
+    - name: Request for Proposals
+      file: 033.17.B7-voluntary-benefits-rfp.pdf
+    - name: Invitation to Bid
+      file: 033.17.B7-voluntary-benefits-invitation.pdf
+    - name: Responses to questions
+      file: 033.17.B7-voluntary-benefits-rfp-letter.pdf
+    - name: Pre-bid Meeting Attendance
+      file: 033.17.B7-voluntary-benefits-pre-bid-sign-in.pdf
+  status: open
+- bid_number: 038.17.B2
+  title: Fitness Equipment for Wilde Lake Middle School
+  status: open
+  files:
+    - name: Bid Tab
+      file: 038.17.B2-wlms-fitness-equipment-bid-tab.pdf
+- bid_number: 027.17.B4
+  title: AV Supplies
+  status: open
+  files:
+    - name: Bid Tab
+      file: 036.17.B2-av-supplies-bid-tab.pdf
+- bid_number: 037.17.B2
+  title: Classroom Paper
+  status: open
+  files:
+    - name: Bid Tab
+      file: 037.17.B2-classroom-paper-bid-tab.pdf
+- bid_number: 030.17.B3
+  title: Student Transportation
+  status: open
+  files:
+    - name: Bid Tab
+      file: 030.17.B3-student-transportation-bid-tab.pdf
+- bid_number: 031.17.B3
+  title: Utility Payment Services
+  status: open
+  body: >
+    <p>Pre-Submission Meeting: Thursday, February 23, 2017, at 10:00 a.m.<br>
+    Proposals Due: Wednesday, March 8, 2017, at 11:00 a.m.</p>
+- bid_number: 025.17.B1
+  title: Commissioning and Environmental Testing Services
+  status: open
+  body: >
+    <p>Pre-Submission Meeting: January 3, 2017 at 9:00 AM<br>
+    Proposals Due: January 18, 2017 at 3:00 PM</p>
+  files:
+    - name: Results of Bid
+      file: 025.17.B1-enrivonmental-services-bid-results.pdf
+- bid_number: 023.17.B5
+  title: Adaptive Instructional Software for Elementary Literacy Solution
+  status: open
+  body: "<p>Bids Due: November 21, 2016 at 2:00 PM</p>"
+- bid_number: 022.17.B2
+  title: Appliances and Kitchen Equipment
+  status: closed
+  quote: appliance-bids.pdf
+- bid_number: 054.13.B2
+  title: Art Equipment
+  status: closed
+  quote: art-equipment-bids.pdf
+- bid_number: 034.10.B2
+  title: Art Supplies
+  status: closed
+  quote: art-supply-bids.pdf
+- bid_number: 001.17.B2
+  title: Audio Visual Equipment
+  status: closed
+  quote: av-bids.pdf
+- bid_number: 046.14.B2
+  title: Calculators
+  status: closed
+  quote: calculator-bids.pdf
+- bid_number: 06CM-77
+  title: Catalog Discounts
+  status: closed
+  quote: catalog-bids.pdf
+- bid_number: 06CM-77
+  title: Catalog Discounts
+  status: closed
+  quote: catalog-bids.pdf
+- bid_number: 045.13.B2
+  title: Health First Aid Supplies
+  status: closed
+  quote: health-bids.pdf

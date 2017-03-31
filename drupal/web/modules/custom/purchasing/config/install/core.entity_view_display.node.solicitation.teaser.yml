@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.solicitation.body
+    - field.field.node.solicitation.field_bid_number
+    - field.field.node.solicitation.field_files
+    - field.field.node.solicitation.field_quote
+    - field.field.node.solicitation.field_status
+    - node.type.solicitation
+  module:
+    - file
+    - text
+    - user
+id: node.solicitation.teaser
+targetEntityType: node
+bundle: solicitation
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_bid_number:
+    type: string
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_files:
+    type: file_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_quote: true
+  field_status: true
+  links: true

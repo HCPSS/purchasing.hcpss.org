@@ -1,0 +1,132 @@
+<?php
+
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+use \Drupal\Core\Serialization\Yaml;
+
+/**
+ * Implementation of hook_install().
+ */
+function purchasing_sample_data_install() {
+  _purchasing_sample_data_create_pages();
+  _purchasing_sample_data_create_bids();
+  _purchasing_sample_data_set_homepage();
+  _purchasing_sample_data_add_current_bids_to_menu();
+}
+
+/**
+ * Add Current Bids view to the main menu.
+ */
+function _purchasing_sample_data_add_current_bids_to_menu() {
+  \Drupal\menu_link_content\Entity\MenuLinkContent::create([
+    'title' => t('Current Bids'),
+    'link' => ['uri' => 'internal:/current-bids'],
+    'menu_name' => 'main',
+    'weight' => 2,
+  ])->save();
+}
+
+/**
+ * Set the home page.
+ */
+function _purchasing_sample_data_set_homepage() {
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/purchasing')
+    ->save();
+}
+
+/**
+ * Create the basic pages.
+ */
+function _purchasing_sample_data_create_pages() {
+  $data = file_get_contents(__DIR__.'/data/nip-award.jpg');
+  $file = file_save_data($data, 'public://inline-images/nip-award.jpg', FILE_EXISTS_REPLACE);
+
+  $nodes_data = Yaml::decode(file_get_contents(__DIR__.'/data/pages.yml'));
+
+  foreach ($nodes_data as $node_data) {
+    _purchasing_sample_data_create_page(
+      $node_data['title'],
+      str_replace('[UUID]', $file->uuid(), $node_data['body']),
+      $node_data['alias'],
+      empty($node_data['weight']) ? NULL : $node_data['weight']
+    );
+  }
+}
+
+function _purchasing_sample_data_create_page($title, $body, $alias, $weight = NULL) {
+  $node = Node::create([
+    'type' => 'page',
+    'title' => $title,
+    'body' => [
+      'value' => $body,
+      'format' => 'basic_html',
+    ],
+  ]);
+
+  $node->save();
+
+  \Drupal::service('path.alias_storage')
+    ->save("/node/{$node->id()}", "/$alias", 'en');
+
+  if ($weight) {
+    \Drupal\menu_link_content\Entity\MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'internal:/node/'.$node->id()],
+      'menu_name' => 'main',
+      'weight' => $weight,
+    ])->save();
+  }
+}
+
+/**
+ * Create solicitations.
+ */
+function _purchasing_sample_data_create_bids() {
+  $bids_data = Yaml::decode(file_get_contents(__DIR__ . '/data/bids.yml'));
+
+  foreach ($bids_data as $bid_data) {
+    $solicitation = Node::create([
+      'type'             => 'solicitation',
+      'field_status'     => $bid_data['status'],
+      'field_bid_number' => $bid_data['bid_number'],
+      'title'            => $bid_data['title'],
+    ]);
+
+    if (!empty($bid_data['files'])) {
+      $files = [];
+      foreach ($bid_data['files'] as $file_data) {
+        $data = file_get_contents(__DIR__.'/data/bid_files/'.$file_data['file']);
+        $file = file_save_data($data, 'public://'.$file_data['file'], FILE_EXISTS_REPLACE);
+
+        $files[] = [
+          'target_id'   => $file->id(),
+          'alt'         => $file_data['name'],
+          'description' => $file_data['name'],
+          'display'     => TRUE,
+        ];
+      }
+
+      $solicitation->set('field_files', $files);
+    }
+
+    if (!empty($bid_data['body'])) {
+      $solicitation->set('body', [
+        'value' => $bid_data['body'],
+        'format' => 'basic_html',
+      ]);
+    }
+
+    if (!empty($bid_data['quote'])) {
+      $data = file_get_contents(__DIR__.'/data/bid_files/'.$file_data['quote']);
+      $file = file_save_data($data, 'public://'.$file_data['quote'], FILE_EXISTS_REPLACE);
+
+      $solicitation->set('field_quote', [
+        'target_id' => $file->id(),
+      ]);
+    }
+
+    $solicitation->save();
+  }
+}

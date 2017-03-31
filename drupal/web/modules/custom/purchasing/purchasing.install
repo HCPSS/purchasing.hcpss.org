@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implementation of hook_install().
+ */
+function purchasing_install() {
+  _purchasing_set_theme();
+  _purchasing_set_site_settings();
+}
+
+/**
+ * Set the theme.
+ */
+function _purchasing_set_theme() {
+  \Drupal::service('theme_handler')->setDefault('purchasing_parity');
+}
+
+/**
+ * Set the site name and slogan.
+ */
+function _purchasing_set_site_settings() {
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('name', 'Purchasing')
+    ->set('slogan', 'Howard County Public School System')
+    ->save();
+}
