@@ -11,19 +11,6 @@ function purchasing_sample_data_install() {
   _purchasing_sample_data_create_pages();
   _purchasing_sample_data_create_bids();
   _purchasing_sample_data_set_homepage();
-  _purchasing_sample_data_add_current_bids_to_menu();
-}
-
-/**
- * Add Current Bids view to the main menu.
- */
-function _purchasing_sample_data_add_current_bids_to_menu() {
-  \Drupal\menu_link_content\Entity\MenuLinkContent::create([
-    'title' => t('Current Bids'),
-    'link' => ['uri' => 'internal:/current-bids'],
-    'menu_name' => 'main',
-    'weight' => 2,
-  ])->save();
 }
 
 /**
