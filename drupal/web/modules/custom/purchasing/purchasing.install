@@ -6,6 +6,7 @@
 function purchasing_install() {
   _purchasing_set_theme();
   _purchasing_set_site_settings();
+  _purchasing_permissions();
 }
 
 /**
@@ -24,4 +25,32 @@ function _purchasing_set_site_settings() {
     ->set('name', 'Purchasing')
     ->set('slogan', 'Howard County Public School System')
     ->save();
+}
+
+/**
+ * Add coordinator permissions.
+ */
+function _purchasing_permissions() {
+  $roles = Drupal\user\Entity\Role::loadMultiple();
+  $role = $roles['coordinator'];
+  user_role_grant_permissions($role->id(), [
+    'access content overview',
+    'view own unpublished content',
+    'create page content',
+    'delete any page content',
+    'delete own page content',
+    'edit any page content',
+    'edit own page content',
+    'create solicitation content',
+    'delete any solicitation content',
+    'delete own solicitation content',
+    'edit any solicitation content',
+    'edit own solicitation content',
+    'access in-place editing',
+    'customize shortcut links',
+    'access toolbar',
+    'view the administration theme',
+    'access contextual links',
+    'administer nodes',
+  ]);
 }

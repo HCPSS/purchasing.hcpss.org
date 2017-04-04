@@ -11,6 +11,19 @@ function purchasing_sample_data_install() {
   _purchasing_sample_data_create_pages();
   _purchasing_sample_data_create_bids();
   _purchasing_sample_data_set_homepage();
+  _purchasing_sample_data_vendor_payments_menu_link();
+}
+
+/**
+ * Add a link for vendor payments.
+ */
+function _purchasing_sample_data_vendor_payments_menu_link() {
+  \Drupal\menu_link_content\Entity\MenuLinkContent::create([
+    'title' => 'Fund Accountability and Transparency – Vendor Payments',
+    'link' => ['uri' => 'http://www.hcpss.org/f/vendors/index.html'],
+    'menu_name' => 'main',
+    'weight' => 99,
+  ])->save();
 }
 
 /**

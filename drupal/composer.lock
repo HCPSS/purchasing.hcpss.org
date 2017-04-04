@@ -1559,7 +1559,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-rc1",
                 "shasum": "04a01f50d508eca70e065b7eba38cd6c83a436c0"
             },
             "require": {
@@ -2212,7 +2212,7 @@
                 "reference": "master"
             },
             "type": "drupal-theme",
-            "time": "2017-03-28 18:36:45"
+            "time": "2017-03-31 14:22:31"
         },
         {
             "name": "ircmaxell/password-compat",
