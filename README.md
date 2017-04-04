@@ -39,7 +39,7 @@ Obviously, you can set *--account-pass* to whatever you want.
 ### 5. Enable the theme and module(s)
 
 ```
-$ docker exec -it piahcpssorg_drupal_1 drush @dev en -y \
+$ docker exec -it purchasinghcpssorg_drupal_1 drush @dev en -y \
 	purchasing_parity \
 	purchasing \
 	purchasing_sample_data
