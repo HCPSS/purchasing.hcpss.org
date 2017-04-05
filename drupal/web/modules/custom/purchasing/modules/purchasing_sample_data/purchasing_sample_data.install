@@ -41,7 +41,7 @@ function _purchasing_sample_data_set_homepage() {
  */
 function _purchasing_sample_data_create_pages() {
   $data = file_get_contents(__DIR__.'/data/nip-award.jpg');
-  
+
   $directory = 'public://inline-images';
   file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
   $file = file_save_data($data, $directory . '/nip-award.jpg', FILE_EXISTS_REPLACE);
@@ -122,8 +122,8 @@ function _purchasing_sample_data_create_bids() {
     }
 
     if (!empty($bid_data['quote'])) {
-      $data = file_get_contents(__DIR__.'/data/bid_files/'.$file_data['quote']);
-      $file = file_save_data($data, 'public://'.$file_data['quote'], FILE_EXISTS_REPLACE);
+      $data = file_get_contents(__DIR__.'/data/bid_files/'.$bid_data['quote']);
+      $file = file_save_data($data, 'public://'.$bid_data['quote'], FILE_EXISTS_REPLACE);
 
       $solicitation->set('field_quote', [
         'target_id' => $file->id(),
