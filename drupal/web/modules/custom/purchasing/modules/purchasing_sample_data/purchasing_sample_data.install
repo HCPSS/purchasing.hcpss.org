@@ -41,7 +41,10 @@ function _purchasing_sample_data_set_homepage() {
  */
 function _purchasing_sample_data_create_pages() {
   $data = file_get_contents(__DIR__.'/data/nip-award.jpg');
-  $file = file_save_data($data, 'public://inline-images/nip-award.jpg', FILE_EXISTS_REPLACE);
+  
+  $directory = 'public://inline-images';
+  file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
+  $file = file_save_data($data, $directory . '/nip-award.jpg', FILE_EXISTS_REPLACE);
 
   $nodes_data = Yaml::decode(file_get_contents(__DIR__.'/data/pages.yml'));
 
