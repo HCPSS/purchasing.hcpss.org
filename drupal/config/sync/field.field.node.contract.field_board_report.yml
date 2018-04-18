@@ -1,0 +1,23 @@
+uuid: 22a62366-a91c-431e-971c-153a11171bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_report
+    - node.type.contract
+  module:
+    - link
+id: node.contract.field_board_report
+field_name: field_board_report
+entity_type: node
+bundle: contract
+label: 'Board Report'
+description: 'The board report on Board Docs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

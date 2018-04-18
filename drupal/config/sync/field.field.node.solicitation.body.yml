@@ -1,0 +1,22 @@
+uuid: 1301b156-e1a5-4dcc-81e5-a2ab88b3e4ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.solicitation
+  module:
+    - text
+id: node.solicitation.body
+field_name: body
+entity_type: node
+bundle: solicitation
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

@@ -1,0 +1,22 @@
+uuid: 88ab5c0f-9479-4a33-a360-c44a125a177a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - purchasing_parity
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: purchasing_parity_local_tasks
+theme: purchasing_parity
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

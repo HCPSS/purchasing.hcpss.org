@@ -1,0 +1,19 @@
+uuid: 2355c48a-3d1c-4544-880e-07d3dfc633c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_address
+    - node.type.vendor
+id: node.vendor.field_email_address
+field_name: field_email_address
+entity_type: node
+bundle: vendor
+label: 'Email Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

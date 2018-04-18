@@ -1,0 +1,21 @@
+uuid: 535ea4ff-1640-40aa-b1e1-c9cbb9447d0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_awarded_vendors
+field_name: field_awarded_vendors
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

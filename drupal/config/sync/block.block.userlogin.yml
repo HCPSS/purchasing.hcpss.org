@@ -1,0 +1,20 @@
+uuid: 9e5bad45-dd1f-49fb-840e-c5b23daf5067
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - purchasing_admin
+id: userlogin
+theme: purchasing_admin
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

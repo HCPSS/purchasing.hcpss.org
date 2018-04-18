@@ -1,0 +1,22 @@
+uuid: 2e3f8e9b-e508-4c39-8178-20e1b5506657
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - purchasing_parity
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: purchasing_parity_breadcrumbs
+theme: purchasing_parity
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

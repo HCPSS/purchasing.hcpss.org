@@ -1,0 +1,505 @@
+# Kitchen appliances
+- name: 1 Stop Electronics
+- name: Sears Commercial
+- name: Business Services
+- name: Wascomat of America
+- name: Calico Industries
+
+# Art equipment
+- name: Glover
+- name: Satco
+
+- name: School Specialty
+  phone: 888-388-3224
+  fax: 888-388-6344 
+  website: http://www.schoolspecialty.com
+  address:
+    line1: W6316 Design Drive
+    city: Greenville
+    state: WI
+    zip: 54942
+
+# Calculator
+- id: V11471
+  name: TechMart Computer Products
+  address:
+    line1: 1424 Odenton Road
+    city: Odenton
+    state: MD
+    zip: 21113
+  phone: 410.674.8202
+  
+# Catalog
+- name: ABC
+  website: http://www.abcschoolsupply.com
+- name: Childcraft Education
+  website: http://www.childcraft.com
+- name: Classroom Direct
+  website: classroomdirect.com
+- name: Constructive Playthings
+  website: http://www.cptoys.com
+  phone: 1-800-832-0224
+- name: Dick Blick Art Materials
+  website: http://www.dickblick.com
+  address:
+    line1: P.O. Box 1267
+    city: Galesburg
+    state: IL
+    zip: 61402
+  phone: (800) 828-4548
+  fax: (800) 621-8293
+- name: Demco
+  website: http://www.demco.com
+  phone: 800.356.1200
+  fax: 1.800.245.1329
+  address:
+    line1: PO BOX 7488
+    city: Madison
+    state: WI
+    zip: 53707 
+- name: ETA Hand2Mind
+  website: http://www.etacuisenaire.com
+- name: Frey Scientific
+  website: http://www.freyscientific.com
+  phone: 800-225-3739
+  fax: 877-256-3739
+  address:
+    line1: 80 Northwest Blvd.
+    city: Nashua
+    state: NH
+    zip: 03061
+- name: Hearlihy
+  website: http://www.hearlihy.com
+  address:
+    line1: P.O. Box 1708
+    city: Pittsburg
+    state: KS
+    zip: 66762
+- name: Highsmith
+- name: Kaplan Early Learning
+- name: Kurtz
+  address:
+    line1: 400 Reed St.
+    line2: PO Box 392
+    city: Clearfield
+    state: PA
+    zip: 16830
+  phone: (800) 252-3811
+  fax: (814) 765-8690 
+- name: Lakeshore Learning Materials
+  phone: (800) 778-4456
+  fax: (800) 537-5403
+  address:
+    line1: 2695 E. Dominguez Street
+    city: Carson
+    state: CA
+    zip: 90895
+- name: Learning How
+- name: NASCO
+  address:
+    line1: 901 Janesville Avenue
+    line2: P.O. Box 901
+    city: Fort Atkinson
+    state: WI
+    zip: 53538
+  phone: 1.800.558.9595
+  fax: 1.800.372.1236
+- name: PITSCO
+- name: Really Good Stuff
+  website: http://www.reallygoodstuff.com
+- name: Summit Learning
+  website: http://www.summitlearning.com
+ 
+# Computers and tablest
+- name: Apple Inc.
+  address:
+    line1: 5505 W Parmer Lane Bldg 7
+    line2: 'MS: 581-IES'
+    city: Austin
+    state: TX
+    zip: 78727
+  phone: 512-6742812
+  fax: 800-5900325
+- name: Data Networks
+  address:
+    line1: 216SchilingCircle
+    line2: Suite104
+    city: HuntValey
+    state: MD
+    zip: 21031
+  phone: 800-283-6387
+  fax: 410-823-0132
+  email: orders@datanetworks.com
+  
+# Furniture
+- name: Glover
+  website: http://www.gloverfurniture.net/
+  address:
+    line1: PO Box 405
+    city: Cockeysville
+    state: MD
+    zip: 21030
+  phone: 1-800-966-9016 
+- name: Douron
+  website: http://douron.com
+  address:
+    line1: 10 Painters Mill Road
+    city: Owings Mills
+    state: MD
+    zip: 21117
+  phone: 410.363.2600
+  email: info@douron.com
+  
+# Health
+- name: School Health
+  fax: 800-235-1305
+  phone: 866-323-5465
+  address:
+    line1: 865 Muirfield Drive
+    city: Hanover Park
+    state: IL
+    zip: 60133
+  website: https://www.schoolhealth.com
+- name: Kentron Health Care, Inc.
+  website: http://www.kentronmedical.com/
+  address:
+    line1: 701 Central Ave W
+    line2: PO Box 120
+    city: Springfield
+    state: TN
+    zip: 37172
+  phone: 1-866-385-0573
+  fax: 1-888-384-0574
+  email: kentron@kentronmedical.com
+- name: Moore Medical
+  website: https://www.mooremedical.com/
+  address:
+    line1: 1690 New Britain Avenue
+    line2: PO Box 4066
+    city: Farmington
+    state: CT
+    zip: 06032
+  phone: 800.234.146
+- name: Westnet
+  website: https://www.westnetmed.com/
+  address: 
+    line1: 55 North Street
+    city: Canton
+    state: MA
+    zip: 02021
+  phone: 781.828.7772
+  fax: 781.828.2011
+  email: sales@westnetmed.com   
+- name: Henry Schein
+  website: https://www.henryschein.com/
+- name: AOSS Medical
+  website: https://aossmedicalsupply.com/
+  address:
+    line1: 4971 Central Avenue
+    city: Monroe
+    state: LA
+    zip: 71203
+  phone: 318-325-8290
+- name: Lifeline
+  website: https://lifelinemedicalsupplies.com/
+  address:
+    line1: 2955 Mercy Lane
+    city: Cheverly
+    state: MD
+    zip: 20785
+  phone: 301-386-0000
+  
+# Music awards
+- name: 'B&H Photo'
+  address: 
+    line1: 420 Ninth Avenue
+    city: New York
+    state: NY
+    zip: 10001
+  phone: 800-947-8003, x4698
+  fax: 800-743-0895
+- name: JKM Music Group
+  address: 
+    line1: 2001 Chapman Avenue
+    city: Rockville
+    state: MD
+    zip: 20852
+  phone: 301-770-9081
+  fax: 301-452-1270
+- name: Jason’s Music Center
+  address: 
+    line1: 8149-B Ritchie Highway
+    city: Pasadena
+    state: MD
+    zip: 21122
+  phone: 410-919-8249
+  fax: 410-647-3518
+- name: 'K&S Music'
+  address:
+    line1: 61 Industrial Road
+    city: Berkeley Heights
+    state: NJ
+    zip: 07922
+  phone: 908-790-0400
+  fax: 908-790-0407  
+- name: Melhart Music
+  address:
+    line1: 3325 N. 10th Street
+    city: McAllen
+    state: TX
+    zip: 78501
+  phone: 956-682-6147, x256
+  fax: 956-682-4253
+- name: Midwest Musical Imports
+  address:
+    line1: 2021 E. Hennepin Ave.
+    city: Minneapolis
+    state: MN
+    zip: 55413
+  phone: 800-926-5587
+  fax: 612-331-4718
+- name: 'Music & Arts Center'
+  address:
+    line1: 4626 Wedgewood Blvd.
+    city: Fredrick
+    state: MD
+    zip: 21703
+  phone: 301-620-4040, X1018
+  fax: 301-663-8496
+- name: Peripole-Bergerault, Inc.
+  address:
+    line1: PO Box 12909
+    city: Salem
+    state: OR
+    zip: 97309-0909
+  phone: 800-443-3592
+  fax: 888-724-6733
+- name: Shar Products Company
+  address: 
+    line1: 2465 S. Industrial Hwy. 
+    city: Ann Arbor
+    state: MI
+    zip: 48104
+  phone: 866-742-7261
+  fax: 800-997-8723
+- name: Suzuki Music
+  address:
+    line1: 9920 Prospect Avenue
+    city: Santee
+    state: CA
+    zip: 92071 
+  phone: 800-854-1594
+  fax: 619-258-1896
+- name: Washington Music
+  address:
+    line1: 11151 Veirs Mill Road
+    city: Wheaton
+    state: MD
+    zip: 20902
+  phone: 301-946-8808
+  fax: 301-946-0487
+- name: Wenger Corporation
+  address:
+    line1: 555 Park Drive
+    city: Owatonna
+    state: MN
+    zip: 55060
+  phone: 800-733-0393, x8440
+  fax: 507-774-8575
+
+# Music Purchasing Program
+- name: Music and Arts
+  website: https://www.musicarts.com/
+  address:
+    line1: 5295 Westview Dr
+    line2: Suite 300
+    city: Frederick
+    state: MD
+    zip: 21703-8517
+  
+# Music equipment repairs
+- name: Baltimore Brass Co.
+  address: 
+    line1: 9900 Mellor Ave.
+    city: Catonsville
+    state: MD
+    zip: 21228
+  phone: 410-744-1723
+- name: Barton Winds 
+  address:
+    line1: 539 Bruce Avenue
+    city: Odenton
+    state: MD
+    zip: 21113
+  phone: 301-395-7805
+- name: DC Slide Repair
+  address:
+    line1: 1218 Downs Drive
+    city: Siler Spring
+    state: MD
+    zip: 20904
+  phone: 301-879-3064 
+- name: Keith Daudelin 
+  address:
+    line1: 7393 Grand Lake Drive
+    city: Seven Valleys
+    state: PA
+    zip: 17360
+  phone: 717-701-0022
+- name: Menchy Music Service 
+  address:
+    line1: 80 Wetzel Drive
+    city: Hanover
+    state: PA
+    zip: 17331
+  phone: 707-637-2185
+- name: 'Perrin & Associates Fine Violins' 
+  address:
+    line1: 517 N. Charles Street
+    line2: 2nd Floor
+    city: Baltimore
+    state: MD
+    zip: 21201
+  phone: 410-539-0043 
+
+# Office supply
+- name: Office Depot
+
+# PE
+- name: Gopher Sport
+  address:
+    line1: 2525 Lemond Street St. SW
+    city: Owatonna
+    state: MN
+    zip: 55060
+  website: http://www.gophersport.com
+- name: School Specialty Inc
+  address:
+    line1: 140 Marble Drive
+    city: Lancaster
+    state: PA
+    zip: 17601
+  website : www.schoolspecialty.com
+- name: MFAC, LLC
+  address:
+    line1: 1600 Division Rd
+    city: West Warwick
+    state: RI
+    zip: 02893
+  website: http://www.performbetter.com
+- name: Pyramid School Products
+  address:
+    line1: 6510 North 54th Street
+    city: Tampa
+    state: FL
+    zip: 33610-1908
+  website: http://www.pyramidsp.com
+- name: 'S & S Worldwide, Inc.'
+  address:
+    line1: 75 Mill St.
+    city: Colchester
+    state: CT
+    zip: 06415
+  website: http://www.ssww.com
+- name: "BSN Sports, Passon's Sports, & US Games"
+  address:
+    line1: P.O. Box 49
+    city: Jenkintown
+    state: PA
+    zip: 19046
+  website: http://www.bsnsports.com
+
+# Projectors
+- name: 'Nicholas P. Pipino Associates, Inc.'
+  website: http://pipinoinc.com/
+  address:
+    line1: 9139-C Red Branch Road
+    city: Columbia
+    state: MD
+    zip: 21045
+  email: spipino@pipinoinc.com
+  phone: 888-596-0014
+
+# Printers
+- name: HCGI
+  website: hcgi.com
+  address:
+    line1: 10440 Little Patuxent Parkway
+    line2: Suite 810
+    city: Columbia
+    state: MD
+    zip: 21044
+  
+# 3D Printers
+- name: Amtek Company, Inc.
+  address:
+    line1: 1244 Ritchie Hwy
+    line2: Suite 10
+    city: Arnold
+    state: MD
+    zip: 21012
+  phone: (800) 926-8359
+  fax: (410) 315-9249
+  email: services@amtekcompany.com
+  
+# Printer toner
+- id: S11147
+  name: RE Business Solutions
+  address:
+    line1: 1980 Old Cuthbert Rd.
+    city: Cherry Hill
+    state: NJ
+    zip: 08034
+  phone: 856-834-5222
+  fax: 856-834-5235
+  
+# Science Equipment
+- name: Carolina Biological Supply Co.
+  address:
+    line1: 2700 York Road
+    city: Burlington
+    state: NC
+    zip: 27215
+  phone: (336) 584-0381
+- name: Fisher Scientific Co.
+  address: 
+    line1: 4500 Turnberry Drive
+    city: Hanover Park
+    state: IL
+    zip: 60133
+  phone: (800) 955-1177
+- name: Flinn Scientific, Inc.
+  address:
+    line1: PO Box 219
+    city: Batavia
+    state: IL
+    zip: 60510
+  phone: (800) 452-1261
+- name: Frey Scientific
+  address: 
+    line1: 140 Marble Drive
+    city: Lancaster
+    state: PA
+    zip: 17601
+  phone: (800) 225-3739
+- name: Sargent Welch
+  address:
+    line1: PO Box 92912
+    city: Rochester
+    state: NY
+    zip: 14692-9012
+  phone: (800) 727-4368
+- name: 'Vernier Software & Technology'
+  address:
+    line1: 13979 SW Millikan Way
+    city: Beaverton
+    state: OR
+    zip: 97005
+  phone: (503) 277-2299
+- name: "Ward's Science"
+  address:
+    line1: PO Box 92912
+    city: Rochester
+    state: NY
+    zip: 14692-9012
+  phone: (800) 962-2660

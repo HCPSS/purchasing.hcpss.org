@@ -1,0 +1,32 @@
+uuid: 990ca140-c818-4d42-b0b0-5c8568a4c021
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.discount_or_markup.field_discount_or_markup
+    - field.field.paragraph.discount_or_markup.field_name
+    - paragraphs.paragraphs_type.discount_or_markup
+id: paragraph.discount_or_markup.default
+targetEntityType: paragraph
+bundle: discount_or_markup
+mode: default
+content:
+  field_discount_or_markup:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

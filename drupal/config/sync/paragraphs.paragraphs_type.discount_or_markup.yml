@@ -1,0 +1,9 @@
+uuid: 1aafe7bb-68e1-4269-94b0-a4e94880a873
+langcode: en
+status: true
+dependencies: {  }
+id: discount_or_markup
+label: 'Discount or Markup'
+icon_uuid: null
+description: 'A percent discount or markup not included in the base price.'
+behavior_plugins: {  }

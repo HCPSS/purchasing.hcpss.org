@@ -1,0 +1,17 @@
+uuid: cf718c3f-acc2-4971-8301-0fb1d40ad905
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Quote
+type: quote
+description: 'A quote is for items under $25,000 that do not go for bids. Quotes are awardable.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

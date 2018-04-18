@@ -1,0 +1,21 @@
+uuid: 37a7355f-e318-4adb-a006-7bc675264552
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_information
+    - paragraphs.paragraphs_type.awarded_vendor
+  module:
+    - text
+id: paragraph.awarded_vendor.field_contact_information
+field_name: field_contact_information
+entity_type: paragraph
+bundle: awarded_vendor
+label: 'Contact Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,7 +1,0 @@
-name: Purchasing Sample Data
-description: HCPSS purching sample data
-type: module
-core: 8.x
-version: 8.x-1.0
-dependencies:
-  - purchasing

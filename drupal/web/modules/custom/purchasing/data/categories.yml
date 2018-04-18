@@ -1,0 +1,26 @@
+---
+- name: Financial Services
+  description: >
+    <p></p>
+- name: Technology Services
+  description: >
+    <p></p>
+- name: Technology Products
+  description: >
+    <p>Computers, tablets, printers and projectors.</p>
+- name: Instructional Services
+  description: >
+    <p>Instructional programs and services.</p>
+- name: Instructional Supplies
+  description: >
+    <p>Instructional supplies and equipment for Art, Music, Physical 
+    Education, and Science.</p>
+- name: Furniture and Appliances
+  description: >
+    <p>Furniture and appliances for offices and kitchen.</p>
+- name: Facilities and Operations
+  description: >
+    <p>Office, health, and custodial supplies.</p>
+- name: Staffing and Human Resources
+  description: >
+    <p></p>

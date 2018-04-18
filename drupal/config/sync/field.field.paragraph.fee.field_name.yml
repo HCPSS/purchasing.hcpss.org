@@ -1,0 +1,19 @@
+uuid: 0101cce3-cd8f-43e4-a89d-e0a0dd92cc36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.fee
+id: paragraph.fee.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: fee
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

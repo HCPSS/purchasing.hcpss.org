@@ -1,0 +1,19 @@
+uuid: d57b4ed1-708b-4126-abb2-6075470f2aec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_identifier
+    - node.type.contract
+id: node.contract.field_identifier
+field_name: field_identifier
+entity_type: node
+bundle: contract
+label: 'HCPSS Contract Number'
+description: 'The contract number assigned to the contract by HCPSS. This may not be the original contract number.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,9 @@
+uuid: a5e5896f-11a4-4f03-8727-1cfd0396dd96
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'Use categories to categorize bids.'
+hierarchy: 1
+weight: 0

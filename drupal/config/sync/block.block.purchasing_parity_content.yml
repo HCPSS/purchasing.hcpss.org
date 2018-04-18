@@ -1,0 +1,22 @@
+uuid: c3a1e4b2-c534-47d1-860f-27d7a24d622a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - purchasing_parity
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: purchasing_parity_content
+theme: purchasing_parity
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

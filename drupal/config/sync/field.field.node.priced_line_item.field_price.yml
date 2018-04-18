@@ -1,0 +1,23 @@
+uuid: 75793c3c-ecb0-40c0-92b2-a5492bf03fab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.priced_line_item
+id: node.priced_line_item.field_price
+field_name: field_price
+entity_type: node
+bundle: priced_line_item
+label: Price
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

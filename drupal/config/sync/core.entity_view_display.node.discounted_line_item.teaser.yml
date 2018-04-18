@@ -1,0 +1,28 @@
+uuid: e26d99a8-e0bf-42b1-a22e-f33cc74d78c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.discounted_line_item.body
+    - node.type.discounted_line_item
+  module:
+    - text
+    - user
+id: node.discounted_line_item.teaser
+targetEntityType: node
+bundle: discounted_line_item
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,27 @@
+uuid: 14a06a10-1a4a-4e25-8a37-555af303b39f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documentation
+    - node.type.solicitation
+  module:
+    - file
+id: node.solicitation.field_documentation
+field_name: field_documentation
+entity_type: node
+bundle: solicitation
+label: Documentation
+description: 'Requests for proposal, invitations to bid, and addendums.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

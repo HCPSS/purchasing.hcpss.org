@@ -1,0 +1,21 @@
+{
+    "name": "org/purchasing",
+    "description": "This extension provides new commands for Drush.",
+    "type": "drupal-drush",
+    "authors": [
+        {
+            "name": "Brendan Anderson",
+            "email": "brendan_anderson@hcpss.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    }
+}

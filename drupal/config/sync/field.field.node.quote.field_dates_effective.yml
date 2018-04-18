@@ -1,0 +1,21 @@
+uuid: 3ee67b86-19d8-4ba9-b3f6-d0234e0b1b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates_effective
+    - node.type.quote
+  module:
+    - datetime_range
+id: node.quote.field_dates_effective
+field_name: field_dates_effective
+entity_type: node
+bundle: quote
+label: 'Dates Effective'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * Implementation of hook_preprocess_HOOK().
+ */
+function purchasing_admin_preprocess_node_add_list(&$variables) {
+  $groups = [
+    'awardable agreements' => [
+      'contract',
+      'solicitation',
+      'quote',
+    ],
+    'awarded line items' => [
+      'priced_line_item',
+      'discounted_line_item',
+      'partner_line_item',
+    ],
+    'site content' => [
+      'article',
+      'page'
+    ],
+  ];
+
+  $categories = [];
+  foreach ($variables['types'] as $type) {
+    $found = FALSE;
+    foreach ($groups as $name => $candidates) {
+      if (in_array($type['type'], $candidates)) {
+        $categories[$name][] = $type;
+        $found = TRUE;
+      }
+    }
+
+    if (!$found) {
+      $categories['other'][] = $type;
+    }
+  }
+
+  uksort($categories, function ($a, $b) use ($groups) {
+    foreach ($groups as $key => $value) {
+      if ($a === $key) {
+        return -1;
+      } else if ($b === $key) {
+        return 1;
+      }
+    }
+    return 0;
+  });
+
+  $variables['categories'] = $categories;
+}

@@ -1,0 +1,17 @@
+uuid: d8dc6271-36c6-4c42-bb68-baf9193b2c37
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Vendor
+type: vendor
+description: 'A company or organization that does business with HCPSS.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

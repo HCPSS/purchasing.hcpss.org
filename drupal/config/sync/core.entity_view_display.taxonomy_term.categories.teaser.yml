@@ -1,0 +1,23 @@
+uuid: b1404ee8-e26b-45d9-8aa3-c4024826cf38
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - taxonomy.vocabulary.categories
+  module:
+    - text
+id: taxonomy_term.categories.teaser
+targetEntityType: taxonomy_term
+bundle: categories
+mode: teaser
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  purchasing_children: true

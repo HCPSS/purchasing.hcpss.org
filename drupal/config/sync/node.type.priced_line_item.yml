@@ -1,0 +1,17 @@
+uuid: 97f0562d-0e5b-484f-a548-13ff50dd487c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Priced Line Item'
+type: priced_line_item
+description: 'An awarded line item that has a specific price.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

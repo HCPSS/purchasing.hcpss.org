@@ -1,0 +1,9 @@
+uuid: c1965a41-4b56-4644-8e5a-2fccba1bf326
+langcode: en
+status: true
+dependencies: {  }
+id: other_charge
+label: 'Other Charge'
+icon_uuid: null
+description: 'A charge that is not a markup, discount, or fee and is not contained in the base price.'
+behavior_plugins: {  }

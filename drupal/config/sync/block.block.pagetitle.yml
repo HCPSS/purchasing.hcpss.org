@@ -1,0 +1,18 @@
+uuid: 3d9f55f4-425f-4648-bc65-470589b67465
+langcode: en
+status: true
+dependencies:
+  theme:
+    - purchasing_admin
+id: pagetitle
+theme: purchasing_admin
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,30 @@
+uuid: b71a0249-143e-49d5-8569-57b5a9a50bc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.other_charge.field_charge
+    - field.field.paragraph.other_charge.field_name
+    - paragraphs.paragraphs_type.other_charge
+id: paragraph.other_charge.default
+targetEntityType: paragraph
+bundle: other_charge
+mode: default
+content:
+  field_charge:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

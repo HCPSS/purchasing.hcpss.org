@@ -1,0 +1,33 @@
+uuid: 066614fd-c004-4746-b9c1-68d2335fe54c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fee.field_name
+    - field.field.paragraph.fee.field_price
+    - paragraphs.paragraphs_type.fee
+id: paragraph.fee.default
+targetEntityType: paragraph
+bundle: fee
+mode: default
+content:
+  field_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_price:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden: {  }

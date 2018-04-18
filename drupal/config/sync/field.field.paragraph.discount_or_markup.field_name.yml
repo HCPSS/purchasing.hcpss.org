@@ -1,0 +1,19 @@
+uuid: 2c9da7ea-c49f-485c-abf0-42627c198a32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.discount_or_markup
+id: paragraph.discount_or_markup.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: discount_or_markup
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

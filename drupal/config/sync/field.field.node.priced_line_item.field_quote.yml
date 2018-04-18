@@ -1,0 +1,27 @@
+uuid: f1b41f43-2a37-4ee8-81b0-379aa8a5af76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quote
+    - node.type.priced_line_item
+  module:
+    - file
+id: node.priced_line_item.field_quote
+field_name: field_quote
+entity_type: node
+bundle: priced_line_item
+label: Quote
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

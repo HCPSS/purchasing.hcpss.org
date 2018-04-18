@@ -1,0 +1,34 @@
+uuid: c8384c97-0f48-4801-bc7c-a7d24bbb0ab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.solicitation.body
+    - node.type.solicitation
+  module:
+    - text
+    - user
+id: node.solicitation.teaser
+targetEntityType: node
+bundle: solicitation
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_bid_tabulation: true
+  field_category: true
+  field_dates_effective: true
+  field_documentation: true
+  field_due_date: true
+  field_identifier: true

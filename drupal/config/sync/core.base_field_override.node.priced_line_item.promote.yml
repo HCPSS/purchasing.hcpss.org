@@ -1,0 +1,22 @@
+uuid: fbbdda8a-b165-4e1e-8ec9-cba0a6067d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.priced_line_item
+id: node.priced_line_item.promote
+field_name: promote
+entity_type: node
+bundle: priced_line_item
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

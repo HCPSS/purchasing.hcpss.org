@@ -1,0 +1,20 @@
+uuid: 0f7fc527-258a-4cb3-9a44-44c2407f408e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - purchasing_parity
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: purchasing_parity_page_title
+theme: purchasing_parity
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

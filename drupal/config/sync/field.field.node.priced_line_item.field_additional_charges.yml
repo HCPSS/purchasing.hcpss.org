@@ -1,0 +1,44 @@
+uuid: df35148a-e138-4014-af73-defcc0b844cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_charges
+    - node.type.priced_line_item
+    - paragraphs.paragraphs_type.discount_or_markup
+    - paragraphs.paragraphs_type.fee
+    - paragraphs.paragraphs_type.other_charge
+  module:
+    - entity_reference_revisions
+id: node.priced_line_item.field_additional_charges
+field_name: field_additional_charges
+entity_type: node
+bundle: priced_line_item
+label: 'Additional Charges'
+description: 'Charges not included in the base price.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      discount_or_markup: discount_or_markup
+      fee: fee
+      other_charge: other_charge
+    target_bundles_drag_drop:
+      awarded_vendor:
+        weight: 5
+        enabled: false
+      discount_or_markup:
+        enabled: true
+        weight: 6
+      fee:
+        enabled: true
+        weight: 7
+      other_charge:
+        enabled: true
+        weight: 8
+field_type: entity_reference_revisions

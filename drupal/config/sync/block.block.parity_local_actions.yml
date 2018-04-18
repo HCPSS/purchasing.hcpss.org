@@ -1,0 +1,20 @@
+uuid: 867cefad-bbce-4b8b-8864-e3918c215fd1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - parity
+_core:
+  default_config_hash: IB80rTu4FdX1mJ_gqZmI1-MsSmLjvsiIB_ExxaCW2_U
+id: parity_local_actions
+theme: parity
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

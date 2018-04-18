@@ -1,0 +1,33 @@
+uuid: 84b4c346-2d3d-4e9d-a0fe-f75a67829577
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.other_charge.field_charge
+    - field.field.paragraph.other_charge.field_name
+    - paragraphs.paragraphs_type.other_charge
+id: paragraph.other_charge.default
+targetEntityType: paragraph
+bundle: other_charge
+mode: default
+content:
+  field_charge:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

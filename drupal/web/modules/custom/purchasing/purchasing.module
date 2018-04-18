@@ -1,0 +1,11 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implementation od hook_form_FORM_ID_alter().
+ */
+function purchasing_form_node_bid_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['field_award']['widget']['add_more']['add_more_button_awarded_bid']['#value'] = 'Award this Bid';
+}

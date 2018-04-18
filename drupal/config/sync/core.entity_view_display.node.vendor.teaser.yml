@@ -1,0 +1,25 @@
+uuid: d2e8388c-c31c-42c3-b9eb-fc01208c6965
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.vendor
+  module:
+    - user
+id: node.vendor.teaser
+targetEntityType: node
+bundle: vendor
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_address: true
+  field_email_address: true
+  field_fax_number: true
+  field_notes: true
+  field_pe_id: true
+  field_phone_number: true
+  field_website: true

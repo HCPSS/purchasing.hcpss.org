@@ -1,0 +1,22 @@
+uuid: 333f116f-7f96-495e-82fe-8c651ae77dfe
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - purchasing_admin
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: purchasing_admin_content
+theme: purchasing_admin
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

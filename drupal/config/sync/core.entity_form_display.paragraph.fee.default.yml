@@ -1,0 +1,32 @@
+uuid: fd22bad1-5122-45c3-9759-f8086d3e0bac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fee.field_name
+    - field.field.paragraph.fee.field_price
+    - paragraphs.paragraphs_type.fee
+id: paragraph.fee.default
+targetEntityType: paragraph
+bundle: fee
+mode: default
+content:
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_price:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

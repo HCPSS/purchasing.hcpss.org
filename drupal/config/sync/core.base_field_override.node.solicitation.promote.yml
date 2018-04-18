@@ -1,0 +1,22 @@
+uuid: 5be0e766-c19a-415f-8c13-ffde10d40d82
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.solicitation
+id: node.solicitation.promote
+field_name: promote
+entity_type: node
+bundle: solicitation
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

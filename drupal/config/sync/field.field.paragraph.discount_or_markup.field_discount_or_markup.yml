@@ -1,0 +1,23 @@
+uuid: b83da8c4-46b7-4e51-b2d5-5c1b8ccdbdfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_discount_or_markup
+    - paragraphs.paragraphs_type.discount_or_markup
+id: paragraph.discount_or_markup.field_discount_or_markup
+field_name: field_discount_or_markup
+entity_type: paragraph
+bundle: discount_or_markup
+label: 'Discount or Markup'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: integer

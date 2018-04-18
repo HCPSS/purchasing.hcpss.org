@@ -1,0 +1,22 @@
+uuid: 6f9fafb9-940b-481a-a3d0-d4d5174b4506
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.priced_line_item
+  module:
+    - text
+id: node.priced_line_item.body
+field_name: body
+entity_type: node
+bundle: priced_line_item
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

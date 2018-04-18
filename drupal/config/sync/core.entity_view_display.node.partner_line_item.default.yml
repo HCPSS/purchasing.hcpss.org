@@ -1,0 +1,26 @@
+uuid: c5b77b10-5d43-4236-8e60-39fddf57531a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.partner_line_item.body
+    - node.type.partner_line_item
+  module:
+    - text
+    - user
+id: node.partner_line_item.default
+targetEntityType: node
+bundle: partner_line_item
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

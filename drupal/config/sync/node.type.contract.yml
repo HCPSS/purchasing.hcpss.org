@@ -1,0 +1,17 @@
+uuid: 8f9e9d34-feea-4f2d-8395-de3cddc069f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Contract
+type: contract
+description: 'A contract that HCPSS is piggybacking on without a solicitation. Contracts are awardable.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

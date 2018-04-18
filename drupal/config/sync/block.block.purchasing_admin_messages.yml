@@ -1,0 +1,22 @@
+uuid: 49d826ee-d316-4ec4-b059-8ba24b865758
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - purchasing_admin
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: purchasing_admin_messages
+theme: purchasing_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

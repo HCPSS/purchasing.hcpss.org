@@ -1,24 +1,6 @@
-name: Purchasing
-description: 'HCPSS Purchasing site configuration.'
+name: 'HCPSS Purchasing'
+description: 'Purchasing functionality.'
+package: HCPSS
 type: module
 core: 8.x
-dependencies:
-  - block
-  - block_content
-  - comment
-  - field
-  - field_group
-  - file
-  - help
-  - image
-  - menu_ui
-  - node
-  - options
-  - path
-  - purchasing
-  - search
-  - system
-  - text
-  - user
-  - views
-version: 8.x-1.0
+version: 0.1

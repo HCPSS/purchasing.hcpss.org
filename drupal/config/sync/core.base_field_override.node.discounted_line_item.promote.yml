@@ -1,0 +1,22 @@
+uuid: 37c6c935-2952-48d6-bebf-8dd6dbcf5e48
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.discounted_line_item
+id: node.discounted_line_item.promote
+field_name: promote
+entity_type: node
+bundle: discounted_line_item
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

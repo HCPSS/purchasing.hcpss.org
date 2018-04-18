@@ -1,0 +1,19 @@
+uuid: 711af8df-61aa-48e1-a7be-df23e2fe4708
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exceptions
+    - node.type.discounted_line_item
+id: node.discounted_line_item.field_exceptions
+field_name: field_exceptions
+entity_type: node
+bundle: discounted_line_item
+label: Exceptions
+description: 'Describe any exceptions to the discount.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

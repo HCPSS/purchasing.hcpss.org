@@ -1,0 +1,17 @@
+uuid: c2a90ef4-a6cd-491c-8c9f-95467820b71a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Discounted Line Item'
+type: discounted_line_item
+description: 'A line item where a vendor offers a discount on products or services.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

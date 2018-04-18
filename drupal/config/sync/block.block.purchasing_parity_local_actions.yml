@@ -1,0 +1,20 @@
+uuid: 532e7f47-58c0-48a3-8f75-e5e4b4fc29e5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - purchasing_parity
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: purchasing_parity_local_actions
+theme: purchasing_parity
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

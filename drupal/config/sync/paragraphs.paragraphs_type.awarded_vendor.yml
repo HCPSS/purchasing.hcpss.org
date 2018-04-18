@@ -1,0 +1,9 @@
+uuid: 2f48f964-c34a-48bd-9a24-5583da5eed19
+langcode: en
+status: true
+dependencies: {  }
+id: awarded_vendor
+label: 'Awarded Vendor'
+icon_uuid: null
+description: 'Vendor that has won a bid.'
+behavior_plugins: {  }

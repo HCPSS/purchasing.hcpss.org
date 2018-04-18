@@ -1,0 +1,23 @@
+uuid: 0cb1eec0-fc49-4f02-9ab2-6b9de29c31bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - paragraphs
+id: paragraph.field_award_letter
+field_name: field_award_letter
+entity_type: paragraph
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

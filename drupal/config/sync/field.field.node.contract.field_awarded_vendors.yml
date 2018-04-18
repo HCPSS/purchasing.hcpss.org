@@ -1,0 +1,40 @@
+uuid: fb6fc694-8647-4c70-a6c7-6e2cc84caee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_awarded_vendors
+    - node.type.contract
+    - paragraphs.paragraphs_type.awarded_vendor
+  module:
+    - entity_reference_revisions
+id: node.contract.field_awarded_vendors
+field_name: field_awarded_vendors
+entity_type: node
+bundle: contract
+label: 'Awarded Vendors'
+description: 'Vendors awarded this contract.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      awarded_vendor: awarded_vendor
+    target_bundles_drag_drop:
+      awarded_vendor:
+        enabled: true
+        weight: 5
+      discount_or_markup:
+        weight: 6
+        enabled: false
+      fee:
+        weight: 7
+        enabled: false
+      other_charge:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

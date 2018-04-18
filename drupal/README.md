@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
 
-This project template should provide a kickstart for managing your site
+This project template provides a starter kit for managing your site
 dependencies with [Composer](https://getcomposer.org/).
 
 If you want to know how to use it as replacement for
-[Drush Make](https://github.com/drush-ops/drush/blob/master/docs/make.md) visit
+[Drush Make](https://github.com/drush-ops/drush/blob/8.x/docs/make.md) visit
 the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
 
 ## Usage
@@ -49,6 +49,7 @@ When installing the given `composer.json` some tasks are taken care of:
 * Creates `web/sites/default/files`-directory.
 * Latest version of drush is installed locally for use at `vendor/bin/drush`.
 * Latest version of DrupalConsole is installed locally for use at `vendor/bin/drupal`.
+* Creates environment variables based on your .env file. See [.env.example](.env.example).
 
 ## Updating Drupal Core
 
@@ -56,12 +57,12 @@ This project will attempt to keep all of your Drupal Core files up-to-date; the
 project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) 
 is used to ensure that your scaffold files are updated every time drupal/core is 
 updated. If you customize any of the "scaffolding" files (commonly .htaccess), 
-you may need to merge conflicts if any of your modfied files are updated in a 
+you may need to merge conflicts if any of your modified files are updated in a 
 new release of Drupal core.
 
 Follow the steps below to update your core files.
 
-1. Run `composer update drupal/core --with-dependencies` to update Drupal Core and its dependencies.
+1. Run `composer update drupal/core webflo/drupal-core-require-dev symfony/* --with-dependencies` to update Drupal Core and its dependencies.
 1. Run `git diff` to determine if any of the scaffolding files have changed. 
    Review the files for any changes and restore any customizations to 
   `.htaccess` or `robots.txt`.
@@ -121,7 +122,7 @@ section of composer.json:
 "extra": {
     "patches": {
         "drupal/foobar": {
-            "Patch description": "URL to patch"
+            "Patch description": "URL or local path to patch"
         }
     }
 }
@@ -129,3 +130,15 @@ section of composer.json:
 ### How do I switch from packagist.drupal-composer.org to packages.drupal.org?
 
 Follow the instructions in the [documentation on drupal.org](https://www.drupal.org/docs/develop/using-composer/using-packagesdrupalorg).
+
+### How do I specify a PHP version ?
+
+Currently Drupal 8 supports PHP 5.5.9 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7+.
+
+To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
+```json
+"config": {
+    "sort-packages": true,
+    "platform": {"php": "5.5.9"}
+},
+```

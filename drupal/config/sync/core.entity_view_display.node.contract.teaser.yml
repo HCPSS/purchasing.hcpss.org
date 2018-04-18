@@ -1,0 +1,32 @@
+uuid: 2846a4bb-b544-4282-9631-3ac6b664103e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contract.body
+    - node.type.contract
+  module:
+    - text
+    - user
+id: node.contract.teaser
+targetEntityType: node
+bundle: contract
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_category: true
+  field_dates_effective: true
+  field_external_contract_number: true
+  field_identifier: true

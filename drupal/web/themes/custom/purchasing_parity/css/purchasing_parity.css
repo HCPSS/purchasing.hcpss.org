@@ -1,0 +1,10 @@
+.vocabulary-categories.view-mode-teaser .content,
+.vocabulary-categories.view-mode-teaser .content p {
+  margin-top: 0;
+}
+
+/* Move to parity */
+.region-primary-menu nav ul li {
+  margin-top: 0;
+}
+/* End move */

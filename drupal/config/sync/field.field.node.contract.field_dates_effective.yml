@@ -1,0 +1,21 @@
+uuid: defebea0-8995-4b87-b476-8584eafbdfa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates_effective
+    - node.type.contract
+  module:
+    - datetime_range
+id: node.contract.field_dates_effective
+field_name: field_dates_effective
+entity_type: node
+bundle: contract
+label: 'Dates Effective'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

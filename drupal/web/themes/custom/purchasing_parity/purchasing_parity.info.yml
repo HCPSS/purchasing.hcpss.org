@@ -1,8 +1,9 @@
 name: Purchasing Parity
 type: theme
-description: Site specific subtheme of Parity.
+description: Site specific subtheme of Parity
 core: 8.x
 libraries:
+  - purchasing_parity/global-styling
   - parity/global-styling
   - core/normalize
 base theme: parity
@@ -18,4 +19,3 @@ regions:
   footer_second: Footer (second)
   page_top: Page top
   page_bottom: Page bottom
-

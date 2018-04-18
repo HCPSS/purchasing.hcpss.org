@@ -1,0 +1,124 @@
+uuid: 1e6aa6f8-84c1-478a-bc69-dc07dd9d02dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.solicitation.body
+    - field.field.node.solicitation.field_awarded_vendors
+    - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_board_minutes
+    - field.field.node.solicitation.field_board_report
+    - field.field.node.solicitation.field_category
+    - field.field.node.solicitation.field_dates_effective
+    - field.field.node.solicitation.field_documentation
+    - field.field.node.solicitation.field_due_date
+    - field.field.node.solicitation.field_identifier
+    - node.type.solicitation
+  module:
+    - datetime
+    - datetime_range
+    - entity_reference_revisions
+    - file
+    - link
+    - text
+    - user
+id: node.solicitation.default
+targetEntityType: node
+bundle: solicitation
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_awarded_vendors:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_bid_tabulation:
+    weight: 104
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_board_minutes:
+    weight: 109
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_board_report:
+    weight: 110
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_category:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dates_effective:
+    weight: 107
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_documentation:
+    weight: 106
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_due_date:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_identifier:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

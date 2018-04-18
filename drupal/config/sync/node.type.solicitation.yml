@@ -1,0 +1,17 @@
+uuid: 4b78855b-cfaa-40c0-a6b6-c2ca93904bfe
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Solicitation
+type: solicitation
+description: 'Use a solicitation to solicit bids and/or proposals. A solicitation is awardable.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

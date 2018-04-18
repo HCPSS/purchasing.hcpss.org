@@ -1,0 +1,22 @@
+uuid: 1fe5d119-b97b-4469-bc19-8eec993d385e
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - purchasing_admin
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: purchasing_admin_help
+theme: purchasing_admin
+region: help
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,5 @@
+services:
+  purchasing.commands:
+    class: \Drupal\purchasing\Commands\PurchasingCommands
+    tags:
+      - { name: drush.command }

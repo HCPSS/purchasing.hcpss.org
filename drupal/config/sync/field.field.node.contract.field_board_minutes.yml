@@ -1,0 +1,23 @@
+uuid: b17221e5-ed58-4a17-8c66-d9123f0f849e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_minutes
+    - node.type.contract
+  module:
+    - link
+id: node.contract.field_board_minutes
+field_name: field_board_minutes
+entity_type: node
+bundle: contract
+label: 'Board Minutes'
+description: 'The URL to the board minutes on swaggit.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

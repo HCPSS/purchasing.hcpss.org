@@ -1,0 +1,9 @@
+uuid: faed69cd-224f-4a6d-a768-a6eb46dd97d7
+langcode: en
+status: true
+dependencies: {  }
+id: fee
+label: Fee
+icon_uuid: null
+description: 'A fee is an additional dollar charge.'
+behavior_plugins: {  }

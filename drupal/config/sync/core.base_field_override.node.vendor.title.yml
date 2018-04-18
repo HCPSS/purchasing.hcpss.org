@@ -1,0 +1,18 @@
+uuid: 8eab09d8-ec0b-4adb-99ea-82e2d6db8c41
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vendor
+id: node.vendor.title
+field_name: title
+entity_type: node
+bundle: vendor
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

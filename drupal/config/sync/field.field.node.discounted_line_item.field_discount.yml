@@ -1,0 +1,23 @@
+uuid: d29cce14-0930-4132-b697-15a980aabac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_discount
+    - node.type.discounted_line_item
+id: node.discounted_line_item.field_discount
+field_name: field_discount
+entity_type: node
+bundle: discounted_line_item
+label: Discount
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: integer

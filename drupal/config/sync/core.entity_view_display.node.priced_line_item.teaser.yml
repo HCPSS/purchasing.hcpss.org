@@ -1,0 +1,28 @@
+uuid: 3e1af714-7a9d-4d1c-af7d-b61e4a3dad11
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.priced_line_item.body
+    - node.type.priced_line_item
+  module:
+    - text
+    - user
+id: node.priced_line_item.teaser
+targetEntityType: node
+bundle: priced_line_item
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }
