@@ -1,0 +1,28 @@
+uuid: 199b9850-2a0b-45b0-b13b-8ccec8a9b1f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vendor
+    - node.type.award
+    - node.type.vendor
+id: node.award.field_vendor
+field_name: field_vendor
+entity_type: node
+bundle: award
+label: Vendor
+description: 'Who has been awarded?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      vendor: vendor
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

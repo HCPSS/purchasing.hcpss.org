@@ -1,0 +1,75 @@
+uuid: 7b6d66b1-9214-477c-8daf-71393000c5ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.inline
+    - field.field.node.contract.body
+    - field.field.node.contract.field_board_minutes
+    - field.field.node.contract.field_board_report
+    - field.field.node.contract.field_category
+    - field.field.node.contract.field_dates_effective
+    - field.field.node.contract.field_identifier
+    - node.type.contract
+  module:
+    - datetime_range
+    - link
+    - text
+id: node.contract.inline
+targetEntityType: node
+bundle: contract
+mode: inline
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_board_minutes:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_board_report:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_category:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_dates_effective:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_identifier: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_phone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - telephone
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -20,6 +22,13 @@ content:
     region: content
   contact:
     weight: 5
+    region: content
+  field_phone:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
     region: content
   language:
     weight: 0

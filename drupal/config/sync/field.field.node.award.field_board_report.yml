@@ -1,0 +1,23 @@
+uuid: 0d78d58c-ed42-4e8a-beff-1162e621e897
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_report
+    - node.type.award
+  module:
+    - link
+id: node.award.field_board_report
+field_name: field_board_report
+entity_type: node
+bundle: award
+label: 'Board Report'
+description: 'A link to the board report on Board Docs.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

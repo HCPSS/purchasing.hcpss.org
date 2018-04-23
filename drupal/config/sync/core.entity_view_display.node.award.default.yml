@@ -1,0 +1,107 @@
+uuid: e2bc3360-c0d2-4b66-876c-ff4fabe691d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.award.field_board_minutes
+    - field.field.node.award.field_board_report
+    - field.field.node.award.field_documentation
+    - field.field.node.award.field_identifier
+    - field.field.node.award.field_notes
+    - field.field.node.award.field_ordering_instructions
+    - field.field.node.award.field_procurement_method
+    - field.field.node.award.field_reference_number
+    - field.field.node.award.field_vendor
+    - node.type.award
+  module:
+    - file
+    - link
+    - text
+    - user
+id: node.award.default
+targetEntityType: node
+bundle: award
+mode: default
+content:
+  field_board_minutes:
+    weight: 107
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_board_report:
+    weight: 108
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_documentation:
+    weight: 109
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_identifier:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_notes:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ordering_instructions:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_procurement_method:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_reference_number:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vendor:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

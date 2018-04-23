@@ -26,6 +26,9 @@ content:
     weight: 100
     region: content
 hidden:
+  field_awarded_vendors: true
+  field_board_minutes: true
+  field_board_report: true
   field_category: true
   field_dates_effective: true
   field_identifier: true

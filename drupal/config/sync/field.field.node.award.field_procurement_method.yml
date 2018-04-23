@@ -1,0 +1,32 @@
+uuid: d6e8a7c7-2800-4a2a-b376-b245eaf4f585
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_procurement_method
+    - node.type.award
+    - node.type.contract
+    - node.type.quote
+    - node.type.solicitation
+id: node.award.field_procurement_method
+field_name: field_procurement_method
+entity_type: node
+bundle: award
+label: 'Procurement Method'
+description: 'How was this award procured?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contract: contract
+      quote: quote
+      solicitation: solicitation
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: contract
+field_type: entity_reference

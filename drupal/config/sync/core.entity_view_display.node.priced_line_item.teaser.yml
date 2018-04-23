@@ -25,4 +25,7 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_additional_charges: true
+  field_price: true
+  field_quote: true

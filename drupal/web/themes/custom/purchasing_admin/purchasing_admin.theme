@@ -1,11 +1,51 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
+function purchasing_admin_form_node_award_form_alter(&$form, FormStateInterface $form_state) {
+  $form['board_information'] = [
+    "#type" => "details",
+    "#title" => 'Board Information',
+    "#open" => false,
+    "#group" => "advanced",
+    "#access" => true,
+    "#weight" => 1,
+  ];
+
+  $form['field_board_minutes']['#group'] = 'board_information';
+  $form['field_board_report']['#group'] = 'board_information';
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function purchasing_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_contract_form', 'node_solicitation_form', 'node_quote_form'])) {
+    $form['dates'] = [
+      "#type" => "details",
+      "#title" => 'Dates',
+      "#open" => true,
+      "#group" => "advanced",
+      "#access" => true,
+      "#weight" => 0,
+    ];
+
+    $form['field_dates_effective']['#group'] = 'dates';
+
+    if (!empty($form['field_due_date'])) {
+      $form['field_due_date']['#group'] = 'dates';
+    }
+
+    //unset($form['field_dates_effective']['widget'][0]['#title']);
+  }
+}
+
 /**
  * Implementation of hook_preprocess_HOOK().
  */
 function purchasing_admin_preprocess_node_add_list(&$variables) {
   $groups = [
-    'awardable agreements' => [
+    'Procurement Methods' => [
       'contract',
       'solicitation',
       'quote',

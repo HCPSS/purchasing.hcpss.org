@@ -1,0 +1,25 @@
+---
+- title: Apple Computers and Accessories
+  contract_number: 'MEEC #UMD-972016'
+  category: Technology Products
+  dates_effective:
+    start: 3/15/2017
+    end: 3/14/2026
+- title: Dell Computers and Accessories
+  contract_number: 'MEEC #UMD-972016'
+  category: Technology Products
+  dates_effective:
+    start: 3/15/2017
+    end: 3/14/2026
+- title: Printer Products
+  contract_number: 'MEEC #UMD-972016'
+  category: Technology Products
+  dates_effective:
+    start: 3/15/2017
+    end: 3/14/2026   
+- title: Projectors for Conference Rooms and Classrooms
+  contract_number: 'TU-1350'
+  category: Technology Products
+  dates_effective:
+    start: 10/1/2017
+    end: 10/31/2018

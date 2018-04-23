@@ -6,11 +6,57 @@ use Drush\Commands\DrushCommands;
 use Drupal\Component\Serialization\Yaml;
 use Drupal\purchasing\Generator\Term\CategoryGenerator;
 use Drupal\purchasing\Generator\Node\VendorGenerator;
+use Drupal\purchasing\Generator\Node\SolicitationGenerator;
+use Drupal\purchasing\Generator\Node\ContractGenerator;
+use Drupal\purchasing\Generator\EntityGeneratorInterface;
+use Drupal\purchasing\Generator\Node\AwardGenerator;
+use Drupal\purchasing\Generator\Node\LineItemGenerator;
 
 /**
  * A Drush commandfile.
  */
 class PurchasingCommands extends DrushCommands {
+
+  /**
+   * Generate categories.
+   *
+   * @usage purchasing:generate:all
+   *   Generate all content.
+   *
+   * @command purchasing:generate:all
+   */
+  public function generateAll() {
+    $this->generateCategories();
+    $this->generateVendors();
+    $this->generateSolicitations();
+    $this->generateContracts();
+    $this->generateAwards();
+    $this->generateLineItems();
+  }
+
+  /**
+   * Generate line items.
+   *
+   * @usage purchasing:generate:line-items
+   *   Generate line items.
+   *
+   * @command purchasing:generate:line-items
+   */
+  public function generateLineItems() {
+    $this->generateFromGenerator('line_item', LineItemGenerator::class);
+  }
+
+  /**
+   * Generate awards.
+   *
+   * @usage purchasing:generate:awards
+   *   Generate awards.
+   *
+   * @command purchasing:generate:awards
+   */
+  public function generateAwards() {
+    $this->generateFromGenerator('award', AwardGenerator::class);
+  }
 
   /**
    * Generate categories.
@@ -21,11 +67,7 @@ class PurchasingCommands extends DrushCommands {
    * @command purchasing:generate:categories
    */
   public function generateCategories() {
-    CategoryGenerator::deleteAll();
-
-    foreach ($this->getData('categories') as $data) {
-      CategoryGenerator::createCategoryFromArray($data);
-    }
+    $this->generateFromGenerator('categories', CategoryGenerator::class);
   }
 
   /**
@@ -37,10 +79,44 @@ class PurchasingCommands extends DrushCommands {
    * @command purchasing:generate:vendors
    */
   public function generateVendors() {
-    VendorGenerator::deleteAll();
+    $this->generateFromGenerator('vendor', VendorGenerator::class);
+  }
 
-    foreach ($this->getData('vendor') as $data) {
-      VendorGenerator::createFromArray($data);
+  /**
+   * Generate solicitations.
+   *
+   * @usage purchasing:generate:solicitations
+   *   Generate solicitations.
+   *
+   * @command purchasing:generate:solicitations
+   */
+  public function generateSolicitations() {
+    $this->generateFromGenerator('solicitation', SolicitationGenerator::class);
+  }
+
+  /**
+   * Generate contracts.
+   *
+   * @usage purchasing:generate:contracts
+   *   Generate contracts.
+   *
+   * @command purchasing:generate:contracts
+   */
+  public function generateContracts() {
+    $this->generateFromGenerator('contract', ContractGenerator::class);
+  }
+
+  /**
+   * Generate entities using an entity generator.
+   *
+   * @param string $dataType
+   * @param EntityGeneratorInterface $generatorClass
+   */
+  private function generateFromGenerator($dataType, string $generatorClass) {
+    $generatorClass::deleteAll();
+
+    foreach ($this->getData($dataType) as $data) {
+      $generatorClass::createFromArray($data);
     }
   }
 

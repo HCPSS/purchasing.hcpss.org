@@ -1,0 +1,305 @@
+- id: 001.18.2.T.01.5981
+  procurement_method:
+    name: solicitation 
+    id: 022.17.B2
+  vendor: 1 Stop Electronics
+  notes: >
+    <p>2% Discounts for appliances NOT on List.<br>
+    $300.00 for on-site visit to school to take measurements (if needed)</p>
+- id: 002.18.3.PR.01.1582
+  procurement_method:
+    name: solicitation 
+    id: 022.17.B2
+  vendor: Sears Commercial
+  notes: >
+    <p>4% Discounts for appliances NOT on List.<br>
+    No charge for on-site visit to school to take measurements (if needed)</p> 
+- id: 003.18.3.T.01.9185
+  procurement_method:
+    name: solicitation 
+    id: 022.17.B2
+  vendor: Business Services
+  notes: >
+    <p>10% Discounts for appliances NOT on List.<br>
+    $200.00 for on-site visit to school to take measurements (if needed)</p>     
+- id: 004.18.2.PR.01.2487
+  procurement_method:
+    name: solicitation 
+    id: 022.17.B2
+  vendor: Wascomat of America
+- id: 005.18.2.PO.01.8724
+  procurement_method:
+    name: solicitation 
+    id: 022.17.B2
+  vendor: Calico Industries
+  notes: >
+    <p>Call for quote on discounts for appliances NOT on List.</p>
+- id: 006.18.2.PO.01.9883
+  procurement_method:
+    name: solicitation 
+    id: 054.13.B2
+  vendor: Satco
+- id: 007.18.2.Q.01.2277
+  procurement_method:
+    name: solicitation 
+    id: 054.13.B2
+  vendor: Glover
+- id: 008.18.5.E.01.0487
+  procurement_method:
+    name: solicitation 
+    id: 054.13.B2
+  vendor: School Specialty
+- id: 009.18.1.PO.01.0736
+  procurement_method:
+    name: solicitation 
+    id: 034.10.B2
+  vendor: School Specialty
+  reference: 7775743771
+  notes: >
+    '<p>AccountNo:409835</p>
+    <p><strong>Discount:</strong><br>
+    32% discount from list price on all current School Specialty List 
+    priced catalogs for supply items, with prefix 9 (Unless catalog bears 
+    notation: no other discounts apply)</p>
+    <p>2014 School Specialty Education Essentials Catalog<br>
+    2014 School Specialty Art Education Catalog/ SAX<br>
+    2014 School Specialty Special Needs Catalog/ Abilitations<br>
+    2014 School Specialty Physical Education & Recreation Catalog/ Sportime<br>
+    2014 School Specialty Early Childhood Catalog/ Childcraft<br>
+    2014 School Specialty Office Supplies Catalog<br>
+    2014 School Specialty Career &Technical Education/ Brodhead Garrett<br>
+    2014 School Specialty Common Core & Instructional Solutions Catalog</p>
+    <p>12% discount from list price on Furniture and Equipment items with 
+    a 6, 7, or 8 prefix (Unless catalog bears notation: no other 
+    discounts apply)</p>
+    <p>Freight Terms:<br>
+    Supply Item Orders $49.00 or greater ship free of charge. (7 & 9 
+    prefix items) Supply Item Orders less than $49.00 will be charged 
+    $9.95. Furniture and Equipment Items ship free of charge. (6 & 8 
+    prefix items).</p>'  
+- id: 010.18.1.PR.01.1804
+  procurement_method:
+    name: contract 
+    id: 'MEEC #UMD-972016'
+  vendor: TechMart Computer Products   
+  ordering_instructions: >
+    <p>Please contact <a href="mailto:monique_ingram@hcpss.org">Monique 
+    Ingram</a> to answer any questions regarding shipping and installation 
+    services.</p>
+    
+    <ul>
+      <li><strong>Order Method</strong> – All computers, tablets, printers, 
+      and projectors must be purchased through an HCPSS Workday purchase 
+      order.</li>
+      
+      <li><strong>Quote and Contract Reference</strong> – Insert both the 
+      QUOTE NUMBER and the CONTRACT NUMBER on requisitions in both the 
+      Workday <em>“Memo to Suppliers</em> and the Workday <em>“Internal 
+      Memo</em> fields.</li>
+      
+      <li><strong>Ship-To Location</strong> – All computers, tablets, 
+      printers and projectors must be shipped directly to the HCPSS 
+      Logistics Center (Workday <em>“Ship-To Address”</em>) from the 
+      Supplier for processing and distribution. To ensure that the Logistic 
+      Center delivers the order to the correct location/person, please 
+      enter the name of the individual who will be receiving the order 
+      in the Workday <em>“Ship-To Contact”</em> field.</li>
+      
+      <li><strong>Large Orders</strong> – If ordering 20 or more devices on 
+      a single order installation services may be required.</li>
+    </ul>
+  notes: >
+    <p>Installation services: Orders of 20 or more similar devices on a 
+    single order, or series of consecutive orders, require the purchase of 
+    Installation Services. Installation Services for either Apple or Dell 
+    devices must be purchased through Data Networks on a separate order 
+    with the corresponding Workday Requisition Number noted in Item 
+    Description.</p>
+    
+    <ul>
+      <li><a href="http://www.hcpss.org/f/aboutus/purchasing/bids/approved/laptop-install-quote-DNIQ202802.pdf">Laptop</a> – $47.00 per device</li>
+      <li><a href="http://www.hcpss.org/f/aboutus/purchasing/bids/approved/desktop-install-quote- DNIQ202803.pdf">Desktop</a> – $57.00 per device</li>
+      <li><a href="http://www.hcpss.org/f/aboutus/purchasing/bids/approved/ipad-install-quote-DNIQ202801.pdf">iPad</a> – $24.00 per device</li>
+    </ul>
+- id: 011.18.4.M.01.9796
+  procurement_method:
+    name: contract 
+    id: 'MEEC #UMD-972016'
+  vendor: Data Networks 
+  notes: >
+    <ul>
+      <li><strong>Order Method</strong> – All computers, tablets, printers, 
+      and projectors must be purchased through an HCPSS Workday purchase 
+      order.</li>
+      
+      <li><strong>Quote and Contract Reference</strong> – Insert both the 
+      QUOTE NUMBER and the CONTRACT NUMBER on requisitions in both the 
+      Workday <em>&ldquo;Memo to Suppliers</em> and the Workday 
+      <em>&ldquo;Internal Memo</em> fields.</li>
+      
+      <li><strong>Ship-To Location</strong> – All computers, tablets, 
+      printers and projectors must be shipped directly to the HCPSS 
+      Logistics Center (Workday <em>&ldquo;Ship-To Address&rdquo;</em>)  
+      from the Supplier for processing and distribution. To ensure that the  
+      Logistic Center delivers the order to the correct location/person,  
+      please enter the name of the individual who will be receiving the 
+      order  in the Workday <em>&ldquo;Ship-To Contact&rdquo;</em> 
+      field.</li>
+      
+      <li><strong>Large Orders</strong> – If ordering 10 or more devices on 
+      a single order installation services may be required.</li>
+    </ul>
+    
+    <p>Please contact <a href="mailto:monique_ingram@hcpss.org">Monique 
+    Ingram</a> to answer any questions regarding shipping and installation 
+    services.</p>
+    
+    <p>Installation Services for 10 or more laptops or computers:</p>
+    
+    <ul>
+      <li><a href="http://www.hcpss.org/f/aboutus/purchasing/bids/approved/laptop-install-quote-DNIQ202802.pdf">Laptop </a>– $47.00 per unit</li>
+      <li><a href="http://www.hcpss.org/f/aboutus/purchasing/bids/approved/desktop-install-quote- DNIQ202803.pdf">Desktop</a> – $57.00 per unit</li>
+      <li><a href="http://www.hcpss.org/f/aboutus/purchasing/bids/approved/ipad-install-quote-DNIQ202801.pdf">iPad</a> – $24.00 per unit</li>
+    </ul>
+- id: 012.18.2.T.01.8968
+  procurement_method:
+    name: contract 
+    id: 'MEEC #UMD-972016'
+  vendor: HCGI
+  ordering_instructions: >
+    <ul>
+      <li><strong>Order Method</strong> – All computers, tablets, printers, 
+      and projectors must be purchased through an HCPSS Workday purchase 
+      order.</li>
+      
+      <li><strong>Quote and Contract Reference</strong> – Insert both the 
+      QUOTE NUMBER and the CONTRACT NUMBER on requisitions in both the 
+      Workday <em>&ldquo;Memo to Suppliers</em> and the Workday 
+      <em>&ldquo;Internal Memo</em> fields.</li>
+      
+      <li><strong>Ship-To Location</strong> – All computers, tablets, 
+      printers and projectors must be shipped directly to the HCPSS 
+      Logistics Center (Workday <em>&ldquo;Ship-To Address&rdquo;</em>)  
+      from the Supplier for processing and distribution. To ensure that the  
+      Logistic Center delivers the order to the correct location/person,  
+      please enter the name of the individual who will be receiving the 
+      order  in the Workday <em>&ldquo;Ship-To Contact&rdquo;</em> 
+      field.</li>
+      
+      <li><strong>Large Orders</strong> – If ordering 10 or more devices on 
+      a single order installation services are required.</li>
+    </ul>
+    <p>Installation Services for <strong>10 or more devices:</strong></p>
+    <ul>
+      <li>Laptop: $47.00 per unit</li>
+      <li>Desktop: $57.00 per unit</li>
+      <li>Printer: $35.00 per unit</li>
+      <li>Tablet: $24.00 per unit</li>
+    </ul>
+    <p>Please contact <a href="mailto:monique_ingram@hcpss.org">Monique 
+    Ingram</a> to answer any questions regarding shipping and installation 
+    services.</p>
+- id: 013.18.5.E.01.4885
+  procurement_method:
+    name: contract 
+    id: 'TU-1350'
+  vendor: Nicholas P. Pipino Associates, Inc.
+  ordering_instructions: >
+    <ul>
+      <li><strong>Order Method</strong> – All computers, tablets, printers, 
+      and projectors must be purchased through an HCPSS Workday purchase 
+      order.</li>
+      
+      <li><strong>Quote and Contract Reference</strong> – Insert both the 
+      QUOTE NUMBER and the CONTRACT NUMBER on requisitions in both the 
+      Workday <em>“Memo to Suppliers</em> and the Workday <em>“Internal 
+      Memo</em> fields.</li>
+      
+      <li><strong>Ship-To Location</strong> – All computers, tablets, 
+      printers and projectors must be shipped directly to the HCPSS 
+      Logistics Center (Workday <em>“Ship-To Address</em>) from the 
+      Supplier for processing and distribution. Enter the final delivery 
+      location in the Workday <em>“Deliver-To</em> field.</li>
+      
+      <li><strong>Large Orders</strong> – If ordering 10 or more devices on 
+      a single order installation services may be required.</li>
+    </ul>
+    <p>Please contact <a href="mailto:monique_ingram@hcpss.org">Monique 
+    Ingram</a> to answer any questions regarding shipping and installation 
+    services.</p>
+
+
+
+- id: 013.18.5.PC.01.4855
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  vendor: Carolina Biological Supply Co.
+  notes: >
+    <p>Minimum order for all companies is $25.00.</p>Quote P103385
+  notes: >
+    '<p>Minimum order $25.00. Free shipping on orders over $200, excluding 
+    live, preserved, hazardous & motor freight items.</p>'
+- id: 014.18.5.PC.01.4856
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  vendor: Fisher Scientific Co.
+  reference: Quote C15-JL-12
+  notes: >
+    '<p>Minimum order $25.00. Free shipping, excluding 
+    live/preserved/hazardous/freight items. $10 hazardous materials 
+    surcharge. No discount on products ending in ND, non-catalog items, 
+    denoted with an NC prefix, and customized items</p>'
+- id: 015.18.5.PC.01.4857
+  vendor: Flinn Scientific, Inc.
+  reference: Quote 136449
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  notes: >
+    '<p>Minimum order $25.00. No discount on live/preserved, lab furniture, 
+    computer software, tech products & E-Learning Freight charged on live 
+    material, lab furniture, hazardous materials, truck freight items & 
+    technology items.</p>'
+- id: 016.18.5.PC.01.4858
+  vendor: Frey Scientific
+  reference: 'Quote #7780096400'
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  notes: >
+    '<p>Minimum order $25.00. No discount on "N" or "LN" prefix items or SSI, 
+    Delta, CPO items. Freight charged on live/preserved, hazardous & items 
+    with a "truck icon". $75 motor freight or 12% of line charged</p>'
+- id: 017.18.5.PC.01.4859
+  vendor: Sargent Welch
+  reference: Quote 80309885-CT
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  notes: >
+    '<p>Minimum order $25.00. Any items with prices ending in "9" (i.e., 
+    $12.89, $5.49) will NOT have a discount. Free shipping excludes overnight 
+    shipments, motor freight and live materials. Hazardous charge will be 
+    $27.50.</p>'
+- id: 018.18.5.PC.01.4860
+  vendor: 'Vernier Software & Technology'
+  reference: 'Quote 033.16.B2.'
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  notes: >
+    <p>Minimum order $25.00. No discount on live/preserved, telescopes, 
+    special orders, Pasco items or publisher kits</p>
+- id: 019.18.5.PC.01.4861
+  vendor: Ward's Science
+  reference: 'Quote 80309885-CT'
+  procurement_method:
+    name: solicitation 
+    id: 033.16.B2
+  notes: >
+    '<p>Minimum order $25.00. Any items with prices ending in "9" (i.e., 
+    $12.89, $5.49) will NOT have a discount. Free shipping excludes overnight 
+    shipments, motor freight and live materials. Hazardous charge will be 
+    $27.50.</p>'

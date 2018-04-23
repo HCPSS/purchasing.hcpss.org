@@ -1,4 +1,4 @@
-uuid: d57b4ed1-708b-4126-abb2-6075470f2aec
+uuid: fa5672d9-136c-482c-94d7-583e45e1a075
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ id: node.contract.field_identifier
 field_name: field_identifier
 entity_type: node
 bundle: contract
-label: 'HCPSS Contract Number'
-description: 'The contract number assigned to the contract by HCPSS. This may not be the original contract number.'
+label: 'External Contract Number'
+description: 'The contract number created by another organization other than HCPSS.'
 required: true
 translatable: true
 default_value: {  }

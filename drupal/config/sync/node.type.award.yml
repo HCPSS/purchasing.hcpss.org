@@ -1,0 +1,17 @@
+uuid: a9bdf6f4-3fbc-4a86-9b29-3f482dbb0a50
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Award
+type: award
+description: 'A bid, contract, or quote that that has been awarded.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

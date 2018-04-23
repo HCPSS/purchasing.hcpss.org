@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.discounted_line_item.body
+    - field.field.node.discounted_line_item.field_award
     - field.field.node.discounted_line_item.field_discount
     - field.field.node.discounted_line_item.field_exceptions
     - node.type.discounted_line_item
@@ -30,6 +31,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_award:
+    weight: 124
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_discount:
     weight: 122
     settings:

@@ -1,0 +1,18 @@
+uuid: bd64713d-ba0c-4658-b8f4-67847ac6e803
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.award
+  module:
+    - user
+id: node.award.teaser
+targetEntityType: node
+bundle: award
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }

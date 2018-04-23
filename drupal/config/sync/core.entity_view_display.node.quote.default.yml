@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.quote.body
-    - field.field.node.quote.field_awarded_vendors
     - field.field.node.quote.field_board_minutes
     - field.field.node.quote.field_board_report
     - field.field.node.quote.field_category
@@ -13,7 +12,6 @@ dependencies:
     - node.type.quote
   module:
     - datetime_range
-    - entity_reference_revisions
     - link
     - text
     - user
@@ -28,15 +26,6 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_awarded_vendors:
-    weight: 106
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
     region: content
   field_board_minutes:
     weight: 107

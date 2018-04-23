@@ -6,4 +6,7 @@ nbproject
 
 # Docker
 .data
+.env
 
+# macOS
+.DS_Store

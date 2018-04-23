@@ -1,0 +1,240 @@
+# Open
+- bid_number: 050.18.B3
+  title: Plumbing Supplies
+  category: Facilities and Operations
+  documentation:
+    - name: Invitation to Bid
+      file: 050.18.B3-plumbling-supplies-invitation.pdf
+  bids_due: April 24, 2018, 10:00 a.m.
+- bid_number: 058.18.B1
+  title: Web-based Instructional College Planning and Career Search
+  category: Instructional Services
+  documentation:
+    - name: Request for Proposals
+      file: 058.18.B1-college-career-planning-rfp.pdf
+  bids_due: April 25, 2018, 3:00 p.m.
+- bid_number: 049.18.B3
+  title: Food Bar Equipment
+  category: Facilities and Operations
+  documentation:
+    - name: Invitation to Bid
+      file: 049.18.B3-food-bar-equipment-invitation.pdf
+  bids_due: April 24, 2018, 11:00 a.m.
+- bid_number: 054.18.B1
+  title: Reading Support Program for Students with Cognitive Disabilities
+  category: Instructional Services
+  documentation:
+    - name: Request for Proposals
+      file: 054.18.B1-reading-support-programs-rfp.pdf
+  bids_due: April 20, 2018, 2:00 p.m.
+- bid_number: 051.18.B5
+  title: Absence Management
+  category: Staffing and Human Resources
+  documentation:
+    - name: Request for Proposals
+      file: 051.18.B5-absence-management-rfp.pdf
+  bids_due: April 11, 2018, 2:00 p.m.
+- bid_number: 057.18.B5
+  title: Security Guard Services
+  category: Facilities and Operations
+  documentation:
+    - name: Request for Proposals
+      file: 057.18.B5-security-guard-services-rfp.pdf
+    - name: 'Addendum #1'
+      file: 057.18.B5-security-guard-services-addendum-one.pdf
+  bids_due: April 16, 2018, 2:00 p.m.
+- bid_number: 045.18.B4
+  title: Football Helmets
+  category: Instructional Supplies
+  documentation:
+    - name: Invitation to Bid
+      file: 045.18.B4-football-helmets-invitation.pdf
+    - name: 'Addendum #1'
+      file: 045.18.B4-football-helmets-addendum-one.pdf
+  bids_due: April 17, 2018, 10:00 a.m.
+- bid_number: 055.18.B5
+  title: Dell Computer Parts and Repair Services
+  category: Technology Services
+  documentation:
+    - name: Invitation to Bid
+      file: 055.18.B5-dell-computer-maintenance-invitation.pdf
+    - name: Request for Proposals
+      file: 055.18.B5-dell-computer-maintenance-rfp.pdf
+    - name: 'Addendum #1'
+      file: 055.18.B5-dell-computer-maintenance-addendum-one.pdf
+  bids_due: April 9, 2018, 10:30 a.m.
+- bid_number: 056.18.B5
+  title: Replacement Lamps for Epson Projectors
+  category: Technology Products
+  documentation:
+    - name: Invitation to Bid
+      file: 056.18.B5-replacement-lamps-epson-projectors-invitation.pdf
+    - name: Request for Bids
+      file: 056.18.B5-replacement-lamps-epson-projectors-request.pdf
+    - name: 'Addendum #1'
+      file: 056.18.B5-replacement-lamps-epson-projectors-addendum-one.pdf
+  bids_due: April 5, 2018, 10:00 a.m.
+- bid_number: 052.18.B5
+  title: HP Printers
+  category: Technology Products
+  documentation:
+    - name: Request for Proposals
+      file: 052.18.B5-hp-printers-proposals.pdf
+    - name: 'Addendum #1'
+      file: 052.18.B5-hp-printers-addendum-one.pdf
+  bids_due: April 2, 2018, 10:00 a.m.
+- bid_number: 054.18.B5
+  title: Dell Computers
+  category: Technology Products
+  documentation:
+    - name: Request for Proposals
+      file: 054.18.B5-dell-computers-proposals.pdf
+    - name: 'Addendum #1'
+      file: 054.18.B5-dell-computers-addendum-one.pdf
+    - name: 'Addendum #2'
+      file: 054.18.B5-dell-computers-addendum-two.pdf
+  bids_due: April 2, 2018 at 10:30 a.m.
+- bid_number: 047.18.B3
+  title: Switchboard Replacement, Applications and Research Laboratory
+  category: Technology Products
+  bid_tab: 047.18.B3-arl-switchboard-replacement-bid-tab.pdf
+- bid_number: 046.18.B3
+  title: Combustion Air Openings at Fulton, Gorman Crossing and Triadelphia Ridge Elementary Schools
+  category: Facilities and Operations
+  bid_tab: 046.18.B3-combustion-air-openings-bid-tab.pdf
+- bid_number: 031.18.B3
+  title: Paving Services
+  category: Facilities and Operations
+  bid_tab: 031.18.B3-paving-services-bid-tab.pdf
+- bid_number: 020.18.B2
+  title: Art Equipment
+  category: Instructional Supplies
+  documentation:
+    - name: Invitation to Bid
+      file: 020.18.B2-art-equipment-invitation.pdf
+  bid_due: February 28, 2018 at 10:00 a.m.
+- bid_number: 043.18.B2
+  title: Laminating Film
+  category: Facilities and Operations
+  documentation:
+    - name: Invitation to Bid
+      file: 043.18.B2-laminating-film-invitation.pdf
+  bids_due: February 28, 2018 at 9:00 a.m.
+- bid_number: 044.18.B2
+  title: Classroom Paper
+  category: Instructional Supplies
+  documentation:
+    - name: Invitation to Bid
+      file: 044.18.B2-classroom-paper-invitation.pdf
+  bids_due: March 1, 2018 at 10:00 a.m.
+- bid_number: 42.18.B5
+  title: Online School Library Automation and Circulation Solution
+  category: Technology Services
+  documentation:
+    - name: Request for Proposals
+      file: 042.18.B5-online-school-library-automation-rfp.pdf
+  bids_due: February 22, 2018 at 10:00 a.m.
+- bid_number: 039.18.B1
+  title: Payroll Services
+  category: Staffing and Human Resources
+  documentation:
+    - name: Request for Proposals
+      file: 039.18.B1-payroll-services-rfp.pdf
+    - name: 'Addendum #1'
+      file: 039.18.B1-payroll-services-addendum-one.pdf
+    - name: 'Addendum #2'
+      file: 039.18.B1-payroll-services-addendum-two.pdf
+    - name: 'Addendum #3'
+      file: 039.18.B1-payroll-services-addendum-three.pdf
+  bids_due: March 23, 2018 at 3:00 p.m.
+- bid_number: 030.18.B3
+  title: Motor Repair Service
+  category: Facilities and Operations
+  bid_tab: 030.18.B3-motor-repair-service-bid-tab.pdf
+- bid_number: 009.18.B3
+  title: Roof Replacement Contractor Services (Multi-Step Bid)
+  category: Facilities and Operations
+  bids_due: February 21, 2018 at 1:00 p.m.
+- bid_number: 026.18.B1
+  title: External Audit Services
+  category: Financial Services
+  bids_due: February 16, 2018 at 3:00 p.m.
+- bid_number: 034.18.B5
+  title: Dell Server Replacement
+  category: Technology Products
+  documentation:
+    - name: Request for Bids
+      file: 034.18.B5-dell-server-replacement-request-bids.pdf
+  bids_due: January 30, 2018 at 2:00 p.m.
+- bid_number: 035.18.B5
+  title: Backup and Recovery Appliance and Software
+  category: Technology Services
+  documentation:
+    - name: Request for Bids
+      file: 035.18.B5-backup-recovery-software-request-bids.pdf
+  bids_due: January 30, 2018 at 2:30 p.m.
+- bid_number: 025.18.B4
+  title: Spring Athletic Sports Referee Official Services (Baseball, Boys Lacrosse, Softball, Girls Lacrosse)
+  category: Staffing and Human Resources
+  bid_tab: 025.18.B4-spring-athletics-services-bid-tab.pdf
+- bid_number: 022.18.B1
+  title: Cafeteria Services for Central Office Building
+  category: Staffing and Human Resources
+  bids_due: January 3, 2018 at 10:00 a.m.
+- bid_number: 021.18.B2
+  title: Appliances and Kitchen Equipment
+  category: Furniture and Appliances
+  documentation:
+    - name: Invitation to Bid
+      file: 021.18.b2-appliances-kitchen-invitation.pdf
+  bids_due: December 5, 2017 at 10:00 a.m.
+- bid_number: 017.18.B5
+  title: Integrated Online Keyboarding Solution
+  category: Instructional Services
+  documentation:
+    - name: Request for Proposals
+      file: 017.18.B5-keyboarding-rfp.pdf
+    - name: 'Addendum #1'
+      file: 017.18.B5-keyboarding-addendum-one.pdf
+  bids_due: November 17, 2017, 2:00 p.m.
+- bid_number: 011.18.B4
+  title: 'Architect & Engineering Services for Facilities Projects'
+  category: Facilities and Operations
+  bid_tab: 011.18.B4-architect-engineering-bid-tab.pdf
+- bid_number: 011.18.B1
+  title: Forensic Audits
+  category: Financial Services
+  bids_due: October 26, 2017 at 2:00 p.m.
+- bid_number: 010.18.B1
+  title: Web-based Instructional Materials
+  category: Instructional Services
+  bids_due: October 18, 2017 at 2:00 p.m.
+- bid_number: 001.18.B2 
+  title: Window Blinds and Shades
+  category: Furniture and Appliances
+  bids_due: August 9, 2017 at 10:00 a.m.
+- bid_number: 042.17.B5  
+  title: 'Security Information & Event Management (SIEM)'
+  category: Technology Services
+  bids_due: May 11, 2017 at 2:30 p.m.
+- bid_number: 041.17.B5
+  title: Telecommunications Replacement Solution
+  category: Technology Products
+  bids_due: July 27, 2017 at 2:30 pm.
+  
+# Closed
+- bid_number: 022.17.B2
+  title: Appliances and Kitchen Equipment
+  category: Furniture and Appliances
+- bid_number:  054.13.B2
+  title: Art Equipment
+  category: Instructional Supplies
+- bid_number: 034.10.B2
+  title: Art Supplies
+  category: Instructional Supplies
+- bid_number: 046.14.B2
+  title: Calculators
+  category: Technology Products
+- bid_number: 033.16.B2
+  title: 'Secondary Science Equipment & Supplies'
+  category: Instructional Supplies

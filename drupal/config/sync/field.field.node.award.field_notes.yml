@@ -1,0 +1,21 @@
+uuid: 8b3dc8c3-b9f6-4b2f-a7c8-e6af1d984bc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.award
+  module:
+    - text
+id: node.award.field_notes
+field_name: field_notes
+entity_type: node
+bundle: award
+label: Notes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

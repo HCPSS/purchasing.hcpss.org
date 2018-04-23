@@ -1,0 +1,21 @@
+uuid: 498d3472-320f-46c0-b202-f32555862ea4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ordering_instructions
+    - node.type.award
+  module:
+    - text
+id: node.award.field_ordering_instructions
+field_name: field_ordering_instructions
+entity_type: node
+bundle: award
+label: 'Ordering Instructions'
+description: 'Who should be contacted and what should be done to order items from this award?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

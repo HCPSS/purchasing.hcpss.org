@@ -3,8 +3,9 @@
 namespace Drupal\purchasing\Generator\Term;
 
 use Drupal\taxonomy\Entity\Term;
+use Drupal\purchasing\Generator\EntityGeneratorInterface;
 
-class CategoryGenerator {
+class CategoryGenerator implements EntityGeneratorInterface {
 
   /**
    * Delete terms.
@@ -30,7 +31,7 @@ class CategoryGenerator {
    *   The parent category
    * @return Term
    */
-  public static function createCategoryFromArray(array $data, Term $parent = NULL) {
+  public static function createFromArray(array $data, Term $parent = NULL) {
     $category = Term::create([
       'vid' => 'categories',
       'name' => $data['name'],

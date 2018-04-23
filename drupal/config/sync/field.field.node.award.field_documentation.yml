@@ -1,0 +1,27 @@
+uuid: 288191f6-b4f9-4251-97b7-3c4ff6979323
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documentation
+    - node.type.award
+  module:
+    - file
+id: node.award.field_documentation
+field_name: field_documentation
+entity_type: node
+bundle: award
+label: Documentation
+description: 'Award letters or anything you would like to reference.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

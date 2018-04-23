@@ -3,22 +3,15 @@
 namespace Drupal\purchasing\Generator\Node;
 
 use Drupal\node\Entity\Node;
+use Drupal\purchasing\Generator\EntityGeneratorInterface;
 
-class VendorGenerator {
+class VendorGenerator extends NodeGenerator  implements EntityGeneratorInterface {
 
   /**
    * Delete vendors.
    */
   public static function deleteAll() {
-    $nids = \Drupal::entityQuery('node')
-      ->condition('type', 'vendor')
-      ->execute();
-
-    $nodes = Node::loadMultiple($nids);
-
-    foreach ($nodes as $node) {
-      $node->delete();
-    }
+    parent::deleteAllOfBundle('vendor');
   }
 
   /**

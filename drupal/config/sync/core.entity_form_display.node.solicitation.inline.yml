@@ -1,0 +1,97 @@
+uuid: d8b2435e-a907-4107-a4b1-783c3cf81633
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.inline
+    - field.field.node.solicitation.body
+    - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_category
+    - field.field.node.solicitation.field_dates_effective
+    - field.field.node.solicitation.field_documentation
+    - field.field.node.solicitation.field_due_date
+    - field.field.node.solicitation.field_identifier
+    - node.type.solicitation
+  module:
+    - datetime
+    - datetime_range
+    - file
+    - path
+    - text
+id: node.solicitation.inline
+targetEntityType: node
+bundle: solicitation
+mode: inline
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_bid_tabulation:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_category:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_dates_effective:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_documentation:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_due_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_identifier:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

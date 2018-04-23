@@ -1,0 +1,28 @@
+uuid: 99eee180-cdb8-4521-89a0-ff99a10841b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_award
+    - node.type.award
+    - node.type.discounted_line_item
+id: node.discounted_line_item.field_award
+field_name: field_award
+entity_type: node
+bundle: discounted_line_item
+label: Award
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      award: award
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,155 @@
+uuid: e0b8ae32-e374-431a-9919-4e35f56c8134
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.inline
+    - field.field.node.award.field_board_minutes
+    - field.field.node.award.field_board_report
+    - field.field.node.award.field_documentation
+    - field.field.node.award.field_identifier
+    - field.field.node.award.field_notes
+    - field.field.node.award.field_ordering_instructions
+    - field.field.node.award.field_procurement_method
+    - field.field.node.award.field_reference_number
+    - field.field.node.award.field_vendor
+    - node.type.award
+  module:
+    - file
+    - inline_entity_form
+    - link
+    - path
+    - text
+id: node.award.default
+targetEntityType: node
+bundle: award
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_board_minutes:
+    weight: 13
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_board_report:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_documentation:
+    weight: 15
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_identifier:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_notes:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_ordering_instructions:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_procurement_method:
+    weight: 1
+    settings:
+      form_mode: inline
+      override_labels: true
+      label_singular: 'Procurement Method'
+      label_plural: 'Procurement Methods'
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_reference_number:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vendor:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

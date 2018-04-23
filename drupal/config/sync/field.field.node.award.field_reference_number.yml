@@ -1,0 +1,19 @@
+uuid: 3265994f-2eaa-406f-b1ee-1b5f87aa2959
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_number
+    - node.type.award
+id: node.award.field_reference_number
+field_name: field_reference_number
+entity_type: node
+bundle: award
+label: 'Reference #'
+description: 'Is there a number that should be used when communicating with the vendor?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
