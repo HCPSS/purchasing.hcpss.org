@@ -37,6 +37,11 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
       'field_category'   => ['target_id' => self::getCategoryIdFromName($data['category'])],
     ]);
 
+    $solicitation->field_dates_effective = [
+      'value' => date('Y-m-d', $start),
+      'end_value' => date('Y-m-d', $end),
+    ];
+
     if (!empty($data['bid_tab'])) {
       $solicitation->field_bid_tabulation = self::createFile($data['bid_tab']);
     }
