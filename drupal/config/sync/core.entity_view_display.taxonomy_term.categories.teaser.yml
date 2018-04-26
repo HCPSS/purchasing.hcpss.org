@@ -12,6 +12,11 @@ targetEntityType: taxonomy_term
 bundle: categories
 mode: teaser
 content:
+  awarded_procurements:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   description:
     label: hidden
     type: text_default
@@ -20,4 +25,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  open_solicitations: true
   purchasing_children: true

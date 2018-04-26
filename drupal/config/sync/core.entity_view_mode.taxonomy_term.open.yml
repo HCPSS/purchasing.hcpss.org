@@ -1,0 +1,10 @@
+uuid: 69c00e7b-321b-4496-8d9c-73c47783833b
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.open
+label: Open
+targetEntityType: taxonomy_term
+cache: true

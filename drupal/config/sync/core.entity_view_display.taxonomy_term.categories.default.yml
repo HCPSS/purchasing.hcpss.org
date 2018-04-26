@@ -19,4 +19,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  awarded_procurements: true
+  open_solicitations: true
   purchasing_children: true

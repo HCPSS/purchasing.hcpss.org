@@ -34,6 +34,7 @@
         "drupal/editor_file": "^1.2",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/paragraphs": "^1.2",
+        "drupal/pathauto": "^1.2",
         "drupal/token": "^1.1",
         "drush/drush": "^9.0.0",
         "hcpss/parity": "dev-master",

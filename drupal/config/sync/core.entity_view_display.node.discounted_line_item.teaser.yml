@@ -26,5 +26,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_award: true
   field_discount: true
   field_exceptions: true

@@ -27,5 +27,6 @@ content:
     region: content
 hidden:
   field_additional_charges: true
+  field_award: true
   field_price: true
   field_quote: true

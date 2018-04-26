@@ -1,0 +1,87 @@
+uuid: c570f97c-8817-4f36-a7a1-81ae5df984a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full_awarded
+    - field.field.node.solicitation.body
+    - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_category
+    - field.field.node.solicitation.field_dates_effective
+    - field.field.node.solicitation.field_documentation
+    - field.field.node.solicitation.field_due_date
+    - field.field.node.solicitation.field_identifier
+    - node.type.solicitation
+  module:
+    - datetime_range
+    - file
+    - text
+    - user
+id: node.solicitation.full_awarded
+targetEntityType: node
+bundle: solicitation
+mode: full_awarded
+content:
+  awards:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_bid_tabulation:
+    weight: 5
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_category:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dates_effective:
+    weight: 3
+    label: inline
+    settings:
+      timezone_override: America/New_York
+      format_type: long_no_time
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_documentation:
+    weight: 6
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_identifier:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  award_notes: true
+  field_due_date: true
+  ordering_instructions: true

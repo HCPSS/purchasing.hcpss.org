@@ -1,0 +1,20 @@
+uuid: 183ba94b-5a21-4fca-a976-e287cbe6eac5
+langcode: en
+status: true
+dependencies:
+  module:
+    - purchasing
+  theme:
+    - purchasing_parity
+id: addressblock
+theme: purchasing_parity
+region: footer_first
+weight: 0
+provider: null
+plugin: address_block
+settings:
+  id: address_block
+  label: 'Address Block'
+  provider: purchasing
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,34 @@
+uuid: 75994e14-b1db-4aed-a57a-f8b27b4d22e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.line_items_by_procurement_method
+  module:
+    - ctools
+    - views
+  theme:
+    - purchasing_parity
+id: views_block__line_items_by_procurement_method_block_2
+theme: purchasing_parity
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:line_items_by_procurement_method-block_2'
+settings:
+  id: 'views_block:line_items_by_procurement_method-block_2'
+  label: Catalog
+  provider: views
+  label_display: visible
+  views_label: Catalog
+  items_per_page: none
+  context_mapping:
+    nid: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      award: award
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

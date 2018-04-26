@@ -22,15 +22,20 @@ targetEntityType: node
 bundle: solicitation
 mode: default
 content:
+  awards:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_bid_tabulation:
-    weight: 104
+    weight: 4
     label: above
     settings:
       use_description_as_link_text: true
@@ -38,7 +43,7 @@ content:
     type: file_default
     region: content
   field_category:
-    weight: 105
+    weight: 5
     label: above
     settings:
       link: true
@@ -46,17 +51,17 @@ content:
     type: entity_reference_label
     region: content
   field_dates_effective:
-    weight: 107
+    weight: 7
     label: above
     settings:
+      timezone_override: America/New_York
+      format_type: long_no_time
       separator: '-'
-      format_type: medium
-      timezone_override: ''
     third_party_settings: {  }
     type: daterange_default
     region: content
   field_documentation:
-    weight: 106
+    weight: 6
     label: above
     settings:
       use_description_as_link_text: true
@@ -64,7 +69,7 @@ content:
     type: file_default
     region: content
   field_due_date:
-    weight: 103
+    weight: 3
     label: above
     settings:
       format_type: medium
@@ -73,7 +78,7 @@ content:
     type: datetime_default
     region: content
   field_identifier:
-    weight: 102
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -81,6 +86,10 @@ content:
     type: string
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  award_notes: true
+  ordering_instructions: true

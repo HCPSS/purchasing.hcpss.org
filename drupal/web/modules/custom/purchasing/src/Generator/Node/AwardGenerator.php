@@ -45,11 +45,17 @@ class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
     }
 
     if (!empty($data['notes'])) {
-      $award->field_notes = $data['notes'];
+      $award->field_notes = [
+        'value' => $data['notes'],
+        'format' => 'basic_html',
+      ];
     }
 
     if (!empty($data['ordering_instructions'])) {
-      $award->field_ordering_instructions = $data['ordering_instructions'];
+      $award->field_ordering_instructions = [
+        'value' => $data['ordering_instructions'],
+        'format' => 'basic_html',
+      ];
     }
 
     if (!empty($data['reference'])) {

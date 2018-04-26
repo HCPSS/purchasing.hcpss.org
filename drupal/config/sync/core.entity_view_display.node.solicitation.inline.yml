@@ -1,0 +1,47 @@
+uuid: a61f8cd5-1a8d-4119-9818-0de74335f31a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.inline
+    - field.field.node.solicitation.body
+    - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_category
+    - field.field.node.solicitation.field_dates_effective
+    - field.field.node.solicitation.field_documentation
+    - field.field.node.solicitation.field_due_date
+    - field.field.node.solicitation.field_identifier
+    - node.type.solicitation
+  module:
+    - user
+id: node.solicitation.inline
+targetEntityType: node
+bundle: solicitation
+mode: inline
+content:
+  field_category:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_identifier:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  award_notes: true
+  awards: true
+  body: true
+  field_bid_tabulation: true
+  field_dates_effective: true
+  field_documentation: true
+  field_due_date: true
+  links: true
+  ordering_instructions: true

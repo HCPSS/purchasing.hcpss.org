@@ -1,0 +1,24 @@
+uuid: bb1725e0-bf97-4f3b-a521-60ee5cd4ea87
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: procurement_methods
+label: 'Procurement Methods'
+type: 'canonical_entities:node'
+pattern: '[node:field_category:entity:name]/[node:content-type:machine-name]/[node:field_identifier]'
+selection_criteria:
+  d1cac38b-74bd-41fd-9b95-042c65a661af:
+    id: node_type
+    bundles:
+      contract: contract
+      quote: quote
+      solicitation: solicitation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d1cac38b-74bd-41fd-9b95-042c65a661af
+selection_logic: and
+weight: -5
+relationships: {  }

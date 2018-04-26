@@ -1,0 +1,21 @@
+uuid: 56233afc-b792-4b52-a108-5ec7de47289e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.open
+    - taxonomy.vocabulary.categories
+id: taxonomy_term.categories.open
+targetEntityType: taxonomy_term
+bundle: categories
+mode: open
+content:
+  open_solicitations:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  awarded_procurements: true
+  description: true
+  purchasing_children: true

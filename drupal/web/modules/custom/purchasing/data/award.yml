@@ -56,7 +56,7 @@
   vendor: School Specialty
   reference: 7775743771
   notes: >
-    '<p>AccountNo:409835</p>
+    <p>AccountNo:409835</p>
     <p><strong>Discount:</strong><br>
     32% discount from list price on all current School Specialty List 
     priced catalogs for supply items, with prefix 9 (Unless catalog bears 
@@ -76,7 +76,7 @@
     Supply Item Orders $49.00 or greater ship free of charge. (7 & 9 
     prefix items) Supply Item Orders less than $49.00 will be charged 
     $9.95. Furniture and Equipment Items ship free of charge. (6 & 8 
-    prefix items).</p>'  
+    prefix items).</p>  
 - id: 010.18.1.PR.01.1804
   procurement_method:
     name: contract 
@@ -238,8 +238,8 @@
   notes: >
     <p>Minimum order for all companies is $25.00.</p>Quote P103385
   notes: >
-    '<p>Minimum order $25.00. Free shipping on orders over $200, excluding 
-    live, preserved, hazardous & motor freight items.</p>'
+    <p>Minimum order $25.00. Free shipping on orders over $200, excluding 
+    live, preserved, hazardous & motor freight items.</p>
 - id: 014.18.5.PC.01.4856
   procurement_method:
     name: solicitation 
@@ -247,10 +247,10 @@
   vendor: Fisher Scientific Co.
   reference: Quote C15-JL-12
   notes: >
-    '<p>Minimum order $25.00. Free shipping, excluding 
+    <p>Minimum order $25.00. Free shipping, excluding 
     live/preserved/hazardous/freight items. $10 hazardous materials 
     surcharge. No discount on products ending in ND, non-catalog items, 
-    denoted with an NC prefix, and customized items</p>'
+    denoted with an NC prefix, and customized items</p>
 - id: 015.18.5.PC.01.4857
   vendor: Flinn Scientific, Inc.
   reference: Quote 136449
@@ -258,10 +258,10 @@
     name: solicitation 
     id: 033.16.B2
   notes: >
-    '<p>Minimum order $25.00. No discount on live/preserved, lab furniture, 
+    <p>Minimum order $25.00. No discount on live/preserved, lab furniture, 
     computer software, tech products & E-Learning Freight charged on live 
     material, lab furniture, hazardous materials, truck freight items & 
-    technology items.</p>'
+    technology items.</p>
 - id: 016.18.5.PC.01.4858
   vendor: Frey Scientific
   reference: 'Quote #7780096400'
@@ -269,9 +269,9 @@
     name: solicitation 
     id: 033.16.B2
   notes: >
-    '<p>Minimum order $25.00. No discount on "N" or "LN" prefix items or SSI, 
+    <p>Minimum order $25.00. No discount on "N" or "LN" prefix items or SSI, 
     Delta, CPO items. Freight charged on live/preserved, hazardous & items 
-    with a "truck icon". $75 motor freight or 12% of line charged</p>'
+    with a "truck icon". $75 motor freight or 12% of line charged</p>
 - id: 017.18.5.PC.01.4859
   vendor: Sargent Welch
   reference: Quote 80309885-CT
@@ -279,10 +279,10 @@
     name: solicitation 
     id: 033.16.B2
   notes: >
-    '<p>Minimum order $25.00. Any items with prices ending in "9" (i.e., 
+    <p>Minimum order $25.00. Any items with prices ending in "9" (i.e., 
     $12.89, $5.49) will NOT have a discount. Free shipping excludes overnight 
     shipments, motor freight and live materials. Hazardous charge will be 
-    $27.50.</p>'
+    $27.50.</p>
 - id: 018.18.5.PC.01.4860
   vendor: 'Vernier Software & Technology'
   reference: 'Quote 033.16.B2.'
@@ -299,7 +299,7 @@
     name: solicitation 
     id: 033.16.B2
   notes: >
-    '<p>Minimum order $25.00. Any items with prices ending in "9" (i.e., 
+    <p>Minimum order $25.00. Any items with prices ending in "9" (i.e., 
     $12.89, $5.49) will NOT have a discount. Free shipping excludes overnight 
     shipments, motor freight and live materials. Hazardous charge will be 
-    $27.50.</p>'
+    $27.50.</p>

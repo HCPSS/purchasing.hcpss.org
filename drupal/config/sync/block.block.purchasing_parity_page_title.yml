@@ -9,7 +9,7 @@ _core:
 id: purchasing_parity_page_title
 theme: purchasing_parity
 region: content
-weight: -50
+weight: -6
 provider: null
 plugin: page_title_block
 settings:

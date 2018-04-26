@@ -4,15 +4,66 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.award.field_board_minutes
+    - field.field.node.award.field_board_report
+    - field.field.node.award.field_documentation
+    - field.field.node.award.field_identifier
+    - field.field.node.award.field_notes
+    - field.field.node.award.field_ordering_instructions
+    - field.field.node.award.field_procurement_method
+    - field.field.node.award.field_reference_number
+    - field.field.node.award.field_vendor
     - node.type.award
   module:
+    - file
+    - text
     - user
 id: node.award.teaser
 targetEntityType: node
 bundle: award
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_documentation:
+    type: file_default
+    weight: 2
     region: content
-hidden: {  }
+    label: inline
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+  field_notes:
+    type: text_default
+    weight: 3
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_ordering_instructions:
+    type: text_default
+    weight: 4
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_reference_number:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vendor:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  field_board_minutes: true
+  field_board_report: true
+  field_identifier: true
+  field_procurement_method: true
+  links: true

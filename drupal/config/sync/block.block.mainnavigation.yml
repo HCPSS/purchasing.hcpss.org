@@ -1,0 +1,29 @@
+uuid: 414c6ef0-a72c-4b07-925d-a29b6a30cfa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - purchasing_parity
+id: mainnavigation
+theme: purchasing_parity
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'About section'
+  provider: system
+  label_display: '0'
+  level: 2
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: "/about\r\n/about/*"
+    negate: false
+    context_mapping: {  }

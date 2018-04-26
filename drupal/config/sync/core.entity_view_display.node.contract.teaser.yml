@@ -14,6 +14,12 @@ targetEntityType: node
 bundle: contract
 mode: teaser
 content:
+  award_notes:
+    weight: 100
+    region: content
+  awards:
+    weight: 100
+    region: content
   body:
     label: hidden
     type: text_summary_or_trimmed
@@ -23,6 +29,9 @@ content:
     third_party_settings: {  }
     region: content
   links:
+    weight: 100
+    region: content
+  ordering_instructions:
     weight: 100
     region: content
 hidden:

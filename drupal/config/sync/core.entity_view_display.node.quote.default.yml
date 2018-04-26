@@ -11,73 +11,34 @@ dependencies:
     - field.field.node.quote.field_identifier
     - node.type.quote
   module:
-    - datetime_range
-    - link
-    - text
     - user
 id: node.quote.default
 targetEntityType: node
 bundle: quote
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_board_minutes:
-    weight: 107
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_board_report:
-    weight: 108
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
   field_category:
-    weight: 104
+    weight: 1
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_dates_effective:
-    weight: 105
-    label: above
-    settings:
-      separator: '-'
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: daterange_default
-    region: content
   field_identifier:
-    weight: 103
+    weight: 0
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  links:
-    weight: 100
-    region: content
-hidden: {  }
+hidden:
+  award_notes: true
+  awards: true
+  body: true
+  field_board_minutes: true
+  field_board_report: true
+  field_dates_effective: true
+  links: true
+  ordering_instructions: true

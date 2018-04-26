@@ -7,4 +7,112 @@
 .region-primary-menu nav ul li {
   margin-top: 0;
 }
+
+.page nav ul li + li {
+  margin-top: 0;
+}
+
+.page .highlighted {
+  margin: 0;
+}
+
+.messages {
+  margin: 1em 0;
+}
 /* End move */
+
+.vocabulary-categories.view-mode-teaser .views-element-container {
+  margin-top: 0;
+}
+
+.vocabulary-categories.view-mode-teaser .content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.vocabulary-categories .item-list {
+  margin-top: 0;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+dl, .page dt, .page dd {
+  margin: 0;
+}
+
+.page dt, .page dd {
+  margin: 0 20px 20px 0;
+}
+
+dt {
+  grid-column-start: 1;
+}
+
+dd {
+  grid-column-start: 2;
+}
+
+#views-exposed-form-line-items-by-procurement-method-block-2,
+#views-exposed-form-line-items-by-procurement-method-block-1 {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+#views-exposed-form-line-items-by-procurement-method-block-2 .form-item,
+#views-exposed-form-line-items-by-procurement-method-block-1 .form-item {
+  grid-column-start: 1;
+  margin-right: 20px;
+}
+
+#views-exposed-form-line-items-by-procurement-method-block-2 .form-actions,
+#views-exposed-form-line-items-by-procurement-method-block-1 .form-actions {
+  grid-column-start: 2;
+}
+
+.node--type-award.node--view-mode-teaser .node__content,
+.node--type-award.node--view-mode-teaser .node__content div {
+	margin-top: 0;
+}
+
+.open-solicitaiton-row .views-field-field-identifier {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+.open-solicitaiton-row .views-field-field-identifier .views-label-field-identifier {
+  grid-column-start: 1;
+  margin-right: 0.2em;  
+}
+
+.views-label-field-documentation, .views-label-field-identifier {
+  font-weight: bold;
+}
+
+.open-solicitaiton-row .views-field-field-identifier .field-content {
+  grid-column-start: 2;
+  margin-top: 0;
+}
+
+.views-field-field-identifier, .views-field-field-documentation {
+  margin-top: 0;
+}
+
+.views-field-field-documentation .field-content {
+  margin-top: 0;
+}
+
+.vocabulary-categories.view-mode-open .content,
+.vocabulary-categories.view-mode-open .content .views-element-container {
+  margin-top: 0;
+}
+
+.item-list > ul > li.open-solicitaiton-row,
+.item-list > ul > li.award-row {
+  margin: 0.7em 0;
+}
+
+.page .metadata > div {
+  margin-top: 0;
+}

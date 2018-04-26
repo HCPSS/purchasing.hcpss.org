@@ -1,0 +1,10 @@
+uuid: f5a48cbe-aacf-43a2-984c-57633762a71e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.full_awarded
+label: 'Full Awarded'
+targetEntityType: node
+cache: true

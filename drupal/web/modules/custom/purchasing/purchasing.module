@@ -1,11 +1,268 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\Entity\Node;
+use Drupal\views\Views;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Link;
 
 /**
- * Implementation od hook_form_FORM_ID_alter().
+ * Implementation of hook_proprocess_HOOK().
+ */
+function purchasing_preprocess_node(&$variables) {
+  if ($variables['view_mode'] === 'full_awarded') {
+    // Make the full_awarded view mode act like a full page view mode.
+    $variables['page'] = TRUE;
+  }
+}
+
+/**
+ * Implementations of hook_entity_view_mode_alter().
+ */
+function purchasing_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  if ($view_mode === 'full' && $entity->getEntityTypeId() == 'node' && $entity->bundle() == 'solicitation') {
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'award')
+      ->condition('status', 1)
+      ->condition('field_procurement_method.target_id', $entity->id())
+      ->execute();
+
+    if (!empty($nids)) {
+      $view_mode = 'full_awarded';
+    }
+  }
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter().
  */
 function purchasing_form_node_bid_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['field_award']['widget']['add_more']['add_more_button_awarded_bid']['#value'] = 'Award this Bid';
+}
+
+/**
+ * Implementation of hook_entity_extra_field_info().
+ */
+function purchasing_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['taxonomy_term']['categories']['display']['awarded_procurements'] = [
+    'label'       => t('Awarded Procurements'),
+    'description' => t('Procurements that have been awarded'),
+    'weight'      => 100,
+    'visible'     => TRUE,
+  ];
+
+  $extra['taxonomy_term']['categories']['display']['open_solicitations'] = [
+    'label'       => t('Open Solicitations'),
+    'description' => t('Solicitations that have not been awarded'),
+    'weight'      => 100,
+    'visible'     => TRUE,
+  ];
+
+  $notes = [
+    'label'       => t('Notes'),
+    'description' => t('Award notes.'),
+    'weight'      => 100,
+    'visible'     => TRUE,
+  ];
+
+  $ordering = [
+    'label'       => t('Ordering Instructions'),
+    'description' => t('How to order.'),
+    'weight'      => 100,
+    'visible'     => TRUE,
+  ];
+
+  $awards = [
+    'label'       => t('Awards'),
+    'description' => t('Awards'),
+    'weight'      => 100,
+    'visible'     => TRUE,
+  ];
+
+  foreach (['solicitation', 'contract', 'quote'] as $bundle) {
+    $extra['node'][$bundle]['display']['award_notes'] = $notes;
+    $extra['node'][$bundle]['display']['ordering_instructions'] = $ordering;
+    $extra['node'][$bundle]['display']['awards'] = $awards;
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function purchasing_theme($existing, $type, $theme, $path) {
+  return [
+    'definition_list' => [
+      'variables' => [
+        'list' => [],
+        'label' => '',
+      ],
+    ],
+    'view_field' => [
+      'variables' => [
+        'view' => [],
+        'label' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implementation of hook_ENITTY_TYPE_view().
+ */
+function purchasing_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+  if ($display->getComponent('award_notes')) {
+    _purchasing_view_award_notes($build, $entity);
+  }
+
+  if ($display->getComponent('ordering_instructions')) {
+    _purchasing_view_ordering_instructions($build, $entity);
+  }
+
+  if ($display->getComponent('awards')) {
+    _purchasing_view_awards($build, $entity);
+  }
+}
+
+/**
+ * Add the awards to the build.
+ *
+ * @param array $build
+ * @param EntityInterface $entity
+ */
+function _purchasing_view_awards(array &$build, EntityInterface $entity) {
+  $view = Views::getView('awards_by_procurement_method');
+  if (is_object($view)) {
+    $args = [$entity->id()];
+    $view->setArguments($args);
+    $view->setDisplay('block_1');
+    $view->preExecute();
+    $view->execute();
+
+    $content = $view->buildRenderable('block_1', $args, FALSE);
+
+    $build['awards'] = [
+      '#theme' => 'view_field',
+      '#view' => $content,
+      '#label' => t('Awarded Vendors'),
+    ];
+  }
+}
+
+/**
+ * Add the ordering instructions to the build.
+ *
+ * @param array $build
+ * @param EntityInterface $entity
+ */
+function _purchasing_view_ordering_instructions(array &$build, EntityInterface $entity) {
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'award')
+    ->condition('field_procurement_method.target_id', $entity->id())
+    ->exists('field_ordering_instructions')
+    ->sort('field_vendor.entity.title')
+    ->execute();
+
+    if (!empty($nids)) {
+      $awards = Node::loadMultiple($nids);
+
+      $list = [];
+      foreach ($awards as $award) {
+        $link = Link::createFromRoute(
+          $award->field_vendor->entity->getTitle(),
+          'entity.node.canonical',
+          ['node' => $award->field_vendor->entity->id()]
+        )->toString();
+
+        $key = Xss::filterAdmin($link);
+        $value = Xss::filterAdmin($award->field_ordering_instructions->value);
+
+        $list[$key] = $value;
+      }
+
+      $build['award_notes'] = [
+        '#theme' => 'definition_list',
+        '#list' => $list,
+        '#label' => 'Notes',
+      ];
+    }
+}
+
+/**
+ * Add the award notes to the build.
+ *
+ * @param array $build
+ * @param EntityInterface $entity
+ */
+function _purchasing_view_award_notes(array &$build, EntityInterface $entity) {
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'award')
+    ->condition('field_procurement_method.target_id', $entity->id())
+    ->exists('field_notes')
+    ->sort('field_vendor.entity.title')
+    ->execute();
+
+  if (!empty($nids)) {
+    $awards = Node::loadMultiple($nids);
+
+    $list = [];
+    foreach ($awards as $award) {
+      $link = Link::createFromRoute(
+        $award->field_vendor->entity->getTitle(),
+        'entity.node.canonical',
+        ['node' => $award->field_vendor->entity->id()]
+        )->toString();
+
+        $key = Xss::filterAdmin($link);
+        $value = Xss::filterAdmin($award->field_notes->value);
+
+        $list[$key] = $value;
+    }
+
+    $build['award_notes'] = [
+      '#theme' => 'definition_list',
+      '#list' => $list,
+      '#label' => 'Notes',
+    ];
+  }
+}
+
+/**
+ * Implementation of hook_ENITTY_TYPE_view().
+ */
+function purchasing_taxonomy_term_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+  if ($display->getComponent('awarded_procurements')) {
+    $view = Views::getView('awarded_procurements_by_category');
+    if (is_object($view)) {
+      $args = [$entity->id()];
+      $view->setArguments($args);
+      $view->setDisplay();
+      $view->preExecute();
+      $view->execute();
+
+      $content = $view->buildRenderable('default', $args, FALSE);
+
+      $build['awarded_procurements'] = $content;
+    }
+  }
+
+  if ($display->getComponent('open_solicitations')) {
+    $view = Views::getView('open_solicitations_by_category');
+    if (is_object($view)) {
+      $args = [$entity->id()];
+      $view->setArguments($args);
+      $view->setDisplay();
+      $view->preExecute();
+      $view->execute();
+
+      $content = $view->buildRenderable('default', $args, FALSE);
+
+      $build['open_solicitations'] = $content;
+    }
+  }
 }

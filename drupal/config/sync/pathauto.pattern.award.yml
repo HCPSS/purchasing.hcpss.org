@@ -1,0 +1,22 @@
+uuid: c0259ce6-371d-492f-b868-5384b8906069
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: award
+label: Award
+type: 'canonical_entities:node'
+pattern: '[node:field_procurement_method:entity:field_category:entity:name]/[node:field_procurement_method:entity:content-type:machine-name]/[node:field_procurement_method:entity:field_identifier]/[node:content-type:machine-name]/[node:field_identifier]'
+selection_criteria:
+  62a6a071-80c3-4759-a0bd-03b0ec8f2156:
+    id: node_type
+    bundles:
+      award: award
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 62a6a071-80c3-4759-a0bd-03b0ec8f2156
+selection_logic: and
+weight: -5
+relationships: {  }

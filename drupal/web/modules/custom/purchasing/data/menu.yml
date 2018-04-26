@@ -1,0 +1,24 @@
+---
+- url: /about 
+  title: About
+  weight: -50
+  
+- url: /about/forms
+  title: Forms
+  parent: /about
+  weight: 5
+
+- title: Fund Accountability and Transparency – Vendor Payments
+  url: http://www.hcpss.org/f/vendors/index.html
+  parent: /about
+  weight: 10
+
+- url: /about/fund-raising
+  title: Fund Raising
+  parent: /about
+  weight: 4
+  
+- url: /about/principals-and-ethics
+  title: Principles and Ethics 
+  parent: /about
+  weight: 3

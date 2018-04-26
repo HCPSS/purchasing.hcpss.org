@@ -1,5 +1,5 @@
 status: '1'
-pattern: 'Award: [node:field_identifier]'
+pattern: '[node:field_vendor] Award ([node:field_identifier])'
 php: 0
 escape: 0
 dependencies:

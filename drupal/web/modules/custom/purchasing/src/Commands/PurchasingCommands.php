@@ -11,6 +11,8 @@ use Drupal\purchasing\Generator\Node\ContractGenerator;
 use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\purchasing\Generator\Node\AwardGenerator;
 use Drupal\purchasing\Generator\Node\LineItemGenerator;
+use Drupal\purchasing\Generator\Node\PageGenerator;
+use Drupal\purchasing\Generator\Menu\MainMenuGenerator;
 
 /**
  * A Drush commandfile.
@@ -32,6 +34,32 @@ class PurchasingCommands extends DrushCommands {
     $this->generateContracts();
     $this->generateAwards();
     $this->generateLineItems();
+    $this->generatePages();
+    $this->generateLinks();
+  }
+
+  /**
+   * Generate links.
+   *
+   * @usage purchasing:generate:links
+   *   Generate links.
+   *
+   * @command purchasing:generate:links
+   */
+  public function generateLinks() {
+    $this->generateFromGenerator('menu', MainMenuGenerator::class);
+  }
+
+  /**
+   * Generate pages.
+   *
+   * @usage purchasing:generate:pages
+   *   Generate pages.
+   *
+   * @command purchasing:generate:pages
+   */
+  public function generatePages() {
+    $this->generateFromGenerator('page', PageGenerator::class);
   }
 
   /**

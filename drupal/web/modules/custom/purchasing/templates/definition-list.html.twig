@@ -1,0 +1,11 @@
+<div>
+  <div class="field-label">{{ label }}</div>
+  <div class="field-value">
+    <dl>
+      {% for k, v in list %}
+        <dt>{{ k|raw }}</dt>
+        <dd>{{ v|raw }}</dd>
+      {% endfor %}
+    </dl>
+  </div>
+</div>

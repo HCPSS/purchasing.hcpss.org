@@ -1,0 +1,35 @@
+uuid: 9d2f15e1-4031-4f30-8a96-59ab2d729f44
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.discount_line_items_by_procurement_method
+  module:
+    - ctools
+    - views
+  theme:
+    - purchasing_parity
+id: views_block__discount_line_items_by_procurement_method_block_1
+theme: purchasing_parity
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:discount_line_items_by_procurement_method-block_1'
+settings:
+  id: 'views_block:discount_line_items_by_procurement_method-block_1'
+  label: Catalog
+  provider: views
+  label_display: visible
+  views_label: Catalog
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      contract: contract
+      quote: quote
+      solicitation: solicitation
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
