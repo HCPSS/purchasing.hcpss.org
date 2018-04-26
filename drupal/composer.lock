@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe9759071c524223da3b35d018c8b10e",
+    "content-hash": "de31381d09baffe41d8bb0cf46d93fec",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -266,6 +266,17 @@
             ],
             "description": "Internationalization library powered by CLDR data.",
             "time": "2017-12-29T00:13:05+00:00"
+        },
+        {
+            "name": "components/highlightjs",
+            "version": "9.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/components/highlightjs/archive/9.7.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library"
         },
         {
             "name": "composer/installers",
@@ -812,6 +823,17 @@
             ],
             "description": "Provides a way to patch Composer packages.",
             "time": "2017-12-07T16:16:31+00:00"
+        },
+        {
+            "name": "d3/d3",
+            "version": "v3.5.17",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/d3/d3/archive/v3.5.17.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library"
         },
         {
             "name": "dflydev/dot-access-configuration",
