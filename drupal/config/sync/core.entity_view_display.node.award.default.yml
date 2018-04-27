@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.award.field_board_minutes
-    - field.field.node.award.field_board_report
     - field.field.node.award.field_documentation
     - field.field.node.award.field_identifier
     - field.field.node.award.field_notes
@@ -15,7 +13,6 @@ dependencies:
     - node.type.award
   module:
     - file
-    - link
     - text
     - user
 id: node.award.default
@@ -23,30 +20,6 @@ targetEntityType: node
 bundle: award
 mode: default
 content:
-  field_board_minutes:
-    weight: 8
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_board_report:
-    weight: 9
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
   field_documentation:
     weight: 4
     label: above

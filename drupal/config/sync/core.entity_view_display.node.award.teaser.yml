@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.award.field_board_minutes
-    - field.field.node.award.field_board_report
     - field.field.node.award.field_documentation
     - field.field.node.award.field_identifier
     - field.field.node.award.field_notes
@@ -25,7 +23,7 @@ mode: teaser
 content:
   field_documentation:
     type: file_default
-    weight: 2
+    weight: 4
     region: content
     label: inline
     settings:
@@ -33,14 +31,14 @@ content:
     third_party_settings: {  }
   field_notes:
     type: text_default
-    weight: 3
+    weight: 5
     region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
   field_ordering_instructions:
     type: text_default
-    weight: 4
+    weight: 6
     region: content
     label: inline
     settings: {  }
@@ -62,8 +60,6 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
-  field_board_minutes: true
-  field_board_report: true
   field_identifier: true
   field_procurement_method: true
   links: true

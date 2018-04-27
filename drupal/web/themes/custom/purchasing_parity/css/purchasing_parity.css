@@ -116,3 +116,19 @@ dd {
 .page .metadata > div {
   margin-top: 0;
 }
+
+.board-links > div {
+  display: inline;
+}
+
+.board-links > div.field__item + div.field__item:before {
+  content: ", ";
+}
+
+.views-element-container td.views-field p:first-of-type {
+	margin-top: 0;
+}
+
+.views-element-container td.views-field p:last-of-type {
+    margin-bottom: 0;
+}

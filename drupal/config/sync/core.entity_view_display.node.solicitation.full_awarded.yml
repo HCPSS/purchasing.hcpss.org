@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.full_awarded
     - field.field.node.solicitation.body
     - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_board_minutes
+    - field.field.node.solicitation.field_board_report
     - field.field.node.solicitation.field_category
     - field.field.node.solicitation.field_dates_effective
     - field.field.node.solicitation.field_documentation
@@ -15,6 +17,7 @@ dependencies:
   module:
     - datetime_range
     - file
+    - fixed_text_link_formatter
     - text
     - user
 id: node.solicitation.full_awarded
@@ -23,25 +26,53 @@ bundle: solicitation
 mode: full_awarded
 content:
   awards:
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_bid_tabulation:
-    weight: 5
+    weight: 7
     label: above
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
+  field_board_minutes:
+    type: fixed_text_link
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_text: Minutes
+      allow_override: 0
+      rel: 0
+      target: 0
+      trim_length: ''
+      url_only: ''
+      url_plain: ''
+    third_party_settings: {  }
+  field_board_report:
+    type: fixed_text_link
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      link_text: Report
+      allow_override: 0
+      rel: 0
+      target: 0
+      trim_length: ''
+      url_only: ''
+      url_plain: ''
+    third_party_settings: {  }
   field_category:
     weight: 2
     label: inline
@@ -61,7 +92,7 @@ content:
     type: daterange_default
     region: content
   field_documentation:
-    weight: 6
+    weight: 8
     label: above
     settings:
       use_description_as_link_text: true

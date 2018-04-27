@@ -58,6 +58,7 @@
         "drupal/core": "~8.5.1",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/editor_file": "^1.2",
+        "drupal/fixed_text_link_formatter": "^1.1",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/paragraphs": "^1.2",
         "drupal/pathauto": "^1.2",

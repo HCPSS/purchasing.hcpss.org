@@ -1,16 +1,16 @@
-uuid: 0d196d81-a9d5-46e4-a631-06f9a8e55a03
+uuid: 1159d601-24df-4a1c-a301-d1a0273c1a4b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_board_minutes
-    - node.type.award
+    - node.type.solicitation
   module:
     - link
-id: node.award.field_board_minutes
+id: node.solicitation.field_board_minutes
 field_name: field_board_minutes
 entity_type: node
-bundle: award
+bundle: solicitation
 label: 'Board Minutes'
 description: 'The URL to the board minutes on swaggit.'
 required: false

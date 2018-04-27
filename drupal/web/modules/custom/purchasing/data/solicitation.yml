@@ -225,6 +225,9 @@
 # Closed
 - bid_number: 022.17.B2
   title: Appliances and Kitchen Equipment
+  board:
+    report: 'http://www.boarddocs.com/mabe/hcpssmd/Board.nsf/goto?open&id=84JU3E7A1442'
+    minutes: http://hcpsstv.new.swagit.com/videos/6259?ts=6274
   category: Furniture and Appliances
 - bid_number:  054.13.B2
   title: Art Equipment

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.node.solicitation.body
     - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_board_minutes
+    - field.field.node.solicitation.field_board_report
     - field.field.node.solicitation.field_category
     - field.field.node.solicitation.field_dates_effective
     - field.field.node.solicitation.field_documentation
@@ -15,6 +17,7 @@ dependencies:
     - datetime
     - datetime_range
     - file
+    - link
     - text
     - user
 id: node.solicitation.default
@@ -41,6 +44,30 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
+    region: content
+  field_board_minutes:
+    weight: 9
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_board_report:
+    weight: 10
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_category:
     weight: 5

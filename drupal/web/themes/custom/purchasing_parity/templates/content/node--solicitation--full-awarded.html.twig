@@ -103,12 +103,26 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     <div class="metadata">
-        {{ content.field_identifier }}
-        {{ content.field_category }}
-        {{ content.field_dates_effective }}
+      {{ content.field_identifier }}
+      {{ content.field_category }}
+      {{ content.field_dates_effective }}
+      {% if content.field_board_report or content.field_board_minutes %}
+        <div class="board-links field--label-inline">
+          {% spaceless %}
+            <div class="field-label field__label">Board of Education</div>
+            {{ content.field_board_report }}
+            {{ content.field_board_minutes }}
+          {% endspaceless %}
+        </div>
+      {% endif %}
     </div>
   
-    {{ content|without('field_identifier')|without('field_category')|without('field_dates_effective') }}
+    {{ content
+        |without('field_identifier')
+        |without('field_category')
+        |without('field_dates_effective')
+        |without('field_board_report')
+        |without('field_board_minutes') }}
   </div>
 
 </article>

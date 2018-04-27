@@ -56,6 +56,14 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
       }
     }
 
+    if (!empty($data['board']['report'])) {
+      $solicitation->field_board_report = ['uri' => $data['board']['report']];
+    }
+
+    if (!empty($data['board']['minutes'])) {
+      $solicitation->field_board_report = ['uri' => $data['board']['minutes']];
+    }
+
     $solicitation->save();
   }
 
