@@ -61,9 +61,11 @@
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/paragraphs": "^1.2",
         "drupal/pathauto": "^1.2",
+        "drupal/simplesamlphp_auth": "^3.0",
         "drupal/token": "^1.1",
         "drush/drush": "^9.0.0",
         "hcpss/parity": "dev-master",
+        "simplesamlphp/simplesamlphp": "^1.15",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"

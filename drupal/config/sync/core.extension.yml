@@ -22,6 +22,7 @@ module:
   editor_advanced_link: 0
   editor_file: 0
   entity_reference_revisions: 0
+  externalauth: 0
   field: 0
   field_ui: 0
   file: 0
@@ -41,6 +42,7 @@ module:
   rdf: 0
   search: 0
   shortcut: 0
+  simplesamlphp_auth: 0
   system: 0
   taxonomy: 0
   telephone: 0

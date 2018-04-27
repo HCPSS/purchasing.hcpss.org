@@ -18,7 +18,9 @@ services:
     container_name: purchasing_web
     depends_on:
       - db
-    image: banderson/drupal
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
     links:
       - db:drupal_db
     ports:

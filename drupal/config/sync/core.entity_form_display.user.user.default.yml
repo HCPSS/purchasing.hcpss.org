@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_display_name
     - field.field.user.user.field_phone
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - field.field.user.user.field_title
   module:
-    - image
+    - path
     - telephone
     - user
 _core:
@@ -18,36 +18,52 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_phone:
-    weight: 7
+    weight: 3
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
-  language:
-    weight: 0
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
+  language:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-  user_picture:
-    type: image_image
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+    settings: {  }
     third_party_settings: {  }
-    weight: -1
-    region: content
 hidden: {  }

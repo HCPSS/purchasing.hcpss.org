@@ -1,0 +1,31 @@
+langcode: en
+default_langcode: en
+activate: true
+mail_attr: mail
+unique_id: sAMAccountName
+user_name: sAMAccountName
+auth_source: default-sp
+login_link_display_name: 'Federated login'
+header_no_cache: false
+role:
+  population: ''
+  eval_every_time: false
+register_users: false
+allow:
+  set_drupal_pwd: false
+  default_login: true
+  default_login_roles:
+    administrator: administrator
+    authenticated: '0'
+  default_login_users: '1'
+logout_goto_url: ''
+user_register_original: visitors_admin_approval
+sync:
+  mail: true
+  user_name: true
+autoenablesaml: false
+debug: false
+secure: false
+httponly: false
+_core:
+  default_config_hash: BuLah1nwoT5oUjn6XIuKnXkjcvdt5tDIGQ6gAflOY0s
