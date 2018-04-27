@@ -62,20 +62,6 @@ function purchasing_entity_extra_field_info() {
     'visible'     => TRUE,
   ];
 
-  $notes = [
-    'label'       => t('Notes'),
-    'description' => t('Award notes.'),
-    'weight'      => 100,
-    'visible'     => TRUE,
-  ];
-
-  $ordering = [
-    'label'       => t('Ordering Instructions'),
-    'description' => t('How to order.'),
-    'weight'      => 100,
-    'visible'     => TRUE,
-  ];
-
   $awards = [
     'label'       => t('Awards'),
     'description' => t('Awards'),
@@ -84,9 +70,16 @@ function purchasing_entity_extra_field_info() {
   ];
 
   foreach (['solicitation', 'contract', 'quote'] as $bundle) {
-    $extra['node'][$bundle]['display']['award_notes'] = $notes;
-    $extra['node'][$bundle]['display']['ordering_instructions'] = $ordering;
     $extra['node'][$bundle]['display']['awards'] = $awards;
+  }
+
+  foreach (['notes', 'ordering_instructions', 'reference_number', 'vendor'] as $field_name) {
+    $field = ['weight' => 100, 'visible' => TRUE];
+    $field['label'] = $field['description'] = ucwords(str_replace('_', ' ', $field_name));
+
+    foreach (['partner', 'discounted', 'priced'] as $line_item_type) {
+      $extra['node']["{$line_item_type}_line_item"]['display'][$field_name] = $field;
+    }
   }
 
   return $extra;
@@ -116,17 +109,21 @@ function purchasing_theme($existing, $type, $theme, $path) {
  * Implementation of hook_ENITTY_TYPE_view().
  */
 function purchasing_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
-  if ($display->getComponent('award_notes')) {
-    _purchasing_view_award_notes($build, $entity);
-  }
-
-  if ($display->getComponent('ordering_instructions')) {
-    _purchasing_view_ordering_instructions($build, $entity);
-  }
-
   if ($display->getComponent('awards')) {
     _purchasing_view_awards($build, $entity);
   }
+
+  foreach (['notes', 'ordering_instructions', 'reference_number', 'vendor'] as $field_name) {
+    if ($display->getComponent($field_name)) {
+      if ($entity->field_award->entity->{'field_'.$field_name}) {
+        $build[$field_name] = $entity->field_award->entity->{'field_'.$field_name}->view('full');
+      }
+    }
+  }
+}
+
+function _purchasing_view_award_field($field, &$build, $entity) {
+  $build[$field] = $entity->field_award->entity->{'field_'.$field}->view('full');
 }
 
 /**
@@ -150,84 +147,6 @@ function _purchasing_view_awards(array &$build, EntityInterface $entity) {
       '#theme' => 'view_field',
       '#view' => $content,
       '#label' => t('Awarded Vendors'),
-    ];
-  }
-}
-
-/**
- * Add the ordering instructions to the build.
- *
- * @param array $build
- * @param EntityInterface $entity
- */
-function _purchasing_view_ordering_instructions(array &$build, EntityInterface $entity) {
-  $nids = \Drupal::entityQuery('node')
-    ->condition('type', 'award')
-    ->condition('field_procurement_method.target_id', $entity->id())
-    ->exists('field_ordering_instructions')
-    ->sort('field_vendor.entity.title')
-    ->execute();
-
-    if (!empty($nids)) {
-      $awards = Node::loadMultiple($nids);
-
-      $list = [];
-      foreach ($awards as $award) {
-        $link = Link::createFromRoute(
-          $award->field_vendor->entity->getTitle(),
-          'entity.node.canonical',
-          ['node' => $award->field_vendor->entity->id()]
-        )->toString();
-
-        $key = Xss::filterAdmin($link);
-        $value = Xss::filterAdmin($award->field_ordering_instructions->value);
-
-        $list[$key] = $value;
-      }
-
-      $build['award_notes'] = [
-        '#theme' => 'definition_list',
-        '#list' => $list,
-        '#label' => 'Notes',
-      ];
-    }
-}
-
-/**
- * Add the award notes to the build.
- *
- * @param array $build
- * @param EntityInterface $entity
- */
-function _purchasing_view_award_notes(array &$build, EntityInterface $entity) {
-  $nids = \Drupal::entityQuery('node')
-    ->condition('type', 'award')
-    ->condition('field_procurement_method.target_id', $entity->id())
-    ->exists('field_notes')
-    ->sort('field_vendor.entity.title')
-    ->execute();
-
-  if (!empty($nids)) {
-    $awards = Node::loadMultiple($nids);
-
-    $list = [];
-    foreach ($awards as $award) {
-      $link = Link::createFromRoute(
-        $award->field_vendor->entity->getTitle(),
-        'entity.node.canonical',
-        ['node' => $award->field_vendor->entity->id()]
-        )->toString();
-
-        $key = Xss::filterAdmin($link);
-        $value = Xss::filterAdmin($award->field_notes->value);
-
-        $list[$key] = $value;
-    }
-
-    $build['award_notes'] = [
-      '#theme' => 'definition_list',
-      '#list' => $list,
-      '#label' => 'Notes',
     ];
   }
 }

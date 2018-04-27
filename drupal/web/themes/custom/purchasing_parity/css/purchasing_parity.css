@@ -8,7 +8,8 @@
   margin-top: 0;
 }
 
-.page nav ul li + li {
+.page nav ul li + li,
+.page nav ol li + li {
   margin-top: 0;
 }
 

@@ -1,0 +1,5 @@
+services:
+  purchasing.breadcrumb:
+    class: Drupal\purchasing\Breadcrumb\PurchasingBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
