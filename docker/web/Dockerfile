@@ -25,6 +25,11 @@ COPY drupal/composer.json      /var/www/drupal/composer.json
 COPY drupal/composer.lock      /var/www/drupal/composer.lock
 COPY drupal/config             /var/www/drupal/config
 
+# Drush aliases
+RUN mkdir -p /root/.drush/sites
+COPY drupal/drush/sites/self.site.yml /root/.drush/sites/self.site.yml
+COPY drupal/drush/drush.yml /root/.drush/drush.yml
+
 RUN mkdir /var/www/drupal/files && chown www-data:www-data /var/www/drupal/files
 
 RUN composer install -d /var/www/drupal

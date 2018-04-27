@@ -8,4 +8,3 @@ prod:
 dev:
   root: /var/www/drupal/web
   uri: http://purchasing.hcpss.localhost:8086
-  
