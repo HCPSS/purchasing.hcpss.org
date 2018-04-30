@@ -71,6 +71,10 @@ class LineItemGenerator extends NodeGenerator implements EntityGeneratorInterfac
       ];
     }
 
+    if (!empty($data['exceptions'])) {
+      $line_item->field_exceptions = $data['exceptions'];
+    }
+
     $line_item->save();
 
     return $line_item;

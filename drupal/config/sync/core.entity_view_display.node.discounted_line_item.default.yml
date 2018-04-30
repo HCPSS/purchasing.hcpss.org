@@ -17,7 +17,7 @@ bundle: discounted_line_item
 mode: default
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
     weight: 101
     settings: {  }
@@ -50,4 +50,26 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  notes:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  ordering_instructions:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  reference_number:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  vendor:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

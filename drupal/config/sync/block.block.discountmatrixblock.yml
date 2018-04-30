@@ -10,21 +10,21 @@ dependencies:
 id: discountmatrixblock
 theme: purchasing_parity
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: discount_matrix_block
 settings:
   id: discount_matrix_block
-  label: Discounts
+  label: 'Discount Table'
   provider: purchasing
   label_display: visible
 visibility:
   node_type:
     id: node_type
     bundles:
-      solicitation: solicitation
       contract: contract
       quote: quote
+      solicitation: solicitation
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

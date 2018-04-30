@@ -7,6 +7,47 @@ use Drupal\node\Entity\Node;
 use Drupal\views\Views;
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Link;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Access\AccessResultInterface;
+use Drupal\node\NodeInterface;
+use Drupal\purchasing\Model\ProcurementMethod;
+
+/**
+ * Implementation of hook_block_access()
+ */
+function purchasing_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation != 'view') {
+    return AccessResult::neutral();
+  }
+
+  $ids = [
+    'discount_matrix_block',
+    'views_block:line_items_by_procurement_method-block_1',
+  ];
+
+  if (!in_array($block->getPluginId(), $ids)) {
+    return AccessResult::neutral();
+  }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  try {
+    $procurementMethod = new ProcurementMethod($node);
+    $num_awards = count($procurementMethod->getDiscountAwardIds());
+  } catch (\InvalidArgumentException $e) {
+    return AccessResult::neutral();
+  } catch (\TypeError $e) {
+    return AccessResult::neutral();
+  }
+
+  $num_priced_line_items = count($procurementMethod->getPricedLineItemIds());
+
+  return AccessResult::forbiddenIf(
+    ($block->getPluginId() == $ids[0] && $num_awards > 8) ||
+    ($block->getPluginId() == $ids[1] && $num_awards <= 8 && !$num_priced_line_items)
+  )->addCacheableDependency($block);
+}
 
 /**
  * Implementation of hook_proprocess_HOOK().

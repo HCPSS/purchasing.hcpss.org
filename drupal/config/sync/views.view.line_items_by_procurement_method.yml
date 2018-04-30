@@ -9,6 +9,7 @@ dependencies:
     - field.storage.node.field_vendor
     - node.type.award
     - node.type.contract
+    - node.type.discounted_line_item
     - node.type.priced_line_item
     - node.type.quote
     - node.type.solicitation
@@ -474,6 +475,7 @@ display:
           admin_label: ''
           operator: in
           value:
+            discounted_line_item: discounted_line_item
             priced_line_item: priced_line_item
           group: 1
           exposed: false

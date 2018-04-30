@@ -303,3 +303,147 @@
     $12.89, $5.49) will NOT have a discount. Free shipping excludes overnight 
     shipments, motor freight and live materials. Hazardous charge will be 
     $27.50.</p>
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 001.18.3.Q.01.9549
+  ordering_instructions: '<p>Sales Rep: Reggie Wilson, 443-756-0025</p>'
+  reference: 'School Specialty #7777468604'
+  vendor: ABC
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 002.18.3.PS.01.5148
+  ordering_instructions: '<p>Sales Rep: Reggie Wilson, 443-756-0025</p>'
+  reference: 'School Specialty #7777468604'
+  vendor: Childcraft Education
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 003.18.4.PC.01.6393
+  vendor: Classroom Direct
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 004.18.5.PC.01.1615
+  ordering_instructions: '<p>Sales Rep: Mary Castro, 800-448- 2972</p>'
+  reference: 'Bid #8315JB'
+  vendor: Constructive Playthings
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 005.18.3.PC.01.1262
+  ordering_instructions: '<p>Sales Rep: Amy Pickrel, 800-704- 7744, a.pickrel@dickblick.com</p>'
+  reference: 'V#601206459 & AACPS #06CM-77'
+  vendor: Dick Blick Art Materials
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 006.18.5.PO.01.6301
+  reference: 'C6MD07'
+  vendor: Demco
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 007.18.1.PC.01.0869
+  ordering_instructions: '<p>Sales Rep: Carolyn Vanco, 800-445- 5985, x5177; cvanco@etacuisenair.com</p>'
+  reference: 'Bid #06CM-77'
+  vendor: ETA Hand2Mind
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 008.18.3.PO.01.2902
+  ordering_instructions: '<p>Sales Rep: Joseph Elliott, 800- 225-3739</p>'
+  reference: 'C-928473-F & AACPS #06CM-77'
+  vendor: Frey Scientific
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 009.18.1.RP.01.4768
+  ordering_instructions: '<p>Sales Rep: Carrie Lee, 866-622-1003</p>'
+  reference: 'HCP-602-04-101231; AACPS #06CM-77'
+  vendor: Frey Scientific
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 010.18.4.PC.01.9786
+  ordering_instructions: '<p>Sales Rep: Cheryl Stedman, 800-543-2180</p>'
+  reference: 'Discount 46687; AACPS #06CM-77'
+  vendor: Highsmith
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 011.18.3.PS.01.3318
+  ordering_instructions: '<p>Sales Rep: Hope Meadows, 800-334- 2014, x3205</p>'
+  reference: 'Bid #06CM-77'
+  vendor: Kaplan Early Learning
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 012.18.3.PR.01.4686
+  ordering_instructions: '<p>Sales Rep: Jeff Pistner, 800-252-3811</p>'
+  reference: 'Bid #06CM-77'
+  vendor: Kurtz
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 013.18.2.E.01.6988
+  ordering_instructions: '<p>Sales Rep: Cynthia Mayorga, 800-421-5354, x2195</p>'
+  reference: 'Bid #06CM-77'
+  vendor: Lakeshore Learning Materials
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 014.18.1.T.01.8371
+  ordering_instructions: '<p>Sales Rep: Phyllis Fitpatrick, 410-242-7100</p>'
+  reference: 'Bid #06CM-77'
+  vendor: Learning How
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 015.18.2.T.01.9929
+  ordering_instructions: '<p>Sales Rep: Dave Johnson, 920-568-5530</p>'
+  reference: 'Nasco #86575 - ALL'
+  vendor: NASCO
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 016.18.5.G.01.2541
+  ordering_instructions: '<p>Sales Rep: Angela Watson, 800-835-0686</p>'
+  reference: 'PIT-602-04-101231'
+  vendor: Learning How
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 017.18.3.T.01.4931
+  ordering_instructions: '<p>Sales Rep: Claudia Fellini, 203-261-1920, x246</p>'
+  reference: 'Really Good Stuff #011613'
+  vendor: Really Good Stuff
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 018.18.2.G.01.7371
+  ordering_instructions: '<p>Sales Rep: Glenn Kennington, 301-216-2181</p>'
+  reference: 'School Specialty #7777468604'
+  vendor: 'Sax Arts & Crafts'
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 019.18.2.M.01.9446
+  ordering_instructions: '<p>Sales Rep: Glenn Kennington, 301-216-2181</p>'
+  reference: 'School Specialty #7777468604'
+  vendor: School Specialty
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 020.18.4.PC.01.4998
+  ordering_instructions: '<p>Sales Rep: Glenn Kennington, 301-216-2181</p>'
+  reference: 'School Specialty #7777468604'
+  vendor: Sportime
+- procurement_method:
+    name: contract
+    id: 'AACPS BID #06CM-77'
+  id: 021.18.2.PC.01.7540
+  ordering_instructions: '<p>Sales Rep: Dave Johnson, (800) 777-8817</p>'
+  reference: 'Summit #59236'
+  vendor: Summit Learning

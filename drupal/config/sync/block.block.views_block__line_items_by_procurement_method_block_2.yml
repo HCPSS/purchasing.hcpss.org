@@ -12,7 +12,7 @@ dependencies:
 id: views_block__line_items_by_procurement_method_block_2
 theme: purchasing_parity
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: 'views_block:line_items_by_procurement_method-block_2'
 settings:

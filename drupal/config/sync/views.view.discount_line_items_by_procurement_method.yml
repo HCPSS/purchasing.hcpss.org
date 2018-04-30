@@ -79,11 +79,7 @@ display:
       style:
         type: table
         options:
-          grouping:
-            -
-              field: title
-              rendered: false
-              rendered_strip: false
+          grouping: {  }
           row_class: ''
           default_row_class: true
           override: true
@@ -145,8 +141,8 @@ display:
           relationship: reverse__node__field_award
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: Title
+          exclude: false
           alter:
             alter_text: false
             text: ''

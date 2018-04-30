@@ -74,6 +74,10 @@ class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
    * @return \Drupal\node\Entity\Node
    */
   private static function loadVendorFromName($name) {
+    if (!is_string($name)) {
+      throw new \InvalidArgumentException('Name must be a string.');
+    }
+
     $nids = \Drupal::entityQuery('node')
       ->condition('type', 'vendor')
       ->condition('title', $name)
@@ -105,7 +109,7 @@ class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
    *
    * @return string
    */
-  private static function generateHcpssContractNumber() {
+  public static function generateHcpssContractNumber() {
     $procurementMethod = [
       'PC', 'E', 'G', 'L', 'M', 'PO', 'PR', 'Q', 'RP', 'PS', 'T',
     ];
