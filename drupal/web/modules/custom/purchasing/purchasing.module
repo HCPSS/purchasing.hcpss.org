@@ -90,6 +90,11 @@ function purchasing_entity_extra_field_info() {
  */
 function purchasing_theme($existing, $type, $theme, $path) {
   return [
+    'discount_matrix' => [
+      'variables' => [
+        'matrix' => [],
+      ],
+    ],
     'definition_list' => [
       'variables' => [
         'list' => [],

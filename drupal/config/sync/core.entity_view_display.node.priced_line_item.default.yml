@@ -65,4 +65,16 @@ content:
   links:
     weight: 100
     region: content
+  notes:
+    weight: 100
+    region: content
+  ordering_instructions:
+    weight: 100
+    region: content
+  reference_number:
+    weight: 100
+    region: content
+  vendor:
+    weight: 100
+    region: content
 hidden: {  }

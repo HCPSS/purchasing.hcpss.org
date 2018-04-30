@@ -106,7 +106,7 @@
       {{ content.field_identifier }}
       {{ content.field_category }}
       {{ content.field_dates_effective }}
-      {% if content.field_board_report or content.field_board_minutes %}
+      {% if content.field_board_report[0] or content.field_board_minutes[0] %}
         <div class="board-links field--label-inline">
           {% spaceless %}
             <div class="field-label field__label">Board of Education</div>

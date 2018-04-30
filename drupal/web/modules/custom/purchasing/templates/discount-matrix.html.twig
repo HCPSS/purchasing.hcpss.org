@@ -1,0 +1,27 @@
+<table class="discount-matrix">
+    <thead>
+        <tr>
+            <th>Name</th>
+            {% for vendor in matrix.vendors %}
+                <th>{{ vendor.label }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for title in matrix.itemNames %}
+            <tr>
+                <td>{{ title }}</td>
+                {% for vendor in matrix.vendors %}
+                    {% set discount = matrix.discount(title, vendor) %}
+                    <td>
+                        {% if discount %}
+                            <a href="{{ path('entity.node.canonical', {'node': discount.id}) }}">
+                                {{ discount.field_discount[0].value }}%
+                            </a>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
