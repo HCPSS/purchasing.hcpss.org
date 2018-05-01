@@ -73,7 +73,9 @@ dd {
 }
 
 .node--type-award.node--view-mode-teaser .node__content,
-.node--type-award.node--view-mode-teaser .node__content div {
+.node--type-award.node--view-mode-teaser .node__content div,
+.node--type-award.node--view-mode-teaser-by-vendor .node__content,
+.node--type-award.node--view-mode-teaser-by-vendor .node__content div {
 	margin-top: 0;
 }
 

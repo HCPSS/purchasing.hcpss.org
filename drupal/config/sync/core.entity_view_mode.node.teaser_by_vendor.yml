@@ -1,0 +1,10 @@
+uuid: b30d2503-7d7e-49e7-a364-59d7ae22d631
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_by_vendor
+label: 'Teaser By Vendor'
+targetEntityType: node
+cache: true

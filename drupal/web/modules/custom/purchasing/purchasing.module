@@ -114,6 +114,8 @@ function purchasing_entity_extra_field_info() {
     'visible'     => TRUE,
   ];
 
+  $extra['node']['vendor']['display']['awards_by_vendor'] = $awards;
+
   foreach (['solicitation', 'contract', 'quote'] as $bundle) {
     $extra['node'][$bundle]['display']['awards'] = $awards;
   }
@@ -163,6 +165,10 @@ function purchasing_node_view(array &$build, EntityInterface $entity, EntityView
     _purchasing_view_awards($build, $entity);
   }
 
+  if ($display->getComponent('awards_by_vendor')) {
+    _purchasing_view_awards_by_vendor($build, $entity);
+  }
+
   foreach (['notes', 'ordering_instructions', 'reference_number', 'vendor'] as $field_name) {
     if ($display->getComponent($field_name)) {
       if ($entity->field_award->entity->{'field_'.$field_name}) {
@@ -172,8 +178,42 @@ function purchasing_node_view(array &$build, EntityInterface $entity, EntityView
   }
 }
 
+/**
+ * Render a field from an award.
+ *
+ * @param string $field
+ * @param array $build
+ * @param EntityInterface $entity
+ */
 function _purchasing_view_award_field($field, &$build, $entity) {
   $build[$field] = $entity->field_award->entity->{'field_'.$field}->view('full');
+}
+
+/**
+ * Add the awards_by_vendor view to the awards_by_vendor field.
+ *
+ * @param array $build
+ * @param NodeInterface $entity
+ */
+function _purchasing_view_awards_by_vendor(array &$build, NodeInterface $entity) {
+  $view = Views::getView('awards_by_vendor');
+  if (is_object($view)) {
+    $args = [$entity->id()];
+    $view->setArguments($args);
+    $view->setDisplay('block_1');
+    $view->preExecute();
+    $view->execute();
+
+    if ($view->total_rows) {
+      $content = $view->buildRenderable('block_1', $args, FALSE);
+
+      $build['awards'] = [
+        '#theme' => 'view_field',
+        '#view' => $content,
+        '#label' => t('Awards'),
+      ];
+    }
+  }
 }
 
 /**
