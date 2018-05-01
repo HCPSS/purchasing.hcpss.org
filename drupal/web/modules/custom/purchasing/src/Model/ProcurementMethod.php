@@ -68,7 +68,7 @@ class ProcurementMethod {
    * @return number[]
    */
   public function getDiscountedLineItemIds() {
-    if (empty($this->discountedLineItemIds)) {
+    if (empty($this->discountedLineItemIds) && !empty($this->getAwardIds())) {
       $this->discountedLineItemIds = \Drupal::entityQuery('node')
         ->condition('status', 1)
         ->condition('type', 'discounted_line_item')
@@ -85,11 +85,11 @@ class ProcurementMethod {
    * @return number[]
    */
   public function getPricedLineItemIds() {
-    if (empty($this->pricedLineItemIds)) {
+    if (empty($this->pricedLineItemIds) && !empty($this->getAwardIds())) {
       $this->pricedLineItemIds = \Drupal::entityQuery('node')
         ->condition('status', 1)
         ->condition('type', 'priced_line_item')
-        ->condition('field_award.target_id', static::getAwardIds(), 'IN')
+        ->condition('field_award.target_id', $this->getAwardIds(), 'IN')
         ->execute();
     }
 
@@ -118,7 +118,6 @@ class ProcurementMethod {
   public function getDiscountAwardIds() {
     if (empty($this->discountAwardIds)) {
       foreach ($this->getDiscountedLineItems() as $lineItem) {
-        \Drupal::messenger()->addMessage($lineItem->field_award->target_id);
         if (!in_array($lineItem->field_award->target_id, $this->discountAwardIds)) {
           $this->discountAwardIds[] = $lineItem->field_award->target_id;
         }

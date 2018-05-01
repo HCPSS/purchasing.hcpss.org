@@ -133,3 +133,13 @@ dd {
 .views-element-container td.views-field p:last-of-type {
     margin-bottom: 0;
 }
+
+.view-id-categories > .view-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.9rem;
+}
+
+.view-id-awarded_procurements_by_category > .view-content {
+  margin-top: 0;
+}

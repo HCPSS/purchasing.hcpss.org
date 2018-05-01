@@ -34,13 +34,17 @@ function purchasing_block_access(Block $block, $operation, AccountInterface $acc
   $node = \Drupal::routeMatch()->getParameter('node');
   try {
     $procurementMethod = new ProcurementMethod($node);
-    $num_awards = count($procurementMethod->getDiscountAwardIds());
   } catch (\InvalidArgumentException $e) {
     return AccessResult::neutral();
   } catch (\TypeError $e) {
     return AccessResult::neutral();
   }
 
+  if (empty($procurementMethod->getAwardIds())) {
+    return AccessResult::forbidden();
+  }
+
+  $num_awards = count($procurementMethod->getDiscountAwardIds());
   $num_priced_line_items = count($procurementMethod->getPricedLineItemIds());
 
   return AccessResult::forbiddenIf(
