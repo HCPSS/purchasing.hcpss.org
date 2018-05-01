@@ -191,13 +191,15 @@ function _purchasing_view_awards(array &$build, EntityInterface $entity) {
     $view->preExecute();
     $view->execute();
 
-    $content = $view->buildRenderable('block_1', $args, FALSE);
+    if ($view->total_rows) {
+      $content = $view->buildRenderable('block_1', $args, FALSE);
 
-    $build['awards'] = [
-      '#theme' => 'view_field',
-      '#view' => $content,
-      '#label' => t('Awarded Vendors'),
-    ];
+      $build['awards'] = [
+        '#theme' => 'view_field',
+        '#view' => $content,
+        '#label' => t('Awarded Vendors'),
+      ];
+    }
   }
 }
 
