@@ -3,3 +3,7 @@ services:
     class: Drupal\purchasing\Breadcrumb\PurchasingBreadcrumbBuilder
     tags:
       - { name: breadcrumb_builder, priority: 100 }
+  purchasing.route_subscriber:
+    class: Drupal\purchasing\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

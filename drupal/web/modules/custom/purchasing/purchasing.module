@@ -9,6 +9,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\node\NodeInterface;
 use Drupal\purchasing\Model\ProcurementMethod;
+use Drupal\Core\Url;
 
 /**
  * Implementation of hook_block_access()
@@ -76,6 +77,22 @@ function purchasing_entity_view_mode_alter(&$view_mode, EntityInterface $entity,
   }
 }
 
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ */
+function purchasing_form_node_solicitation_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['actions'][] = [
+    '#type' => 'link',
+    '#title' => t('Add Award to this Solicitation'),
+    '#access' => TRUE,
+    '#weight' => 99,
+    '#attributes' => ['class' => ['button']],
+    '#url' => Url::fromRoute('node.add', [
+      'node_type' => 'award',
+      'solicitation' => $form_state->getFormObject()->getEntity()->id(),
+    ]),
+  ];
+}
 
 /**
  * Implementation of hook_form_FORM_ID_alter().
@@ -91,8 +108,6 @@ function purchasing_form_node_priced_line_item_form_alter(&$form, FormStateInter
   $form['field_per']['#group'] = 'price';
 
   $form['#attached']['library'][] = 'purchasing/price';
-
-  //dpm($form);
 }
 
 /**
