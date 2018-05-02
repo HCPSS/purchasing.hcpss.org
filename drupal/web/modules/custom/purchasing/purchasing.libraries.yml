@@ -1,0 +1,5 @@
+price:
+  version: 1.x
+  css:
+    component:
+      css/price.css: {}

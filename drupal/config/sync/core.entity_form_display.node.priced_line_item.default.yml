@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.priced_line_item.body
     - field.field.node.priced_line_item.field_additional_charges
     - field.field.node.priced_line_item.field_award
+    - field.field.node.priced_line_item.field_per
     - field.field.node.priced_line_item.field_price
     - field.field.node.priced_line_item.field_quote
     - node.type.priced_line_item
@@ -21,7 +22,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
@@ -30,13 +31,13 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_additional_charges:
     type: entity_reference_paragraphs
-    weight: 123
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -47,7 +48,7 @@ content:
     third_party_settings: {  }
     region: content
   field_award:
-    weight: 125
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -55,15 +56,21 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_per:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_price:
-    weight: 122
+    weight: 9
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_quote:
-    weight: 124
+    weight: 12
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -71,7 +78,7 @@ content:
     region: content
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -79,26 +86,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 4
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 7
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -106,7 +113,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60

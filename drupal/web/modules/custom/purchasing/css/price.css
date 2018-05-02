@@ -1,0 +1,5 @@
+.layout-node-form .price {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 1em;
+}

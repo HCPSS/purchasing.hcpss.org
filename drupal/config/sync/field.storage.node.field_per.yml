@@ -1,0 +1,27 @@
+uuid: 2acbeeae-93bf-4058-a941-bf9dfca7d290
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_per
+field_name: field_per
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: unit
+      label: Unit
+    -
+      value: hour
+      label: Hour
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

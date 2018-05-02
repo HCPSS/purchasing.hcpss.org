@@ -3,14 +3,10 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
-use Drupal\node\Entity\Node;
 use Drupal\views\Views;
-use Drupal\Component\Utility\Xss;
-use Drupal\Core\Link;
 use Drupal\block\Entity\Block;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Access\AccessResultInterface;
 use Drupal\node\NodeInterface;
 use Drupal\purchasing\Model\ProcurementMethod;
 
@@ -80,11 +76,23 @@ function purchasing_entity_view_mode_alter(&$view_mode, EntityInterface $entity,
   }
 }
 
+
 /**
  * Implementation of hook_form_FORM_ID_alter().
  */
-function purchasing_form_node_bid_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['field_award']['widget']['add_more']['add_more_button_awarded_bid']['#value'] = 'Award this Bid';
+function purchasing_form_node_priced_line_item_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['price'] = [
+    '#type' => 'container',
+    '#weight' => $form['field_price']['#weight'],
+    '#attributes' => ['class' => 'price'],
+  ];
+
+  $form['field_price']['#group'] = 'price';
+  $form['field_per']['#group'] = 'price';
+
+  $form['#attached']['library'][] = 'purchasing/price';
+
+  //dpm($form);
 }
 
 /**

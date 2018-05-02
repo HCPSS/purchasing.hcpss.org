@@ -1,0 +1,23 @@
+uuid: 530267a6-3464-4a20-af3a-e6e2b4c12ec6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_per
+    - node.type.priced_line_item
+  module:
+    - options
+id: node.priced_line_item.field_per
+field_name: field_per
+entity_type: node
+bundle: priced_line_item
+label: Per
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: unit
+default_value_callback: ''
+settings: {  }
+field_type: list_string

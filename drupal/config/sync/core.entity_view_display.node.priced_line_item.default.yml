@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.priced_line_item.body
     - field.field.node.priced_line_item.field_additional_charges
     - field.field.node.priced_line_item.field_award
+    - field.field.node.priced_line_item.field_per
     - field.field.node.priced_line_item.field_price
     - field.field.node.priced_line_item.field_quote
     - node.type.priced_line_item
   module:
     - entity_reference_revisions
     - file
+    - options
     - text
     - user
 id: node.priced_line_item.default
@@ -42,6 +44,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_per:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_price:
     weight: 102
