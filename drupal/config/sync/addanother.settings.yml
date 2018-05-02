@@ -1,0 +1,14 @@
+default_button: false
+default_message: false
+default_tab: false
+default_tab_edit: false
+_core:
+  default_config_hash: ffjwyOkkEGJcHRBGwLlGLtdWUcTvXx8Dclcq43MZrT8
+button:
+  vendor: true
+message:
+  vendor: false
+tab:
+  vendor: false
+tab_edit:
+  vendor: false

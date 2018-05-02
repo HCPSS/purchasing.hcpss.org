@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ad7e0caca8b7fcf8e83173f6c3aaac4",
+    "content-hash": "ac1582423a6285292de3d18b92dd9d45",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1479,6 +1479,65 @@
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
             "time": "2017-12-08T22:53:11+00:00"
+        },
+        {
+            "name": "drupal/addanother",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/addanother",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/addanother-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "52a13dea183da080c4bb174c1cd631d69d97fa54"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1479709140",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DarrellDuane",
+                    "homepage": "https://www.drupal.org/user/142816"
+                },
+                {
+                    "name": "Robin Monks",
+                    "homepage": "https://www.drupal.org/user/12246"
+                },
+                {
+                    "name": "gaurav_varshney",
+                    "homepage": "https://www.drupal.org/user/2616983"
+                },
+                {
+                    "name": "mkdok",
+                    "homepage": "https://www.drupal.org/user/3308753"
+                }
+            ],
+            "description": "Presents users with an option to create another node of the same type after a node is added.",
+            "homepage": "https://www.drupal.org/project/addanother",
+            "support": {
+                "source": "http://cgit.drupalcode.org/addanother"
+            }
         },
         {
             "name": "drupal/address",
@@ -8691,6 +8750,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/addanother": 5,
         "drupal/auto_entitylabel": 10,
         "drupal/inline_entity_form": 10,
         "hcpss/parity": 20
