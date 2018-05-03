@@ -9,7 +9,7 @@
 - name: Glover
 - name: Satco
 
-- name: School Specialty
+- name: School Specialty Inc.
   phone: 888-388-3224
   fax: 888-388-6344 
   website: http://www.schoolspecialty.com
@@ -373,13 +373,6 @@
     state: MN
     zip: 55060
   website: http://www.gophersport.com
-- name: School Specialty Inc
-  address:
-    line1: 140 Marble Drive
-    city: Lancaster
-    state: PA
-    zip: 17601
-  website : www.schoolspecialty.com
 - name: MFAC, LLC
   address:
     line1: 1600 Division Rd
@@ -537,8 +530,6 @@
 - name: Really Good Stuff
   website: http://www.reallygoodstuff.com
 - name: 'Sax Arts & Crafts'
-  website: http://store.schoolspecialtyonline.net
-- name: School Specialty
   website: http://store.schoolspecialtyonline.net
 - name: Sportime
 - name: Summit Learning

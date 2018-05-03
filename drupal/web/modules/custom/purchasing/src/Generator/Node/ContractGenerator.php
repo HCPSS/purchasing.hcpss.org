@@ -7,11 +7,14 @@ use Drupal\purchasing\Generator\EntityGeneratorInterface;
 
 class ContractGenerator extends NodeGenerator  implements EntityGeneratorInterface {
 
-  /**
-   * Delete solicitations.
-   */
-  public static function deleteAll() {
-    parent::deleteAllOfBundle('contract');
+  private $data;
+
+  public function __construct(array $data) {
+    $this->data = $data;
+  }
+
+  protected static function getBundle() {
+    return 'contract';
   }
 
   /**
@@ -21,16 +24,16 @@ class ContractGenerator extends NodeGenerator  implements EntityGeneratorInterfa
    *   Solicitation values
    * @return Node
    */
-  public static function createFromArray(array $data) {
-    $start = strtotime($data['dates_effective']['start']);
-    $end =  strtotime($data['dates_effective']['end']);
+  public function generate() {
+    $start = strtotime($this->data['dates_effective']['start']);
+    $end =  strtotime($this->data['dates_effective']['end']);
 
     $contract = Node::create([
-      'type' => 'contract',
-      'uid' => 1,
-      'title' => $data['title'],
-      'field_identifier' => $data['contract_number'],
-      'field_category' => ['target_id' => self::getCategoryIdFromName($data['category'])],
+      'type' => static::getBundle(),
+      'uid' => \Drupal::currentUser()->id(),
+      'title' => $this->data['title'],
+      'field_identifier' => $this->data['contract_number'],
+      'field_category' => ['target_id' => self::getCategoryIdFromName($this->data['category'])],
       'field_dates_effective' => [
         'value' => date("Y-m-d", $start),
         'end_value' => date("Y-m-d", $end),

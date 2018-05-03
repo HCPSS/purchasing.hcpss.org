@@ -12,6 +12,15 @@ use Drupal\purchasing\Model\ProcurementMethod;
 use Drupal\Core\Url;
 
 /**
+ * Implementation for hook_inline_entity_form_entity_form_alter().
+ */
+function purchasing_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  if ($entity_form['#entity_type'] == 'node' && $entity_form['#bundle'] == 'vendor') {
+    $entity_form['#attached']['library'][] = 'purchasing/inline_vendor';
+  }
+}
+
+/**
  * Implementation of hook_block_access()
  */
 function purchasing_block_access(Block $block, $operation, AccountInterface $account) {

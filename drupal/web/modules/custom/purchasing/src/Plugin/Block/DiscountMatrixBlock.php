@@ -36,6 +36,7 @@ class DiscountMatrixBlock extends BlockBase {
         ->condition('type', 'discounted_line_item')
         ->condition('status', 1)
         ->condition('field_award.target_id', $award_ids, 'IN')
+        ->sort('title')
         ->execute();
 
       if (!empty($line_item_ids)) {

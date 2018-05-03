@@ -1,0 +1,30 @@
+@media (min-width: 976px) {
+  .field--name-field-vendor .field--name-field-fax-number,
+  .field--name-field-vendor .field--name-field-phone-number,
+  .field--name-field-vendor .field--name-field-website,
+  .field--name-field-vendor .field--name-field-email-address,
+  .field--name-field-vendor .field--name-title,
+  .field--name-field-vendor .field--name-field-pe-id  {
+    float: left;
+    width: 50%;
+  }
+	
+  .field--name-field-vendor .field--name-field-fax-number input,
+  .field--name-field-vendor .field--name-field-phone-number input,
+  .field--name-field-vendor .field--name-field-website input,
+  .field--name-field-vendor .field--name-field-email-address input,
+  .field--name-field-vendor .field--name-title input,
+  .field--name-field-vendor .field--name-field-pe-id input {
+    width: 95%;	  
+  }
+	
+  .field--name-field-vendor .field--name-field-website,
+  .field--name-field-vendor .field--name-field-notes,
+  .field--name-field-vendor .field--name-field-address {
+    clear: both;
+  }	
+}
+
+.form-item-field-vendor-form-inline-entity-form-field-address-0-address-country-code {
+  display: none;
+}

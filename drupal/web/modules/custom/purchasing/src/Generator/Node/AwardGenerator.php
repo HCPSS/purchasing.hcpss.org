@@ -9,11 +9,12 @@ class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
 
   private static $contractNumber = 1;
 
-  /**
-   * Delete awards.
-   */
-  public static function deleteAll() {
-    parent::deleteAllOfBundle('award');
+  public function __construct(array $data) {
+    $this->data = $data;
+  }
+
+  protected static function getBundle() {
+    return 'award';
   }
 
   /**
@@ -23,43 +24,43 @@ class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
    *   Award values
    * @return Node
    */
-  public static function createFromArray(array $data) {
+  public function generate() {
     $procurement = self::loadProcurementMethod(
-      $data['procurement_method']['name'],
-      $data['procurement_method']['id']
+      $this->data['procurement_method']['name'],
+      $this->data['procurement_method']['id']
     );
 
-    $vendor = self::loadVendorFromName($data['vendor']);
+    $vendor = self::loadVendorFromName($this->data['vendor']);
 
     $award = Node::create([
-      'type' => 'award',
-      'uid' => 1,
+      'type' => static::getBundle(),
+      'uid' => \Drupal::currentUser()->id(),
       'field_vendor' => $vendor,
       'field_procurement_method' => $procurement,
     ]);
 
-    if (!empty($data['id'])) {
-      $award->field_identifier = $data['id'];
+    if (!empty($this->data['id'])) {
+      $award->field_identifier = $this->data['id'];
     } else {
       $award->field_identifier =  self::generateHcpssContractNumber();
     }
 
-    if (!empty($data['notes'])) {
+    if (!empty($this->data['notes'])) {
       $award->field_notes = [
-        'value' => $data['notes'],
+        'value' => $this->data['notes'],
         'format' => 'basic_html',
       ];
     }
 
-    if (!empty($data['ordering_instructions'])) {
+    if (!empty($this->data['ordering_instructions'])) {
       $award->field_ordering_instructions = [
-        'value' => $data['ordering_instructions'],
+        'value' => $this->data['ordering_instructions'],
         'format' => 'basic_html',
       ];
     }
 
-    if (!empty($data['reference'])) {
-      $award->field_reference_number = $data['reference'];
+    if (!empty($this->data['reference'])) {
+      $award->field_reference_number = $this->data['reference'];
     }
 
     $award->save();

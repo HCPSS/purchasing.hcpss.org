@@ -7,11 +7,13 @@ use Drupal\node\Entity\Node;
 
 class PageGenerator extends NodeGenerator implements EntityGeneratorInterface {
 
-  /**
-   * Delete pages.
-   */
-  public static function deleteAll() {
-    parent::deleteAllOfBundle('page');
+  private $data;
+  public function __construct(array $data) {
+    $this->data = $data;
+  }
+
+  protected static function getBundle() {
+    return 'page';
   }
 
   /**
@@ -21,16 +23,16 @@ class PageGenerator extends NodeGenerator implements EntityGeneratorInterface {
    *   Award values
    * @return Node
    */
-  public static function createFromArray(array $data) {
+  public function generate() {
     $page = Node::create([
-      'type' => 'page',
-      'uid' => 1,
-      'title' => $data['title'],
+      'type' => static::getBundle(),
+      'uid' => \Drupal::currentUser()->id(),
+      'title' => $this->data['title'],
       'body' => [
-        'value' => $data['body'],
+        'value' => $this->data['body'],
         'format' => 'basic_html',
       ],
-      'path' => ['alias' => $data['url']],
+      'path' => ['alias' => $this->data['url']],
     ]);
 
     $page->save();

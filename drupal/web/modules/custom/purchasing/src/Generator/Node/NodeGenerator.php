@@ -6,12 +6,14 @@ use Drupal\node\Entity\Node;
 
 abstract class NodeGenerator {
 
+  protected abstract static function getBundle();
+
   /**
-   * Delete vendors.
+   * Delete nodes.
    */
-  public static function deleteAllOfBundle($bundle) {
+  public static function deleteAll() {
     $nids = \Drupal::entityQuery('node')
-      ->condition('type', $bundle)
+      ->condition('type', static::getBundle())
       ->execute();
 
     $nodes = Node::loadMultiple($nids);

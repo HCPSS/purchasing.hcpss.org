@@ -3,6 +3,7 @@
 namespace Drupal\purchasing\Generator;
 
 interface EntityGeneratorInterface {
-  public static function createFromArray(array $data);
+  public function __construct(array $data);
+  public function generate();
   public static function deleteAll();
 }

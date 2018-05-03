@@ -48,12 +48,12 @@
   procurement_method:
     name: solicitation 
     id: 054.13.B2
-  vendor: School Specialty
+  vendor: School Specialty Inc.
 - id: 009.18.1.PO.01.0736
   procurement_method:
     name: solicitation 
     id: 034.10.B2
-  vendor: School Specialty
+  vendor: School Specialty Inc.
   reference: 7775743771
   notes: >
     <p>AccountNo:409835</p>
@@ -432,7 +432,7 @@
   id: 019.18.2.M.01.9446
   ordering_instructions: '<p>Sales Rep: Glenn Kennington, 301-216-2181</p>'
   reference: 'School Specialty #7777468604'
-  vendor: School Specialty
+  vendor: School Specialty Inc.
 - procurement_method:
     name: contract
     id: 'AACPS BID #06CM-77'

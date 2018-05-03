@@ -6,6 +6,17 @@ use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 class MainMenuGenerator implements EntityGeneratorInterface {
+
+  private $data;
+
+  public function __construct(array $data) {
+    $this->data = $data;
+  }
+
+  /**
+   * {@inheritDoc}
+   * @see \Drupal\purchasing\Generator\EntityGeneratorInterface::deleteAll()
+   */
   public static function deleteAll() {
     $menu_handler = \Drupal::service('plugin.manager.menu.link');
 
@@ -20,21 +31,24 @@ class MainMenuGenerator implements EntityGeneratorInterface {
    *   link values
    * @return MenuLinkContent
    */
-  public static function createFromArray(array $data) {
-    $url = strpos($data['url'], '/') === 0 ? 'internal:' . $data['url'] : $data['url'];
+  public function generate() {
+    $url = $this->data['url'];
+    if (strpos($url, '/') === 0) {
+      $url = "internal:$url";
+    }
 
     $item = MenuLinkContent::create([
-      'title' => $data['title'],
+      'title' => $this->data['title'],
       'link' => ['uri' => $url],
       'menu_name' => 'main',
       'expanded' => TRUE,
-      'weight' => $data['weight'],
+      'weight' => $this->data['weight'],
     ]);
 
-    if (!empty($data['parent'])) {
+    if (!empty($this->data['parent'])) {
       $mids = \Drupal::entityQuery('menu_link_content')
         ->condition('menu_name', 'main')
-        ->condition('link.uri', 'internal:' . $data['parent'])
+        ->condition('link.uri', 'internal:' . $this->data['parent'])
         ->execute();
 
       $parent = MenuLinkContent::load(array_shift($mids));

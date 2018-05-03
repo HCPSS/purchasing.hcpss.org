@@ -1,0 +1,7 @@
+purchasing_import:
+  path: 'admin/content/import'
+  defaults:
+    _controller: '\Drupal\purchasing\Controller\ImportController::index'
+    _title: Content Import
+  requirements:
+    _permission: 'create award content+create discounted_line_item content+create priced_line_item content'

@@ -80,15 +80,18 @@ class PurchasingBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    */
   private function addProcurement(NodeInterface $award, Breadcrumb $breadcrumb) {
     $procurement = $award->field_procurement_method->entity;
-    $label = vsprintf('%s (%s)', [
-      $procurement->label(),
-      $procurement->field_identifier->value
-    ]);
 
-    $breadcrumb->addLink(Link::createFromRoute(
-      $label,
-      'entity.node.canonical',
-      ['node' => $award->field_procurement_method->entity->id()]
-    ));
+    if ($procurement) {
+      $label = vsprintf('%s (%s)', [
+        $procurement->label(),
+        $procurement->field_identifier->value
+      ]);
+
+      $breadcrumb->addLink(Link::createFromRoute(
+        $label,
+        'entity.node.canonical',
+        ['node' => $award->field_procurement_method->entity->id()]
+      ));
+    }
   }
 }

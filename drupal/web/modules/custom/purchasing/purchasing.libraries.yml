@@ -3,3 +3,10 @@ price:
   css:
     component:
       css/price.css: {}
+
+inline_vendor:
+  version: 1.x
+  css:
+    component:
+      css/inline_vendor.css: {}
+      

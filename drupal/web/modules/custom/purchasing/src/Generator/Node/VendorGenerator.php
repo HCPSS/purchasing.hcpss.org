@@ -7,11 +7,14 @@ use Drupal\purchasing\Generator\EntityGeneratorInterface;
 
 class VendorGenerator extends NodeGenerator  implements EntityGeneratorInterface {
 
-  /**
-   * Delete vendors.
-   */
-  public static function deleteAll() {
-    parent::deleteAllOfBundle('vendor');
+  private $data;
+
+  public function __construct(array $data) {
+    $this->data = $data;
+  }
+
+  protected static function getBundle() {
+    return 'vendor';
   }
 
   /**
@@ -43,39 +46,39 @@ class VendorGenerator extends NodeGenerator  implements EntityGeneratorInterface
    *   Vendor values
    * @return Node
    */
-  public static function createFromArray(array $data) {
+  public function generate() {
     $vendor = Node::create([
-      'type'  => 'vendor',
-      'title' => $data['name'],
-      'uid'   => 1,
+      'type'  => static::getBundle(),
+      'title' => $this->data['name'],
+      'uid'   => \Drupal::currentUser()->id(),
     ]);
 
-    if (!empty($data['address'])) {
-      $vendor->field_address = self::resolveAddress($data['address']);
+    if (!empty($this->data['address'])) {
+      $vendor->field_address = self::resolveAddress($this->data['address']);
     }
 
-    if (!empty($data['website'])) {
-      $vendor->field_website = ['uri' => $data['website']];
+    if (!empty($this->data['website'])) {
+      $vendor->field_website = ['uri' => $this->data['website']];
     }
 
-    if (!empty($data['id'])) {
-      $vendor->field_pe_id = $data['id'];
+    if (!empty($this->data['id'])) {
+      $vendor->field_pe_id = $this->data['id'];
     }
 
-    if (!empty($data['phone'])) {
-      $vendor->field_phone_number = $data['phone'];
+    if (!empty($this->data['phone'])) {
+      $vendor->field_phone_number = $this->data['phone'];
     }
 
-    if (!empty($data['fax'])) {
-      $vendor->field_fax_number = $data['fax'];
+    if (!empty($this->data['fax'])) {
+      $vendor->field_fax_number = $this->data['fax'];
     }
 
-    if (!empty($data['email'])) {
-      $vendor->field_email_address = $data['email'];
+    if (!empty($this->data['email'])) {
+      $vendor->field_email_address = $this->data['email'];
     }
 
-    if (!empty($data['notes'])) {
-      $vendor->field_notes = $data['notes'];
+    if (!empty($this->data['notes'])) {
+      $vendor->field_notes = $this->data['notes'];
     }
 
     $vendor->save();

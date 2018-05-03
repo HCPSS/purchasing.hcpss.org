@@ -1,0 +1,328 @@
+---
+- type: discount
+  award: 013.18.5.PC.01.4855
+  title: 'LIVING MATERIALS'
+  discount: 5
+- type: discount
+  award: 014.18.5.PC.01.4856
+  title: 'CHEMICALS'
+  discount: 33
+- type: discount
+  award: 014.18.5.PC.01.4856
+  title: 'GLASSWARE'
+  discount: 33
+- type: discount
+  award: 014.18.5.PC.01.4856
+  title: 'GENERAL LAB'
+  discount: 33
+- type: discount
+  award: 014.18.5.PC.01.4856
+  title: 'PRESERVED MATERIALS'
+  discount: 33
+- type: discount
+  award: 014.18.5.PC.01.4856
+  title: 'SKELETON/MODELS'
+  discount: 33
+- type: discount
+  award: 014.18.5.PC.01.4856
+  title: 'LARGE EQUIPMENT'
+  discount: 33
+- type: discount
+  award: 015.18.5.PC.01.4857
+  title: 'CHEMICALS'
+  discount: 20
+- type: discount
+  award: 015.18.5.PC.01.4857
+  title: 'GLASSWARE'
+  discount: 12
+- type: discount
+  award: 015.18.5.PC.01.4857
+  title: 'GENERAL LAB'
+  discount: 12
+- type: discount
+  award: 015.18.5.PC.01.4857
+  title: 'PRESERVED MATERIALS'
+  discount: 12
+- type: discount
+  award: 015.18.5.PC.01.4857
+  title: 'SKELETON/MODELS'
+  discount: 12
+- type: discount
+  award: 015.18.5.PC.01.4857
+  title: 'LARGE EQUIPMENT'
+  discount: 12
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'CHEMICALS'
+  discount: 32
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'GLASSWARE'
+  discount: 32  
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'GENERAL LAB'
+  discount: 32  
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'LIVING MATERIALS'
+  discount: 32  
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'PRESERVED MATERIALS'
+  discount: 32  
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'SKELETON/MODELS'
+  discount: 32  
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'LARGE EQUIPMENT'
+  discount: 32  
+- type: discount
+  award: 016.18.5.PC.01.4858
+  title: 'SCIENCE DATA COLLECTION'
+  discount: 32
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'CHEMICALS'
+  discount: 33
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'GLASSWARE'
+  discount: 33  
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'GENERAL LAB'
+  discount: 33  
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'LIVING MATERIALS'
+  discount: 33  
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'PRESERVED MATERIALS'
+  discount: 33  
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'SKELETON/MODELS'
+  discount: 33  
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'LARGE EQUIPMENT'
+  discount: 33  
+- type: discount
+  award: 017.18.5.PC.01.4859
+  title: 'SCIENCE DATA COLLECTION'
+  discount: 33
+- type: discount
+  award: 018.18.5.PC.01.4860
+  title: 'SCIENCE DATA COLLECTION'
+  discount: 2
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'GLASSWARE'
+  discount: 15 
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'GENERAL LAB'
+  discount: 15  
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'LIVING MATERIALS'
+  discount: 15  
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'PRESERVED MATERIALS'
+  discount: 15  
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'SKELETON/MODELS'
+  discount: 15  
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'LARGE EQUIPMENT'
+  discount: 15  
+- type: discount
+  award: 019.18.5.PC.01.4861
+  title: 'SCIENCE DATA COLLECTION'
+  discount: 15
+- type: discount
+  award: 001.18.3.Q.01.9549
+  title: ABC Early Learning
+  discount: 32
+  description: >
+    <p>Discount off List Priced Catalog - minimum order of $49</p><p>Free UPS 
+    with $49+ order and Free TRUCK (T) shipping on orders over $500</p>
+  exceptions: 'Excludes Factory Direct (*) items, Playground Equipment, Sales flyers & internet orders'
+- type: discount
+  award: 002.18.3.PS.01.5148
+  title: Primary Grades (K-3) catalog
+  discount: 32
+  description: >
+    <p>Discount off List Priced Catalog - minimum order of $49</p><p>Free UPS 
+    with $49+ order and Free TRUCK (T) shipping on orders over $500</p>
+  exceptions: 'Excludes Factory Direct (*) items, Playground Equipment, Sales flyers & internet orders'
+- type: discount
+  award: 003.18.4.PC.01.6393
+  title: Classroom Direct
+  discount: 0
+  description: >
+    <p>Catalog prices are already discounted</p><p>Free on orders over $50</p>
+- type: discount
+  award: 004.18.5.PC.01.1615
+  title: Constructive Playthings
+  discount: 15
+  description: >
+    <p>Minimum Order $25, on catalog only - not sale flyers</p><p>Free Shipping 
+    over $200 for UPS shipments; Free if over $550 for "T"ruck shipments</p>
+  exceptions: 'All Equipment marked with "*FOB Factory" or "*"is excluded'
+- type: discount
+  award: 005.18.3.PC.01.1262
+  title: Blick Art Materials
+  discount: 20
+  description: >
+    <p>Free shipping on orders over $250</p>
+  exceptions: 'Drop ship items with F in the item number - No discount, no Free Shipping'
+- type: discount
+  award: 006.18.5.PO.01.6301
+  title: 'Demco Supplies'
+  discount: 18
+  description: '<p>Free Shipping</p>'
+- type: discount
+  award: 006.18.5.PO.01.6301
+  title: 'Demco Furniture & equipment'
+  discount: 5
+- type: discount
+  award: 007.18.1.PC.01.0869
+  title: 'Math K-12'
+  description: '<p>Free Shipping</p>'
+  discount: 18
+  exceptions: 'No Discount Math M6P-, E6p-, P6PJcP-, INP. Free shipping still applies'
+- type: discount
+  award: 007.18.1.PC.01.0869
+  title: 'Science K-9'
+  description: '<p>Free Shipping</p>'
+  discount: 10
+  exceptions: 'Science T6P-, INP-. Free shipping still applies'
+- type: discount
+  award: 007.18.1.PC.01.0869
+  title: 'Reading K-6'
+  description: '<p>Free Shipping</p>'
+  discount: 6
+  exceptions: 'Reading R6P-, L6p-, INP-. Free shipping still applies'
+- type: discount
+  award: 008.18.3.PO.01.2902
+  title: 'Frey Scientific'
+  discount: 27
+  description: '<p>Shipping: Free except hazardous, live or truck shipped items</p>'
+  exceptions: > 
+    Hazardous chemicals, items priced in red and items with prefix of 10 & 11
+- type: discount
+  award: 009.18.1.RP.01.4768
+  title: 'Hearily Curriculum Supply Catalog'
+  discount: 2
+  description: '<p>Free Shipping</p>'
+  exceptions: >
+    Hazardous Materials - $30; Modules & Lesson Plans excluded
+- type: discount
+  award: 010.18.4.PC.01.9786
+  title: 'Upstart & Highsmith Supplies'
+  discount: 18
+  description: '<p>Free Shipping/Handling - $25 minimum order</p>'
+  exceptions: >
+    Sparks Magazine; 3M Security Prod; Sale Catalogs; other discounts; 
+    Interact/Edupress Prod.
+- type: discount
+  award: 010.18.4.PC.01.9786
+  title: 'Upstart & Highsmith Furniture'
+  discount: 5
+  description: '<p>Free Shipping/Handling - $25 minimum order</p>'
+  exceptions: >
+    Sparks Magazine; 3M Security Prod; Sale Catalogs; other discounts; 
+    Interact/Edupress Prod.
+- type: discount
+  award: 011.18.3.PS.01.3318
+  title: 'Kaplan Catalog and Primary Learning Catalog'
+  discount: 15
+  exceptions: >
+    Bids, sales offers, coupons; Playgrounds; All About ECERS-R, ITERS-R, 
+    PAR Mat.; Dibels, Plss, Told, Topa, Fluharty, Tera, Plai, T eld
+- type: discount
+  award: 012.18.3.PR.01.4686
+  title: 'School Supplies Catalog'
+  discount: 25
+  exceptions: 'Furniture & Equipment'
+- type: discount
+  award: 013.18.2.E.01.6988
+  title: 'Lakeshore Learning; Lakeshore Elem'
+  discount: 7
+- type: discount
+  award: 014.18.1.T.01.8371
+  title: 'Learning How'
+  discount: 15
+- type: discount
+  award: 015.18.2.T.01.9929
+  title: 'Arts & Crafts'
+  discount: 20
+  exceptions: 'Excludes Frogs and live materials, and items marked with a "truck" logo.'
+- type: discount
+  award: 015.18.2.T.01.9929
+  title: 'Math, Hands on health, Agricultural Sci, Physical Ed, SPED'
+  discount: 15
+  exceptions: 'Excludes Frogs and live materials, and items marked with a "truck" logo.'
+- type: discount
+  award: 015.18.2.T.01.9929
+  title: 'Family & Consumer Science, Earling Learning, Reading, Res'
+  discount: 10
+  exceptions: 'Excludes Frogs and live materials, and items marked with a "truck" logo.'
+- type: discount
+  award: 016.18.5.G.01.2541
+  title: 'Pitsco Ideas & Solutions Big Book Catalog'
+  discount: 2
+  description: <p>Free Shipping</p>
+- type: discount
+  award: 017.18.3.T.01.4931
+  title: 'Really Good Stuff'
+  discount: 3
+  description: >
+    <p>Call Claudia Fellini for large volume pricing, 203-261-1920, x 246. 
+    Cannot be combined with other offers unless stipulated by Really Good 
+    Stuff.</p>
+    <p>See catalog or website for shipping policies and charges.</p>
+- type: discount
+  award: 018.18.2.G.01.7371
+  title: 'School Specialty/Sax - Art Education'
+  discount: 32
+  description: >
+    <p>Discount on List Priced Catalogs; $49 minimum order for free shipping; 
+    $9.95 charged for orders under $49</p>
+    <p>Shipping: Free on in-stock orders $49 or over. Orders under $49 are 
+    charged $9.95 for shipping.</p>
+- type: discount
+  award: 019.18.2.M.01.9446
+  title: 'School Specialty Ed Essentials: Art Ed; Early Ed; PE & Health; Special Needs; Career & Technology'
+  discount: 32
+  description: >
+    <p>Discount on List Priced Catalogs; $49 minimum order for free shipping; 
+    $9.95 charged for orders under $49. 12% discount & free freight on 
+    furniture orders</p>
+    <p>Shipping: Free on in-stock orders $49 or over. Orders under $49 are 
+    charged $9.95 for shipping.</p>
+- type: discount
+  award: 020.18.4.PC.01.4998
+  title: 'Sportime'
+  discount: 32
+  description: >
+    <p>discount on List Priced Catalogs; $49 minimum order for free shipping; 
+    $9.95 charged for orders under $49</p>
+    <p> Shipping: free on in-stock orders $49 or over. Orders under $49 are 
+    charged $9.95 for shipping.</p>
+- type: discount
+  award: 021.18.2.PC.01.7540
+  title: Summit Learning
+  discount: 15
+  description: >
+    <p>Discount on Pre-K-K, Math, and Science catalogs. $50 minimum order</p>
+    <p>Free shipping on orders over $50.</p>
+  exceptions: 'Furniture & live material'

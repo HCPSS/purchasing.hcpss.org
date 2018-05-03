@@ -9,10 +9,61 @@ use Drupal\purchasing\Generator\EntityGeneratorInterface;
 class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInterface {
 
   /**
-   * Delete solicitations.
+   * Due date timestamp.
+   *
+   * @var int
    */
-  public static function deleteAll() {
-    parent::deleteAllOfBundle('solicitation');
+  private $due;
+
+  /**
+   * Effective start date timestamp.
+   *
+   * @var int
+   */
+  private $start;
+
+  /**
+   * Effective end date timestamp.
+   *
+   * @var int
+   */
+  private $end;
+
+  /**
+   * Solicitation data
+   *
+   * @var array
+   */
+  private $data;
+
+  public function __construct(array $data) {
+    if (!empty($data['bids_due'])) {
+      $this->due = strtotime($data['bids_due']);
+    } else {
+      $this->due = time() + rand(3600 * 24 * 7, 3600 * 24 * 60);
+    }
+
+    if (!empty($data['effective']['start'])) {
+      $this->start = strtotime($data['effective']['start']);
+    } else {
+      $this->start = $this->due + 3600 * 24 * 30;
+    }
+
+    if (!empty($data['effective']['end'])) {
+      $this->end = strtotime($data['effective']['end']);
+    } else {
+      $this->end = strtotime('+1 year', $this->start);
+    }
+
+    $this->data = $data;
+  }
+
+  /**
+   * {@inheritDoc}
+   * @see \Drupal\purchasing\Generator\Node\NodeGenerator::getBundle()
+   */
+  protected static function getBundle() {
+    return 'solicitation';
   }
 
   /**
@@ -22,32 +73,23 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
    *   Solicitation values
    * @return Node
    */
-  public static function createFromArray(array $data) {
-    // Make up some dates.
-    $due = time() + rand(3600 * 24 * 7, 3600 * 24 * 60);
-    $start = $due + 3600 * 24 * 30;
-    $end = strtotime('+1 year', $start);
-
+  public function generate() {
     $solicitation = Node::create([
-      'type'             => 'solicitation',
-      'title'            => $data['title'],
-      'uid'              => 1,
-      'field_identifier' => $data['bid_number'],
-      'field_due_date'   => date("Y-m-d\Th:i:s", $due),
-      'field_category'   => ['target_id' => self::getCategoryIdFromName($data['category'])],
+      'type'                  => static::getBundle(),
+      'title'                 => $this->data['title'],
+      'uid'                   => \Drupal::currentUser()->id(),
+      'field_identifier'      => $this->data['bid_number'],
+      'field_category'        => ['target_id' => self::getCategoryIdFromName($this->data['category'])],
+      'field_due_date'        => date('Y-m-d\Th:i:s', $this->due),
+      'field_dates_effective' => ['value' => date('Y-m-d', $this->start), 'end_value' => date('Y-m-d', $this->end)],
     ]);
 
-    $solicitation->field_dates_effective = [
-      'value' => date('Y-m-d', $start),
-      'end_value' => date('Y-m-d', $end),
-    ];
-
-    if (!empty($data['bid_tab'])) {
-      $solicitation->field_bid_tabulation = self::createFile($data['bid_tab']);
+    if (!empty($this->data['bid_tab'])) {
+      $solicitation->field_bid_tabulation = self::createFile($this->data['bid_tab']);
     }
 
-    if (!empty($data['documentation'])) {
-      foreach ($data['documentation'] as $document) {
+    if (!empty($this->data['documentation'])) {
+      foreach ($this->data['documentation'] as $document) {
         $file = self::createFile($document['file']);
         $solicitation->field_documentation[] = [
           'description' => $document['name'],
@@ -56,15 +98,17 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
       }
     }
 
-    if (!empty($data['board']['report'])) {
-      $solicitation->field_board_report = ['uri' => $data['board']['report']];
+    if (!empty($this->data['board']['report'])) {
+      $solicitation->field_board_report = ['uri' => $this->data['board']['report']];
     }
 
-    if (!empty($data['board']['minutes'])) {
-      $solicitation->field_board_report = ['uri' => $data['board']['minutes']];
+    if (!empty($this->data['board']['minutes'])) {
+      $solicitation->field_board_report = ['uri' => $this->data['board']['minutes']];
     }
 
     $solicitation->save();
+
+    return $solicitation;
   }
 
   /**
@@ -78,7 +122,7 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
     $file = File::create([
       'uid'      => 1,
       'status'   => 1,
-      'filename' => $data['bid_tab'],
+      'filename' => $fileName,
       'uri'      => $fileFolder . $fileName,
     ]);
 

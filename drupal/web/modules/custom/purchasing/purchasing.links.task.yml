@@ -1,0 +1,5 @@
+purchasing_import:
+  route_name: purchasing_import
+  title: Import
+  base_route: system.admin_content
+  weight: 100

@@ -7,6 +7,12 @@ use Drupal\purchasing\Generator\EntityGeneratorInterface;
 
 class CategoryGenerator implements EntityGeneratorInterface {
 
+  private $data;
+
+  public function __construct(array $data) {
+    $this->data = $data;
+  }
+
   /**
    * Delete terms.
    */
@@ -31,27 +37,17 @@ class CategoryGenerator implements EntityGeneratorInterface {
    *   The parent category
    * @return Term
    */
-  public static function createFromArray(array $data, Term $parent = NULL) {
+  public function generate() {
     $category = Term::create([
       'vid' => 'categories',
-      'name' => $data['name'],
+      'name' => $this->data['name'],
       'description' => [
-        'value' => $data['description'],
+        'value' => $this->data['description'],
         'format' => 'basic_html',
       ],
     ]);
 
-    if ($parent) {
-      $category->parent = ['target_id' => $parent->id()];
-    }
-
     $category->save();
-
-    if (!empty($data['categories'])) {
-      foreach ($data['categories'] as $subData) {
-        $subCategory = self::createCategoryFromArray($subData, $category);
-      }
-    }
 
     return $category;
   }

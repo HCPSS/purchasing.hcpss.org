@@ -58,8 +58,10 @@ class DiscountMatrix {
     $vendors = [];
     foreach ($this->line_items as $line_item) {
       $vendor = $line_item->field_award->entity->field_vendor->entity;
-      $vendors[$vendor->id()] = $vendor;
+      $vendors[$vendor->label()] = $vendor;
     }
+
+    ksort($vendors);
 
     return array_values($vendors);
   }

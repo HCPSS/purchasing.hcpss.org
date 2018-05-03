@@ -13,6 +13,8 @@ use Drupal\purchasing\Generator\Node\AwardGenerator;
 use Drupal\purchasing\Generator\Node\LineItemGenerator;
 use Drupal\purchasing\Generator\Node\PageGenerator;
 use Drupal\purchasing\Generator\Menu\MainMenuGenerator;
+use Drupal\purchasing\Generator\Node\PricedLineItemGenerator;
+use Drupal\purchasing\Generator\Node\DiscountedLineItemGenerator;
 
 /**
  * A Drush commandfile.
@@ -33,7 +35,8 @@ class PurchasingCommands extends DrushCommands {
     $this->generateSolicitations();
     $this->generateContracts();
     $this->generateAwards();
-    $this->generateLineItems();
+    $this->generatePricedLineItems();
+    $this->generateDiscountedLineItems();
     $this->generatePages();
     $this->generateLinks();
   }
@@ -63,15 +66,27 @@ class PurchasingCommands extends DrushCommands {
   }
 
   /**
-   * Generate line items.
+   * Generate priced line items.
    *
-   * @usage purchasing:generate:line-items
-   *   Generate line items.
+   * @usage purchasing:generate:priced-line-items
+   *   Generate discounted line items.
    *
-   * @command purchasing:generate:line-items
+   * @command purchasing:generate:priced-line-items
    */
-  public function generateLineItems() {
-    $this->generateFromGenerator('line_item', LineItemGenerator::class);
+  public function generatePricedLineItems() {
+    $this->generateFromGenerator('priced_line_item', PricedLineItemGenerator::class);
+  }
+
+  /**
+   * Generate discounted line items.
+   *
+   * @usage purchasing:generate:discounted-line-items
+   *   Generate discounted line items.
+   *
+   * @command purchasing:generate:discounted-line-items
+   */
+  public function generateDiscountedLineItems() {
+    $this->generateFromGenerator('discounted_line_item', DiscountedLineItemGenerator::class);
   }
 
   /**
@@ -144,7 +159,8 @@ class PurchasingCommands extends DrushCommands {
     $generatorClass::deleteAll();
 
     foreach ($this->getData($dataType) as $data) {
-      $generatorClass::createFromArray($data);
+      $generator = new $generatorClass($data);
+      $generator->generate();
     }
   }
 
