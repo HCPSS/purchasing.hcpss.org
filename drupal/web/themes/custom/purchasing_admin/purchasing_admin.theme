@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\block\Entity\Block;
 
 function purchasing_admin_form_node_award_form_alter(&$form, FormStateInterface $form_state) {
   $form['board_information'] = [
@@ -44,6 +45,43 @@ function purchasing_admin_form_alter(&$form, FormStateInterface $form_state, $fo
  * Implementation of hook_preprocess_HOOK().
  */
 function purchasing_admin_preprocess_node_add_list(&$variables) {
+  $variables['categories'] = _purchasing_admin_group_categories($variables);
+  $variables['blocks'] = _purchasing_admin_get_form_blocks();
+}
+
+/**
+ * Get node import form blocks.
+ *
+ * @return array
+ */
+function _purchasing_admin_get_form_blocks() {
+  $block_manager = \Drupal::service('plugin.manager.block');
+  $block_names = [
+    'solicitation_import_block',
+    'vendor_import_block',
+    'award_import_block',
+    'priced_line_item_import_block',
+    'discounted_line_item_import_block',
+  ];
+
+  $blocks = [];
+  foreach ($block_names as $block_name) {
+    $block = $block_manager->createInstance($block_name, []);
+    $access = $block->access(\Drupal::currentUser());
+    if ($access) {
+      $blocks[] = $block->build();
+    }
+  }
+
+  return $blocks;
+}
+
+/**
+ * Group content types by category.
+ *
+ * @return array
+ */
+function _purchasing_admin_group_categories($variables) {
   $groups = [
     'Procurement Methods' => [
       'contract',
@@ -87,5 +125,21 @@ function purchasing_admin_preprocess_node_add_list(&$variables) {
     return 0;
   });
 
-  $variables['categories'] = $categories;
+  return $categories;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

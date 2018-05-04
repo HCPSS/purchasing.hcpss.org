@@ -15,51 +15,12 @@ class ImportController extends ControllerBase {
    * @return array
    */
   public function index() {
-    $build['solicitation'] = [
-      '#type' => 'container',
+    return [
+      'solicitations'         => $this->formBuilder()->getForm(SolicitationImportForm::class),
+      'vendors'               => $this->formBuilder()->getForm(VendorImportForm::class),
+      'award'                 => $this->formBuilder()->getForm(AwardImportForm::class),
+      'priced_line_items'     => $this->formBuilder()->getForm(PricedLineItemImportForm::class),
+      'discounted_line_items' => $this->formBuilder()->getForm(DiscountedLineItemImportForm::class),
     ];
-    $build['solicitation']['header'] = [
-      '#type' => 'markup',
-      '#markup' => '<h3>Solicitations</h3>',
-    ];
-    $build['solicitation']['form'] = $this->formBuilder()->getForm(SolicitationImportForm::class);
-
-    $build['vendors'] = [
-      '#type' => 'container',
-    ];
-    $build['vendors']['header'] = [
-      '#type' => 'markup',
-      '#markup' => '<h3>Vendors</h3>',
-    ];
-    $build['vendors']['form'] = $this->formBuilder()->getForm(VendorImportForm::class);
-
-    $build['award'] = [
-      '#type' => 'container',
-    ];
-    $build['award']['header'] = [
-      '#type' => 'markup',
-      '#markup' => '<h3>Awards</h3>',
-    ];
-    $build['award']['form'] = $this->formBuilder()->getForm(AwardImportForm::class);
-
-    $build['priced_line_item'] = [
-      '#type' => 'container',
-    ];
-    $build['priced_line_item']['header'] = [
-      '#type' => 'markup',
-      '#markup' => '<h3>Priced Line Items</h3>',
-    ];
-    $build['priced_line_item']['form'] = $this->formBuilder()->getForm(PricedLineItemImportForm::class);
-
-    $build['discounted_line_item'] = [
-      '#type' => 'container',
-    ];
-    $build['discounted_line_item']['header'] = [
-      '#type' => 'markup',
-      '#markup' => '<h3>Discounted Line Items</h3>',
-    ];
-    $build['discounted_line_item']['form'] = $this->formBuilder()->getForm(DiscountedLineItemImportForm::class);
-
-    return $build;
   }
 }

@@ -15,11 +15,50 @@ use Drupal\purchasing\Generator\Node\PageGenerator;
 use Drupal\purchasing\Generator\Menu\MainMenuGenerator;
 use Drupal\purchasing\Generator\Node\PricedLineItemGenerator;
 use Drupal\purchasing\Generator\Node\DiscountedLineItemGenerator;
+use Drupal\node\Entity\Node;
 
 /**
  * A Drush commandfile.
  */
 class PurchasingCommands extends DrushCommands {
+
+  /**
+   * Delete all nodes of the given bundle.
+   *
+   * @command purchasing:node:delete
+   * @param $bundle The node bundle to delete.
+   * @usage drush purchasing:node:delete priced_line_item
+   *   Delete all nodes of priced_line_item bundle.
+   */
+  public function deleteAllNodes($bundle = NULL) {
+    if (!$bundle) {
+      $bundles_info = \Drupal::entityTypeManager()
+        ->getStorage('node_type')
+        ->loadMultiple();
+
+      $bundles = [];
+      foreach ($bundles_info as $bundle_info) {
+        $bundles[] = $bundle_info->id();
+      }
+    } else {
+      $bundles = [$bundle];
+    }
+
+    foreach ($bundles as $b) {
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', $b)
+        ->execute();
+
+      $nodes = Node::loadMultiple($nids);
+      $num = 0;
+      foreach ($nodes as $node) {
+        $node->delete();
+        $num++;
+      }
+
+      $this->output()->writeln("$num $b deleted.");
+    }
+  }
 
   /**
    * Generate categories.

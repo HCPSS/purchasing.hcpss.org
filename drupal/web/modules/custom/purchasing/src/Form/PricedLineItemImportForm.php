@@ -4,6 +4,9 @@ namespace Drupal\purchasing\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\Serializer\Encoder\CsvEncoder;
+use Drupal\purchasing\Generator\Node\PricedLineItemGenerator;
+use Drupal\file\Entity\File;
 
 class PricedLineItemImportForm extends FormBase {
 
@@ -25,7 +28,7 @@ class PricedLineItemImportForm extends FormBase {
       '#required' => TRUE,
       '#title' => $this->t('Priced Line Item File'),
       '#upload_location' => 'private://imports',
-      'upload_validators' => [
+      '#upload_validators' => [
         'file_validate_extensions' => ['csv']
       ],
     ];
@@ -33,7 +36,7 @@ class PricedLineItemImportForm extends FormBase {
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Save'),
+      '#value' => $this->t('Import'),
     ];
 
     return $form;
@@ -44,6 +47,33 @@ class PricedLineItemImportForm extends FormBase {
    * @see \Drupal\Core\Form\FormInterface::submitForm()
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::messenger()->addMessage('yeah');
+    $file_id = $form_state->getValue('file')[0];
+    $file = File::load($file_id);
+
+    $encoder = new CsvEncoder();
+    $data = $encoder->decode(file_get_contents($file->getFileUri()), 'csv');
+
+    $database = \Drupal::database();
+    $transaction = $database->startTransaction();
+    try {
+      $num_created = 0;
+      if (array_key_exists(0, $data)) {
+        foreach ($data as $d) {
+          $generator = new PricedLineItemGenerator($d);
+          $generator->generate();
+          $num_created++;
+        }
+      } else {
+        $generator = new PricedLineItemGenerator($data);
+        $generator->generate();
+        $num_created++;
+      }
+    } catch (\Exception $e) {
+      $transaction->rollBack();
+      watchdog_exception($e->getMessage(), $e);
+      throw $e;
+    }
+
+    \Drupal::messenger()->addMessage("$num_created Priced Line Items created.");
   }
 }

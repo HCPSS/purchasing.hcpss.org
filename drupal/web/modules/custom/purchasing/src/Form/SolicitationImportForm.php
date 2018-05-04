@@ -37,7 +37,7 @@ class SolicitationImportForm extends FormBase {
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Save'),
+      '#value' => $this->t('Import'),
     ];
 
     return $form;
@@ -54,17 +54,25 @@ class SolicitationImportForm extends FormBase {
     $encoder = new CsvEncoder();
     $data = $encoder->decode(file_get_contents($file->getFileUri()), 'csv');
 
-    $num_created = 0;
-    if (array_key_exists(0, $data)) {
-      foreach ($data as $d) {
-        $generator = new SolicitationGenerator($d);
+    $database = \Drupal::database();
+    $transaction = $database->startTransaction();
+    try {
+      $num_created = 0;
+      if (array_key_exists(0, $data)) {
+        foreach ($data as $d) {
+          $generator = new SolicitationGenerator($d);
+          $solicitation = $generator->generate();
+          $num_created++;
+        }
+      } else {
+        $generator = new SolicitationGenerator($data);
         $solicitation = $generator->generate();
         $num_created++;
       }
-    } else {
-      $generator = new SolicitationGenerator($data);
-      $solicitation = $generator->generate();
-      $num_created++;
+    } catch (\Exception $e) {
+      $transaction->rollBack();
+      watchdog_exception($e->getMessage(), $e);
+      throw $e;
     }
 
     \Drupal::messenger()->addMessage("$num_created Solicitation created.");

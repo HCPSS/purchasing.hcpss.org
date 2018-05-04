@@ -13,25 +13,38 @@
  * @see seven_preprocess_node_add_list()
  */
 #}
-{% if content %}
-  {% for category, nodeTypes in categories %}
-    <h2>{{ category|title }}</h2>
-    <ul class="admin-list">
-      {% for type in nodeTypes %}
-        <li class="clearfix">
-          <a href="{{ type.url }}">
-            <span class="label">{{ type.label }}</span>
-            <div class="description">{{ type.description }}</div>
-          </a>
-        </li>
+
+<div class="clearfix">
+  <div class="layout-column layout-column--two-third">
+    {% if content %}
+      {% for category, nodeTypes in categories %}
+        <h3>{{ category|title }}</h3>
+        <ul class="admin-list">
+          {% for type in nodeTypes %}
+            <li class="clearfix">
+              <a href="{{ type.url }}">
+                <span class="label">{{ type.label }}</span>
+                <div class="description">{{ type.description }}</div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       {% endfor %}
-    </ul>
-  {% endfor %}
-{% else %}
-  <p>
-    {% set create_content = path('node.type_add') %}
-    {% trans %}
-      You have not created any content types yet. Go to the <a href="{{ create_content }}">content type creation page</a> to add a new content type.
-    {% endtrans %}
-  </p>
-{% endif %}
+    {% else %}
+      <p>
+        {% set create_content = path('node.type_add') %}
+        {% trans %}
+          You have not created any content types yet. Go to the <a href="{{ create_content }}">content type creation page</a> to add a new content type.
+        {% endtrans %}
+      </p>
+    {% endif %}
+  </div>
+  <div class="layout-column layout-column--third" style="padding-left: 25px;">
+    <h3>Import</h3>
+    {% for block in blocks %}
+      <div style="padding: 10px 0;">
+        {{ block }}
+      </div>
+    {% endfor %}
+  </div>
+</div>
