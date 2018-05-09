@@ -91,6 +91,8 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_board_minutes: true
+  field_board_report: true
   promote: true
   status: true
   sticky: true

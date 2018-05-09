@@ -40,6 +40,8 @@ hidden:
   awards: true
   body: true
   field_bid_tabulation: true
+  field_board_minutes: true
+  field_board_report: true
   field_dates_effective: true
   field_documentation: true
   field_due_date: true

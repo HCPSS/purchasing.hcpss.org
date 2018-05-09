@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.open
+    - node.type.solicitation
     - system.menu.main
     - taxonomy.vocabulary.categories
   module:
+    - datetime
+    - node
     - taxonomy
     - user
 id: categories_with_open_solicitations
@@ -137,15 +140,109 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: reverse__node__field_category
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            solicitation: solicitation
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_due_date_value:
+          id: field_due_date_value
+          table: node__field_due_date
+          field: field_due_date_value
+          relationship: reverse__node__field_category
+          group_type: group
+          admin_label: ''
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
       sorts: {  }
       title: 'Open Solicitations'
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        reverse__node__field_category:
+          id: reverse__node__field_category
+          table: taxonomy_term_field_data
+          field: reverse__node__field_category
+          relationship: none
+          group_type: group
+          admin_label: Procurement
+          required: true
+          entity_type: taxonomy_term
+          plugin_id: entity_reverse
       arguments: {  }
       display_extenders: {  }
       css_class: 'grid three-column'
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:

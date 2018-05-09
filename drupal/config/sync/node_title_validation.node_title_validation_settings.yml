@@ -70,6 +70,5 @@ node_title_validation_config:
   max-wc-vendor: '25'
   unique-vendor: 1
   unique: 0
-
 _core:
   default_config_hash: 5p2lzpRAbNnhbgkvO2MKkxtc2QOBeMRkWubKyc7HYFE

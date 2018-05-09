@@ -12,6 +12,9 @@ targetEntityType: node
 bundle: vendor
 mode: teaser
 content:
+  awards_by_vendor:
+    weight: 100
+    region: content
   links:
     weight: 100
     region: content

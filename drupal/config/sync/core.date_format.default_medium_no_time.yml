@@ -1,0 +1,8 @@
+uuid: d9c1940c-1462-482c-bc14-2662dd3fa0aa
+langcode: en
+status: true
+dependencies: {  }
+id: default_medium_no_time
+label: 'Default Medium no time'
+locked: false
+pattern: 'D, M jS Y'

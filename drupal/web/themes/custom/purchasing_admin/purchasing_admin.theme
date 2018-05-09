@@ -1,8 +1,10 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\block\Entity\Block;
 
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ */
 function purchasing_admin_form_node_award_form_alter(&$form, FormStateInterface $form_state) {
   $form['board_information'] = [
     "#type" => "details",
@@ -36,8 +38,6 @@ function purchasing_admin_form_alter(&$form, FormStateInterface $form_state, $fo
     if (!empty($form['field_due_date'])) {
       $form['field_due_date']['#group'] = 'dates';
     }
-
-    //unset($form['field_dates_effective']['widget'][0]['#title']);
   }
 }
 
@@ -127,19 +127,3 @@ function _purchasing_admin_group_categories($variables) {
 
   return $categories;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -93,4 +93,6 @@ content:
     third_party_settings: {  }
 hidden:
   award_notes: true
+  field_board_minutes: true
+  field_board_report: true
   ordering_instructions: true
