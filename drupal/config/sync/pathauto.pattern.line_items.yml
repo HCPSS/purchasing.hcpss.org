@@ -1,0 +1,24 @@
+uuid: 52c43dbc-4a46-43e6-80b4-40a7d8b00291
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: line_items
+label: 'Line Items'
+type: 'canonical_entities:node'
+pattern: '[node:field_award:entity:field_procurement_method:entity:content-type:machine-name]/[node:field_award:entity:field_procurement_method:entity:field_identifier]/award/[node:field_award:entity:field_identifier]/line-item/[node:nid]'
+selection_criteria:
+  9c7cd190-52f0-4488-a09c-a356c87c4501:
+    id: node_type
+    bundles:
+      discounted_line_item: discounted_line_item
+      partner_line_item: partner_line_item
+      priced_line_item: priced_line_item
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9c7cd190-52f0-4488-a09c-a356c87c4501
+selection_logic: and
+weight: -5
+relationships: {  }

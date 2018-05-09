@@ -7,16 +7,16 @@ dependencies:
 id: award
 label: Award
 type: 'canonical_entities:node'
-pattern: '[node:field_procurement_method:entity:field_category:entity:name]/[node:field_procurement_method:entity:content-type:machine-name]/[node:field_procurement_method:entity:field_identifier]/[node:content-type:machine-name]/[node:field_identifier]'
+pattern: '[node:field_procurement_method:entity:content-type:machine-name]/[node:field_procurement_method:entity:field_identifier]/award/[node:field_identifier]'
 selection_criteria:
-  62a6a071-80c3-4759-a0bd-03b0ec8f2156:
+  d0b80634-6e6a-4f89-b99a-3be9c44eabec:
     id: node_type
     bundles:
       award: award
     negate: false
     context_mapping:
       node: node
-    uuid: 62a6a071-80c3-4759-a0bd-03b0ec8f2156
+    uuid: d0b80634-6e6a-4f89-b99a-3be9c44eabec
 selection_logic: and
 weight: -5
 relationships: {  }

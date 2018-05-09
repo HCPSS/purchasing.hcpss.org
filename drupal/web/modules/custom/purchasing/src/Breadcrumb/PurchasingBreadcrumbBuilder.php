@@ -10,6 +10,12 @@ use Drupal\node\NodeInterface;
 
 class PurchasingBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
+  private $routeMap = [
+    'solicitation' => ['Solicitation', 'view.procurements.page_3'],
+    'contract'     => ['Contract',     'view.procurements.page_1'],
+    'quote'        => ['Quote',        'view.procurements.page_2'],
+  ];
+
   /**
    * {@inheritDoc}
    * @see \Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface::applies()
@@ -41,11 +47,31 @@ class PurchasingBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     if ($node = $route_match->getParameter('node')) {
       switch ($node->bundle()) {
         case 'award':
-          $this->addProcurement($node, $breadcrumb);
+          $procurement = $node->field_procurement_method->entity;
+          $this->addProcurementMethod($procurement, $breadcrumb);
+          $this->addProcurement($procurement, $breadcrumb);
           break;
         case 'priced_line_item':
-          $this->addProcurement($node->field_award->entity, $breadcrumb);
-          $this->addAward($node, $breadcrumb);
+          $award = $node->field_award->entity;
+          $procurement = $award->field_procurement_method->entity;
+
+          $this->addProcurementMethod($procurement, $breadcrumb);
+          $this->addProcurement($procurement, $breadcrumb);
+          $this->addAwardName($award, $breadcrumb);
+          $this->addAward($award, $breadcrumb);
+          break;
+        case 'discounted_line_item':
+
+          break;
+        case 'solicitation':
+          $this->addProcurementMethod($node, $breadcrumb);
+          break;
+        case 'contract':
+          $this->addProcurementMethod($node, $breadcrumb);
+          break;
+        case 'quote':
+          $this->addProcurementMethod($node, $breadcrumb);
+          break;
       }
     }
 
@@ -53,44 +79,82 @@ class PurchasingBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   }
 
   /**
-   * Add the award to the breadcrumb given the line item.
+   * Add generic award link.
    *
-   * @param NodeInterface $line_item
+   * @param NodeInterface $award
    * @param Breadcrumb $breadcrumb
    */
-  private function addAward(NodeInterface $line_item, Breadcrumb $breadcrumb) {
-    $award = $line_item->field_award->entity;
-    $label = vsprintf('%s (%s)', [
-      $award->field_vendor->entity->label(),
-      $award->field_identifier->value,
-    ]);
+  private function addLineItem(NodeInterface $lineItem, Breadcrumb $breadcrumb) {
+    $award = $lineItem->field_award->entity;
+    $procurement = $award->field_procurement_method->entity;
 
+    switch ($procurement->bundle()) {
+      case 'solicitation':
+        $route = 'view.line_item.page_1';
+        break;
+      case 'contract':
+        $route = 'view.line_item.page_2';
+        break;
+      case 'quote':
+        $route = 'view.line_item.page_3';
+        break;
+    }
+
+    $breadcrumb->addLink(Link::createFromRoute(ucwords($procurement->bundle()), $route, [
+      'arg_0' => $procurement->field_identifier->value,
+      'arg_1' => $award->field_identifier->value,
+    ]));
+  }
+
+  /**
+   * Add generic award link.
+   *
+   * @param NodeInterface $award
+   * @param Breadcrumb $breadcrumb
+   */
+  private function addAward(NodeInterface $award, Breadcrumb $breadcrumb) {
+    $breadcrumb->addLink(Link::createFromRoute('Award', 'view.award.page_1', [
+      'arg_0' => $award->field_procurement_method->entity->field_identifier->value,
+    ]));
+  }
+
+  /**
+   * Add the procurement method to the breadcrumb.
+   *
+   * @param NodeInterface $procurement
+   * @param Breadcrumb $breadcrumb
+   */
+  private function addProcurementMethod(NodeInterface $procurement, Breadcrumb $breadcrumb) {
+    list($label, $route) = $this->routeMap[$procurement->bundle()];
+    $breadcrumb->addLink(Link::createFromRoute($label, $route));
+  }
+
+  /**
+   * Add the award to the breadcrumb given the line item.
+   *
+   * @param NodeInterface $award
+   * @param Breadcrumb $breadcrumb
+   */
+  private function addAwardName(NodeInterface $award, Breadcrumb $breadcrumb) {
     $breadcrumb->addLink(Link::createFromRoute(
-      $label,
+      $award->field_vendor->entity->label(),
       'entity.node.canonical',
-      ['node' => $line_item->field_award->entity->id()]
+      ['node' => $award->id()]
     ));
   }
 
   /**
    * Add the procurement to the breadcrumb given the award.
    *
-   * @param NodeInterface $award
+   * @param NodeInterface $procurement
    * @param Breadcrumb $breadcrumb
    */
-  private function addProcurement(NodeInterface $award, Breadcrumb $breadcrumb) {
-    $procurement = $award->field_procurement_method->entity;
-
+  private function addProcurement(NodeInterface $procurement, Breadcrumb $breadcrumb) {
     if ($procurement) {
-      $label = vsprintf('%s (%s)', [
-        $procurement->label(),
-        $procurement->field_identifier->value
-      ]);
-
       $breadcrumb->addLink(Link::createFromRoute(
-        $label,
+        $procurement->label(),
         'entity.node.canonical',
-        ['node' => $award->field_procurement_method->entity->id()]
+        ['node' => $procurement->id()]
       ));
     }
   }

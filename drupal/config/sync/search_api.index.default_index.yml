@@ -23,6 +23,7 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.node.field_vendor
     - field.storage.node.field_procurement_method
+    - field.storage.node.field_award
     - search_api.server.default_server
 _core:
   default_config_hash: ZZOzsPDzemFXt9PsEqqVv44_AuKbg1LEqkr0WFzom1I
@@ -228,6 +229,46 @@ field_settings:
       config:
         - field.storage.node.field_procurement_method
       module:
+        - node
+  field_procurement_identifier:
+    label: 'Procurement » Identifier'
+    datasource_id: 'entity:node'
+    property_path: 'field_procurement_method:entity:field_identifier'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_procurement_method
+        - field.storage.node.field_identifier
+      module:
+        - node
+  nid:
+    label: 'Content ID'
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+  field_award_identifier:
+    label: 'Award » Identifier'
+    datasource_id: 'entity:node'
+    property_path: 'field_award:entity:field_identifier'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_award
+        - field.storage.node.field_identifier
+      module:
+        - node
+  field_award_procurement_identifier:
+    label: 'Award » Procurement » Identifier'
+    datasource_id: 'entity:node'
+    property_path: 'field_award:entity:field_procurement_method:entity:field_identifier'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_award
+        - field.storage.node.field_procurement_method
+        - field.storage.node.field_identifier
+      module:
+        - node
         - node
 datasource_settings:
   'entity:node':

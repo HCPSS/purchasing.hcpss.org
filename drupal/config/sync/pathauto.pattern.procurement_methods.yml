@@ -7,9 +7,9 @@ dependencies:
 id: procurement_methods
 label: 'Procurement Methods'
 type: 'canonical_entities:node'
-pattern: '[node:field_category:entity:name]/[node:content-type:machine-name]/[node:field_identifier]'
+pattern: '[node:content-type:machine-name]/[node:field_identifier]'
 selection_criteria:
-  d1cac38b-74bd-41fd-9b95-042c65a661af:
+  fecd9c33-c62e-430f-81d1-7625e7200df6:
     id: node_type
     bundles:
       contract: contract
@@ -18,7 +18,7 @@ selection_criteria:
     negate: false
     context_mapping:
       node: node
-    uuid: d1cac38b-74bd-41fd-9b95-042c65a661af
+    uuid: fecd9c33-c62e-430f-81d1-7625e7200df6
 selection_logic: and
 weight: -5
 relationships: {  }
