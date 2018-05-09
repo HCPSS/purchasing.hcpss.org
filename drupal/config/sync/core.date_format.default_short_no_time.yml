@@ -1,0 +1,8 @@
+uuid: b2025d35-a19c-4cb9-b09d-00677cd98c8c
+langcode: en
+status: true
+dependencies: {  }
+id: default_short_no_time
+label: 'Default Short no time'
+locked: false
+pattern: 'M jS Y'
