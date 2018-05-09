@@ -41,13 +41,13 @@ function purchasing_block_access(Block $block, $operation, AccountInterface $acc
   try {
     $procurementMethod = new ProcurementMethod($node);
   } catch (\InvalidArgumentException $e) {
-    return AccessResult::neutral();
+    return AccessResult::neutral()->addCacheableDependency($block);
   } catch (\TypeError $e) {
-    return AccessResult::neutral();
+    return AccessResult::neutral()->addCacheableDependency($block);
   }
 
   if (empty($procurementMethod->getAwardIds())) {
-    return AccessResult::forbidden();
+    return AccessResult::forbidden()->addCacheableDependency($block);
   }
 
   $num_awards = count($procurementMethod->getDiscountAwardIds());
