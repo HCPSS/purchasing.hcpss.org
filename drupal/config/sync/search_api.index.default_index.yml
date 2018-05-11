@@ -8,7 +8,6 @@ dependencies:
     - node
     - search_api
   config:
-    - field.storage.node.field_dates_effective
     - field.storage.node.body
     - field.storage.node.field_discount
     - field.storage.node.field_due_date
@@ -24,6 +23,7 @@ dependencies:
     - field.storage.node.field_vendor
     - field.storage.node.field_procurement_method
     - field.storage.node.field_award
+    - field.storage.node.field_dates_effective
     - search_api.server.default_server
 _core:
   default_config_hash: ZZOzsPDzemFXt9PsEqqVv44_AuKbg1LEqkr0WFzom1I
@@ -104,14 +104,6 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: type
     type: string
-  field_dates_effective:
-    label: 'Dates Effective'
-    datasource_id: 'entity:node'
-    property_path: field_dates_effective
-    type: date
-    dependencies:
-      config:
-        - field.storage.node.field_dates_effective
   body:
     label: Description
     datasource_id: 'entity:node'
@@ -270,6 +262,22 @@ field_settings:
       module:
         - node
         - node
+  field_dates_effective_start:
+    label: 'Dates Effective » Start'
+    datasource_id: 'entity:node'
+    property_path: field_dates_effective
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_dates_effective
+  field_dates_effective_end:
+    label: 'Dates Effective » End'
+    datasource_id: 'entity:node'
+    property_path: 'field_dates_effective:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_dates_effective
 datasource_settings:
   'entity:node':
     bundles:

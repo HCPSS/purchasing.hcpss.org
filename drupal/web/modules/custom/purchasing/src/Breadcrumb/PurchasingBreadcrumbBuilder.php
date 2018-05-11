@@ -80,7 +80,7 @@ class PurchasingBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
   /**
    * Add generic award link.
-   *
+
    * @param NodeInterface $award
    * @param Breadcrumb $breadcrumb
    */
