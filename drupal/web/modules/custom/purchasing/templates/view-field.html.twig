@@ -1,4 +1,10 @@
-<div>
+{%
+  set classes = [
+    'view-field',
+    'view-name-' ~ view_name|clean_class,
+  ]
+%}
+<div class="{{ classes|join(' ') }}">
   <div class="field-label">{{ label }}</div>
   <div class="field-value">
     {{ view }}

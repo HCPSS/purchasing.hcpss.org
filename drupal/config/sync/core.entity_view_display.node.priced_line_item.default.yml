@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.priced_line_item.body
     - field.field.node.priced_line_item.field_additional_charges
     - field.field.node.priced_line_item.field_award
+    - field.field.node.priced_line_item.field_images
     - field.field.node.priced_line_item.field_per
     - field.field.node.priced_line_item.field_price
     - field.field.node.priced_line_item.field_quote
@@ -22,15 +23,15 @@ bundle: priced_line_item
 mode: default
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
-    weight: 101
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_additional_charges:
     type: entity_reference_revisions_entity_view
-    weight: 103
+    weight: 8
     label: above
     settings:
       view_mode: default
@@ -38,7 +39,7 @@ content:
     third_party_settings: {  }
     region: content
   field_award:
-    weight: 105
+    weight: 10
     label: above
     settings:
       link: true
@@ -46,14 +47,14 @@ content:
     type: entity_reference_label
     region: content
   field_per:
-    weight: 106
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_price:
-    weight: 102
+    weight: 7
     label: above
     settings:
       thousand_separator: ''
@@ -64,26 +65,42 @@ content:
     type: number_decimal
     region: content
   field_quote:
-    weight: 104
+    weight: 9
     label: above
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
+  image_gallery:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
   notes:
-    weight: 100
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
   ordering_instructions:
-    weight: 100
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
   reference_number:
-    weight: 100
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
   vendor:
-    weight: 100
+    weight: 5
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_images: true

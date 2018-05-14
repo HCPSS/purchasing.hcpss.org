@@ -161,6 +161,15 @@ function purchasing_entity_extra_field_info() {
     }
   }
 
+  $images = [
+    'label'       => t('Image Gallery'),
+    'description' => t('Image Gallery'),
+    'weight'      => 100,
+    'visible'     => TRUE,
+  ];
+  $extra['node']['priced_line_item']['display']['image_gallery']     = $images;
+  $extra['node']['discounted_line_item']['display']['image_gallery'] = $images;
+
   return $extra;
 }
 
@@ -199,6 +208,10 @@ function purchasing_node_view(array &$build, EntityInterface $entity, EntityView
 
   if ($display->getComponent('awards_by_vendor')) {
     _purchasing_view_awards_by_vendor($build, $entity);
+  }
+
+  if ($display->getComponent('image_gallery')) {
+    _purchasing_view_image_gallery($build, $entity);
   }
 
   foreach (['notes', 'ordering_instructions', 'reference_number', 'vendor'] as $field_name) {
@@ -243,6 +256,39 @@ function _purchasing_view_awards_by_vendor(array &$build, NodeInterface $entity)
         '#theme' => 'view_field',
         '#view' => $content,
         '#label' => t('Awards'),
+      ];
+    }
+  }
+}
+
+/**
+ * Implementation of hook_preprocess_HOOK().
+ */
+function purchasing_preprocess_view_field(&$variables, $hook) {
+  $variables['view_name'] = $variables['view']['#name'];
+}
+
+/**
+ * Add the awards_by_vendor view to the awards_by_vendor field.
+ *
+ * @param array $build
+ * @param NodeInterface $entity
+ */
+function _purchasing_view_image_gallery(array &$build, NodeInterface $entity) {
+  $view = Views::getView('images');
+  if (is_object($view)) {
+    $args = [$entity->id()];
+    $view->setArguments($args);
+    $view->setDisplay('block_1');
+    $view->preExecute();
+    $view->execute();
+
+    if ($view->total_rows) {
+      $content = $view->buildRenderable('block_1', $args, FALSE);
+      $build['awards'] = [
+        '#theme' => 'view_field',
+        '#view' => $content,
+        '#label' => t('Images'),
       ];
     }
   }

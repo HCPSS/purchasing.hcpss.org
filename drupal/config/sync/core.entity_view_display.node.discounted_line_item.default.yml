@@ -19,12 +19,12 @@ content:
   body:
     label: above
     type: text_default
-    weight: 101
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_award:
-    weight: 104
+    weight: 9
     label: above
     settings:
       link: true
@@ -32,7 +32,7 @@ content:
     type: entity_reference_label
     region: content
   field_discount:
-    weight: 102
+    weight: 7
     label: above
     settings:
       thousand_separator: ''
@@ -41,34 +41,39 @@ content:
     type: number_integer
     region: content
   field_exceptions:
-    weight: 103
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
+  image_gallery:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   notes:
-    weight: 100
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   ordering_instructions:
-    weight: 100
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   reference_number:
-    weight: 100
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   vendor:
-    weight: 100
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

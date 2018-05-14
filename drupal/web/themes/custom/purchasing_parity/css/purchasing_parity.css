@@ -145,3 +145,27 @@ dd {
 .view-id-awarded_procurements_by_category > .view-content {
   margin-top: 0;
 }
+
+.view-field.view-name-images img {
+  width: 100%;
+    max-width: 480px;
+    height: auto;
+}
+
+.view-field.view-name-images {
+  display: block;
+}
+
+@media (min-width: 620px) {
+  .view-field.view-name-images {
+    width: 300px;
+    float: right;
+  }
+}
+
+@media (min-width: 960px) {
+  .view-field.view-name-images {
+    width: 480px;
+    float: right;
+  }
+}
