@@ -2227,6 +2227,7 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
