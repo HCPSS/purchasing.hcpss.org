@@ -187,7 +187,7 @@
   documentation:
     - name: Invitation to Bid
       file: 021.18.b2-appliances-kitchen-invitation.pdf
-  bids_due: December 5, 2017 at 10:00 a.m.
+  bids_due: 4/30/18 14:00
 - bid_number: 017.18.B5
   title: Integrated Online Keyboarding Solution
   category: Instructional Services
@@ -229,15 +229,35 @@
     report: 'http://www.boarddocs.com/mabe/hcpssmd/Board.nsf/goto?open&id=84JU3E7A1442'
     minutes: http://hcpsstv.new.swagit.com/videos/6259?ts=6274
   category: Furniture and Appliances
+  bids_due: 4/30/18 14:00
+  effective:
+    start: 5/1/18
+    end:  5/1/19  
 - bid_number:  054.13.B2
   title: Art Equipment
   category: Instructional Supplies
+  bids_due: 4/30/18 14:00
+  effective:
+    start: 5/1/18
+    end:  5/1/19
 - bid_number: 034.10.B2
   title: Art Supplies
   category: Instructional Supplies
+  bids_due: 4/30/18 14:00
+  effective:
+    start: 5/1/18
+    end:  5/1/19
 - bid_number: 046.14.B2
   title: Calculators
   category: Technology Products
+  bids_due: 4/30/18 14:00
+  effective:
+    start: 5/1/18
+    end:  5/1/19
 - bid_number: 033.16.B2
   title: 'Secondary Science Equipment & Supplies'
   category: Instructional Supplies
+  bids_due: 4/30/18 14:00
+  effective:
+    start: 5/1/18
+    end:  5/1/19

@@ -22,6 +22,9 @@ content:
       trim_length: 600
     third_party_settings: {  }
     region: content
+  image_gallery:
+    weight: 100
+    region: content
   links:
     weight: 100
     region: content

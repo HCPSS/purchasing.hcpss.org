@@ -12,9 +12,26 @@ dependencies:
     - node.type.quote
   module:
     - datetime_range
+    - field_group
     - link
     - path
     - text
+third_party_settings:
+  field_group:
+    group_board:
+      children:
+        - field_board_report
+        - field_board_minutes
+      parent_name: ''
+      weight: 11
+      format_type: details_sidebar
+      format_settings:
+        id: ''
+        classes: ''
+        open: 0
+        required_fields: 1
+      label: Board
+      region: content
 id: node.quote.default
 targetEntityType: node
 bundle: quote
@@ -36,7 +53,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_board_minutes:
-    weight: 11
+    weight: 14
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -44,7 +61,7 @@ content:
     type: link_default
     region: content
   field_board_report:
-    weight: 12
+    weight: 13
     settings:
       placeholder_url: ''
       placeholder_title: ''

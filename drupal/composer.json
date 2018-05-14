@@ -60,6 +60,7 @@
         "drupal/date_range_formatter": "^3.1",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/editor_file": "^1.2",
+        "drupal/field_group": "^3.0@beta",
         "drupal/file_entity": "^2.0@beta",
         "drupal/fixed_text_link_formatter": "^1.1",
         "drupal/inline_entity_form": "^1.0@beta",
@@ -120,6 +121,9 @@
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
+            "drupal/field_group": {
+                "Allow advanced placement": "https://www.drupal.org/files/issues/2652642-33.patch"
+            },
             "drupal/node_title_validation": {
                 "Unable to import configuration": "https://www.drupal.org/files/issues/2855289-7.patch"
             },
