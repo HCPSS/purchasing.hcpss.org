@@ -129,21 +129,27 @@ function _purchasing_render_view($name, $display, array $args = [], $allow_empty
  * Implementation of hook_form_FORM_ID_alter().
  */
 function purchasing_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (!empty($form['#fieldgroups']['group_awards'])) {
-    $content = _purchasing_render_view(
-      'awards_by_procurement_method_form',
-      'procurement_form',
-      [$form_state->getFormObject()->getEntity()->id()],
-      TRUE,
-      TRUE
-    );
+  if (!empty($form['#fieldgroups']['group_line_items'])) {
+    $args    = [$form_state->getFormObject()->getEntity()->id()];
+    $view    = 'line_items_by_award_form';
+    $display = 'award_form';
+    $content = _purchasing_render_view($view, $display, $args, TRUE, TRUE);
 
     if ($content) {
-      $form['awards'] = [
-        '#type' => 'markup',
-        '#markup' => $content,
-      ];
+      $form['line_items'] = ['#type' => 'markup', '#markup' => $content];
+      $form['#fieldgroups']['group_line_items']->children = 'line_items';
+      $form['#group_children']['line_items'] = 'group_line_items';
+    }
+  }
 
+  if (!empty($form['#fieldgroups']['group_awards'])) {
+    $args    = [$form_state->getFormObject()->getEntity()->id()];
+    $view    = 'awards_by_procurement_method_form';
+    $display = 'procurement_form';
+    $content = _purchasing_render_view($view, $display, $args, TRUE, TRUE);
+
+    if ($content) {
+      $form['awards'] = ['#type' => 'markup', '#markup' => $content];
       $form['#fieldgroups']['group_awards']->children = 'awards';
       $form['#group_children']['awards'] = 'group_awards';
     }
