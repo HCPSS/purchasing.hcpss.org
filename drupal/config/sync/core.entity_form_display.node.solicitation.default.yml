@@ -28,7 +28,7 @@ third_party_settings:
         - field_due_date
         - field_dates_effective
       parent_name: ''
-      weight: 15
+      weight: 13
       format_type: details_sidebar
       format_settings:
         label: Dates
@@ -43,7 +43,7 @@ third_party_settings:
         - field_board_report
         - field_board_minutes
       parent_name: ''
-      weight: 13
+      weight: 12
       format_type: details_sidebar
       format_settings:
         id: ''
@@ -52,11 +52,28 @@ third_party_settings:
         required_fields: 1
       label: Board
       region: content
+    group_awards:
+      children: {  }
+      parent_name: ''
+      weight: 14
+      format_type: details_sidebar
+      format_settings:
+        id: ''
+        classes: ''
+        open: 1
+        required_fields: 0
+      label: Awards
+      region: content
 id: node.solicitation.default
 targetEntityType: node
 bundle: solicitation
 mode: default
 content:
+  awards:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     type: text_textarea_with_summary
     weight: 9

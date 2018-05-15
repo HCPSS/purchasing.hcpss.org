@@ -10,6 +10,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\node\NodeInterface;
 use Drupal\purchasing\Model\ProcurementMethod;
 use Drupal\Core\Url;
+use PHPUnit\Framework\Constraint\IsAnything;
 
 /**
  * Implementation for hook_inline_entity_form_entity_form_alter().
@@ -87,20 +88,66 @@ function purchasing_entity_view_mode_alter(&$view_mode, EntityInterface $entity,
 }
 
 /**
+ * Helper function to render a view.
+ *
+ * @param string $name
+ *   The view machine name.
+ * @param string $display
+ *   The display machine name.
+ * @param array $args
+ *   The arguments to pass to the view.
+ * @param boolean $allow_empty
+ *   Should we render if the view contains no results?
+ * @param boolean $render
+ *   Should we render the results or send a renderable array,
+ * @return NULL|array|string
+ *   Array if $render is false. String if $render is true. NULL if there is
+ *   no view or the view has no results and you did not choose to render
+ *   the empty view.
+ */
+function _purchasing_render_view($name, $display, array $args = [], $allow_empty = FALSE, $render = FALSE) {
+  $view = Views::getView($name);
+  if (is_object($view)) {
+    $view->setArguments($args);
+    $view->setDisplay($display);
+    $view->preExecute();
+    $view->execute();
+
+    if (!$view->total_rows && !$allow_empty) {
+      return;
+    }
+
+    if ($render) {
+      return \Drupal::service('renderer')->renderRoot($view->render());
+    } else {
+      $view->buildRenderable($display, $args, FALSE);
+    }
+  }
+}
+
+/**
  * Implementation of hook_form_FORM_ID_alter().
  */
-function purchasing_form_node_solicitation_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['actions'][] = [
-    '#type' => 'link',
-    '#title' => t('Add Award to this Solicitation'),
-    '#access' => TRUE,
-    '#weight' => 99,
-    '#attributes' => ['class' => ['button']],
-    '#url' => Url::fromRoute('node.add', [
-      'node_type' => 'award',
-      'solicitation' => $form_state->getFormObject()->getEntity()->id(),
-    ]),
-  ];
+function purchasing_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!empty($form['#fieldgroups']['group_awards'])) {
+    $content = _purchasing_render_view(
+      'awards_by_procurement_method_form',
+      'procurement_form',
+      [$form_state->getFormObject()->getEntity()->id()],
+      TRUE,
+      TRUE
+    );
+
+    if ($content) {
+      $form['awards'] = [
+        '#type' => 'markup',
+        '#markup' => $content,
+      ];
+
+      $form['#fieldgroups']['group_awards']->children = 'awards';
+      $form['#group_children']['awards'] = 'group_awards';
+    }
+  }
 }
 
 /**
@@ -201,7 +248,7 @@ function purchasing_theme($existing, $type, $theme, $path) {
 /**
  * Implementation of hook_ENITTY_TYPE_view().
  */
-function purchasing_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+function purchasing_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   if ($display->getComponent('awards')) {
     _purchasing_view_awards($build, $entity);
   }

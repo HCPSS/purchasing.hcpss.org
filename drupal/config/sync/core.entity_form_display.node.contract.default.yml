@@ -23,7 +23,7 @@ third_party_settings:
         - field_board_report
         - field_board_minutes
       parent_name: ''
-      weight: 13
+      weight: 11
       format_type: details_sidebar
       format_settings:
         id: ''
@@ -31,6 +31,18 @@ third_party_settings:
         open: 0
         required_fields: 1
       label: Board
+      region: content
+    group_awards:
+      children: {  }
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        id: ''
+        classes: ''
+        open: 1
+        required_fields: 0
+      label: Awards
       region: content
 id: node.contract.default
 targetEntityType: node
@@ -81,7 +93,7 @@ content:
     type: daterange_default
     region: content
   field_identifier:
-    weight: 12
+    weight: 10
     settings:
       size: 60
       placeholder: ''

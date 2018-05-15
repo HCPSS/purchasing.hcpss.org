@@ -34,8 +34,6 @@
   website: http://www.abcschoolsupply.com
 - name: Childcraft Education
   website: http://www.childcraft.com
-- name: Classroom Direct
-  website: classroomdirect.com
 - name: Constructive Playthings
   website: http://www.cptoys.com
   phone: 1-800-832-0224
@@ -415,7 +413,7 @@
 
 # Printers
 - name: HCGI
-  website: hcgi.com
+  website: http://hcgi.com
   address:
     line1: 10440 Little Patuxent Parkway
     line2: Suite 810
@@ -498,8 +496,6 @@
   phone: (800) 962-2660
 
 #Catalog
-- name: ABC
-  website: http://www.abcschoolsupply.com
 - name: Childcraft Education
   website: http://www.childcraft.com
 - name: Classroom Direct
