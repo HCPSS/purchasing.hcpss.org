@@ -10,3 +10,12 @@
     width: 66%;
   }
 }
+
+.line-item-actions {
+  margin-top: 20px;
+}
+
+.js .line-item-actions .dropbutton-wrapper,
+.js .line-item-actions .dropbutton-widget {
+  display: inline-block;
+}

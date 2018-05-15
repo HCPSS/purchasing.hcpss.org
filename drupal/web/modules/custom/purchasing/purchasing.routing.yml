@@ -1,0 +1,19 @@
+---
+purchasing.import.priced_line_item:
+  path: '/node/import/priced_line_item'
+  defaults:
+    _title: 'Import Priced Line Items'
+    _form: '\Drupal\purchasing\Form\PricedLineItemImportForm'
+  requirements:
+    _permission: 'create priced_line_item content'
+  options:
+    _admin_route: TRUE
+purchasing.import.discounted_line_item:
+  path: '/node/import/discounted_line_item'
+  defaults:
+    _title: 'Import Discounted Line Items'
+    _form: '\Drupal\purchasing\Form\DiscountedLineItemImportForm'
+  requirements:
+    _permission: 'create discounted_line_item content'
+  options:
+    _admin_route: TRUE

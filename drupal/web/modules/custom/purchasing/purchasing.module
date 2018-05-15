@@ -130,15 +130,60 @@ function _purchasing_render_view($name, $display, array $args = [], $allow_empty
  */
 function purchasing_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (!empty($form['#fieldgroups']['group_line_items'])) {
-    $args    = [$form_state->getFormObject()->getEntity()->id()];
+    $id      = $form_state->getFormObject()->getEntity()->id();
     $view    = 'line_items_by_award_form';
     $display = 'award_form';
-    $content = _purchasing_render_view($view, $display, $args, TRUE, TRUE);
+    $content = _purchasing_render_view($view, $display, [$id], TRUE, TRUE);
 
     if ($content) {
       $form['line_items'] = ['#type' => 'markup', '#markup' => $content];
-      $form['#fieldgroups']['group_line_items']->children = 'line_items';
+      $form['line_item_actions'] = [
+        '#type' => 'container',
+        '#attributes' => ['class' => 'line-item-actions'],
+      ];
+      $form['line_item_actions']['add'] = [
+        '#type' => 'dropbutton',
+        '#links' => [
+          'priced' => [
+            'title' => t('Add a Priced Line Item'),
+            'url' => Url::fromRoute('node.add', [
+              'node_type' => 'priced_line_item',
+              'award' => $id,
+              'destination' => Url::fromRoute('entity.node.edit_form', ['node' => $id])->toString(),
+            ]),
+          ],
+          'discount' => [
+            'title' => t('Add a Discounted Line Item'),
+            'url' => Url::fromRoute('node.add', [
+              'node_type' => 'discounted_line_item',
+              'award' => $id,
+              'destination' => Url::fromRoute('entity.node.edit_form', ['node' => $id])->toString(),
+            ]),
+          ],
+        ],
+      ];
+      $form['line_item_actions']['import'] = [
+        '#type' => 'dropbutton',
+        '#links' => [
+          'priced' => [
+            'title' => t('Import Priced Line Items'),
+            'url' => Url::fromRoute('purchasing.import.priced_line_item', [
+              'destination' => Url::fromRoute('entity.node.edit_form', ['node' => $id])->toString(),
+            ]),
+          ],
+          'discount' => [
+            'title' => t('Import Discounted Line Items'),
+            'url' => Url::fromRoute('purchasing.import.discounted_line_item', [
+              'destination' => Url::fromRoute('entity.node.edit_form', ['node' => $id])->toString(),
+            ]),
+          ],
+        ],
+      ];
+
+      $form['#fieldgroups']['group_line_items']->children[] = 'line_items';
+      $form['#fieldgroups']['group_line_items']->children[] = 'line_item_actions';
       $form['#group_children']['line_items'] = 'group_line_items';
+      $form['#group_children']['line_item_actions'] = 'group_line_items';
     }
   }
 
