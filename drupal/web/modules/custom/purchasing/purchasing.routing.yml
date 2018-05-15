@@ -17,3 +17,12 @@ purchasing.import.discounted_line_item:
     _permission: 'create discounted_line_item content'
   options:
     _admin_route: TRUE
+purchasing.login:
+  path: '/login'
+  defaults:
+    _controller: '\Drupal\purchasing\Controller\DefaultController::login'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _maintenance_access: TRUE
+    no_cache: TRUE

@@ -4,6 +4,8 @@
 }
 
 /* Move to parity */
+[data-contextual-id] { margin-top: 0; }
+
 .region-primary-menu nav ul li {
   margin-top: 0;
 }
