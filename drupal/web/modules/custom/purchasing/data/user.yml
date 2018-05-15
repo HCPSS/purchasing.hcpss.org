@@ -1,32 +1,57 @@
 ---
-- name: Douglas Pindell
+- display_name: Douglas Pindell
   title: Purchasing Director
   phone: 410-313-6722
+  email: douglas_pindell@hcpss.org
+  username: dpindell
+  roles: ['purchaser']
 
-- name: CeCe Clement, CPPO, CPPB
+- display_name: CeCe Clement, CPPO, CPPB
   title: Purchasing Manager
   phone: 410-313-6724
+  email: cece_clement@hcpss.org
+  username: cclement
+  roles: ['purchaser']
 
-- name: Joe Veslany
+- display_name: Joe Veslany
   title: Procurement Specialist
   phone: 410-313-6723
+  email: joe_veslany@hcpss.org
+  username: jveslany
+  roles: ['purchaser']
 
-- name: Robert Gill, CPPO, CPPB
+- display_name: Robert Gill, CPPO, CPPB
   title: Procurement Specialist
   phone: 410-313-4584
+  email: robert_gill@hcpss.org
+  username: rgill
+  roles: ['purchaser']
 
-- name: Ted Ludicke
+- display_name: Ted Ludicke
   title: Contract Specialist
   phone: 410-313-5644
+  email: ted_ludicke@hcpss.org
+  username: tludicke
+  roles: ['purchaser']
 
-- name: Eileen Arnold
+- display_name: Eileen Arnold
   title: Purchasing Technician
   phone: 410-313-6725
+  email: eileen_arnold@hcpss.org
+  username: earnold
+  roles: ['purchaser']
 
-- name: Michele Nethken
-  title: Secretary
-  phone: 410-313-6644
-
-- name: Cherylene Beck
+- display_name: Cherylene Beck
   title: Purchasing Clerk
   phone: 410-313-6714
+  email: cherylene_beck@hcpss.org
+  username: cbeck
+  roles: ['purchaser']
+
+- display_name: Brendan Anderson
+  title: Web Developer
+  phone: 410-313-6694
+  email: brendan_anderson@hcpss.org
+  username: banderson
+  roles: ['purchaser']
+  

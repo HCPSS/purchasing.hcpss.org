@@ -16,6 +16,7 @@ use Drupal\purchasing\Generator\Menu\MainMenuGenerator;
 use Drupal\purchasing\Generator\Node\PricedLineItemGenerator;
 use Drupal\purchasing\Generator\Node\DiscountedLineItemGenerator;
 use Drupal\node\Entity\Node;
+use Drupal\purchasing\Generator\User\UserGenerator;
 
 /**
  * A Drush commandfile.
@@ -70,6 +71,7 @@ class PurchasingCommands extends DrushCommands {
    */
   public function generateAll() {
     $this->generateCategories();
+    $this->generateUsers();
     $this->generateVendors();
     $this->generateSolicitations();
     $this->generateContracts();
@@ -186,6 +188,18 @@ class PurchasingCommands extends DrushCommands {
    */
   public function generateContracts() {
     $this->generateFromGenerator('contract', ContractGenerator::class);
+  }
+
+  /**
+   * Generate users.
+   *
+   * @usage purchasing:generate:users
+   *   Generate users.
+   *
+   * @command purchasing:generate:users
+   */
+  public function generateUsers() {
+    $this->generateFromGenerator('user', UserGenerator::class);
   }
 
   /**
