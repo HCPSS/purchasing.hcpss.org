@@ -4,6 +4,7 @@ namespace Drupal\purchasing\Generator\Node;
 
 use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
 
 class PageGenerator extends NodeGenerator implements EntityGeneratorInterface {
 
@@ -36,6 +37,12 @@ class PageGenerator extends NodeGenerator implements EntityGeneratorInterface {
     ]);
 
     $page->save();
+
+    if (!empty($this->data['homepage']) && $this->data['homepage']) {
+      $url = Url::fromRoute('entity.node.canonical', ['node' => $page->id()])->toString();
+      $config = \Drupal::service('config.factory')->getEditable('system.site');
+      $config->set('page.front', $url)->save();
+    }
 
     return $page;
   }

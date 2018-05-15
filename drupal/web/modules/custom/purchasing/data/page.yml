@@ -1,6 +1,7 @@
 ---
 - title: Purchasing
   url: /about
+  homepage: true
   body: >
     <p>The Purchasing Office of the Howard County Public School System provides central procurement of instructional materials, furniture and equipment, construction services, maintenance materials and equipment, and other services for use in the public schools. These purchases are made using a competitive bid or quotation process.</p>
 
