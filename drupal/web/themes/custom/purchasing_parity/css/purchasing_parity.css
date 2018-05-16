@@ -171,3 +171,7 @@ dd {
     float: right;
   }
 }
+
+.field--name-field-documentation .field__items {
+  margin-top: 0;
+}
