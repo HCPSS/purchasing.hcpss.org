@@ -89,12 +89,15 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
     }
 
     if (!empty($this->data['documentation'])) {
-      foreach ($this->data['documentation'] as $document) {
+      foreach ($this->data['documentation'] as $index => $document) {
         $file = self::createFile($document['file']);
-        $solicitation->field_documentation[] = [
-          'description' => $document['name'],
-          'file' => $file,
-        ];
+        $solicitation->field_documentation[$index] = $file;
+        $solicitation->field_documentation[$index]->description = $document['name'];
+        $solicitation->field_documentation[$index]->display = 1;
+//         $solicitation->field_documentation[] = [
+//           'description' => $document['name'],
+//           'file' => $file,
+//         ];
       }
     }
 
@@ -127,12 +130,6 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
     ]);
 
     $newFile = file_copy($file, 'public://', $fileName);
-
-    if (!$newFile) {
-      echo "$fileName\n";
-      die;
-    }
-
     $newFile->setPermanent();
     $newFile->save();
 
