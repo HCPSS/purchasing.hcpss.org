@@ -47,7 +47,7 @@ class DiscountedLineItemGenerator extends NodeGenerator implements EntityGenerat
     $line_item = Node::create([
       'type' => static::getBundle(),
       'title' => ucwords(strtolower($this->data['title'])),
-      'uid' => \Drupal::currentUser()->id(),
+      'uid' => \Drupal::currentUser()->id() ?: 1,
       'field_discount' => $this->data['discount'],
       'field_award' => self::loadAwardFromNumber($this->data['award']),
     ]);

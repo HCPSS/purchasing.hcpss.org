@@ -56,7 +56,7 @@ class PricedLineItemGenerator extends NodeGenerator implements EntityGeneratorIn
     $line_item = Node::create([
       'type' => static::getBundle(),
       'title' => ucwords(strtolower($this->data['title'])),
-      'uid' => \Drupal::currentUser()->id(),
+      'uid' => \Drupal::currentUser()->id() ?: 1,
       'field_price' => $this->data['price'],
       'field_award' => self::loadAwardFromNumber($this->data['award']),
     ]);

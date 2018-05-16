@@ -30,7 +30,7 @@ class ContractGenerator extends NodeGenerator  implements EntityGeneratorInterfa
 
     $contract = Node::create([
       'type' => static::getBundle(),
-      'uid' => \Drupal::currentUser()->id(),
+      'uid' => \Drupal::currentUser()->id() ?: 1,
       'title' => $this->data['title'],
       'field_identifier' => $this->data['contract_number'],
       'field_category' => ['target_id' => self::getCategoryIdFromName($this->data['category'])],

@@ -34,7 +34,7 @@ class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
 
     $award = Node::create([
       'type' => static::getBundle(),
-      'uid' => \Drupal::currentUser()->id(),
+      'uid' => \Drupal::currentUser()->id() ?: 1,
       'field_vendor' => $vendor,
       'field_procurement_method' => $procurement,
     ]);

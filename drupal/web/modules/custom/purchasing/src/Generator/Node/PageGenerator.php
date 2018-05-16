@@ -27,7 +27,7 @@ class PageGenerator extends NodeGenerator implements EntityGeneratorInterface {
   public function generate() {
     $page = Node::create([
       'type' => static::getBundle(),
-      'uid' => \Drupal::currentUser()->id(),
+      'uid' => \Drupal::currentUser()->id() ?: 1,
       'title' => $this->data['title'],
       'body' => [
         'value' => $this->data['body'],

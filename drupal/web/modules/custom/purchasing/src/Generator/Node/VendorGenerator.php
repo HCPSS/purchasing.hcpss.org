@@ -50,7 +50,7 @@ class VendorGenerator extends NodeGenerator  implements EntityGeneratorInterface
     $vendor = Node::create([
       'type'  => static::getBundle(),
       'title' => $this->data['name'],
-      'uid'   => \Drupal::currentUser()->id(),
+      'uid'   => \Drupal::currentUser()->id() ?: 1,
     ]);
 
     if (!empty($this->data['address'])) {

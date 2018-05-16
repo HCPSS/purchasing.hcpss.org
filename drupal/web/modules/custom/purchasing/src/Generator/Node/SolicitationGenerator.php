@@ -77,7 +77,7 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
     $solicitation = Node::create([
       'type'                  => static::getBundle(),
       'title'                 => $this->data['title'],
-      'uid'                   => \Drupal::currentUser()->id(),
+      'uid'                   => \Drupal::currentUser()->id() ?: 1,
       'field_identifier'      => $this->data['bid_number'],
       'field_category'        => ['target_id' => self::getCategoryIdFromName($this->data['category'])],
       'field_due_date'        => date('Y-m-d\Th:i:s', $this->due),
