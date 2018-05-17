@@ -62,4 +62,5 @@ content:
 hidden:
   field_identifier: true
   field_procurement_method: true
+  langcode: true
   links: true

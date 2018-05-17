@@ -1,0 +1,85 @@
+uuid: 2e1037fc-c771-4184-959a-9c133582c9d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.award.field_documentation
+    - field.field.node.award.field_identifier
+    - field.field.node.award.field_notes
+    - field.field.node.award.field_ordering_instructions
+    - field.field.node.award.field_procurement_method
+    - field.field.node.award.field_reference_number
+    - field.field.node.award.field_vendor
+    - node.type.award
+  module:
+    - file
+    - text
+    - user
+id: node.award.search_index
+targetEntityType: node
+bundle: award
+mode: search_index
+content:
+  field_documentation:
+    weight: 4
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_identifier:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_notes:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ordering_instructions:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_procurement_method:
+    weight: 6
+    label: above
+    settings:
+      view_mode: inline
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_reference_number:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vendor:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

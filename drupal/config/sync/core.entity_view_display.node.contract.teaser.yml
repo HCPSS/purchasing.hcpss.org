@@ -5,6 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.contract.body
+    - field.field.node.contract.field_board_minutes
+    - field.field.node.contract.field_board_report
+    - field.field.node.contract.field_category
+    - field.field.node.contract.field_dates_effective
+    - field.field.node.contract.field_identifier
     - node.type.contract
   module:
     - text
@@ -42,3 +47,4 @@ hidden:
   field_dates_effective: true
   field_external_contract_number: true
   field_identifier: true
+  langcode: true

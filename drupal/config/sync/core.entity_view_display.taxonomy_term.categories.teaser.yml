@@ -25,5 +25,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  langcode: true
   open_solicitations: true
   purchasing_children: true

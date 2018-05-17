@@ -1,0 +1,30 @@
+uuid: b1836c8a-c9c8-4085-9c7c-1ddce2ad02c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.partner_line_item.body
+    - node.type.partner_line_item
+  module:
+    - text
+    - user
+id: node.partner_line_item.search_result
+targetEntityType: node
+bundle: partner_line_item
+mode: search_result
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  links: true
+  notes: true
+  ordering_instructions: true
+  reference_number: true
+  vendor: true

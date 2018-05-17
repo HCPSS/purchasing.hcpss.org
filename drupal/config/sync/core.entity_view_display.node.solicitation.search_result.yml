@@ -1,0 +1,78 @@
+uuid: a10a985c-1308-4712-9b1b-208b6fcc7977
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.solicitation.body
+    - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_board_minutes
+    - field.field.node.solicitation.field_board_report
+    - field.field.node.solicitation.field_category
+    - field.field.node.solicitation.field_dates_effective
+    - field.field.node.solicitation.field_documentation
+    - field.field.node.solicitation.field_due_date
+    - field.field.node.solicitation.field_identifier
+    - node.type.solicitation
+  module:
+    - datetime
+    - datetime_range
+    - text
+    - user
+id: node.solicitation.search_result
+targetEntityType: node
+bundle: solicitation
+mode: search_result
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_category:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dates_effective:
+    weight: 4
+    label: inline
+    settings:
+      timezone_override: America/New_York
+      format_type: default_short_no_time
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_due_date:
+    weight: 3
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_identifier:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  award_notes: true
+  awards: true
+  field_bid_tabulation: true
+  field_board_minutes: true
+  field_board_report: true
+  field_documentation: true
+  langcode: true
+  links: true
+  ordering_instructions: true

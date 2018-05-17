@@ -1,0 +1,86 @@
+uuid: dcfbe8aa-70b4-46d0-9289-7fe9a718533f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.quote.body
+    - field.field.node.quote.field_board_minutes
+    - field.field.node.quote.field_board_report
+    - field.field.node.quote.field_category
+    - field.field.node.quote.field_dates_effective
+    - field.field.node.quote.field_identifier
+    - node.type.quote
+  module:
+    - datetime_range
+    - link
+    - text
+    - user
+id: node.quote.search_index
+targetEntityType: node
+bundle: quote
+mode: search_index
+content:
+  body:
+    type: text_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_board_minutes:
+    type: link
+    weight: 4
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_board_report:
+    type: link
+    weight: 3
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_category:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dates_effective:
+    type: daterange_default
+    weight: 1
+    region: content
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_identifier:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  award_notes: true
+  awards: true
+  langcode: true
+  links: true
+  ordering_instructions: true

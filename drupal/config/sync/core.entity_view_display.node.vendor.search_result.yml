@@ -1,0 +1,57 @@
+uuid: ae4e64b0-4686-45f7-9114-2fd11a6ece3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.vendor.field_address
+    - field.field.node.vendor.field_email_address
+    - field.field.node.vendor.field_fax_number
+    - field.field.node.vendor.field_notes
+    - field.field.node.vendor.field_pe_id
+    - field.field.node.vendor.field_phone_number
+    - field.field.node.vendor.field_website
+    - node.type.vendor
+  module:
+    - link
+    - user
+id: node.vendor.search_result
+targetEntityType: node
+bundle: vendor
+mode: search_result
+content:
+  field_email_address:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_pe_id:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_website:
+    weight: 1
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  awards_by_vendor: true
+  field_address: true
+  field_fax_number: true
+  field_notes: true
+  field_phone_number: true
+  langcode: true
+  links: true

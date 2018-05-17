@@ -104,3 +104,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_images: true
+  langcode: true

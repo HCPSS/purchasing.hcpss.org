@@ -39,4 +39,5 @@ hidden:
   field_image_title_text: true
   filemime: true
   filesize: true
+  langcode: true
   uid: true

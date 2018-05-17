@@ -12,6 +12,10 @@ use Drupal\purchasing\Model\ProcurementMethod;
 use Drupal\Core\Url;
 use PHPUnit\Framework\Constraint\IsAnything;
 
+function purchasing_search_api_processor_info_alter(array &$processors) {
+  //die(print_r(array_keys($processors), 1));
+}
+
 /**
  * Implementation for hook_inline_entity_form_entity_form_alter().
  */

@@ -5,6 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.quote.body
+    - field.field.node.quote.field_board_minutes
+    - field.field.node.quote.field_board_report
+    - field.field.node.quote.field_category
+    - field.field.node.quote.field_dates_effective
+    - field.field.node.quote.field_identifier
     - node.type.quote
   module:
     - text
@@ -41,3 +46,4 @@ hidden:
   field_category: true
   field_dates_effective: true
   field_identifier: true
+  langcode: true

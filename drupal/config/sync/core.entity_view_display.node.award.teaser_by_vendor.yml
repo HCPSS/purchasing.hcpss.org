@@ -56,4 +56,5 @@ hidden:
   field_notes: true
   field_ordering_instructions: true
   field_vendor: true
+  langcode: true
   links: true

@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.discounted_line_item.body
+    - field.field.node.discounted_line_item.field_award
+    - field.field.node.discounted_line_item.field_discount
+    - field.field.node.discounted_line_item.field_exceptions
     - node.type.discounted_line_item
   module:
     - text
@@ -44,3 +47,4 @@ hidden:
   field_award: true
   field_discount: true
   field_exceptions: true
+  langcode: true

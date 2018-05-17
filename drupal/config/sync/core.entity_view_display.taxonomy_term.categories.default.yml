@@ -20,5 +20,6 @@ content:
     third_party_settings: {  }
 hidden:
   awarded_procurements: true
+  langcode: true
   open_solicitations: true
   purchasing_children: true

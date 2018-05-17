@@ -1,0 +1,82 @@
+uuid: 3c3be180-19d0-4119-8a42-a0b02ea5cffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.discounted_line_item.body
+    - field.field.node.discounted_line_item.field_award
+    - field.field.node.discounted_line_item.field_discount
+    - field.field.node.discounted_line_item.field_exceptions
+    - node.type.discounted_line_item
+  module:
+    - text
+    - user
+id: node.discounted_line_item.search_result
+targetEntityType: node
+bundle: discounted_line_item
+mode: search_result
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_award:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_discount:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_exceptions:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  image_gallery:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  notes:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  ordering_instructions:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  reference_number:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  vendor:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

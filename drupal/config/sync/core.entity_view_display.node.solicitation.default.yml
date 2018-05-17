@@ -119,4 +119,5 @@ content:
     third_party_settings: {  }
 hidden:
   award_notes: true
+  langcode: true
   ordering_instructions: true

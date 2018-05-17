@@ -6,6 +6,8 @@ dependencies:
     - core.entity_form_mode.node.inline
     - field.field.node.solicitation.body
     - field.field.node.solicitation.field_bid_tabulation
+    - field.field.node.solicitation.field_board_minutes
+    - field.field.node.solicitation.field_board_report
     - field.field.node.solicitation.field_category
     - field.field.node.solicitation.field_dates_effective
     - field.field.node.solicitation.field_documentation
@@ -75,6 +77,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
     weight: 6

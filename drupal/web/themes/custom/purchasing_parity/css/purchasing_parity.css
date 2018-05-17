@@ -175,3 +175,42 @@ dd {
 .field--name-field-documentation .field__items {
   margin-top: 0;
 }
+
+/* search */
+.node--view-mode-search-result .node__content {
+  margin-top: 0.5em;
+}
+
+.node--view-mode-search-result .node__content .field {
+  margin-top: 0;
+}
+
+.node--view-mode-search-result h2 {
+  font-size: 1.333em;
+}
+
+.node--view-mode-search-result h2 small {
+  /* font-size: 1em; */
+  font-weight: normal;
+}
+/* end search */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

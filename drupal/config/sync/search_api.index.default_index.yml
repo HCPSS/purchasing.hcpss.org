@@ -1,12 +1,7 @@
 uuid: a57b7427-f038-4f28-af6f-3fab17ae1145
 langcode: en
-status: true
+status: false
 dependencies:
-  module:
-    - user
-    - taxonomy
-    - node
-    - search_api
   config:
     - field.storage.node.body
     - field.storage.node.field_discount
@@ -21,10 +16,13 @@ dependencies:
     - field.storage.node.field_reference_number
     - field.storage.node.field_category
     - field.storage.node.field_vendor
-    - field.storage.node.field_procurement_method
-    - field.storage.node.field_award
     - field.storage.node.field_dates_effective
     - search_api.server.default_server
+  module:
+    - taxonomy
+    - node
+    - search_api
+    - search_api_solr
 _core:
   default_config_hash: ZZOzsPDzemFXt9PsEqqVv44_AuKbg1LEqkr0WFzom1I
 id: default_index
@@ -32,23 +30,6 @@ name: 'Default content index'
 description: 'Default content index created by the Database Search Defaults module'
 read_only: false
 field_settings:
-  rendered_item:
-    label: 'Rendered item'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        anonymous: anonymous
-      view_mode:
-        'entity:node':
-          award: default
-          contract: default
-          discounted_line_item: default
-          partner_line_item: default
-          priced_line_item: default
-          quote: default
-          solicitation: default
-          vendor: default
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -84,14 +65,6 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: sticky
     type: boolean
-  author:
-    label: 'Author name'
-    datasource_id: 'entity:node'
-    property_path: 'uid:entity:name'
-    type: string
-    dependencies:
-      module:
-        - user
   uid:
     label: 'Author ID'
     datasource_id: 'entity:node'
@@ -212,56 +185,11 @@ field_settings:
         - field.storage.node.field_vendor
       module:
         - node
-  procurement_method:
-    label: 'Procurement Method'
-    datasource_id: 'entity:node'
-    property_path: 'field_procurement_method:entity:title'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_procurement_method
-      module:
-        - node
-  field_procurement_identifier:
-    label: 'Procurement » Identifier'
-    datasource_id: 'entity:node'
-    property_path: 'field_procurement_method:entity:field_identifier'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_procurement_method
-        - field.storage.node.field_identifier
-      module:
-        - node
   nid:
     label: 'Content ID'
     datasource_id: 'entity:node'
     property_path: nid
     type: integer
-  field_award_identifier:
-    label: 'Award » Identifier'
-    datasource_id: 'entity:node'
-    property_path: 'field_award:entity:field_identifier'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_award
-        - field.storage.node.field_identifier
-      module:
-        - node
-  field_award_procurement_identifier:
-    label: 'Award » Procurement » Identifier'
-    datasource_id: 'entity:node'
-    property_path: 'field_award:entity:field_procurement_method:entity:field_identifier'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_award
-        - field.storage.node.field_procurement_method
-        - field.storage.node.field_identifier
-      module:
-        - node
-        - node
   field_dates_effective_start:
     label: 'Dates Effective » Start'
     datasource_id: 'entity:node'
@@ -304,8 +232,7 @@ processor_settings:
       preprocess_index: -10
   html_filter:
     all_fields: false
-    fields:
-      - rendered_item
+    fields: {  }
     title: true
     alt: true
     tags:
@@ -321,7 +248,6 @@ processor_settings:
     all_fields: false
     fields:
       - title
-      - rendered_item
     weights:
       preprocess_index: -5
       preprocess_query: -8
@@ -332,7 +258,6 @@ processor_settings:
   stemmer:
     all_fields: true
     fields:
-      - rendered_item
       - title
       - body
       - field_exceptions
@@ -349,7 +274,6 @@ processor_settings:
     all_fields: false
     fields:
       - title
-      - rendered_item
     stopwords:
       - a
       - an
@@ -393,7 +317,6 @@ processor_settings:
     all_fields: false
     fields:
       - title
-      - rendered_item
     spaces: ''
     overlap_cjk: 1
     minimum_word_size: '3'
@@ -404,10 +327,10 @@ processor_settings:
     all_fields: false
     fields:
       - title
-      - rendered_item
     weights:
       preprocess_index: -4
       preprocess_query: -7
+  solr_date_range: {  }
 tracker_settings:
   default:
     indexing_order: fifo

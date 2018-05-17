@@ -18,4 +18,5 @@ content:
 hidden:
   awarded_procurements: true
   description: true
+  langcode: true
   purchasing_children: true

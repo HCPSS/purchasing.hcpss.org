@@ -42,4 +42,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
+  langcode: true
   member_for: true

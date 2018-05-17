@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Implementation of hook_preprocess_HOOK().
+ */
+function purchasing_parity_preprocess_node(&$variables, $hook) {
+  if ($variables['view_mode'] == 'search_result') {
+    switch ($variables['node']->bundle()) {
+      case 'priced_line_item':
+        $result_label = 'Line Item';
+        break;
+      case 'discounted_line_item':
+        $result_label = 'Line Item';
+        break;
+      case 'partner_line_item':
+        $result_label = 'Line Item';
+        break;
+      case 'award':
+        $result_label = 'Award';
+        break;
+      case 'contract':
+        $result_label = 'Procurement';
+        break;
+      case 'solicitation':
+        $result_label = 'Procurement';
+        break;
+      case 'quote':
+        $result_label = 'Procurement';
+        break;
+      case 'vendor':
+        $result_label = 'Vendor';
+        break;
+      default:
+        $result_label = 'Page';
+        break;
+    }
+
+    $variables['result_label'] = $result_label;
+  }
+}

@@ -1,0 +1,226 @@
+uuid: b1ef1bf9-d3fe-4b47-a648-5480e331e793
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+    - taxonomy
+    - search_api_solr
+    - search_api
+    - node
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_category
+    - field.storage.node.field_due_date
+    - field.storage.node.field_exceptions
+    - field.storage.node.field_identifier
+    - field.storage.node.field_notes
+    - field.storage.node.field_pe_id
+    - field.storage.node.field_reference_number
+    - field.storage.node.field_discount
+    - search_api.server.default_solr_server
+    - core.entity_view_mode.node.search_index
+_core:
+  default_config_hash: 5gcfQOCjXVt6We4_q02H8VjnECSON5NgKOchFAsncxU
+id: default_solr_index
+name: 'Default Solr content index'
+description: 'Default content index created by the Solr Search Defaults module'
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered item'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          award: search_index
+          contract: search_index
+          discounted_line_item: search_index
+          partner_line_item: search_index
+          priced_line_item: search_index
+          quote: search_index
+          solicitation: search_index
+          vendor: search_index
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+  status:
+    label: 'Publishing status'
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+  author:
+    label: 'Author name'
+    datasource_id: 'entity:node'
+    property_path: 'uid:entity:name'
+    type: string
+    dependencies:
+      module:
+        - user
+  uid:
+    label: 'Author ID'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+  body:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  name:
+    label: 'Category » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_category:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_category
+      module:
+        - taxonomy
+  field_due_date:
+    label: 'Due Date'
+    datasource_id: 'entity:node'
+    property_path: field_due_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_due_date
+  field_exceptions:
+    label: Exceptions
+    datasource_id: 'entity:node'
+    property_path: field_exceptions
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_exceptions
+  field_identifier:
+    label: 'HCPSS Contract Number'
+    datasource_id: 'entity:node'
+    property_path: field_identifier
+    type: solr_text_wstoken
+    dependencies:
+      config:
+        - field.storage.node.field_identifier
+  field_notes:
+    label: Notes
+    datasource_id: 'entity:node'
+    property_path: field_notes
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_notes
+  field_pe_id:
+    label: 'PE ID'
+    datasource_id: 'entity:node'
+    property_path: field_pe_id
+    type: solr_text_wstoken
+    dependencies:
+      config:
+        - field.storage.node.field_pe_id
+  field_reference_number:
+    label: 'Reference #'
+    datasource_id: 'entity:node'
+    property_path: field_reference_number
+    type: solr_text_wstoken
+    dependencies:
+      config:
+        - field.storage.node.field_reference_number
+  field_discount:
+    label: Discount
+    datasource_id: 'entity:node'
+    property_path: field_discount
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_discount
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - article
+        - page
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url:
+    weights:
+      preprocess_index: -30
+  aggregated_field:
+    weights:
+      add_properties: 20
+  content_access:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -4
+  entity_status:
+    weights:
+      preprocess_index: -10
+  html_filter:
+    weights:
+      preprocess_index: -3
+      preprocess_query: -6
+    fields:
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      string: 2
+      b: 2
+    all_fields: false
+  rendered_item:
+    weights:
+      add_properties: 0
+      pre_index_save: -10
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default_solr_server

@@ -12,7 +12,7 @@ id: node.award.field_procurement_method
 field_name: field_procurement_method
 entity_type: node
 bundle: award
-label: 'Procurement Method'
+label: Procurement
 description: 'How was this award procured?'
 required: true
 translatable: false

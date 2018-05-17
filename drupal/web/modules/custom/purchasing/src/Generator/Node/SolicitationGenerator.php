@@ -94,10 +94,6 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
         $solicitation->field_documentation[$index] = $file;
         $solicitation->field_documentation[$index]->description = $document['name'];
         $solicitation->field_documentation[$index]->display = 1;
-//         $solicitation->field_documentation[] = [
-//           'description' => $document['name'],
-//           'file' => $file,
-//         ];
       }
     }
 

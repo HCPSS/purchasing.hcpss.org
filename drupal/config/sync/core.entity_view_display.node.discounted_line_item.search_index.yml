@@ -1,0 +1,51 @@
+uuid: 1d998bf5-19f8-41ea-ac24-64c283f0c0a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.discounted_line_item.body
+    - field.field.node.discounted_line_item.field_award
+    - field.field.node.discounted_line_item.field_discount
+    - field.field.node.discounted_line_item.field_exceptions
+    - node.type.discounted_line_item
+  module:
+    - text
+    - user
+id: node.discounted_line_item.search_index
+targetEntityType: node
+bundle: discounted_line_item
+mode: search_index
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_discount:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_exceptions:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  field_award: true
+  image_gallery: true
+  langcode: true
+  links: true
+  notes: true
+  ordering_instructions: true
+  reference_number: true
+  vendor: true

@@ -40,5 +40,6 @@ hidden:
   field_board_minutes: true
   field_board_report: true
   field_dates_effective: true
+  langcode: true
   links: true
   ordering_instructions: true

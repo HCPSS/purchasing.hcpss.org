@@ -1,0 +1,70 @@
+uuid: d33fa440-82b5-40b1-adc9-d0f52ae9caae
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.priced_line_item.body
+    - field.field.node.priced_line_item.field_additional_charges
+    - field.field.node.priced_line_item.field_award
+    - field.field.node.priced_line_item.field_images
+    - field.field.node.priced_line_item.field_per
+    - field.field.node.priced_line_item.field_price
+    - field.field.node.priced_line_item.field_quote
+    - node.type.priced_line_item
+  module:
+    - entity_reference_revisions
+    - file
+    - text
+    - user
+id: node.priced_line_item.search_index
+targetEntityType: node
+bundle: priced_line_item
+mode: search_index
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_additional_charges:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_price:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_quote:
+    weight: 3
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  field_award: true
+  field_images: true
+  field_per: true
+  image_gallery: true
+  langcode: true
+  links: true
+  notes: true
+  ordering_instructions: true
+  reference_number: true
+  vendor: true

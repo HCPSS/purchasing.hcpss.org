@@ -68,6 +68,7 @@
         "drupal/paragraphs": "^1.2",
         "drupal/pathauto": "^1.2",
         "drupal/search_api": "^1.8",
+        "drupal/search_api_solr": "^2.0@beta",
         "drupal/simplesamlphp_auth": "^3.0",
         "drupal/token": "^1.1",
         "drush/drush": "^9.0.0",
@@ -129,6 +130,9 @@
             },
             "drupal/core": {
                 "Issue 2786577": "https://www.drupal.org/files/issues/2786577-270_0.patch"
+            },
+            "drupal/search_api_solr": {
+                "Issue 2971640": "https://www.drupal.org/files/issues/2018-05-09/2971640.patch"
             }
         }
     }

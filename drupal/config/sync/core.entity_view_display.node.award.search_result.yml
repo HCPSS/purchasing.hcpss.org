@@ -1,0 +1,66 @@
+uuid: ae9481e8-a46b-45f3-ba1e-f99a33da745f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.award.field_documentation
+    - field.field.node.award.field_identifier
+    - field.field.node.award.field_notes
+    - field.field.node.award.field_ordering_instructions
+    - field.field.node.award.field_procurement_method
+    - field.field.node.award.field_reference_number
+    - field.field.node.award.field_vendor
+    - node.type.award
+  module:
+    - text
+    - user
+id: node.award.search_result
+targetEntityType: node
+bundle: award
+mode: search_result
+content:
+  field_identifier:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_notes:
+    weight: 1
+    label: inline
+    settings:
+      trim_length: 140
+    third_party_settings: {  }
+    type: text_trimmed
+    region: content
+  field_ordering_instructions:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_procurement_method:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_vendor:
+    weight: 4
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_documentation: true
+  field_reference_number: true
+  langcode: true
+  links: true

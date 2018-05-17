@@ -5,6 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.priced_line_item.body
+    - field.field.node.priced_line_item.field_additional_charges
+    - field.field.node.priced_line_item.field_award
+    - field.field.node.priced_line_item.field_images
+    - field.field.node.priced_line_item.field_per
+    - field.field.node.priced_line_item.field_price
+    - field.field.node.priced_line_item.field_quote
     - node.type.priced_line_item
   module:
     - text
@@ -47,3 +53,4 @@ hidden:
   field_per: true
   field_price: true
   field_quote: true
+  langcode: true

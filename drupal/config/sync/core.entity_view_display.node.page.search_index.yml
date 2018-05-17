@@ -24,4 +24,5 @@ content:
     label: hidden
     region: content
 hidden:
+  langcode: true
   links: true

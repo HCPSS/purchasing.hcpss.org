@@ -46,4 +46,5 @@ content:
     region: content
 hidden:
   field_image: true
+  langcode: true
   links: true

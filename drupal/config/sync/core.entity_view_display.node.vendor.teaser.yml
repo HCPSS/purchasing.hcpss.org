@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.vendor.field_address
+    - field.field.node.vendor.field_email_address
+    - field.field.node.vendor.field_fax_number
+    - field.field.node.vendor.field_notes
+    - field.field.node.vendor.field_pe_id
+    - field.field.node.vendor.field_phone_number
+    - field.field.node.vendor.field_website
     - node.type.vendor
   module:
     - user
@@ -26,3 +33,4 @@ hidden:
   field_pe_id: true
   field_phone_number: true
   field_website: true
+  langcode: true

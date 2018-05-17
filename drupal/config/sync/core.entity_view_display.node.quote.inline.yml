@@ -90,4 +90,5 @@ content:
   ordering_instructions:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  langcode: true

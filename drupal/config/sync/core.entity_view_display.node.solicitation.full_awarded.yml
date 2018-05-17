@@ -115,4 +115,5 @@ content:
 hidden:
   award_notes: true
   field_due_date: true
+  langcode: true
   ordering_instructions: true
