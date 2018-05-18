@@ -10,3 +10,6 @@ nbproject
 
 # macOS
 .DS_Store
+
+# Keep Solr config but not data
+.cores/mycore/data

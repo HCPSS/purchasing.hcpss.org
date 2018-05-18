@@ -1,8 +1,12 @@
 services:
-  purchasing.breadcrumb:
-    class: Drupal\purchasing\Breadcrumb\PurchasingBreadcrumbBuilder
+  purchasing.node_breadcrumb:
+    class: Drupal\purchasing\Breadcrumb\PurchasingNodeBreadcrumbBuilder
     tags:
       - { name: breadcrumb_builder, priority: 100 }
+  purchasing.view_breadcrumb:
+    class: Drupal\purchasing\Breadcrumb\PurchasingViewBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 101 }
   purchasing.route_subscriber:
     class: Drupal\purchasing\Routing\RouteSubscriber
     tags:

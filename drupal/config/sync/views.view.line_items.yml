@@ -1,23 +1,27 @@
-uuid: 2f3d885d-c6d2-4a45-a4ba-756f602b1c23
+uuid: 6e274816-66c7-415e-9b44-5a8071b6db30
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_discount
     - field.storage.node.field_price
-    - search_api.index.default_index
+    - field.storage.node.field_vendor
+    - node.type.discounted_line_item
+    - node.type.partner_line_item
+    - node.type.priced_line_item
   module:
-    - search_api
+    - node
     - text
     - user
-id: line_item
-label: 'Line Item'
+id: line_items
+label: 'Line Items'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_default_index
-base_field: search_api_id
+base_table: node_field_data
+base_field: nid
 core: 8.x
 display:
   default:
@@ -36,8 +40,11 @@ display:
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
       exposed_form:
         type: basic
         options:
@@ -83,8 +90,9 @@ display:
           columns:
             title: title
             body: body
-            field_price: field_price
             field_discount: field_discount
+            field_price: field_price
+            field_vendor: field_vendor
           info:
             title:
               sortable: true
@@ -94,18 +102,11 @@ display:
               empty_column: false
               responsive: ''
             body:
-              sortable: true
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
-            field_price:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: true
               responsive: ''
             field_discount:
               sortable: true
@@ -114,19 +115,35 @@ display:
               separator: ''
               empty_column: true
               responsive: ''
+            field_price:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: ''
+            field_vendor:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
           default: '-1'
           empty_table: false
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          view_mode: teaser
       fields:
         title:
           id: title
-          table: search_api_index_default_index
+          table: node_field_data
           field: title
           relationship: none
           group_type: group
           admin_label: ''
-          label: Title
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -146,8 +163,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -181,17 +198,12 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          plugin_id: search_api_field
+          entity_type: node
+          entity_field: title
+          plugin_id: field
         body:
           id: body
-          table: search_api_index_default_index
+          table: node__body
           field: body
           relationship: none
           group_type: group
@@ -250,17 +262,74 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          plugin_id: search_api_field
+          plugin_id: field
+        field_discount:
+          id: field_discount
+          table: node__field_discount
+          field: field_discount
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Discount
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_price:
           id: field_price
-          table: search_api_index_default_index
+          table: node__field_price
           field: field_price
           relationship: none
           group_type: group
@@ -323,33 +392,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
-          plugin_id: search_api_field
-        field_discount:
-          id: field_discount
-          table: search_api_index_default_index
-          field: field_discount
-          relationship: none
+          plugin_id: field
+        field_vendor:
+          id: field_vendor
+          table: node__field_vendor
+          field: field_vendor
+          relationship: field_award
           group_type: group
           admin_label: ''
-          label: Discount
+          label: Vendor
           exclude: false
           alter:
             alter_text: false
@@ -390,12 +441,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
+            link: true
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -405,34 +455,27 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
-          plugin_id: search_api_field
+          plugin_id: field
       filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
         type:
           id: type
-          table: search_api_index_default_index
+          table: node_field_data
           field: type
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: in
           value:
             discounted_line_item: discounted_line_item
             partner_line_item: partner_line_item
@@ -464,68 +507,34 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
-        status:
-          id: status
-          table: search_api_index_default_index
-          field: status
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        combine:
+          id: combine
+          table: views
+          field: combine
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_boolean
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_default_index
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: and
+          operator: contains
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: search_api_fulltext_op
+            operator_id: combine_op
             label: Search
             description: ''
             use_operator: false
-            operator: search_api_fulltext_op
-            identifier: search_api_fulltext
+            operator: combine_op
+            identifier: combine
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              purchaser: '0'
               administrator: '0'
             placeholder: ''
           is_grouped: false
@@ -540,22 +549,57 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
-          plugin_id: search_api_fulltext
-      sorts: {  }
+          fields:
+            title: title
+            body: body
+            field_discount: field_discount
+            field_price: field_price
+            field_vendor: field_vendor
+          plugin_id: combine
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
       title: 'Line Items'
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
-      arguments:
-        field_award_procurement_identifier:
-          id: field_award_procurement_identifier
-          table: search_api_index_default_index
-          field: field_award_procurement_identifier
+      relationships:
+        field_award:
+          id: field_award
+          table: node__field_award
+          field: field_award
           relationship: none
+          group_type: group
+          admin_label: Award
+          required: true
+          plugin_id: standard
+        field_procurement_method:
+          id: field_procurement_method
+          table: node__field_procurement_method
+          field: field_procurement_method
+          relationship: field_award
+          group_type: group
+          admin_label: Procurement
+          required: true
+          plugin_id: standard
+      arguments:
+        field_identifier_value:
+          id: field_identifier_value
+          table: node__field_identifier
+          field: field_identifier_value
+          relationship: field_procurement_method
           group_type: group
           admin_label: ''
           default_action: default
@@ -570,7 +614,11 @@ display:
             index: 1
             use_alias: true
           default_argument_skip_url: false
-          summary_options: {  }
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
           summary:
             sort_order: asc
             number_of_records: 0
@@ -580,14 +628,18 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
+          glossary: false
+          limit: 0
+          case: upper
+          path_case: none
+          transform_dash: false
           break_phrase: false
-          not: false
-          plugin_id: search_api
-        field_award_identifier:
-          id: field_award_identifier
-          table: search_api_index_default_index
-          field: field_award_identifier
-          relationship: none
+          plugin_id: string
+        field_identifier_value_1:
+          id: field_identifier_value_1
+          table: node__field_identifier
+          field: field_identifier_value
+          relationship: field_award
           group_type: group
           admin_label: ''
           default_action: default
@@ -602,7 +654,11 @@ display:
             index: 3
             use_alias: true
           default_argument_skip_url: false
-          summary_options: {  }
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
           summary:
             sort_order: asc
             number_of_records: 0
@@ -612,9 +668,13 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
+          glossary: false
+          limit: 0
+          case: upper
+          path_case: none
+          transform_dash: false
           break_phrase: false
-          not: false
-          plugin_id: search_api
+          plugin_id: string
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -623,35 +683,16 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_discount'
         - 'config:field.storage.node.field_price'
-  page_1:
+        - 'config:field.storage.node.field_vendor'
+  contract:
     display_plugin: page
-    id: page_1
-    display_title: 'Solicitation Page'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: solicitation/%/award/%/line-item
-      display_description: ''
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_discount'
-        - 'config:field.storage.node.field_price'
-  page_2:
-    display_plugin: page
-    id: page_2
+    id: contract
     display_title: 'Contract Page'
     position: 2
     display_options:
@@ -665,11 +706,13 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_discount'
         - 'config:field.storage.node.field_price'
+        - 'config:field.storage.node.field_vendor'
   page_3:
     display_plugin: page
     id: page_3
@@ -686,8 +729,33 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_discount'
         - 'config:field.storage.node.field_price'
+        - 'config:field.storage.node.field_vendor'
+  solicitation:
+    display_plugin: page
+    id: solicitation
+    display_title: 'Solicitation Page'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: solicitation/%/award/%/line-item
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_discount'
+        - 'config:field.storage.node.field_price'
+        - 'config:field.storage.node.field_vendor'
