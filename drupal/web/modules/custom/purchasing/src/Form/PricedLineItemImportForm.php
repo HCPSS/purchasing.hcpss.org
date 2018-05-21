@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Drupal\purchasing\Generator\Node\PricedLineItemGenerator;
 use Drupal\file\Entity\File;
+use Drupal\Core\Url;
 
 class PricedLineItemImportForm extends FormBase {
 
@@ -31,6 +32,9 @@ class PricedLineItemImportForm extends FormBase {
       '#upload_validators' => [
         'file_validate_extensions' => ['csv']
       ],
+      '#description' => $this->t('<a href="@url">Download an example csv.</a>', [
+        '@url' => Url::fromRoute('purchasing.example_csv', ['node_type' => 'priced_line_item'])->toString(),
+      ]),
     ];
 
     $form['actions']['#type'] = 'actions';

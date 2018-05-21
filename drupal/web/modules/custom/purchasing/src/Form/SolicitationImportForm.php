@@ -6,8 +6,8 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
-use Symfony\Component\Serializer\Encoder\JsonEncode;
 use Drupal\purchasing\Generator\Node\SolicitationGenerator;
+use Drupal\Core\Url;
 
 class SolicitationImportForm extends FormBase {
 
@@ -32,6 +32,9 @@ class SolicitationImportForm extends FormBase {
       '#upload_validators' => [
         'file_validate_extensions' => ['csv']
       ],
+      '#description' => $this->t('<a href="@url">Download an example csv.</a>', [
+        '@url' => Url::fromRoute('purchasing.example_csv', ['node_type' => 'solicitation'])->toString(),
+      ]),
     ];
 
     $form['actions']['#type'] = 'actions';

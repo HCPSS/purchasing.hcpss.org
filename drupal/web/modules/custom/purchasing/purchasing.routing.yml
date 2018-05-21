@@ -26,3 +26,9 @@ purchasing.login:
   options:
     _maintenance_access: TRUE
     no_cache: TRUE
+purchasing.example_csv:
+  path: '/node/import/{node_type}/example'
+  defaults:
+    _controller: '\Drupal\purchasing\Controller\CsvController::exampleFile'
+  requirements:
+    _node_add_access: 'node:{node_type}'

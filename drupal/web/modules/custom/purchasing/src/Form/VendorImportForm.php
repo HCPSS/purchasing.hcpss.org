@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Drupal\purchasing\Generator\Node\VendorGenerator;
+use Drupal\Core\Url;
 
 class VendorImportForm extends FormBase {
 
@@ -31,6 +32,9 @@ class VendorImportForm extends FormBase {
       '#upload_validators' => [
         'file_validate_extensions' => ['csv']
       ],
+      '#description' => $this->t('<a href="@url">Download an example csv.</a>', [
+        '@url' => Url::fromRoute('purchasing.example_csv', ['node_type' => 'vendor'])->toString(),
+      ]),
     ];
 
     $form['actions']['#type'] = 'actions';
