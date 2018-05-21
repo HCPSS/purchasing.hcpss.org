@@ -45,10 +45,6 @@ class PricedLineItemGenerator extends NodeGenerator implements EntityGeneratorIn
    * @return Node
    */
   public function generate() {
-    if (trim($this->data['title']) == 'Bulletin Board, 4 x 8') {
-      dpm($this->data);
-    }
-
     if (!is_numeric($this->data['price'])) {
       throw new \Exception('Price must be a number. '. $this->data['price'] .' given');
     }
