@@ -12,6 +12,21 @@ use Drupal\purchasing\Model\ProcurementMethod;
 use Drupal\Core\Url;
 
 /**
+ * Implementation of hook_preprocess_field().
+ */
+function purchasing_preprocess_field(&$variables) {
+  if ($variables['field_name'] == 'field_price') {
+    $entity = $variables['element']['#object'];
+
+    switch ($entity->field_per->value) {
+      case 'hour':
+        $variables['items'][0]['content']['#suffix'] = '<span class="suffix">/hr</span>';
+        break;
+    }
+  }
+}
+
+/**
  * Implementation for hook_inline_entity_form_entity_form_alter().
  */
 function purchasing_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
