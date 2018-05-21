@@ -61,19 +61,20 @@ function _purchasing_admin_get_form_blocks() {
  */
 function _purchasing_admin_group_categories($variables) {
   $groups = [
-    'Procurement Methods' => [
+    'procurements' => [
       'contract',
       'solicitation',
       'quote',
     ],
-    'awarded line items' => [
+    'awards' => ['award', 'vendor'],
+    'line items' => [
       'priced_line_item',
       'discounted_line_item',
       'partner_line_item',
     ],
     'site content' => [
       'article',
-      'page'
+      'page',
     ],
   ];
 
