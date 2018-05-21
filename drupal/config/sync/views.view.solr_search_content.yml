@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - search_api.index.default_solr_index
+    - system.menu.main
   module:
     - search_api
 _core:
@@ -154,7 +155,16 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: solr-search/content
+      path: search
+      menu:
+        type: normal
+        title: Search
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 99
+        context: '0'
+        menu_name: main
     cache_metadata:
       contexts:
         - 'languages:language_interface'
