@@ -195,22 +195,6 @@ dd {
 }
 /* end search */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.views-field-field-dates-effective time {
+  white-space: nowrap;
+}
