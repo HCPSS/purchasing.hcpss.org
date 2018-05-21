@@ -1,4 +1,18 @@
 # Open
+- bid_number: 018.18.B3
+  title: 'Exterior Door Replacement - Clarksville Elementary School'
+  category: Facilities and Operations
+  bids_due: '6/23/18 10:00:00 AM'
+  description: 'Pre-Submission Meeting: May 11, 2018 at 1:00 p.m.'
+  documentation:
+    - name: 'Invitation to Bid'
+      file: 018.18.B3-ces-exterior-door-invitation.pdf
+    - name: 'Drawings'
+      file: 018.18.B3-ces-exterior-door-drawings.pdf
+    - name: 'Addendum #1'
+      file: 018.18.B3-ces-exterior-door-addendum-one.pdf
+    - name: 'Addendum #2'
+      file: 018.18.B3-ces-exterior-door-addendum-two.pdf
 - bid_number: 050.18.B3
   title: Plumbing Supplies
   category: Facilities and Operations
