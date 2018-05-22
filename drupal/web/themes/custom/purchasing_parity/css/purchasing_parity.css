@@ -207,3 +207,5 @@ dd {
 }
 
 .view-filters, .view-content { margin-top: 0.5em; }
+
+.view-id-awards_by_procurement_method .view-content { margin-top: 0; }
