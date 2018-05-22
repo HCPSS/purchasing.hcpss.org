@@ -198,3 +198,12 @@ dd {
 .views-field-field-dates-effective time {
   white-space: nowrap;
 }
+
+/* View Filter */
+.views-exposed-form, .form-item,
+.views-exposed-form, .form-actions,
+.views-element-container > div {
+  margin-top: 0;
+}
+
+.view-filters, .view-content { margin-top: 0.5em; }

@@ -50,6 +50,14 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_procurement_method:
+    type: entity_reference_label
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   field_reference_number:
     weight: 4
     label: above
@@ -59,7 +67,7 @@ content:
     type: string
     region: content
   field_vendor:
-    weight: 5
+    weight: 6
     label: above
     settings:
       link: true
@@ -67,6 +75,5 @@ content:
     type: entity_reference_label
     region: content
 hidden:
-  field_procurement_method: true
   langcode: true
   links: true

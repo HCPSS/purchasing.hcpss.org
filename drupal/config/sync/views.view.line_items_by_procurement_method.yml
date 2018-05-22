@@ -50,7 +50,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -1183,7 +1183,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: combine_op
@@ -1196,7 +1196,7 @@ display:
               anonymous: '0'
               purchaser: '0'
               administrator: '0'
-            placeholder: ''
+            placeholder: 'Search the Catalog'
           is_grouped: false
           group_info:
             label: ''
@@ -1576,7 +1576,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: combine_op
@@ -1587,8 +1587,9 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              purchaser: '0'
               administrator: '0'
-            placeholder: ''
+            placeholder: 'Search the Catalog'
           is_grouped: false
           group_info:
             label: ''
