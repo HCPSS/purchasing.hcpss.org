@@ -58,13 +58,15 @@ dd {
 }
 
 #views-exposed-form-line-items-by-procurement-method-block-2,
-#views-exposed-form-line-items-by-procurement-method-block-1 {
+#views-exposed-form-line-items-by-procurement-method-block-1,
+#views-exposed-form-procurement-methods-open-solicitation {
   display: grid;
   grid-template-columns: max-content 1fr;
 }
 
 #views-exposed-form-line-items-by-procurement-method-block-2 .form-item,
-#views-exposed-form-line-items-by-procurement-method-block-1 .form-item {
+#views-exposed-form-line-items-by-procurement-method-block-1 .form-item, 
+#views-exposed-form-procurement-methods-open-solicitation .form-item {
   grid-column-start: 1;
   margin-right: 20px;
 }
@@ -206,6 +208,10 @@ dd {
   margin-top: 0;
 }
 
-.view-filters, .view-content { margin-top: 0.5em; }
+.view-filters, .view-content { 
+  margin-top: 0.5em;
+}
 
-.view-id-awards_by_procurement_method .view-content { margin-top: 0; }
+.view-id-awards_by_procurement_method .view-content { 
+  margin-top: 0;
+}

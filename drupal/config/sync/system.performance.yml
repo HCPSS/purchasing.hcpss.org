@@ -3,7 +3,7 @@ cache:
     max_age: 0
     use_internal: true
 css:
-  preprocess: true
+  preprocess: false
   gzip: true
 fast_404:
   enabled: true

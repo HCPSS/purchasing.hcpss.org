@@ -52,7 +52,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -600,7 +600,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: combine_op
@@ -613,7 +613,7 @@ display:
               anonymous: '0'
               purchaser: '0'
               administrator: '0'
-            placeholder: ''
+            placeholder: 'Search Contracts'
           is_grouped: false
           group_info:
             label: ''
@@ -714,6 +714,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        header: false
       path: solicitation/open
       menu:
         type: normal
@@ -790,7 +791,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: combine_op
@@ -803,7 +804,7 @@ display:
               anonymous: '0'
               purchaser: '0'
               administrator: '0'
-            placeholder: ''
+            placeholder: 'Search Solicitations'
           is_grouped: false
           group_info:
             label: ''
@@ -1319,6 +1320,20 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<h2>Submittal Information</h2>\n\n<p>All bids must be submitted in a sealed envelope clearly marked with “BID ENCLOSED” along with the Bid Number and Description. It is the bidder’s responsibility to insure that bids are delivered to the Purchasing Office prior to the scheduled opening time.</p>\n\n<p>Bids may not be returned via the internet, fax, or by any other electronic mode.</p>\n\n<p>Formal bid notice will be posted on <a href=\"https://emaryland.buyspeed.com/bso/\">eMaryland Marketplace</a>.</p>\n\n<p>Solicitation award log forthcoming.</p>\n\n<p><strong>Note:</strong> The following is a representation of the bid opening results or award recommendations. It does not represent what was officially approved by the Board of Education.</p>"
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -1797,7 +1812,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: combine_op
@@ -1810,7 +1825,7 @@ display:
               anonymous: '0'
               purchaser: '0'
               administrator: '0'
-            placeholder: ''
+            placeholder: 'Search Quote'
           is_grouped: false
           group_info:
             label: ''
@@ -1922,7 +1937,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: combine_op
@@ -1935,7 +1950,7 @@ display:
               anonymous: '0'
               purchaser: '0'
               administrator: '0'
-            placeholder: ''
+            placeholder: 'Search Solicitations'
           is_grouped: false
           group_info:
             label: ''
