@@ -46,7 +46,12 @@ class PricedLineItemGenerator extends NodeGenerator implements EntityGeneratorIn
    */
   public function generate() {
     if (!is_numeric($this->data['price'])) {
-      throw new \Exception('Price must be a number. '. $this->data['price'] .' given');
+      $message = vsprintf('Price must be a number. %s given for "%s"', [
+        $this->data['price'],
+        $this->data['title'],
+      ]);
+
+      throw new \Exception($message);
     }
 
     $line_item = Node::create([

@@ -447,3 +447,39 @@
   ordering_instructions: '<p>Sales Rep: Dave Johnson, (800) 777-8817</p>'
   reference: 'Summit #59236'
   vendor: Summit Learning
+  
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7131
+  vendor: Moore Medical
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7132
+  vendor: Henry Schein
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7133
+  vendor: Westnet
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7134
+  vendor: 'Kentron Health Care, Inc.'
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7135
+  vendor: Lifeline
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7136
+  vendor: 'School Health'
+- procurement_method:
+    name: solicitation
+    id: 045.13.B2
+  id: 021.18.2.PC.01.7137
+  vendor: 'AOSS Medical'

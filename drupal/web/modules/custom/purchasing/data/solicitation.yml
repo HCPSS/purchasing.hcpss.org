@@ -19,35 +19,35 @@
   documentation:
     - name: Invitation to Bid
       file: 050.18.B3-plumbling-supplies-invitation.pdf
-  bids_due: '4/24/2018  10:00:00 AM'
+  bids_due: '8/24/2018  10:00:00 AM'
 - bid_number: 058.18.B1
   title: Web-based Instructional College Planning and Career Search
   category: Instructional Services
   documentation:
     - name: Request for Proposals
       file: 058.18.B1-college-career-planning-rfp.pdf
-  bids_due: '4/25/2018  3:00:00 PM'
+  bids_due: '8/25/2018  3:00:00 PM'
 - bid_number: 049.18.B3
   title: Food Bar Equipment
   category: Facilities and Operations
   documentation:
     - name: Invitation to Bid
       file: 049.18.B3-food-bar-equipment-invitation.pdf
-  bids_due: '4/24/2018  11:00:00 AM'
+  bids_due: '8/24/2018  11:00:00 AM'
 - bid_number: 054.18.B1
   title: Reading Support Program for Students with Cognitive Disabilities
   category: Instructional Services
   documentation:
     - name: Request for Proposals
       file: 054.18.B1-reading-support-programs-rfp.pdf
-  bids_due: '4/20/2018  2:00:00 PM'
+  bids_due: '8/20/2018  2:00:00 PM'
 - bid_number: 051.18.B5
   title: Absence Management
   category: Staffing and Human Resources
   documentation:
     - name: Request for Proposals
       file: 051.18.B5-absence-management-rfp.pdf
-  bids_due: '4/11/2018  2:00:00 PM'
+  bids_due: '8/11/2018  2:00:00 PM'
 - bid_number: 057.18.B5
   title: Security Guard Services
   category: Facilities and Operations
@@ -56,7 +56,7 @@
       file: 057.18.B5-security-guard-services-rfp.pdf
     - name: 'Addendum #1'
       file: 057.18.B5-security-guard-services-addendum-one.pdf
-  bids_due: '4/16/2018  2:00:00 PM'
+  bids_due: '8/16/2018  2:00:00 PM'
 - bid_number: 045.18.B4
   title: Football Helmets
   category: Instructional Supplies
@@ -65,7 +65,7 @@
       file: 045.18.B4-football-helmets-invitation.pdf
     - name: 'Addendum #1'
       file: 045.18.B4-football-helmets-addendum-one.pdf
-  bids_due: '4/17/2018  10:00:00 AM'
+  bids_due: '8/17/2018  10:00:00 AM'
 - bid_number: 055.18.B5
   title: Dell Computer Parts and Repair Services
   category: Technology Services
@@ -76,7 +76,7 @@
       file: 055.18.B5-dell-computer-maintenance-rfp.pdf
     - name: 'Addendum #1'
       file: 055.18.B5-dell-computer-maintenance-addendum-one.pdf
-  bids_due: '4/9/2018  10:30:00 AM'
+  bids_due: '8/9/2018  10:30:00 AM'
 - bid_number: 056.18.B5
   title: Replacement Lamps for Epson Projectors
   category: Technology Products
@@ -87,7 +87,7 @@
       file: 056.18.B5-replacement-lamps-epson-projectors-request.pdf
     - name: 'Addendum #1'
       file: 056.18.B5-replacement-lamps-epson-projectors-addendum-one.pdf
-  bids_due: '4/5/2018  10:00:00 AM'
+  bids_due: '8/5/2018  10:00:00 AM'
 - bid_number: 052.18.B5
   title: HP Printers
   category: Technology Products
@@ -96,7 +96,7 @@
       file: 052.18.B5-hp-printers-proposals.pdf
     - name: 'Addendum #1'
       file: 052.18.B5-hp-printers-addendum-one.pdf
-  bids_due: '4/2/2018  10:00:00 AM'
+  bids_due: '8/2/2018  10:00:00 AM'
 - bid_number: 054.18.B5
   title: Dell Computers
   category: Technology Products
@@ -107,7 +107,7 @@
       file: 054.18.B5-dell-computers-addendum-one.pdf
     - name: 'Addendum #2'
       file: 054.18.B5-dell-computers-addendum-two.pdf
-  bids_due: '4/2/2018  10:30:00 AM'
+  bids_due: '8/2/2018  10:30:00 AM'
 - bid_number: 047.18.B3
   title: Switchboard Replacement, Applications and Research Laboratory
   category: Technology Products
@@ -126,7 +126,7 @@
   documentation:
     - name: Invitation to Bid
       file: 020.18.B2-art-equipment-invitation.pdf
-  bid_due: February 28, 2018 at 10:00 a.m.
+  bids_due: '8/2/2018  10:30:00 AM'
 - bid_number: 043.18.B2
   title: Laminating Film
   category: Facilities and Operations
@@ -237,6 +237,13 @@
   bids_due: '7/27/2017  2:30:00 PM'
   
 # Closed
+- bid_number: 045.13.B2
+  category: 'Facilities and Operations'
+  title: Health First Aid Supplies
+  bids_due: '4/30/2018  2:00:00 PM'
+  effective:
+    start: 5/1/18
+    end:  5/1/19
 - bid_number: 022.17.B2
   title: Appliances and Kitchen Equipment
   board:
