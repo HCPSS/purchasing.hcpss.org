@@ -162,7 +162,7 @@ dd {
 
 @media (min-width: 620px) {
   .view-field.view-name-images {
-    width: 220px;
+    width: 250px;
     float: right;
   }
 }
