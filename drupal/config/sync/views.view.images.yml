@@ -88,7 +88,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% set imagestyle = {\n  '#theme':      'image_style',\n  '#style_name': 'large',\n  '#uri':        uri,\n  '#alt':        'thumbnail',\n  '#attributes': { class: 'swiper-image' },\n} %}\n\n<a href=\"{{ file_url(uri) }}\">{{ imagestyle }}</a>"
+            text: "{% set imagestyle = {\n  '#theme':      'image_style',\n  '#style_name': 'medium',\n  '#uri':        uri,\n  '#alt':        'thumbnail',\n  '#attributes': { class: 'swiper-image' },\n} %}\n\n<a href=\"{{ file_url(uri) }}\">{{ imagestyle }}</a>"
             make_link: false
             path: ''
             absolute: false

@@ -162,14 +162,7 @@ dd {
 
 @media (min-width: 620px) {
   .view-field.view-name-images {
-    width: 300px;
-    float: right;
-  }
-}
-
-@media (min-width: 960px) {
-  .view-field.view-name-images {
-    width: 480px;
+    width: 220px;
     float: right;
   }
 }
@@ -217,7 +210,8 @@ dd {
 }
 
 .view-mode-teaser h2,
-.node--view-mode-teaser h2 {
+.node--view-mode-teaser h2,
+.node--view-mode-teaser-by-vendor h2 {
   font-size: 1.8rem;
   margin-bottom: 0;
 }
