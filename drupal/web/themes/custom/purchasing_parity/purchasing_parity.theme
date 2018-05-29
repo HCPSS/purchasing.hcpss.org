@@ -4,7 +4,6 @@
  * Implementation of hook_preprocess_HOOK().
  */
 function purchasing_preprocess_pager(&$variables, $hook) {
-  return;
   if (in_array('pager__images__block_1', $variables['pager']['#theme'])) {
     if (isset($variables['items']['first'])) {
       unset($variables['items']['first']);
