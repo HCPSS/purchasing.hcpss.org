@@ -79,8 +79,8 @@ content:
     settings:
       form_mode: inline
       override_labels: true
-      label_singular: 'Procurement Method'
-      label_plural: 'Procurement Methods'
+      label_singular: Procurement
+      label_plural: Procurements
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
