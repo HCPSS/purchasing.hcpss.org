@@ -318,8 +318,8 @@ function purchasing_node_view(array &$build, EntityInterface $entity, EntityView
     _purchasing_view_awards($build, $entity);
   }
 
-  if ($display->getComponent('awards_by_vendor')) {
-    _purchasing_view_awards_by_vendor($build, $entity);
+  if ($component = $display->getComponent('awards_by_vendor')) {
+    _purchasing_view_awards_by_vendor($build, $entity, $component['weight']);
   }
 
   if ($display->getComponent('image_gallery')) {
@@ -352,7 +352,7 @@ function _purchasing_view_award_field($field, &$build, $entity) {
  * @param array $build
  * @param NodeInterface $entity
  */
-function _purchasing_view_awards_by_vendor(array &$build, NodeInterface $entity) {
+function _purchasing_view_awards_by_vendor(array &$build, NodeInterface $entity, $weight) {
   $view = Views::getView('awards_by_vendor');
   if (is_object($view)) {
     $args = [$entity->id()];
@@ -368,6 +368,7 @@ function _purchasing_view_awards_by_vendor(array &$build, NodeInterface $entity)
         '#theme' => 'view_field',
         '#view' => $content,
         '#label' => t('Awards'),
+        '#weight' => $weight,
       ];
     }
   }
