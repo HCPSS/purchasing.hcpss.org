@@ -17,8 +17,6 @@ services:
   search:
     container_name: purchasing_search
     build: docker/search
-    volumes:
-      - ./.cores:/opt/solr/server/solr/mycores
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
