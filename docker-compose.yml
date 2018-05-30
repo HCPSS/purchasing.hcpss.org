@@ -16,6 +16,7 @@ services:
 
   search:
     container_name: purchasing_search
+    image: reg.hcpss.org/purchasing/search
     build: docker/search
     entrypoint:
       - docker-entrypoint.sh
@@ -26,6 +27,7 @@ services:
 
   drupal:
     container_name: purchasing_web
+    image: reg.hcpss.org/purchasing/web
     depends_on:
       - db
       - search
