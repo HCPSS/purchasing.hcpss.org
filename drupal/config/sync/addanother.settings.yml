@@ -6,9 +6,13 @@ _core:
   default_config_hash: ffjwyOkkEGJcHRBGwLlGLtdWUcTvXx8Dclcq43MZrT8
 button:
   vendor: true
+  temp: false
 message:
   vendor: false
+  temp: false
 tab:
   vendor: false
+  temp: false
 tab_edit:
   vendor: false
+  temp: false

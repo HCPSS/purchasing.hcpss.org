@@ -12,6 +12,26 @@ use Drupal\purchasing\Model\ProcurementMethod;
 use Drupal\Core\Url;
 
 /**
+ * Implementation of hook_form_FORM_ID_alter().
+ *
+ * Inline Entity Fields does not have configuration settings for it's
+ * entity autocomplete field. So I am configuring it here to use a view for
+ * filtering.
+ */
+function purchasing_inline_entity_form_reference_form_alter(&$reference_form, &$form_state) {
+  $reference_form['entity_id']['#selection_settings'] = [
+    'view' => [
+      'view_name' => 'procurement_filter',
+      'display_name' => 'entity_reference_1',
+      'arguments' => [],
+    ],
+    'match_operator' => 'CONTAINS',
+  ];
+
+  $reference_form['entity_id']['#selection_handler'] = 'purchasing';
+}
+
+/**
  * Implementation of hook_preprocess_field().
  */
 function purchasing_preprocess_field(&$variables) {
@@ -132,7 +152,8 @@ function _purchasing_render_view($name, $display, array $args = [], $allow_empty
     }
 
     if ($render) {
-      return \Drupal::service('renderer')->renderRoot($view->render());
+      $root = $view->render();
+      return \Drupal::service('renderer')->renderRoot($root);
     } else {
       $view->buildRenderable($display, $args, FALSE);
     }

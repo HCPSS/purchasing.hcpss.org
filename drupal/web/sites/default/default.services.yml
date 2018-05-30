@@ -55,7 +55,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default false
-    debug: true
+    debug: false
     # Twig auto-reload:
     #
     # Automatically recompile Twig templates whenever the source code changes.
@@ -93,7 +93,7 @@ parameters:
     # users. If you know what the high-cardinality cache contexts are for your
     # site, specify those here. If you're not sure, the defaults are fairly safe
     # in general.
-    # 
+    #
     # For more information about rendering optimizations see
     # https://www.drupal.org/developing/api/8/render/arrays/cacheability#optimizing
     auto_placeholder_conditions:

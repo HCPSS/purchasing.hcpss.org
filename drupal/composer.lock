@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "35b79de683c8aeeccf68b6a33786f760",
@@ -3918,7 +3918,7 @@
                 "reference": "master"
             },
             "type": "drupal-theme",
-            "time": "2018-05-04T16:00:33+00:00"
+            "time": "2018-05-23T16:52:53+00:00"
         },
         {
             "name": "jaimeperez/twig-configurable-i18n",
