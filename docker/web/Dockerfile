@@ -2,7 +2,7 @@ FROM banderson/drupal
 
 MAINTAINER brendan_anderson@hcpss.org
 LABEL vendor="Howard County Public School System"
-LABEL org.hcpss.purchasing.web.version="0.1.1"
+LABEL org.hcpss.purchasing.web.version="0.1.3"
 
 # SQLite for storing SimpleSAMLphp sessions.
 RUN apt-get update && apt-get install -y \
