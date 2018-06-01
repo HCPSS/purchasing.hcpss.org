@@ -54,4 +54,17 @@
   email: brendan_anderson@hcpss.org
   username: banderson
   roles: ['purchaser']
+
+- display_name: Teresa Dennison
+  title: 'Specialist - Continuous Improvement'
+  phone: 410-313-6703
+  email: teresa_dennison@hcpss.org
+  username: tdennison
+  roles: ['purchaser']
   
+- display_name: Michele Nethken
+  title: Administrative Secretary
+  phone: 410-313-6644
+  email: michele_nethken@hcpss.org
+  username: mnethken
+  roles: ['purchaser']
