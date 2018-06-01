@@ -19,3 +19,7 @@
 .js .line-item-actions .dropbutton-widget {
   display: inline-block;
 }
+
+.js #edit-field-procurement-method-wrapper .dropbutton-wrapper {
+  float: left;
+}

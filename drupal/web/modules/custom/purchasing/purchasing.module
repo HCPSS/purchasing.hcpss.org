@@ -19,16 +19,18 @@ use Drupal\Core\Url;
  * filtering.
  */
 function purchasing_inline_entity_form_reference_form_alter(&$reference_form, &$form_state) {
-  $reference_form['entity_id']['#selection_settings'] = [
-    'view' => [
-      'view_name' => 'procurement_filter',
-      'display_name' => 'entity_reference_1',
-      'arguments' => [],
-    ],
-    'match_operator' => 'CONTAINS',
-  ];
+  if ($reference_form['#parents'][0] == 'field_procurement_method') {
+    $reference_form['entity_id']['#selection_settings'] = [
+      'view' => [
+        'view_name' => 'procurement_filter',
+        'display_name' => 'entity_reference_1',
+        'arguments' => [],
+      ],
+      'match_operator' => 'CONTAINS',
+    ];
 
-  $reference_form['entity_id']['#selection_handler'] = 'purchasing';
+    $reference_form['entity_id']['#selection_handler'] = 'purchasing';
+  }
 }
 
 /**
