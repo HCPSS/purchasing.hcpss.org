@@ -7,6 +7,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
 use Drupal\node\NodeInterface;
+use Drupal\node\Entity\Node;
 
 class PurchasingNodeBreadcrumbBuilder extends SegmentBreadcrumb implements BreadcrumbBuilderInterface {
 
@@ -20,6 +21,12 @@ class PurchasingNodeBreadcrumbBuilder extends SegmentBreadcrumb implements Bread
         'solicitation', 'contract', 'quote', 'award', 'priced_line_item',
         'discount_line_item', 'partner_line_item',
       ];
+
+      if (!$node instanceof NodeInterface && is_numeric($node)) {
+        // Sometimes, instead of giving us the fully loaded Node, Drupal will
+        // give us the raw NID as a string from the path.
+        $node = Node::load($node);
+      }
 
       if (in_array($node->bundle(), $bundles)) {
         return TRUE;
@@ -41,6 +48,10 @@ class PurchasingNodeBreadcrumbBuilder extends SegmentBreadcrumb implements Bread
     $segments[self::POSITION_HOME] = Link::createFromRoute('Home', '<front>');
 
     if ($node = $route_match->getParameter('node')) {
+      if (!$node instanceof NodeInterface && is_numeric($node)) {
+        $node = Node::load($node);
+      }
+
       $this->addViewSegment($node, $segments);
     }
 
