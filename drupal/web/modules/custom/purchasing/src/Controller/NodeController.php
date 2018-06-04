@@ -18,6 +18,10 @@ class NodeController extends NodeControllerBase {
 
     if ($node_type->id() === 'award' && $pid = \Drupal::request()->get('procurement')) {
       $node->field_procurement_method = ['target_id' => $pid];
+    } else if (in_array($node_type->id(), ['priced_line_item', 'discounted_line_item'])) {
+      if ($aid = \Drupal::request()->get('award')) {
+        $node->field_award = ['target_id' => $aid];
+      }
     }
 
     $form = $this->entityFormBuilder()->getForm($node);
