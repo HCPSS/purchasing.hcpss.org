@@ -1,24 +1,5 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
-
-/**
- * Implementation of hook_form_FORM_ID_alter().
- */
-function purchasing_admin_form_node_award_form_alter(&$form, FormStateInterface $form_state) {
-  $form['board_information'] = [
-    "#type" => "details",
-    "#title" => 'Board Information',
-    "#open" => false,
-    "#group" => "advanced",
-    "#access" => true,
-    "#weight" => 1,
-  ];
-
-  $form['field_board_minutes']['#group'] = 'board_information';
-  $form['field_board_report']['#group'] = 'board_information';
-}
-
 /**
  * Implementation of hook_preprocess_HOOK().
  */
