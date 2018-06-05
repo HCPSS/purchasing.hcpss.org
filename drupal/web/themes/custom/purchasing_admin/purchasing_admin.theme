@@ -45,18 +45,17 @@ function _purchasing_admin_group_categories($variables) {
     'procurements' => [
       'contract',
       'solicitation',
-      'quote',
     ],
     'awards' => ['award', 'vendor'],
     'line items' => [
       'priced_line_item',
       'discounted_line_item',
-      'partner_line_item',
     ],
     'site content' => [
       'article',
       'page',
     ],
+    'experimental' => ['quote', 'partner_line_item'],
   ];
 
   $categories = [];
