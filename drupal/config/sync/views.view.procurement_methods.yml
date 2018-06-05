@@ -673,6 +673,7 @@ display:
           table: taxonomy_term_hierarchy
           field: parent
           plugin_id: standard
+          relationship: field_category
       arguments: {  }
       display_extenders: {  }
       title: 'Solicitations Open for Bid'
