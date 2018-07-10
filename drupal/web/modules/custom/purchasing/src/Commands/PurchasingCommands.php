@@ -62,7 +62,7 @@ class PurchasingCommands extends DrushCommands {
   }
 
   /**
-   * Generate categories.
+   * Generate all.
    *
    * @usage purchasing:generate:all
    *   Generate all content.
@@ -78,6 +78,21 @@ class PurchasingCommands extends DrushCommands {
     $this->generateAwards();
     $this->generatePricedLineItems();
     $this->generateDiscountedLineItems();
+    $this->generatePages();
+    $this->generateLinks();
+  }
+
+  /**
+   * Generate only essential stuff.
+   *
+   * @usage purchasing:generate:slim
+   *   Generate essential content.
+   *
+   * @command purchasing:generate:slim
+   */
+  public function generateSlim() {
+    $this->generateCategories();
+    $this->generateUsers();
     $this->generatePages();
     $this->generateLinks();
   }

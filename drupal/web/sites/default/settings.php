@@ -785,12 +785,27 @@ $settings['entity_update_batch_size'] = 50;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+// if (getenv('DRUPAL_ENV') == 'dev') {
+//   $config['config_split.config_split.development_split']['status'] = TRUE;
+// }
+// else {
+//   $config['config_split.config_split.development_split']['status'] = FALSE;
+// }
+
+if (getenv('DRUPAL_ENV') == 'dev') {
+  $config['config_split.config_split.development_split']['status'] = TRUE;
+}
+else {
+  $config['config_split.config_split.development_split']['status'] = FALSE;
+}
+
 $settings['trusted_host_patterns'] = array(
   '^purchasing\.hcpss\.org$',
   '^purchasing\.hcpss\.localhost$',
   '^10\.216\.209\.84$',
 );
-$config_directories['sync'] = '../config/sync';
+$config_directories['sync'] = '/var/www/drupal/config/sync';
 $settings["file_private_path"] = "/var/www/drupal/files";
 $databases['default']['default'] = [
   'database' => getenv('MYSQL_DATABASE'),
