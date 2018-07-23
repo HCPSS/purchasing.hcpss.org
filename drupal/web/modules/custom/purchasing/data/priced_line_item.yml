@@ -793,4 +793,207 @@
   description: 'School Health 10029'
   price: 248.86
   award: '021.18.2.PC.01.7136'
- 
+
+- title: 'Dell OptiPlex 3050 (i5-7500, 8GB, 256GB SSD)'
+  description: '<p>With 4-year next business day on-site extended warranty</p><p>DNIQ203969</p>'
+  price: 603
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell XPS 9370 (i5-8250U up to 3.4GHz, 4GB, 128GB SSD)'
+  description: '<p>With 4-year next business day on-site extended warranty</p><p>DNIQ204569</p>'
+  price: 1247
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell Latitude 3380 (i3-6006U 2.00GHz, 8GB, 128GB SSD, Intel Wireless)'
+  description: '<p>With 4-year next business day on-site extended warranty</p><p>DNIQ204367</p>'
+  price: 667
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell Latitude E5590 (i3-7130U 2.7GHz, 8GB, 256GB SSD)'
+  description: '<p>With 4-year next business day on-site extended warranty</p><p>DNIQ204530</p>'
+  price: 994
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell Latitude7480 (i5-7300U 2.6GHz, 8GB, 256GB SSD)'
+  description: '<p>With 4-year next business day on-site extended warranty</p><p>DNIQ203962</p>'
+  price: 1170
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell Precision 7520 (i7-7820HQ 2.90GHz, 16GB, 512GB SSD, Quadro M1200 w/4GB)'
+  description: '<p>With 4-year next business day on-site extended warranty</p><p>DNIQ203847</p>'
+  price: 1991
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell 24 Monitor'
+  description: '<p>E2416H with Premium Pane 3 Year Advanced Exchange Warranty</p><p>DNIQ203963</p>'
+  price: 146
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell 27 Monitor'
+  description: '<p>P2717H with Premium Pane 3 Year Advanced Exchange Warranty</p><p>DNIQ203970</p>'
+  price: 250
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell E-Port Plus Advanced Port Replicator with USB 3.0'
+  description: '<p>DNIQ203971</p>'
+  price: 155
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell Wireless Keyboard and Mouse - KM636'
+  description: '<p>DNIQ203972</p>'
+  price: 36
+  award: '010.18.1.PR.01.1804'
+- title: 'Dell Adapter – USB-C to HDMI/VGA/Ethernet/USB 3.0'
+  description: '<p>DNIQ203975</p>'
+  price: 50
+  award: '010.18.1.PR.01.1804'
+- title: 'Adapter: USB-C to VGA'
+  description: '<p>Intended Use: Connects XPS 13 laptop to analog VGA monitor, projector or LCD</p>'
+  price: 46.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 122797
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-122797.pdf'
+- title: 'Adapter (Dongle): Mini-Display Port to VGA'
+  description: '<p>Intended Use: Connects Latitude to analog VGA monitor, projector, or LCD</p>'
+  price: 32.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: 120524
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120524.pdf'
+- title: 'StarTech.com Display Port to DVI Video Adapter Converter'
+  description: '<p>Intended Use: Connects Dell Laptops and Desktops to Digital DVI Monitors, Eliminates need for separate adapter and cable</p><p>Vendor: CDW-G</p>'
+  price: 21.94
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: CDW-G
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/cdw-g-dvi-adapter-converter.pdf'
+- title: 'Cable: Mini Display Port to DVI Cable'
+  description: >
+    <p>Intended Use: Connects Dell laptops & desktops to digital DVI monitors, eliminates need for separate adapter and cable.</p>
+    <p><a href="http://www.amazon.com/Cable-Matters-DisplayPort-Thunderbolt-Compatible/dp/B00DJCB83O/ref=sr_1_1?ie=UTF8&qid=1422906500&sr=8-1&keywords=Mini+displayport+to+DVI">Available from Amazon.com</a></p>
+  price: 10.99
+  award: '010.18.1.PR.01.1804'
+- title: 'Cable: Mini Display Port to VGA Cable'
+  description: >
+    <p>Intended Use: Connects Dell laptops & desktops to analog VGA monitor, projector or LCD, eliminates need for separate adapter and cable</p>
+    <p><a href="http://www.amazon.com/Cable-Matters-DisplayPort-Thunderbolt-Compatible/dp/B00DJCBBDG/ref=sr_1_12?ie=UTF8&qid=1422906583&sr=8-12&keywords=Mini+displayport+to+VGA">Available from Amazon.com</a></p>
+  price: 15.99
+  award: '010.18.1.PR.01.1804'
+- title: 'Power Adapter, Dell Latitude Models: 3350, 5570, 7450, 3040'
+  description: '<p>Intended Use: 90w AC adapter for use with models listed</p>'
+  price: 59.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: 121663
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-121663.pdf'
+- title: 'Power Adapter, Dell Precision Laptop Model 7510'
+  description: '<p>Intended Use: 130 Watt, 3 prong AC adapter</p>'
+  price: 75.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: 121970
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/bb-quote-121970.pdf'
+- title: 'Power Adapter, Dell XPS/Inspiron Laptops'
+  description: '<p>Intended Use: 45 Watt 3-prong AC Adapter</p>'
+  price: 37.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: 122799
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-122799.pdf'
+- title: 'Docking Station Package: Latitude E Series port replicator, E Series 24in Monitor (no stand), Soundbar, Wireless Keyboard and Mouse'
+  description: '<p>Intended Use: Converts laptop for desktop use</p>'
+  price: 420.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: 120132
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/120132.pdf'
+- title: 'Docking Station Package: Latitude E Series port replicator, E Series 24in Monitor (no stand), Soundbar, Wired Keyboard and Mouse'
+  description: '<p>Intended Use: Converts laptop for desktop use</p>'
+  price: 437.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: 120531
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120531.pdf'
+- title: 'Docking Station: Latitude E Series port replicator (no monitor, keyboard or mouse)'
+  description: '<p>Intended Use: Converts laptop for desktop use</p>'
+  price: 174.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120529
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120529.pdf'
+- title: 'Docking Station: Latitude E Series Monitor Stand'
+  description: '<p>Intended Use: Allows monitor to be stacked on top of port replicator</p>'
+  price: 135.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: DNIQ203045
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-203045.pdf'
+- title: 'Battery: Latitude E Series'
+  description: '<p>Intended Use: 6 cell primary battery for use with laptop</p>'
+  price: 116.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120525
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120525.pdf'
+- title: 'Monitor: Dell E Series 24″ Widescreen'
+  description: '<p>Intended Use: 24in display for use with any computer</p>'
+  price: 191.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120532
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120532.pdf'
+- title: 'Monitor: Dell E Series 27″ Flat Panel'
+  description: '<p>Intended Use: 27in display for use with any computer</p>'
+  price: 272.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: DNIQ200116
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-DNIQ200116.pdf'
+- title: 'Speakers: USB AC511 Sound Bar for Dell Monitors'
+  description: '<p>Intended Use: Speakers for use with all monitors</p>'
+  price: 29.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120535
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120535.pdf'
+- title: 'Dell wired keyboard'
+  description: '<p>Intended Use: Wired keyboard for use with any computer</p>'
+  price: 17.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120527
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120527.pdf'
+- title: 'Dell USB 3 button optical mouse'
+  description: '<p>Intended Use: Wired USB 3 button optical mouse for use with any computer</p>'
+  price: 17.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120534
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120534.pdf'    
+- title: 'Dell KM636 wireless keyboard and mouse combo'
+  description: '<p>Intended Use: Wireless keyboard and mouse for use with any computer</p>'
+  price: 41.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 120537
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-120537.pdf'
+- title: 'LG External Ultra Slim Portable DVDRW'
+  description: '<p>Intended Use: Read and Write on CDs and DVDs</p>'
+  price: 29.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: 122270
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-122270.pdf'
+- title: 'Dell 30 unit managed mobile cart'
+  description: '<p>Intended Use: 30 unit mobile cart for use with Laptops</p>'
+  price: 3816.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: DNIQ201209
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/DNIQ201209.pdf'
+- title: 'Laptop case, Targus Clamshell mfg# CN31US Available from CDW-G'
+  description: '<p>Intended Use: 3rd party vendor case</p>'
+  price: 28.00
+  award: '010.18.1.PR.01.1804'
+  quote: 
+    description: GJFR497
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/quote-GJFR497.pdf'
+- title: 'Laptop case for Dell XPS 13in, Kensington #LS240 Available from Data Networks'
+  description: '<p>Intended Use: Laptop Case</p>'
+  price: 23.00
+  award: '010.18.1.PR.01.1804'
+  quote:
+    description: JR-121610
+    uri: 'http://www.hcpss.org/f/aboutus/purchasing/bids/approved/dell-contracts/jr-quote-121610.pdf'

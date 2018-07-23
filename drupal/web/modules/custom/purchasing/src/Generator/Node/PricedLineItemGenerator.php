@@ -5,6 +5,9 @@ namespace Drupal\purchasing\Generator\Node;
 use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\file\Entity\File;
+use GuzzleHttp\Client;
+use Drupal\Core\File\FileSystem;
 
 class PricedLineItemGenerator extends NodeGenerator implements EntityGeneratorInterface {
 
@@ -67,6 +70,27 @@ class PricedLineItemGenerator extends NodeGenerator implements EntityGeneratorIn
         'value' => $this->data['description'],
         'format' => 'basic_html',
       ];
+    }
+
+    if (!empty($this->data['quote'])) {
+      $tempName = drupal_tempnam('quote', 'quote');
+
+      $client = new Client();
+      $client->get($this->data['quote']['uri'], ['sink' => $tempName]);
+
+      $file = File::create([
+        'uid' => 1,
+        'status' => 1,
+        'filename' => basename($this->data['quote']['uri']),
+        'uri' => drupal_realpath($tempName),
+      ]);
+
+      $quoteFile = file_copy($file, 'public://' . basename($this->data['quote']['uri']));
+      $quoteFile->setPermanent();
+      $quoteFile->save();
+
+      $line_item->field_quote = $quoteFile;
+      $line_item->field_quote->description = $this->data['quote']['description'];
     }
 
     if (!empty($this->data['exceptions'])) {
