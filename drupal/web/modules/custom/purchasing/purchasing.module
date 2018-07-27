@@ -260,13 +260,6 @@ function purchasing_form_node_priced_line_item_form_alter(&$form, FormStateInter
 function purchasing_entity_extra_field_info() {
   $extra = [];
 
-  $extra['taxonomy_term']['categories']['display']['awarded_procurements'] = [
-    'label'       => t('Awarded Procurements'),
-    'description' => t('Procurements that have been awarded'),
-    'weight'      => 100,
-    'visible'     => TRUE,
-  ];
-
   $extra['taxonomy_term']['categories']['display']['open_solicitations'] = [
     'label'       => t('Open Solicitations'),
     'description' => t('Solicitations that have not been awarded'),
@@ -461,21 +454,6 @@ function _purchasing_view_awards(array &$build, EntityInterface $entity) {
  * Implementation of hook_ENITTY_TYPE_view().
  */
 function purchasing_taxonomy_term_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
-  if ($display->getComponent('awarded_procurements')) {
-    $view = Views::getView('awarded_procurements_by_category');
-    if (is_object($view)) {
-      $args = [$entity->id()];
-      $view->setArguments($args);
-      $view->setDisplay();
-      $view->preExecute();
-      $view->execute();
-
-      $content = $view->buildRenderable('default', $args, FALSE);
-
-      $build['awarded_procurements'] = $content;
-    }
-  }
-
   if ($display->getComponent('open_solicitations')) {
     $view = Views::getView('open_solicitations_by_category');
     if (is_object($view)) {

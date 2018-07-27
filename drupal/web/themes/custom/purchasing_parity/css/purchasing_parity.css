@@ -1,5 +1,5 @@
-.vocabulary-categories.view-mode-teaser .content,
-.vocabulary-categories.view-mode-teaser .content p {
+.vocabulary-categories.view-mode-awards .content,
+.vocabulary-categories.view-mode-awards .content p {
   margin-top: 0;
 }
 
@@ -24,11 +24,11 @@
 }
 /* End move */
 
-.vocabulary-categories.view-mode-teaser .views-element-container {
+.vocabulary-categories.view-mode-awards .views-element-container {
   margin-top: 0;
 }
 
-.vocabulary-categories.view-mode-teaser .content p:last-of-type {
+.vocabulary-categories.view-mode-awards .content p:last-of-type {
   margin-bottom: 0;
 }
 
@@ -209,6 +209,7 @@ dd {
   margin-top: 0;
 }
 
+.view-mode-awards h2,
 .view-mode-teaser h2,
 .node--view-mode-teaser h2,
 .node--view-mode-teaser-by-vendor h2 {
@@ -221,4 +222,8 @@ dd {
 #views-exposed-form-taxonomy-term-page-1 .form-item,
 #views-exposed-form-taxonomy-term-page-1 .form-actions {
   display: inline-block;
+}
+
+.view-mode-awards .content ul {
+  margin-top: 0;
 }

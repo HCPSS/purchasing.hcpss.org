@@ -1,0 +1,26 @@
+uuid: d355e215-ccc5-407f-b9a7-9810ef6ac41e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.awards
+    - taxonomy.vocabulary.categories
+  module:
+    - text
+id: taxonomy_term.categories.awards
+targetEntityType: taxonomy_term
+bundle: categories
+mode: awards
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  awarded_procurements: true
+  langcode: true
+  open_solicitations: true
+  purchasing_children: true

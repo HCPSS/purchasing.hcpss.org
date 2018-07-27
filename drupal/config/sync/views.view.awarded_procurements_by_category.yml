@@ -1,6 +1,6 @@
 uuid: 931d749c-b214-4f56-91b1-7e648a84bc26
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - node.type.award

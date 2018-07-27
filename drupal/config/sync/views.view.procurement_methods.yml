@@ -725,7 +725,7 @@ display:
       display_extenders: {  }
       display_description: ''
       path: contract
-      enabled: false
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1942,7 +1942,7 @@ display:
         operator: AND
         groups:
           1: AND
-      enabled: false
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:

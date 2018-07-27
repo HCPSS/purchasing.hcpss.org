@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\node\Entity\Node;
+use Drupal\purchasing\Model\ProcurementMethod;
+
 /**
  * Implementation of hook_preprocess_HOOK().
  */
@@ -51,5 +55,47 @@ function purchasing_parity_preprocess_node(&$variables, $hook) {
     }
 
     $variables['result_label'] = $result_label;
+  }
+}
+
+/**
+ * Implementation of hook_theme_suggestions_HOOK_alter().
+ */
+function purchasing_parity_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  $suggestions[] = vsprintf('taxonomy_term__%s__%s', [
+    $variables['elements']['#taxonomy_term']->bundle(),
+    $variables['elements']['#view_mode'],
+  ]);
+}
+
+/**
+ * Implementation of hook_preprocess_taxonomy_term().
+ */
+function purchasing_parity_preprocess_taxonomy_term(&$variables) {
+  /** @var \Drupal\taxonomy\Entity\Term $term */
+  $term = $variables['term'];
+
+  if ($variables['view_mode'] == 'awards' && $term->bundle() == 'categories') {
+    $now = (new DrupalDateTime())->format(DATETIME_DATE_STORAGE_FORMAT);
+
+    $query = \Drupal::database()->select('node', 'n');
+    $query->addField('n', 'nid');
+
+    $query->leftJoin('node_field_data',                'fd',  'n.nid = fd.nid');
+    $query->leftJoin('node__field_dates_effective',    'fde', 'n.nid = fde.entity_id');
+    $query->leftJoin('node__field_category',           'fc',  'n.nid = fc.entity_id');
+    $query->leftJoin('node__field_procurement_method', 'fpm', 'n.nid = fpm.field_procurement_method_target_id');
+
+    $query->condition('n.type', ['solicitation', 'contract', 'quote'], 'IN');
+    $query->condition('fde.field_dates_effective_end_value', $now, '>=');
+    $query->condition('fc.field_category_target_id', $term->id());
+    $query->condition('fd.status', 1);
+    $query->condition('fpm.bundle', NULL, 'IS NOT NULL');
+
+    $result = $query->execute();
+    $nids = $result->fetchAllAssoc('nid');
+    $nodes = Node::loadMultiple(array_keys($nids));
+
+    $variables['procurements'] = $nodes;
   }
 }

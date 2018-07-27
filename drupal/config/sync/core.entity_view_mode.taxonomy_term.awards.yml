@@ -1,0 +1,10 @@
+uuid: 5838ef2c-d0e8-495f-958e-2f6e8a66e245
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.awards
+label: Awards
+targetEntityType: taxonomy_term
+cache: true

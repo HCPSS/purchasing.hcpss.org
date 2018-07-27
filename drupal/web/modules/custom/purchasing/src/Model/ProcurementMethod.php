@@ -37,12 +37,30 @@ class ProcurementMethod {
    */
   private $discountedLineItems = [];
 
+  /**
+   * @var NodeInterface[]
+   */
+  private $awards;
+
   public function __construct(NodeInterface $node) {
     if (!in_array($node->bundle(), ['solicitation', 'contract', 'quote'])) {
       throw new \InvalidArgumentException('Node must be a solicitaiton, contract or quote.');
     }
 
     $this->node = $node;
+  }
+
+  /**
+   * Get awards.
+   *
+   * @return NodeInterface[]
+   */
+  public function getAwards() {
+    if ($this->awards === NULL) {
+      $this->awards = Node::loadMultiple($this->getAwardIds());
+    }
+
+    return $this->awards;
   }
 
   /**
