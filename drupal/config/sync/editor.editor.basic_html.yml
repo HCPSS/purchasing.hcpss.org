@@ -37,19 +37,9 @@ settings:
             - BulletedList
             - NumberedList
         -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-            - DrupalFile
-        -
           name: 'Block Formatting'
           items:
             - Format
-        -
-          name: Tools
-          items:
-            - Source
   plugins:
     language:
       language_list: un
