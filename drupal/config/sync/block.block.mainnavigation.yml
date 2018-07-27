@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/about\r\n/about/*\r\n/business-opportunities\r\n/business-opportunities/*"
+    pages: "/about\r\n/about/*\r\n/business-opportunities\r\n/business-opportunities/*\r\n/resources\r\n/resources/*"
     negate: false
     context_mapping: {  }
