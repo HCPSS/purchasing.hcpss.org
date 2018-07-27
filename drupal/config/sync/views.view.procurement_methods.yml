@@ -677,6 +677,31 @@ display:
       arguments: {  }
       display_extenders: {  }
       title: 'Solicitations Open for Bid'
+      use_more: false
+      use_more_always: true
+      use_more_text: 'All Current Bids'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_dates_effective'
+        - 'config:field.storage.node.field_identifier'
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: 'Open Solicitation Block'
+    position: 5
+    display_options:
+      display_extenders: {  }
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -700,6 +725,7 @@ display:
       display_extenders: {  }
       display_description: ''
       path: contract
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -730,16 +756,17 @@ display:
         relationships: false
         group_by: false
         sorts: false
-      path: solicitation/open
+      path: business-opportunities/current-bids
       menu:
         type: normal
-        title: 'Open Solicitations'
+        title: 'Current Bids'
         description: ''
         expanded: false
-        parent: ''
-        weight: -45
+        parent: 'menu_link_content:db51b00b-a221-4744-bdcb-8d75c0b501dc'
+        weight: -50
         context: '0'
         menu_name: main
+        enabled: true
       filters:
         status:
           value: '1'
@@ -1399,6 +1426,7 @@ display:
             label: ''
           granularity: second
           plugin_id: datetime
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1914,6 +1942,7 @@ display:
         operator: AND
         groups:
           1: AND
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -2492,6 +2521,7 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,12 @@
+uuid: f335c6e7-5945-4a8c-b016-89bafb902b0c
+langcode: en
+status: true
+dependencies: {  }
+id: business_opportunities
+label: 'Business Opportunities'
+description: ''
+use_admin_theme: false
+path: /business-opportunities
+access_logic: and
+access_conditions: {  }
+parameters: {  }

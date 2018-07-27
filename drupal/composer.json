@@ -67,6 +67,7 @@
         "drupal/fixed_text_link_formatter": "^1.1",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/node_title_validation": "^1.1",
+        "drupal/page_manager": "^4.0@beta",
         "drupal/paragraphs": "^1.2",
         "drupal/pathauto": "^1.2",
         "drupal/search_api": "^1.8",

@@ -1,0 +1,88 @@
+uuid: 2bbe9c67-9f2b-492d-a946-99bbc71a8da3
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.business_opportunities
+    - views.view.bid_tabs
+    - views.view.open_bids
+  content:
+    - 'block_content:basic:4fc02f3d-695f-4c86-bb76-3eacc3a24a42'
+    - 'block_content:basic:a42d9b3d-68c7-452c-b769-6fcd3c41321b'
+    - 'block_content:basic:ea7ffdc9-d37c-4ae3-be01-734214bfc8d4'
+  module:
+    - block_content
+    - views
+id: business_opportunities-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    9a2de7ac-2860-4593-a5c9-04418ab3c02c:
+      id: 'views_block:open_bids-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: bottom
+      weight: -10
+      uuid: 9a2de7ac-2860-4593-a5c9-04418ab3c02c
+      context_mapping: {  }
+    fc1098a5-ab7b-4fa0-b0ed-98c50f614471:
+      id: 'views_block:bid_tabs-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: bottom
+      weight: 0
+      uuid: fc1098a5-ab7b-4fa0-b0ed-98c50f614471
+      context_mapping: {  }
+    3d6a6957-37d1-4237-9f5f-e4e2d4cbaa90:
+      id: 'block_content:4fc02f3d-695f-4c86-bb76-3eacc3a24a42'
+      label: 'Advertising and Posting of Solicitation Information'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: -9
+      uuid: 3d6a6957-37d1-4237-9f5f-e4e2d4cbaa90
+      context_mapping: {  }
+    089cbd84-c0c5-4ec8-ae56-bb377fb88be7:
+      id: 'block_content:ea7ffdc9-d37c-4ae3-be01-734214bfc8d4'
+      label: 'Minority, Women, Disabled and Locally-Owned Resources'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: -8
+      uuid: 089cbd84-c0c5-4ec8-ae56-bb377fb88be7
+      context_mapping: {  }
+    a270f087-726f-4cea-a9de-2d140a8909d2:
+      id: 'block_content:a42d9b3d-68c7-452c-b769-6fcd3c41321b'
+      label: 'Supplier Registration'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: -10
+      uuid: a270f087-726f-4cea-a9de-2d140a8909d2
+      context_mapping: {  }
+  id: block_display
+  uuid: e311af3d-ae8d-4d42-bffd-8711eee0d2f8
+  label: null
+  weight: 0
+  page_title: ''
+page: business_opportunities
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

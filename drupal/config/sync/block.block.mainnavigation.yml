@@ -16,7 +16,7 @@ provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'About section'
+  label: 'Secondary Menu'
   provider: system
   label_display: '0'
   level: 2
@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/about\r\n/about/*"
+    pages: "/about\r\n/about/*\r\n/business-opportunities\r\n/business-opportunities/*"
     negate: false
     context_mapping: {  }
