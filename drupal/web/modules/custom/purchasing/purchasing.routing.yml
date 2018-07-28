@@ -32,3 +32,9 @@ purchasing.example_csv:
     _controller: '\Drupal\purchasing\Controller\CsvController::exampleFile'
   requirements:
     _node_add_access: 'node:{node_type}'
+purchasing.business_opportunities:
+  path: '/business-opportunities'
+  defaults:
+    _controller: '\Drupal\purchasing\Controller\DefaultController::businessOpportunities'
+  requirements:
+    _permission: 'access content'

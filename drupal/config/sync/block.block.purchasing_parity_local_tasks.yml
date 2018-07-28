@@ -9,7 +9,7 @@ _core:
 id: purchasing_parity_local_tasks
 theme: purchasing_parity
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:

@@ -1,0 +1,30 @@
+uuid: 322ae752-53d7-4250-a6fd-f870f28eb857
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.bid_tabs
+  module:
+    - system
+    - views
+  theme:
+    - purchasing_parity
+id: views_block__bid_tabs_block_1
+theme: purchasing_parity
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:bid_tabs-block_1'
+settings:
+  id: 'views_block:bid_tabs-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /business-opportunities
+    negate: false
+    context_mapping: {  }

@@ -10,7 +10,7 @@ dependencies:
 id: discountmatrixblock
 theme: purchasing_parity
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: discount_matrix_block
 settings:

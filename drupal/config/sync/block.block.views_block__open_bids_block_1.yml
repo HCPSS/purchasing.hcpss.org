@@ -1,0 +1,30 @@
+uuid: 829b37fe-33b2-48be-a1bd-31f2e2cf4874
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.open_bids
+  module:
+    - system
+    - views
+  theme:
+    - purchasing_parity
+id: views_block__open_bids_block_1
+theme: purchasing_parity
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:open_bids-block_1'
+settings:
+  id: 'views_block:open_bids-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /business-opportunities
+    negate: false
+    context_mapping: {  }
