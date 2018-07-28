@@ -62,6 +62,29 @@ class PurchasingCommands extends DrushCommands {
   }
 
   /**
+   * Generate awards, procurements and line items stuff.
+   *
+   * @usage purchasing:generate:data
+   *   Generate awards, procurements and line items.
+   *
+   * @command purchasing:generate:data
+   */
+  public function generateData() {
+    echo "columes\n";
+    $this->generateVendors();
+    echo "solicitations\n";
+    $this->generateSolicitations();
+    echo "contracts\n";
+    $this->generateContracts();
+    echo "awards\n";
+    $this->generateAwards();
+    echo "priced\n";
+    $this->generatePricedLineItems();
+    echo "discounted\n";
+    $this->generateDiscountedLineItems();
+  }
+
+  /**
    * Generate all.
    *
    * @usage purchasing:generate:all
