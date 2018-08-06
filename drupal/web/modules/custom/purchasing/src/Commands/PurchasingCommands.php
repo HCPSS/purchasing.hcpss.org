@@ -70,17 +70,11 @@ class PurchasingCommands extends DrushCommands {
    * @command purchasing:generate:data
    */
   public function generateData() {
-    echo "columes\n";
     $this->generateVendors();
-    echo "solicitations\n";
     $this->generateSolicitations();
-    echo "contracts\n";
     $this->generateContracts();
-    echo "awards\n";
     $this->generateAwards();
-    echo "priced\n";
     $this->generatePricedLineItems();
-    echo "discounted\n";
     $this->generateDiscountedLineItems();
   }
 
