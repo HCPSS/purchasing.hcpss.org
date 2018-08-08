@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
     - datetime
@@ -111,6 +112,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_presentation_to_the_board:
+    weight: 11
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   links:
     weight: 0

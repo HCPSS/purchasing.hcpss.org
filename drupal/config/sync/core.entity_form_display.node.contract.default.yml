@@ -9,8 +9,10 @@ dependencies:
     - field.field.node.contract.field_category
     - field.field.node.contract.field_dates_effective
     - field.field.node.contract.field_identifier
+    - field.field.node.contract.field_presentation_to_the_board
     - node.type.contract
   module:
+    - datetime
     - datetime_range
     - field_group
     - link
@@ -20,16 +22,18 @@ third_party_settings:
   field_group:
     group_board:
       children:
+        - field_presentation_to_the_board
         - field_board_report
         - field_board_minutes
       parent_name: ''
       weight: 12
       format_type: details_sidebar
       format_settings:
+        label: Board
+        open: '1'
+        required_fields: '1'
         id: ''
         classes: ''
-        open: 0
-        required_fields: 1
       label: Board
       region: content
     group_awards:
@@ -78,7 +82,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_board_minutes:
-    weight: 11
+    weight: 28
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -86,7 +90,7 @@ content:
     type: link_default
     region: content
   field_board_report:
-    weight: 10
+    weight: 27
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -112,6 +116,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_presentation_to_the_board:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   langcode:
     type: language_select

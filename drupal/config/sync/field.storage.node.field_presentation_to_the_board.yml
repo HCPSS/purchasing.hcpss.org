@@ -1,0 +1,20 @@
+uuid: 0f65ee4e-2fa5-41f2-b7f9-1888b7fe5717
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_presentation_to_the_board
+field_name: field_presentation_to_the_board
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

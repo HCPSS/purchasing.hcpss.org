@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
     - datetime
@@ -40,16 +41,18 @@ third_party_settings:
       region: content
     group_board:
       children:
+        - field_presentation_to_the_board
         - field_board_report
         - field_board_minutes
       parent_name: ''
       weight: 13
       format_type: details_sidebar
       format_settings:
+        label: Board
+        open: '1'
+        required_fields: '1'
         id: ''
         classes: ''
-        open: 0
-        required_fields: 1
       label: Board
       region: content
     group_awards:
@@ -97,7 +100,7 @@ content:
     type: file_generic
     region: content
   field_board_minutes:
-    weight: 15
+    weight: 103
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -105,7 +108,7 @@ content:
     type: link_default
     region: content
   field_board_report:
-    weight: 14
+    weight: 102
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -144,6 +147,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_presentation_to_the_board:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   langcode:
     type: language_select

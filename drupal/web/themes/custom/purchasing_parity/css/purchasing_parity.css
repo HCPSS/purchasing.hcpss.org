@@ -124,14 +124,6 @@ dd {
   margin-top: 0;
 }
 
-.board-links > div {
-  display: inline;
-}
-
-.board-links > div.field__item + div.field__item:before {
-  content: ", ";
-}
-
 .views-element-container td.views-field p:first-of-type {
 	margin-top: 0;
 }
@@ -154,6 +146,18 @@ dd {
   width: 100%;
     max-width: 480px;
     height: auto;
+}
+
+.field--name-field-presentation-to-the-board {
+  display: inline;
+}
+
+.field--name-field-presentation-to-the-board time:after {
+  content: '.';
+}
+
+.board-links > div {
+  margin-top: 0;
 }
 
 .view-field.view-name-images {

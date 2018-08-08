@@ -13,8 +13,10 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
+    - datetime
     - datetime_range
     - file
     - fixed_text_link_formatter
@@ -51,7 +53,8 @@ content:
     region: content
     label: hidden
     settings:
-      link_text: Minutes
+      link_text: 'Board Minutes'
+      link_class: board-link
       allow_override: 0
       rel: 0
       target: 0
@@ -65,7 +68,8 @@ content:
     region: content
     label: hidden
     settings:
-      link_text: Report
+      link_text: 'Board Report'
+      link_class: board-link
       allow_override: 0
       rel: 0
       target: 0
@@ -107,6 +111,15 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_presentation_to_the_board:
+    type: datetime_default
+    weight: 10
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long_no_time
+    third_party_settings: {  }
   links:
     weight: 0
     region: content

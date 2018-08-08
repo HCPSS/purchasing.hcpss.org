@@ -1,0 +1,21 @@
+uuid: 98feadd0-6a1a-4fdd-b8a4-43d67a40a3c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_presentation_to_the_board
+    - node.type.solicitation
+  module:
+    - datetime
+id: node.solicitation.field_presentation_to_the_board
+field_name: field_presentation_to_the_board
+entity_type: node
+bundle: solicitation
+label: 'Presentation to the Board'
+description: 'The date this procurement will be presented to the board.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

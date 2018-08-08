@@ -1,0 +1,21 @@
+uuid: 7d9fe2f4-2ba0-4d47-8691-85d1c588b303
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_presentation_to_the_board
+    - node.type.contract
+  module:
+    - datetime
+id: node.contract.field_presentation_to_the_board
+field_name: field_presentation_to_the_board
+entity_type: node
+bundle: contract
+label: 'Presentation to the Board'
+description: 'The date this contract will be presented to the board.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
