@@ -57,33 +57,34 @@ $ docker exec purchasing_web drush @self.dev config-split:export -y
 ### Deploy your changes
 
 Once your changes have been made and checked into version control, rebuild the
-reg.hcpss.org/purchasing/web image:
+images:
 
 ```
 $ docker-compose up -d --build
 ```
 
-Once the image has rebuilt, push it to the registry:
+Once the images have rebuilt, push them to the registry:
 
 ```
-$ docker push reg.hcpss.org/purchasing/web
+$ docker-compose push
 ```
 
 Go to the server you want to deploy to (staging or production) and pull the new
-image:
+images:
 
 ```
-$ docker pull reg.hcpss.org/purchasing/web
+$ cd /folder/with/docker-compose
+$ docker-compose pull
 ```
 
-And update the container(s):
+And update the containers:
 
 ```
-$ cd /folder/with/docker-compose && docker-compose up -d
+$ docker-compose up -d
 ```
 
 I like to watch the update scripts run so I usually follow the logs like this:
 
 ```
-$ cd /folder/with/docker-compose && docker-compose up -d && docker logs -f purchasing_web
+$ docker-compose up -d && docker logs -f purchasing_web
 ```
