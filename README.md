@@ -30,22 +30,16 @@ $ docker-compose up -d
 ### Install Drupal
 
 ```
-$ docker exec purchasing_web drush @self.dev site:install -y \
+$ docker exec purchasing_web drush @self.dev site:install config_installer -y \
     --account-pass=admin \
-    --db-url=mysql://drupal:drupal@drupal_db:3306/drupal \
-    --config-dir=../config/sync minimal
-    
-$ docker exec purchasing_web drush @self.dev config:import -y
-$ docker exec purchasing_web drush @self.dev cache:rebuild
+    config_installer_sync_configure_form.sync_directory=/var/www/drupal/config/sync
 ```
-
-Change parameters to match what you have in your .env file.
 
 ### Generate dummy content (optional)
 
 ```
 $ docker exec purchasing_web drush @self.dev purchasing:generate:all
-$ docker exec purchasing_web drush @self.dev cache:rebuild
+$ docker exec purchasing_web drush @self.dev search-api:index
 ```
 
 ### Make your changes
@@ -54,8 +48,8 @@ Code changes should be made in drupal/web/modules/custom/purchasing. Theme
 changes should be made in drupal/web/themes/custom/parity_purchasing.
 
 Changes made to configuration (changes made through the UI) need to be 
-exported:
+exported using the config split module:
 
 ```
-$ docker exec purchasing_web drush @self.dev config:export -y
+$ docker exec purchasing_web drush @self.dev config-split:export -y
 ```
