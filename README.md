@@ -53,3 +53,37 @@ exported using the config split module:
 ```
 $ docker exec purchasing_web drush @self.dev config-split:export -y
 ```
+
+### Deploy your changes
+
+Once your changes have been made and checked into version control, rebuild the
+reg.hcpss.org/purchasing/web image:
+
+```
+$ docker-compose up -d --build
+```
+
+Once the image has rebuilt, push it to the registry:
+
+```
+$ docker push reg.hcpss.org/purchasing/web
+```
+
+Go to the server you want to deploy to (staging or production) and pull the new
+image:
+
+```
+$ docker pull reg.hcpss.org/purchasing/web
+```
+
+And update the container(s):
+
+```
+$ cd /folder/with/docker-compose && docker-compose up -d
+```
+
+I like to watch the update scripts run so I usually follow the logs like this:
+
+```
+$ cd /folder/with/docker-compose && docker-compose up -d && docker logs -f purchasing_web
+```
