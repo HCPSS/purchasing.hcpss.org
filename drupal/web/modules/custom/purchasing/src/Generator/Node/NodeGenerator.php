@@ -3,8 +3,9 @@
 namespace Drupal\purchasing\Generator\Node;
 
 use Drupal\node\Entity\Node;
+use Drupal\purchasing\Generator\AbstractEntityGenerator;
 
-abstract class NodeGenerator {
+abstract class NodeGenerator extends AbstractEntityGenerator {
 
   protected abstract static function getBundle();
 

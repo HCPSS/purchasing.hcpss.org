@@ -10,13 +10,14 @@ use Drupal\purchasing\Generator\Node\SolicitationGenerator;
 use Drupal\purchasing\Generator\Node\ContractGenerator;
 use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\purchasing\Generator\Node\AwardGenerator;
-use Drupal\purchasing\Generator\Node\LineItemGenerator;
 use Drupal\purchasing\Generator\Node\PageGenerator;
 use Drupal\purchasing\Generator\Menu\MainMenuGenerator;
 use Drupal\purchasing\Generator\Node\PricedLineItemGenerator;
 use Drupal\purchasing\Generator\Node\DiscountedLineItemGenerator;
 use Drupal\node\Entity\Node;
 use Drupal\purchasing\Generator\User\UserGenerator;
+use Symfony\Component\Serializer\Encoder\CsvEncoder;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
  * A Drush commandfile.
@@ -27,7 +28,8 @@ class PurchasingCommands extends DrushCommands {
    * Delete all nodes of the given bundle.
    *
    * @command purchasing:node:delete
-   * @param $bundle The node bundle to delete.
+   * @param $bundle string
+   *   The node bundle to delete.
    * @usage drush purchasing:node:delete priced_line_item
    *   Delete all nodes of priced_line_item bundle.
    */
@@ -232,6 +234,49 @@ class PurchasingCommands extends DrushCommands {
    */
   public function generateUsers() {
     $this->generateFromGenerator('user', UserGenerator::class);
+  }
+
+  /**
+   * Import solicitations from a CSV.
+   *
+   * @usage purchasing:import:solicitations ~/home/solicitations.csv
+   *   Import solicitations.
+   *
+   * @command purchasing:import:solicitations
+   */
+  public function importSolicitation($file, array $options = ['file-directory' => InputOption::VALUE_REQUIRED]) {
+    $file_dir = $options['file-directory'] ?: $this->defaultFileDirectory();
+    echo "File DIR: $file_dir\n";
+
+    $encoder = new CsvEncoder();
+    $data = $encoder->decode(file_get_contents($file), 'csv');
+
+    $database = \Drupal::database();
+    $transaction = $database->startTransaction();
+
+    try {
+      $num_created = 0;
+      if (!array_key_exists(0, $data)) {
+        $data = [$data];
+      }
+      foreach ($data as $d) {
+        (new SolicitationGenerator($d, $file_dir))->generate();
+        $num_created++;
+      }
+    } catch (\Exception $e) {
+      $transaction->rollBack();
+      watchdog_exception($e->getMessage(), $e);
+      throw $e;
+    }
+  }
+
+  /**
+   * Get the default file directory.
+   *
+   * @return string
+   */
+  private function defaultFileDirectory() {
+    return drupal_get_path('module', 'purchasing') . '/data/files/';
   }
 
   /**

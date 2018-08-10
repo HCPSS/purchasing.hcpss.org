@@ -61,15 +61,13 @@ class SolicitationImportForm extends FormBase {
     $transaction = $database->startTransaction();
     try {
       $num_created = 0;
-      if (array_key_exists(0, $data)) {
-        foreach ($data as $d) {
-          $generator = new SolicitationGenerator($d);
-          $solicitation = $generator->generate();
-          $num_created++;
-        }
-      } else {
-        $generator = new SolicitationGenerator($data);
-        $solicitation = $generator->generate();
+      if (!array_key_exists(0, $data)) {
+        $data = [$data];
+      }
+      foreach ($data as $d) {
+        $generator = new SolicitationGenerator($d);
+        $procurement = $generator->generate();
+
         $num_created++;
       }
     } catch (\Exception $e) {

@@ -2,16 +2,11 @@
 
 namespace Drupal\purchasing\Generator\Node;
 
-use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\node\Entity\Node;
 
-class AwardGenerator extends NodeGenerator implements EntityGeneratorInterface {
+class AwardGenerator extends NodeGenerator {
 
   private static $contractNumber = 1;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
 
   protected static function getBundle() {
     return 'award';

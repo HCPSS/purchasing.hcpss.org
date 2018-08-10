@@ -3,15 +3,9 @@
 namespace Drupal\purchasing\Generator\Term;
 
 use Drupal\taxonomy\Entity\Term;
-use Drupal\purchasing\Generator\EntityGeneratorInterface;
+use Drupal\purchasing\Generator\AbstractEntityGenerator;
 
-class CategoryGenerator implements EntityGeneratorInterface {
-
-  private $data;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
+class CategoryGenerator extends AbstractEntityGenerator {
 
   /**
    * Delete terms.

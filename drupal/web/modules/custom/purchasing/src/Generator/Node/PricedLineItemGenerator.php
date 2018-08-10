@@ -2,20 +2,12 @@
 
 namespace Drupal\purchasing\Generator\Node;
 
-use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\file\Entity\File;
 use GuzzleHttp\Client;
-use Drupal\Core\File\FileSystem;
 
-class PricedLineItemGenerator extends NodeGenerator implements EntityGeneratorInterface {
-
-  private $data;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
+class PricedLineItemGenerator extends NodeGenerator {
 
   /**
    * {@inheritDoc}

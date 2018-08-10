@@ -4,17 +4,9 @@ namespace Drupal\purchasing\Generator\User;
 
 use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\user\Entity\User;
+use Drupal\purchasing\Generator\AbstractEntityGenerator;
 
-class UserGenerator implements EntityGeneratorInterface {
-
-  /**
-   * @var array
-   */
-  private $data;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
+class UserGenerator extends AbstractEntityGenerator {
 
   /**
    * {@inheritDoc}

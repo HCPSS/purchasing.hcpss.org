@@ -2,16 +2,10 @@
 
 namespace Drupal\purchasing\Generator\Menu;
 
-use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\purchasing\Generator\AbstractEntityGenerator;
 
-class MainMenuGenerator implements EntityGeneratorInterface {
-
-  private $data;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
+class MainMenuGenerator extends AbstractEntityGenerator {
 
   /**
    * {@inheritDoc}

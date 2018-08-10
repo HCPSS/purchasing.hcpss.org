@@ -2,16 +2,9 @@
 
 namespace Drupal\purchasing\Generator\Node;
 
-use Drupal\purchasing\Generator\EntityGeneratorInterface;
 use Drupal\node\Entity\Node;
 
-class DiscountedLineItemGenerator extends NodeGenerator implements EntityGeneratorInterface {
-
-  private $data;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
+class DiscountedLineItemGenerator extends NodeGenerator {
 
   /**
    * {@inheritDoc}

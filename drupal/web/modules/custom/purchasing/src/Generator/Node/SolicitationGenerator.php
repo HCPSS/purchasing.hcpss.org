@@ -5,8 +5,10 @@ namespace Drupal\purchasing\Generator\Node;
 use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\purchasing\Generator\EntityGeneratorInterface;
+use GuzzleHttp\Client;
+use Drupal\purchasing\Generator\AbstractEntityGenerator;
 
-class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInterface {
+class SolicitationGenerator extends NodeGenerator {
 
   /**
    * Due date timestamp.
@@ -30,32 +32,28 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
   private $end;
 
   /**
-   * Solicitation data
+   * Presentation to the board timestamp.
    *
-   * @var array
+   * @var int
    */
-  private $data;
+  private $presentation_to_the_board;
 
-  public function __construct(array $data) {
-    if (!empty($data['bids_due'])) {
-      $this->due = strtotime($data['bids_due']);
-    } else {
-      $this->due = time() + rand(3600 * 24 * 7, 3600 * 24 * 60);
-    }
+  public function __construct(array $data, $files_dir = NULL) {
+    parent::__construct($data, $files_dir);
+
+    $this->due = strtotime($data['bids_due']);
 
     if (!empty($data['effective']['start'])) {
       $this->start = strtotime($data['effective']['start']);
-    } else {
-      $this->start = $this->due + 3600 * 24 * 30;
     }
 
     if (!empty($data['effective']['end'])) {
       $this->end = strtotime($data['effective']['end']);
-    } else {
-      $this->end = strtotime('+1 year', $this->start);
     }
 
-    $this->data = $data;
+    if (!empty($data['presentation_to_the_board'])) {
+      $this->presentation_to_the_board = strtotime($data['presentation_to_the_board']);
+    }
   }
 
   /**
@@ -81,8 +79,18 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
       'field_identifier'      => $this->data['bid_number'],
       'field_category'        => ['target_id' => self::getCategoryIdFromName($this->data['category'])],
       'field_due_date'        => date('Y-m-d\Th:i:s', $this->due),
-      'field_dates_effective' => ['value' => date('Y-m-d', $this->start), 'end_value' => date('Y-m-d', $this->end)],
     ]);
+
+    if ($this->start && $this->end) {
+      $solicitation->field_dates_effective = [
+        'value' => date('Y-m-d', $this->start),
+        'end_value' => date('Y-m-d', $this->end),
+      ];
+    }
+
+    if ($this->presentation_to_the_board) {
+      $solicitation->field_presentation_to_the_board = date('Y-m-d', $this->presentation_to_the_board);
+    }
 
     if (!empty($this->data['bid_tab'])) {
       $solicitation->field_bid_tabulation = self::createFile($this->data['bid_tab']);
@@ -90,7 +98,11 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
 
     if (!empty($this->data['documentation'])) {
       foreach ($this->data['documentation'] as $index => $document) {
-        $file = self::createFile($document['file']);
+        if (empty($document['file'])) {
+          continue;
+        }
+
+        $file = $this->createFile($document['file']);
         $solicitation->field_documentation[$index] = $file;
         $solicitation->field_documentation[$index]->description = $document['name'];
         $solicitation->field_documentation[$index]->display = 1;
@@ -108,27 +120,5 @@ class SolicitationGenerator extends NodeGenerator implements EntityGeneratorInte
     $solicitation->save();
 
     return $solicitation;
-  }
-
-  /**
-   * Create a file from the given filename.
-   *
-   * @param string $fileName
-   * @return \Drupal\file\FileInterface|false
-   */
-  private static function createFile($fileName) {
-    $fileFolder = drupal_get_path('module', 'purchasing') . '/data/files/';
-    $file = File::create([
-      'uid'      => 1,
-      'status'   => 1,
-      'filename' => $fileName,
-      'uri'      => $fileFolder . $fileName,
-    ]);
-
-    $newFile = file_copy($file, 'public://', $fileName);
-    $newFile->setPermanent();
-    $newFile->save();
-
-    return $newFile;
   }
 }

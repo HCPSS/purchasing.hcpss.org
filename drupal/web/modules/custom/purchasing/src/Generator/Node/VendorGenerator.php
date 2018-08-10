@@ -3,15 +3,8 @@
 namespace Drupal\purchasing\Generator\Node;
 
 use Drupal\node\Entity\Node;
-use Drupal\purchasing\Generator\EntityGeneratorInterface;
 
-class VendorGenerator extends NodeGenerator  implements EntityGeneratorInterface {
-
-  private $data;
-
-  public function __construct(array $data) {
-    $this->data = $data;
-  }
+class VendorGenerator extends NodeGenerator {
 
   protected static function getBundle() {
     return 'vendor';
