@@ -47,6 +47,7 @@ hidden:
   field_dates_effective: true
   field_documentation: true
   field_due_date: true
+  field_presentation_to_the_board: true
   langcode: true
   links: true
   ordering_instructions: true

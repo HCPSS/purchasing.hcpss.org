@@ -52,4 +52,5 @@ hidden:
   field_documentation: true
   field_due_date: true
   field_identifier: true
+  field_presentation_to_the_board: true
   langcode: true

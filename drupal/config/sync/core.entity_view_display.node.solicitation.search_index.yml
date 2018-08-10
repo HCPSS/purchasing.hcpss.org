@@ -111,6 +111,7 @@ content:
 hidden:
   award_notes: true
   awards: true
+  field_presentation_to_the_board: true
   langcode: true
   links: true
   ordering_instructions: true

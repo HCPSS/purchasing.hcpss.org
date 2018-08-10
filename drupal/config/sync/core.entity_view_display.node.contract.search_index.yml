@@ -90,5 +90,6 @@ content:
     third_party_settings: {  }
 hidden:
   awards: true
+  field_presentation_to_the_board: true
   langcode: true
   links: true

@@ -27,58 +27,6 @@ name: 'Default Solr content index'
 description: 'Default content index created by the Solr Search Defaults module'
 read_only: false
 field_settings:
-  rendered_item:
-    label: 'Rendered item'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        anonymous: anonymous
-      view_mode:
-        'entity:node':
-          award: search_index
-          contract: search_index
-          discounted_line_item: search_index
-          partner_line_item: search_index
-          priced_line_item: search_index
-          quote: search_index
-          solicitation: search_index
-          vendor: search_index
-  node_grants:
-    label: 'Node access information'
-    property_path: search_api_node_grants
-    type: string
-    indexed_locked: true
-    type_locked: true
-    hidden: true
-  title:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: text
-    boost: !!float 8
-  created:
-    label: 'Authored on'
-    datasource_id: 'entity:node'
-    property_path: created
-    type: date
-  changed:
-    label: Changed
-    datasource_id: 'entity:node'
-    property_path: changed
-    type: date
-  status:
-    label: 'Publishing status'
-    datasource_id: 'entity:node'
-    property_path: status
-    type: boolean
-    indexed_locked: true
-    type_locked: true
-  sticky:
-    label: 'Sticky at top of lists'
-    datasource_id: 'entity:node'
-    property_path: sticky
-    type: boolean
   author:
     label: 'Author name'
     datasource_id: 'entity:node'
@@ -87,18 +35,6 @@ field_settings:
     dependencies:
       module:
         - user
-  uid:
-    label: 'Author ID'
-    datasource_id: 'entity:node'
-    property_path: uid
-    type: integer
-    indexed_locked: true
-    type_locked: true
-  type:
-    label: 'Content type'
-    datasource_id: 'entity:node'
-    property_path: type
-    type: string
   body:
     label: Description
     datasource_id: 'entity:node'
@@ -107,16 +43,24 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  name:
-    label: 'Category » Name'
+  changed:
+    label: Changed
     datasource_id: 'entity:node'
-    property_path: 'field_category:entity:name'
+    property_path: changed
+    type: date
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+  field_discount:
+    label: Discount
+    datasource_id: 'entity:node'
+    property_path: field_discount
     type: text
     dependencies:
       config:
-        - field.storage.node.field_category
-      module:
-        - taxonomy
+        - field.storage.node.field_discount
   field_due_date:
     label: 'Due Date'
     datasource_id: 'entity:node'
@@ -165,14 +109,70 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_reference_number
-  field_discount:
-    label: Discount
+  name:
+    label: 'Category » Name'
     datasource_id: 'entity:node'
-    property_path: field_discount
+    property_path: 'field_category:entity:name'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_discount
+        - field.storage.node.field_category
+      module:
+        - taxonomy
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered item'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          award: search_index
+          contract: search_index
+          discounted_line_item: search_index
+          partner_line_item: search_index
+          priced_line_item: search_index
+          quote: search_index
+          solicitation: search_index
+          vendor: search_index
+  status:
+    label: 'Publishing status'
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+  uid:
+    label: 'Author ID'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
 datasource_settings:
   'entity:node':
     bundles:
@@ -206,11 +206,11 @@ processor_settings:
     title: true
     alt: true
     tags:
+      b: 2
       h1: 5
       h2: 3
       h3: 2
       string: 2
-      b: 2
     all_fields: false
   rendered_item:
     weights:

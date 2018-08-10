@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
     - datetime
@@ -26,7 +27,7 @@ bundle: solicitation
 mode: full
 content:
   awards:
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -38,7 +39,7 @@ content:
     third_party_settings: {  }
     region: content
   field_bid_tabulation:
-    weight: 4
+    weight: 5
     label: above
     settings:
       use_description_as_link_text: true
@@ -46,7 +47,7 @@ content:
     type: file_default
     region: content
   field_category:
-    weight: 5
+    weight: 6
     label: above
     settings:
       link: true
@@ -54,7 +55,7 @@ content:
     type: entity_reference_label
     region: content
   field_dates_effective:
-    weight: 7
+    weight: 8
     label: above
     settings:
       timezone_override: America/New_York
@@ -64,7 +65,7 @@ content:
     type: daterange_default
     region: content
   field_documentation:
-    weight: 6
+    weight: 7
     label: above
     settings:
       use_description_as_link_text: true
@@ -88,6 +89,15 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_presentation_to_the_board:
+    type: datetime_default
+    weight: 4
+    region: content
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: default_medium_no_time
+    third_party_settings: {  }
   links:
     weight: 0
     region: content

@@ -67,5 +67,6 @@ hidden:
   awards: true
   field_board_minutes: true
   field_board_report: true
+  field_presentation_to_the_board: true
   langcode: true
   links: true

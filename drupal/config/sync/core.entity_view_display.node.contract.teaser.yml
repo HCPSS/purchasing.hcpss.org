@@ -47,4 +47,5 @@ hidden:
   field_dates_effective: true
   field_external_contract_number: true
   field_identifier: true
+  field_presentation_to_the_board: true
   langcode: true

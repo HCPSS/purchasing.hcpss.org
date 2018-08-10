@@ -88,6 +88,7 @@ hidden:
   created: true
   field_board_minutes: true
   field_board_report: true
+  field_presentation_to_the_board: true
   langcode: true
   path: true
   promote: true
