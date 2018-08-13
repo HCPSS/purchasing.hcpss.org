@@ -65,6 +65,7 @@
         "drupal/field_group": "^3.0@beta",
         "drupal/file_entity": "^2.0@beta",
         "drupal/fixed_text_link_formatter": "^1.1",
+        "drupal/google_analytics": "^2.3",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/node_title_validation": "^1.1",
         "drupal/page_manager": "^4.0@beta",

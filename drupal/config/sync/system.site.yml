@@ -1,11 +1,11 @@
 uuid: cf6cae8e-21dd-4724-898b-5fc067f29683
 name: Purchasing
 mail: brendan_anderson@hcpss.org
-slogan: 'Howard County Public School System'
+slogan: ''
 page:
   403: ''
   404: ''
-  front: /about
+  front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
