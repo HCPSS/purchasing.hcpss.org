@@ -734,7 +734,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
-      use_more: true
+      use_more: false
       use_more_always: true
       use_more_text: 'All Current Bids »'
       link_url: ''
@@ -762,9 +762,8 @@ display:
     display_options:
       display_extenders: {  }
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 5
           offset: 0
       defaults:
         pager: false
