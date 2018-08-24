@@ -55,7 +55,13 @@ class SolicitationImportForm extends FormBase {
     $file = File::load($file_id);
 
     $encoder = new CsvEncoder();
-    $data = $encoder->decode(file_get_contents($file->getFileUri()), 'csv');
+    $csv = file_get_contents($file->getFileUri());
+
+    // Remove BOM.
+    $bom = pack('H*','EFBBBF');
+    $csv = preg_replace("/^$bom/", '', $csv);
+
+    $data = $encoder->decode($csv, 'csv');
 
     $database = \Drupal::database();
     $transaction = $database->startTransaction();
