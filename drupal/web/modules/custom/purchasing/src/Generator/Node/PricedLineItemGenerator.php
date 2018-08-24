@@ -40,6 +40,8 @@ class PricedLineItemGenerator extends NodeGenerator {
    * @return Node
    */
   public function generate() {
+    $this->data['price'] = trim($this->data['price']);
+
     if (!is_numeric($this->data['price'])) {
       $message = vsprintf('Price must be a number. %s given for "%s"', [
         $this->data['price'],
