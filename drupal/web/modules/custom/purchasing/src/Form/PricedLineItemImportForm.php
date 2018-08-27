@@ -81,7 +81,8 @@ class PricedLineItemImportForm extends FormBase {
     } catch (\Exception $e) {
       $transaction->rollBack();
       watchdog_exception($e->getMessage(), $e);
-      throw $e;
+      \Drupal::messenger()->addError($e->getMessage());
+      return;
     }
 
     \Drupal::messenger()->addMessage("$num_created Priced Line Items created.");

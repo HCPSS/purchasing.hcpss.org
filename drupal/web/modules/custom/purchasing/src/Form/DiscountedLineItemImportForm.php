@@ -81,7 +81,8 @@ class DiscountedLineItemImportForm extends FormBase {
     } catch (\Exception $e) {
       $transaction->rollBack();
       watchdog_exception($e->getMessage(), $e);
-      throw $e;
+      \Drupal::messenger()->addError($e->getMessage());
+      return;
     }
 
     \Drupal::messenger()->addMessage("$num_created Discounted Line Items created.");
