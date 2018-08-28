@@ -3,6 +3,7 @@
 namespace Drupal\purchasing\Generator\Node;
 
 use Drupal\node\Entity\Node;
+use Drupal\purchasing\Validation\AwardValidator;
 
 class AwardGenerator extends NodeGenerator {
 
@@ -56,6 +57,18 @@ class AwardGenerator extends NodeGenerator {
 
     if (!empty($this->data['reference'])) {
       $award->field_reference_number = $this->data['reference'];
+    }
+
+    $validator = new AwardValidator($award);
+    $validator->validate();
+    $violations = $validator->getViolations();
+    if (!empty($violations)) {
+      $message = 'Error validating the award.';
+      foreach ($violations as $violation) {
+        $message .= ' ' . $violation->getMessage();
+      }
+
+      throw new \Exception($message);
     }
 
     $award->save();

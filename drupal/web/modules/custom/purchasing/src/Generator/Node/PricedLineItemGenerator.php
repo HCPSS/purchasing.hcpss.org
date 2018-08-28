@@ -6,6 +6,7 @@ use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\file\Entity\File;
 use GuzzleHttp\Client;
+use Drupal\purchasing\Validation\PricedLineItemValidator;
 
 class PricedLineItemGenerator extends NodeGenerator {
 
@@ -109,6 +110,18 @@ class PricedLineItemGenerator extends NodeGenerator {
         'target_id' => $charge->id(),
         'target_revision_id' => $charge->getRevisionId(),
       ];
+    }
+
+    $validator = new PricedLineItemValidator($line_item);
+    $validator->validate();
+    $violations = $validator->getViolations();
+    if (!empty($violations)) {
+      $message = 'Error validating the priced line item.';
+      foreach ($violations as $violation) {
+        $message .= ' ' . $violation->getMessage();
+      }
+
+      throw new \Exception($message);
     }
 
     $line_item->save();

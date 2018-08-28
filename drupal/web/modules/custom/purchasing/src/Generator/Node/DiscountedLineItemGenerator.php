@@ -3,6 +3,7 @@
 namespace Drupal\purchasing\Generator\Node;
 
 use Drupal\node\Entity\Node;
+use Drupal\purchasing\Validation\DiscountedLineItemValidator;
 
 class DiscountedLineItemGenerator extends NodeGenerator {
 
@@ -54,6 +55,18 @@ class DiscountedLineItemGenerator extends NodeGenerator {
 
     if (!empty($this->data['exceptions'])) {
       $line_item->field_exceptions = $this->data['exceptions'];
+    }
+
+    $validator = new DiscountedLineItemValidator($line_item);
+    $validator->validate();
+    $violations = $validator->getViolations();
+    if (!empty($violations)) {
+      $message = 'Error validating the discounted line item.';
+      foreach ($violations as $violation) {
+        $message .= ' ' . $violation->getMessage();
+      }
+
+      throw new \Exception($message);
     }
 
     $line_item->save();
