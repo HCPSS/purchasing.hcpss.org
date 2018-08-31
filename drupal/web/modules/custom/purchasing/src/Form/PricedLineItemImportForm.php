@@ -32,7 +32,11 @@ class PricedLineItemImportForm extends FormBase {
       '#upload_validators' => [
         'file_validate_extensions' => ['csv']
       ],
-      '#description' => $this->t('<a href="@url">Download an example csv.</a>', [
+      '#description' => $this->t('
+        Discounted Line Items require an Award. Make sure that the Award exists
+        in the system and that it is referenced in your csv.
+        <a href="@url">Download an example csv.</a>
+      ', [
         '@url' => Url::fromRoute('purchasing.example_csv', ['node_type' => 'priced_line_item'])->toString(),
       ]),
     ];

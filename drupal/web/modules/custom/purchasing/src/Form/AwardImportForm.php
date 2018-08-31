@@ -32,7 +32,11 @@ class AwardImportForm extends FormBase {
       '#upload_validators' => [
         'file_validate_extensions' => ['csv']
       ],
-      '#description' => $this->t('<a href="@url">Download an example csv.</a>', [
+      '#description' => $this->t('
+        Awards require a Vendor and a Solicitation or Contract. Make sure those
+        exist in the system before importing the Award.
+        <a href="@url">Download an example csv.</a>
+      ', [
         '@url' => Url::fromRoute('purchasing.example_csv', ['node_type' => 'award'])->toString(),
       ]),
     ];
