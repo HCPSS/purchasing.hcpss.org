@@ -1,0 +1,11 @@
+uuid: afc23aaf-3115-43a0-ac60-2ed535101cde
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fund_raising_organization
+id: node.fund_raising_organization
+target_entity_type_id: node
+target_bundle: fund_raising_organization
+default_langcode: site_default
+language_alterable: false

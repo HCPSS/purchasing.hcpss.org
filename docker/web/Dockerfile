@@ -8,6 +8,7 @@ LABEL org.hcpss.purchasing.web.version="0.1.3"
 RUN apt-get update && apt-get install -y \
         sqlite3 \
         php-sqlite3 \
+        php-zip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /srv/sqlite

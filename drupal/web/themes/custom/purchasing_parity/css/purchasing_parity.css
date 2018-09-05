@@ -231,3 +231,20 @@ dd {
 .view-mode-awards .content ul {
   margin-top: 0;
 }
+
+.compact table tr td, .compact table tr th {
+  padding: 5px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.view-approved-fund-raising-vendor-codes .view-content .views-row,
+.view-approved-fund-raising-vendor-codes {
+  margin: 0;
+}
+
+.fundraising-vendor-code-teaser div {
+  display: inline;
+}
+
+

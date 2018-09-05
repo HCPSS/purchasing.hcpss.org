@@ -1,0 +1,22 @@
+uuid: 90848f7a-c93f-45b4-872a-907de7aa28bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: approved_fund_raising_organizations
+label: 'Approved Fund Raising Organizations'
+type: 'canonical_entities:node'
+pattern: '[node:field_date_approved:date:custom:m-y]-[node:field_code:entity:name]-[node:title]'
+selection_criteria:
+  10699dca-f852-4a8b-be80-c880ba6b537f:
+    id: node_type
+    bundles:
+      fund_raising_organization: fund_raising_organization
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 10699dca-f852-4a8b-be80-c880ba6b537f
+selection_logic: and
+weight: -5
+relationships: {  }

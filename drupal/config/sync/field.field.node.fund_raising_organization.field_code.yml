@@ -1,0 +1,29 @@
+uuid: b3806100-fa85-412e-b733-18a737ccd4e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code
+    - node.type.fund_raising_organization
+    - taxonomy.vocabulary.fundraising_vendor_codes
+id: node.fund_raising_organization.field_code
+field_name: field_code
+entity_type: node
+bundle: fund_raising_organization
+label: Code
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      fundraising_vendor_codes: fundraising_vendor_codes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: dd5b2fc5-a67c-406d-816d-e171d01ed9ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fund_raising_organization
+id: node.fund_raising_organization.promote
+field_name: promote
+entity_type: node
+bundle: fund_raising_organization
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

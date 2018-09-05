@@ -1,0 +1,116 @@
+uuid: ac0aa8ca-d8b9-49ad-a476-7d2a16ad983d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fund_raising_organization.field_address
+    - field.field.node.fund_raising_organization.field_code
+    - field.field.node.fund_raising_organization.field_contact_person
+    - field.field.node.fund_raising_organization.field_date_approved
+    - field.field.node.fund_raising_organization.field_phone_number
+    - node.type.fund_raising_organization
+  module:
+    - address
+    - datetime
+    - path
+    - telephone
+id: node.fund_raising_organization.default
+targetEntityType: node
+bundle: fund_raising_organization
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 10
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_code:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_contact_person:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_date_approved:
+    weight: 1
+    settings:
+      date_order: DMY
+      time_type: none
+      increment: 15
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_phone_number:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

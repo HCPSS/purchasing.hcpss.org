@@ -21,6 +21,7 @@ function _purchasing_admin_get_form_blocks() {
     'award_import_block',
     'priced_line_item_import_block',
     'discounted_line_item_import_block',
+    'fund_raising_organization_import_block',
   ];
 
   $blocks = [];

@@ -1,0 +1,21 @@
+uuid: 26ebff5f-81a2-4170-bb10-01d1bcb3fe56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_approved
+    - node.type.fund_raising_organization
+  module:
+    - datetime
+id: node.fund_raising_organization.field_date_approved
+field_name: field_date_approved
+entity_type: node
+bundle: fund_raising_organization
+label: 'Date Approved'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

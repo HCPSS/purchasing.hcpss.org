@@ -1,0 +1,9 @@
+uuid: 5f511f46-0bae-42a3-8191-4c4c466b118d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Approved Fundraising Vendor Codes'
+vid: fundraising_vendor_codes
+description: 'Use Approved Fundraising Vendor Codes to describe the fund raising category'
+hierarchy: 0
+weight: 0

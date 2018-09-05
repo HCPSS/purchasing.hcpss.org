@@ -7,12 +7,20 @@ _core:
 button:
   vendor: true
   temp: false
+  fund_raising_organization: true
+  discounted_line_item: false
 message:
   vendor: false
   temp: false
+  fund_raising_organization: false
+  discounted_line_item: false
 tab:
   vendor: false
   temp: false
+  fund_raising_organization: false
+  discounted_line_item: false
 tab_edit:
   vendor: false
   temp: false
+  fund_raising_organization: false
+  discounted_line_item: false

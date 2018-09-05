@@ -1,0 +1,9 @@
+uuid: 408c0668-ca7c-4850-b14a-186b0d8d7f69
+langcode: en
+status: true
+dependencies: {  }
+id: approved_date
+label: 'Approved Date'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

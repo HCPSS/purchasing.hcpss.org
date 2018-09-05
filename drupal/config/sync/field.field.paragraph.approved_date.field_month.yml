@@ -1,0 +1,23 @@
+uuid: a17c5c2c-4a02-4fcc-b41d-fa4507b0c411
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_month
+    - paragraphs.paragraphs_type.approved_date
+id: paragraph.approved_date.field_month
+field_name: field_month
+entity_type: paragraph
+bundle: approved_date
+label: Month
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 12
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -32,3 +32,12 @@ purchasing.example_csv:
     _controller: '\Drupal\purchasing\Controller\CsvController::exampleFile'
   requirements:
     _node_add_access: 'node:{node_type}'
+purchasing.fund_raising_organizations.form:
+  path: '/import/fro'
+  defaults:
+    _title: 'Import FRO'
+    _form: '\Drupal\purchasing\Form\FundRaisingOrganizationImportForm'
+  requirements:
+    _permission: 'create fund_raising_organization content'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,23 @@
+uuid: 484edb8b-3b32-45f7-b6a4-94f7f7d312b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.fundraising_vendor_codes.field_description
+    - taxonomy.vocabulary.fundraising_vendor_codes
+id: taxonomy_term.fundraising_vendor_codes.default
+targetEntityType: taxonomy_term
+bundle: fundraising_vendor_codes
+mode: default
+content:
+  field_description:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  description: true
+  langcode: true

@@ -9,4 +9,9 @@ inline_vendor:
   css:
     component:
       css/inline_vendor.css: {}
-      
+
+approved_date:
+  version: 1.x
+  css:
+    component:
+      css/approved_date.css: {}

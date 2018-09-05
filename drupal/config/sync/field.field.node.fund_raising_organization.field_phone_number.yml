@@ -1,0 +1,21 @@
+uuid: 84148620-a067-4843-8b33-11435ce0f5f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number
+    - node.type.fund_raising_organization
+  module:
+    - telephone
+id: node.fund_raising_organization.field_phone_number
+field_name: field_phone_number
+entity_type: node
+bundle: fund_raising_organization
+label: 'Phone Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,31 @@
+uuid: 87e5d21a-e314-4fd5-937d-d280bc5f8542
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.approved_date.field_month
+    - field.field.paragraph.approved_date.field_year
+    - paragraphs.paragraphs_type.approved_date
+id: paragraph.approved_date.default
+targetEntityType: paragraph
+bundle: approved_date
+mode: default
+content:
+  field_month:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_year:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

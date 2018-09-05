@@ -1,0 +1,18 @@
+uuid: dccc9896-9fcc-461e-84df-5bd991fb8b98
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fund_raising_organization
+id: node.fund_raising_organization.title
+field_name: title
+entity_type: node
+bundle: fund_raising_organization
+label: Company
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

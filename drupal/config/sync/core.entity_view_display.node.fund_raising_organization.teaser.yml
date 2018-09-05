@@ -1,0 +1,19 @@
+uuid: 9f10cf4c-7f92-441e-927c-ec74713d61ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.fund_raising_organization
+  module:
+    - user
+id: node.fund_raising_organization.teaser
+targetEntityType: node
+bundle: fund_raising_organization
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

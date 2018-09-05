@@ -1,0 +1,23 @@
+uuid: 519b6c17-89ed-4dd0-8b7e-f041b69a233b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_year
+    - paragraphs.paragraphs_type.approved_date
+id: paragraph.approved_date.field_year
+field_name: field_year
+entity_type: paragraph
+bundle: approved_date
+label: Year
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1970
+  max: 3000
+  prefix: ''
+  suffix: ''
+field_type: integer

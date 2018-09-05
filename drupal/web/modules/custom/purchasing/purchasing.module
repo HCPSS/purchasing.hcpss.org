@@ -10,6 +10,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\node\NodeInterface;
 use Drupal\purchasing\Model\ProcurementMethod;
 use Drupal\Core\Url;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Implementation of hook_form_FORM_ID_alter().
@@ -160,6 +161,27 @@ function _purchasing_render_view($name, $display, array $args = [], $allow_empty
       $view->buildRenderable($display, $args, FALSE);
     }
   }
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ *
+ * Set the default approved date to the first day of the current month.
+ */
+function purchasing_form_node_fund_raising_organization_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $defaultDate = DrupalDateTime::createFromArray([
+    'year'  => date('Y'),
+    'month' => date('n'),
+    'day'   => 1,
+  ]);
+
+  $form['field_date_approved']['widget'][0]['value']['#default_value'] = $defaultDate;
+
+  $form['#attached']['library'][] = 'purchasing/approved_date';
+}
+
+function purchasing_form_node_fund_raising_organization_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'purchasing/approved_date';
 }
 
 /**

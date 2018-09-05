@@ -7,6 +7,11 @@ use Drupal\purchasing\Generator\AbstractEntityGenerator;
 
 abstract class NodeGenerator extends AbstractEntityGenerator {
 
+  /**
+   * Get the bundle.
+   *
+   * @return string
+   */
   protected abstract static function getBundle();
 
   /**
@@ -34,9 +39,9 @@ abstract class NodeGenerator extends AbstractEntityGenerator {
    */
   protected static function getCategoryIdFromName($name) {
     $nids = \Drupal::entityQuery('taxonomy_term')
-    ->condition('vid', 'categories')
-    ->condition('name', $name)
-    ->execute();
+      ->condition('vid', 'categories')
+      ->condition('name', $name)
+      ->execute();
 
     return array_shift($nids);
   }

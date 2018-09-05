@@ -1,0 +1,11 @@
+uuid: 183565db-cae3-4449-b0d4-dc5e30236031
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.discounted_line_item
+id: node.discounted_line_item
+target_entity_type_id: node
+target_bundle: discounted_line_item
+default_langcode: site_default
+language_alterable: false
