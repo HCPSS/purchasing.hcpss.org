@@ -41,3 +41,10 @@ purchasing.fund_raising_organizations.form:
     _permission: 'create fund_raising_organization content'
   options:
     _admin_route: TRUE
+purchasing.403:
+  path: '/403'
+  defaults:
+    _controller: '\Drupal\purchasing\Controller\Http4xxController:on403'
+    _title: 'Access denied'
+  requirements:
+    _access: 'TRUE'

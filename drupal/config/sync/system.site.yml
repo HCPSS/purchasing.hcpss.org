@@ -3,7 +3,7 @@ name: Purchasing
 mail: brendan_anderson@hcpss.org
 slogan: ''
 page:
-  403: ''
+  403: /403
   404: ''
   front: /node/1
 admin_compact_mode: false
