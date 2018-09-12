@@ -670,8 +670,8 @@ display:
           plugin_id: entity_reverse
         parent:
           id: parent
-          table: taxonomy_term_hierarchy
-          field: parent
+          table: taxonomy_term__parent
+          field: parent_target_id
           plugin_id: standard
           relationship: field_category
       arguments: {  }

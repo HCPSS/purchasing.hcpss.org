@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
     - text
@@ -28,6 +29,8 @@ content:
   awards:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_summary_or_trimmed
@@ -39,6 +42,8 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   ordering_instructions:
     weight: 100
     region: content

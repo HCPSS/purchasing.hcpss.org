@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.contract.field_category
     - field.field.node.contract.field_dates_effective
     - field.field.node.contract.field_identifier
+    - field.field.node.contract.field_presentation_to_the_board
     - node.type.contract
   module:
     - text
@@ -25,6 +26,8 @@ content:
   awards:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_summary_or_trimmed
@@ -36,6 +39,8 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   ordering_instructions:
     weight: 100
     region: content

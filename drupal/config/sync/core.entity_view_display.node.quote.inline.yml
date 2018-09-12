@@ -27,6 +27,8 @@ content:
   awards:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
@@ -87,6 +89,8 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   ordering_instructions:
     weight: 100
     region: content

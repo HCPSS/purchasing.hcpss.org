@@ -25,6 +25,8 @@ content:
   awards:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_summary_or_trimmed
@@ -36,6 +38,8 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   ordering_instructions:
     weight: 100
     region: content

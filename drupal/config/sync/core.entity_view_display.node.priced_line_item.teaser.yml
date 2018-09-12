@@ -31,21 +31,33 @@ content:
   image_gallery:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   notes:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   ordering_instructions:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   reference_number:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   vendor:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_additional_charges: true
   field_award: true

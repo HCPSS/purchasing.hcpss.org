@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.fund_raising_organization.field_address
+    - field.field.node.fund_raising_organization.field_code
+    - field.field.node.fund_raising_organization.field_contact_person
+    - field.field.node.fund_raising_organization.field_date_approved
+    - field.field.node.fund_raising_organization.field_phone_number
     - node.type.fund_raising_organization
   module:
     - user
@@ -15,5 +20,12 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_address: true
+  field_code: true
+  field_contact_person: true
+  field_date_approved: true
+  field_phone_number: true
   langcode: true

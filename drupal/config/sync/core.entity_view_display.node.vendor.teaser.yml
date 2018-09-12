@@ -22,9 +22,13 @@ content:
   awards_by_vendor:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_address: true
   field_email_address: true
