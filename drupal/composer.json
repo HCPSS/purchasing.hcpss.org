@@ -129,7 +129,8 @@
         },
         "patches": {
             "drupal/field_group": {
-                "Allow advanced placement": "https://www.drupal.org/files/issues/2652642-33.patch"
+                "Allow advanced placement": "https://www.drupal.org/files/issues/2652642-33.patch",
+                "Issue 2955526": "2955526-custom.patch"
             },
             "drupal/node_title_validation": {
                 "Unable to import configuration": "https://www.drupal.org/files/issues/2855289-7.patch"
