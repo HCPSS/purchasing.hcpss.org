@@ -475,7 +475,7 @@ function _purchasing_view_awards(array &$build, EntityInterface $entity) {
 /**
  * Implementation of hook_ENITTY_TYPE_view().
  */
-function purchasing_taxonomy_term_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode, $langcode) {
+function purchasing_taxonomy_term_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   if ($display->getComponent('open_solicitations')) {
     $view = Views::getView('open_solicitations_by_category');
     if (is_object($view)) {
