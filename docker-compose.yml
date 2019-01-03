@@ -7,6 +7,7 @@ services:
     image: mysql:5.7
     volumes:
       - ./.data:/var/lib/mysql
+      - ./drupal.sql:/docker-entrypoint-initdb.d/drupal.sql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -48,3 +49,6 @@ services:
       MYSQL_PORT: ${MYSQL_PORT}
       MYSQL_USER: ${MYSQL_USER}
       DRUPAL_ENV: ${DRUPAL_ENV}
+    command: >
+      bash -c "drush --root=/var/www/drupal/web upwd webmaster admin 
+      && /usr/sbin/apache2ctl -D FOREGROUND"
