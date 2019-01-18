@@ -224,7 +224,11 @@ dd {
 #views-exposed-form-solr-search-content-page-1 .form-item,
 #views-exposed-form-solr-search-content-page-1 .form-actions,
 #views-exposed-form-taxonomy-term-page-1 .form-item,
-#views-exposed-form-taxonomy-term-page-1 .form-actions {
+#views-exposed-form-taxonomy-term-page-1 .form-actions,
+#views-exposed-form-approved-contracts-page-1 .form-item,
+#views-exposed-form-approved-contracts-page-1 .form-actions,
+#views-exposed-form-approved-contracts-page-1 .form-item,
+#views-exposed-form-approved-contracts-page-1 .form-actions {
   display: inline-block;
 }
 
