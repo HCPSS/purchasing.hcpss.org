@@ -75,6 +75,7 @@
         "drupal/search_api_solr": "^2.0@beta",
         "drupal/simplesamlphp_auth": "^3.0",
         "drupal/token": "^1.1",
+        "drupal/views_data_export": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "hcpss/parity": "dev-master",
         "phpoffice/phpspreadsheet": "^1.4",

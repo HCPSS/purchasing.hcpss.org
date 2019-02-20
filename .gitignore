@@ -3,6 +3,7 @@
 .project
 .settings
 nbproject
+.vscode
 
 # Docker
 .data
