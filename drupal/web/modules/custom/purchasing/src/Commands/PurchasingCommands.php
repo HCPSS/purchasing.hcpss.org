@@ -18,11 +18,46 @@ use Drupal\node\Entity\Node;
 use Drupal\purchasing\Generator\User\UserGenerator;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Console\Input\InputOption;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 /**
  * A Drush commandfile.
  */
 class PurchasingCommands extends DrushCommands {
+
+  /**
+   * Export all the fund raising organizations to a CSV.
+   *
+   * @command purchasing:export:fro:csv
+   * @usage drush purchasing:export:fro:csv
+   *   Export the FROs to CSV.
+   */
+  public function exportFroToCsv() {
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'fund_raising_organization')
+      ->condition('status', 1)
+      ->execute();
+
+    $nodes = Node::loadMultiple($nids);
+    $data = [];
+    foreach ($nodes as $node) {
+      $data[] = [
+        'code'           => $node->field_code->entity->label(),
+        'approved'       => $node->field_date_approved->value,
+        'company'        => $node->getTitle(),
+        'address'        => $node->field_address->address_line1,
+        'city'           => $node->field_address->locality,
+        'state'          => $node->field_address->administrative_area,
+        'zip'            => $node->field_address->postal_code,
+        'phone'          => $node->field_phone_number->value,
+        'contact_person' => $node->field_contact_person->value,
+      ];
+    }
+
+    $serializer = new \Drupal\csv_serialization\Encoder\CsvEncoder();
+
+    $this->output()->write($serializer->encode($data, 'csv'));
+  }
 
   /**
    * Delete all nodes of the given bundle.

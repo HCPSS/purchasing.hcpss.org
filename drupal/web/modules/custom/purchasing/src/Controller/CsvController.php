@@ -5,6 +5,7 @@ namespace Drupal\purchasing\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
+use Drupal\node\Entity\Node;
 
 class CsvController extends ControllerBase {
 
@@ -30,6 +31,9 @@ class CsvController extends ControllerBase {
       case 'solicitation':
         $csv = $this->solicitationCsv();
         break;
+      case 'fund_raising_organization':
+        $csv = $this->fundRaisingOrganizationCsv();
+        break;
       default:
         throw new NotFoundHttpException();
     }
@@ -39,6 +43,33 @@ class CsvController extends ControllerBase {
     $response->headers->set('Content-Disposition', "attachment; filename=\"{$node_type}.csv\"");
 
     return $response;
+  }
+
+  private function fundRaisingOrganizationCsv() {
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'fund_raising_organization')
+      ->condition('status', 1)
+      ->execute();
+
+    $nodes = Node::loadMultiple($nids);
+    $data = [];
+    foreach ($nodes as $node) {
+      $data[] = [
+        'code'           => $node->field_code->entity->label(),
+        'approved'       => $node->field_date_approved->value,
+        'company'        => $node->getTitle(),
+        'address'        => $node->field_address->address_line1,
+        'city'           => $node->field_address->locality,
+        'state'          => $node->field_address->administrative_area,
+        'zip'            => $node->field_address->postal_code,
+        'phone'          => $node->field_phone_number->value,
+        'contact_person' => $node->field_contact_person->value,
+      ];
+    }
+
+    $serializer = new \Drupal\csv_serialization\Encoder\CsvEncoder();
+
+    return $serializer->encode($data, 'csv');
   }
 
   /**

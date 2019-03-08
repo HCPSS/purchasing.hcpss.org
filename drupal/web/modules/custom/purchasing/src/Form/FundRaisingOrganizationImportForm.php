@@ -11,6 +11,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls;
 use PhpOffice\PhpSpreadsheet\Reader\Csv;
 use Drupal\node\Entity\Node;
 use Drupal\purchasing\Generator\Node\FundRaisingOrganizationGenerator;
+use Drupal\Core\Url;
 
 class FundRaisingOrganizationImportForm extends FormBase {
 
@@ -39,8 +40,11 @@ class FundRaisingOrganizationImportForm extends FormBase {
       ],
       '#description' => $this->t('
         <strong>Caution:</strong> existing fund raising organizations will be
-        deleted and replaced with the ones in your import file.
-      '),
+        deleted and replaced with the ones in your import file. <a href="@url">
+        Export current Fund Raising Organizations here</a>.
+      ', [
+        '@url' => Url::fromRoute('purchasing.example_csv', ['node_type' => 'fund_raising_organization'])->toString(),
+      ]),
     ];
 
     $form['actions']['#type'] = 'actions';

@@ -87,8 +87,8 @@ class FundRaisingOrganizationGenerator extends NodeGenerator {
       $fro->field_phone_number = $this->data['phone'];
     }
 
-    if (!empty($this->data['contact_person'])) {
-      $fro->field_contact_person = $this->data['contact_person'];
+    if (!empty($this->data['contactperson'])) {
+      $fro->field_contact_person = $this->data['contactperson'];
     }
 
     $validator = new FundRaisingOrganizationValidator($fro);
