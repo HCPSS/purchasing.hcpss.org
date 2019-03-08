@@ -5,6 +5,7 @@ services:
   db:
     container_name: purchasing_db
     image: mysql:5.7
+    restart: always
     volumes:
       - ./.data:/var/lib/mysql
       - ./drupal.sql:/docker-entrypoint-initdb.d/drupal.sql
@@ -19,6 +20,7 @@ services:
     container_name: purchasing_search
     image: reg.hcpss.org/purchasing/search
     build: docker/search
+    restart: always
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
@@ -29,6 +31,7 @@ services:
   drupal:
     container_name: purchasing_web
     image: reg.hcpss.org/purchasing/web
+    restart: always
     depends_on:
       - db
       - search
@@ -49,6 +52,3 @@ services:
       MYSQL_PORT: ${MYSQL_PORT}
       MYSQL_USER: ${MYSQL_USER}
       DRUPAL_ENV: ${DRUPAL_ENV}
-    command: >
-      bash -c "drush --root=/var/www/drupal/web upwd webmaster admin 
-      && /usr/sbin/apache2ctl -D FOREGROUND"
