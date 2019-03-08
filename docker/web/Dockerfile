@@ -1,6 +1,6 @@
 FROM banderson/drupal
 
-MAINTAINER brendan_anderson@hcpss.org
+LABEL maintainer="Brendan Anderson <brendan_anderson@hcpss.org>"
 LABEL vendor="Howard County Public School System"
 LABEL org.hcpss.purchasing.web.version="0.1.4"
 
