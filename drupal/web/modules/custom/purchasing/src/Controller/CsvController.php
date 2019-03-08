@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
 use Drupal\node\Entity\Node;
+use Symfony\Component\Serializer\Encoder\CsvEncoder;
 
 class CsvController extends ControllerBase {
 
@@ -67,7 +68,7 @@ class CsvController extends ControllerBase {
       ];
     }
 
-    $serializer = new \Drupal\csv_serialization\Encoder\CsvEncoder();
+    $serializer = new CsvEncoder();
 
     return $serializer->encode($data, 'csv');
   }
