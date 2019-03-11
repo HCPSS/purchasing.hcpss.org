@@ -32,3 +32,4 @@ backend_config:
   skip_schema_check: false
   domain: generic
   site_hash: true
+  server_prefix: ''
