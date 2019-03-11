@@ -263,7 +263,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: m/y
+            date_format: m/Y
           group_column: value
           group_columns: {  }
           group_rows: true
