@@ -48,11 +48,8 @@ class FundRaisingOrganizationGenerator extends NodeGenerator {
    * @param string $monthYear
    * @return string
    */
-  private function formatDate($monthYear) {
-    return vsprintf('20%02d-%02d-01', [
-      explode('/', $monthYear)[1],
-      explode('/', $monthYear)[0],
-    ]);
+  private function formatDate($date) {
+    return date('Y-m-d', strtotime($date));
   }
 
   /**
