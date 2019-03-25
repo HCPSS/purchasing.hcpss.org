@@ -121,13 +121,17 @@ abstract class SegmentBreadcrumb {
   protected function addNodeSegment(NodeInterface $node, array &$segments) {
     switch ($this->getNodeCategory($node)) {
       case self::CATEGORY_AWARD:
-        $segments[self::POSITION_AWARD_NODE] = Link::createFromRoute(
-          $node->field_vendor->entity->label(),
-          'entity.node.canonical',
-          ['node' => $node->id()]
-        );
+        $vendor = $node->field_vendor->entity;
 
-        $this->addViewSegment($node, $segments);
+        if ($vendor) {
+          $segments[self::POSITION_AWARD_NODE] = Link::createFromRoute(
+            $node->field_vendor->entity->label(),
+            'entity.node.canonical',
+            ['node' => $node->id()]
+          );
+
+          $this->addViewSegment($node, $segments);
+        }
         break;
       case self::CATEGORY_PROCUREMENT:
         $segments[self::POSITION_PROCUREMENT_NODE] = Link::createFromRoute(
