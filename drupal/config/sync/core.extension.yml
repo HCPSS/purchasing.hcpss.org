@@ -25,9 +25,6 @@ module:
   editor_advanced_link: 0
   editor_file: 0
   entity_reference_revisions: 0
-  event_log_track: 0
-  event_log_track_node: 0
-  event_log_track_taxonomy: 0
   externalauth: 0
   field: 0
   field_group: 0
