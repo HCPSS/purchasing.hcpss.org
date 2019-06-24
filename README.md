@@ -4,87 +4,135 @@ This is the drupal website for the HCPSS purchasing department.
 
 ## Development
 
-### Clone the repo
+## To bring up a development version of the site:
+
+### 1. Prerequisites
+
+1. You need docker and docker-compose installed.
+2. You need this in your /etc/hosts file: `127.0.0.1 purchasing.hcpss.localhost`
+3. You need to have your aws credentials stored in ~/.aws/credentials
+
+### 1. Clone this repository
 
 ```
 $ git clone https://github.com/HCPSS/purchasing.hcpss.org.git
 $ cd purchasing.hcpss.org
 ```
 
-### Create an .env file
+### 2. Initialize the project
 
-The .env file holds our secrets.
+We need 3 things for our project to run that are not in VCS:
+
+1. A copy of the production database placed at /drupal.sql
+2. A copy of the environment variables at /.env
+3. All source code managed by composer.
+
+I made a bash script that will do all 3 of these.
 
 ```
-$ cp example.env .env
+$ ./bin/init
 ```
 
-Edit to your taste.
-
-### Launch it
+### 3. Launch
 
 ```
 $ docker-compose up -d
 ```
 
-### Install Drupal
+The site is now available at http://purchasing.hcpss.localhost:8086 \
+username: webmaster \
+password: admin
+
+## Performing updates.
+
+### 1. Prerequisites
+
+1. All prerequisites from step 1 above.
+2. You need to be logged in to reg.hcpss.org. You can do this 
+by typing `docker login reg.hcpss.org` into the terminal.
+
+### 2. Launch the development environment
+
+This is done my following steps 1-3 above.
+
+### 3. Update dependencies
 
 ```
-$ docker exec purchasing_web drush @self.dev site:install config_installer -y \
-    --account-pass=admin \
-    config_installer_sync_configure_form.sync_directory=/var/www/drupal/config/sync
+$ docker exec purchasing_web composer update
 ```
 
-### Generate dummy content (optional)
+Watch the output and make sure that the things you are expecting to update are
+getting updated.
+
+### 4. Update drupal
 
 ```
-$ docker exec purchasing_web drush @self.dev purchasing:generate:all
-$ docker exec purchasing_web drush @self.dev search-api:index
+$ docker exec purchasing_web drush --root=/var/www/drupal/web updb -y
 ```
 
-### Make your changes
+Make sure we don't get any errors.
 
-Code changes should be made in drupal/web/modules/custom/purchasing. Theme
-changes should be made in drupal/web/themes/custom/parity_purchasing.
+### 5. Test the site.
 
-Changes made to configuration (changes made through the UI) need to be 
-exported using the config split module:
+Poke around and make sure nothing goes wrong when browsing. Also make sure to
+sumbit an purchasing request and make sure it gets saved.
+
+### 6. Export your config changes
+
+The update process modifies config so we need to export it:
 
 ```
-$ docker exec purchasing_web drush @self.dev config-split:export -y
+$ docker exec purchasing_web drush --root=/var/www/drupal/web csex -y
 ```
 
-### Deploy your changes
+### 7. Commit your chenges to VCS
 
-Once your changes have been made and checked into version control, rebuild the
-images:
+```
+$ git add .
+$ git commit -m "Update drupal"
+$ git push origin master
+```
+
+### 8. Rebuild your image(s)
+
+The new code/config needs to be packaged into a docker image.
 
 ```
 $ docker-compose up -d --build
 ```
 
-Once the images have rebuilt, push them to the registry:
+### 9. Push the new images to reg.hcpss.org
 
 ```
 $ docker-compose push
 ```
 
-Go to the server you want to deploy to (staging or production) and pull the new
-images:
+## Deploying
+
+### 1. Go to your deploy location
+
+SSH into your server and cd into the directory that houses the docker-compose.yml file.
+
+### 2. Pull the new image(s)
 
 ```
-$ cd /folder/with/docker-compose
 $ docker-compose pull
 ```
 
-And update the containers:
+If you get an error, you might not be logged in to reg.hcpss.org. Do so with:
+
+```
+$ docker login reg.hcpss.org
+```
+
+### 3 Updated the container(s)
 
 ```
 $ docker-compose up -d
 ```
 
-I like to watch the update scripts run so I usually follow the logs like this:
+The docker entrypoint takes care of importing the new config and performing the updates. You can monitor the progress with:
 
 ```
-$ docker-compose up -d && docker logs -f purchasing_web
+$ docker logs -f purchasing_web
 ```

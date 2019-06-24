@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+rm -rf ./.data
+
+# Find the latest backup
 export BACKUP_FILE=$(
     docker run \
         --volume ~/.aws:/root/.aws \
@@ -7,16 +10,18 @@ export BACKUP_FILE=$(
         aws s3 ls hcpss.web.backups/purchasing/ | tail -n 1 | awk '{print $NF}'
 )
 
-mkdir -p ./fetchseed
+mkdir -p ./backup
 
+# Download the latest backup
 docker run \
     --volume ~/.aws:/root/.aws \
-    --volume $(pwd)/fetchseed:/app \
+    --volume $(pwd)/backup:/app \
     cgswong/aws \
     aws s3 cp s3://hcpss.web.backups/purchasing/$BACKUP_FILE /app/$BACKUP_FILE
 
-cd ./fetchseed
-tar -xf ./$BACKUP_FILE
-mv ./drupal.sql ../drupal.sql
-cd ..
-rm -rf fetchseed
+docker run --volume $(pwd)/backup:/app \
+    ubuntu bash -c "cd /app && tar -xzf ./$BACKUP_FILE"
+
+mv ./backup/drupal.sql ./drupal.sql
+
+rm -rf ./backup

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker run -v $(pwd)/drupal:/var/www/drupal banderson/drupal composer install

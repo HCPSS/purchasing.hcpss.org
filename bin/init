@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+MYDIR="$(dirname "$0")"
+
+source $MYDIR/fetch-backup
+source $MYDIR/fetch-dependencies
+
+cp .env.dist .env

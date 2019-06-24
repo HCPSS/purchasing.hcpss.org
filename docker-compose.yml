@@ -52,3 +52,6 @@ services:
       MYSQL_PORT: ${MYSQL_PORT}
       MYSQL_USER: ${MYSQL_USER}
       DRUPAL_ENV: ${DRUPAL_ENV}
+    command: >
+      bash -c "drush --root=/var/www/drupal/web upwd webmaster admin 
+      && /usr/sbin/apache2ctl -D FOREGROUND"
