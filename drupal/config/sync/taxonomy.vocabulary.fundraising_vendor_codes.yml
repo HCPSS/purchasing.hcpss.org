@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Approved Fundraising Vendor Codes'
 vid: fundraising_vendor_codes
 description: 'Use Approved Fundraising Vendor Codes to describe the fund raising category'
-hierarchy: 0
 weight: 0
