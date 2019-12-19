@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /srv/sqlite
-    
+
 COPY docker/web/config/php/php.ini /etc/php/7.2/apache2/
-COPY docker/web/config/php/php.ini /etc/php/7.2/cli/
+COPY docker/web/config/php/php.cli.ini /etc/php/7.2/cli/php.ini
 COPY docker/web/config/simplesaml /srv/simplesaml_config
 COPY docker/web/config/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
