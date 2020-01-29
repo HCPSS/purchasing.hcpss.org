@@ -79,7 +79,7 @@
         "drush/drush": "^9.0.0",
         "hcpss/parity": "dev-master",
         "phpoffice/phpspreadsheet": "^1.4",
-        "simplesamlphp/simplesamlphp": "^1.15",
+        "simplesamlphp/simplesamlphp": "^1.18",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
