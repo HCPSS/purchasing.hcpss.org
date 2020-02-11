@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.contract.field_category
     - field.field.node.contract.field_dates_effective
     - field.field.node.contract.field_identifier
+    - field.field.node.contract.field_include_in_staff_catalog
+    - field.field.node.contract.field_presentation_to_the_board
     - node.type.contract
   module:
     - datetime_range
@@ -67,6 +69,7 @@ hidden:
   awards: true
   field_board_minutes: true
   field_board_report: true
+  field_include_in_staff_catalog: true
   field_presentation_to_the_board: true
   langcode: true
   links: true

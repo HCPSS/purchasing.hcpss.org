@@ -13,6 +13,8 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_include_in_staff_catalog
+    - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
     - datetime
@@ -111,6 +113,7 @@ content:
 hidden:
   award_notes: true
   awards: true
+  field_include_in_staff_catalog: true
   field_presentation_to_the_board: true
   langcode: true
   links: true

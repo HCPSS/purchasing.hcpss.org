@@ -65,7 +65,7 @@ dd {
 }
 
 #views-exposed-form-line-items-by-procurement-method-block-2 .form-item,
-#views-exposed-form-line-items-by-procurement-method-block-1 .form-item, 
+#views-exposed-form-line-items-by-procurement-method-block-1 .form-item,
 #views-exposed-form-procurement-methods-open-solicitation .form-item {
   grid-column-start: 1;
   margin-right: 20px;
@@ -90,7 +90,7 @@ dd {
 
 .open-solicitaiton-row .views-field-field-identifier .views-label-field-identifier {
   grid-column-start: 1;
-  margin-right: 0.2em;  
+  margin-right: 0.2em;
 }
 
 .views-label-field-documentation, .views-label-field-identifier {
@@ -205,11 +205,11 @@ dd {
   margin-top: 0;
 }
 
-.view-filters, .view-content { 
+.view-filters, .view-content {
   margin-top: 0.5em;
 }
 
-.view-id-awards_by_procurement_method .view-content { 
+.view-id-awards_by_procurement_method .view-content {
   margin-top: 0;
 }
 
@@ -227,8 +227,8 @@ dd {
 #views-exposed-form-taxonomy-term-page-1 .form-actions,
 #views-exposed-form-approved-contracts-page-1 .form-item,
 #views-exposed-form-approved-contracts-page-1 .form-actions,
-#views-exposed-form-approved-contracts-page-1 .form-item,
-#views-exposed-form-approved-contracts-page-1 .form-actions {
+#views-exposed-form-approved-contracts-staff-catalog-page .form-item,
+#views-exposed-form-approved-contracts-staff-catalog-page .form-actions {
   display: inline-block;
 }
 

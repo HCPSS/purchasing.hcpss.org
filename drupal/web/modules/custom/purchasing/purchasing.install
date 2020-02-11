@@ -1,0 +1,19 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Set all solicitations to show in staff catalog.
+ */
+function purchasing_update_8101() {
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', ['contract', 'quote', 'solicitation'], 'IN')
+    ->execute();
+
+  $nodes = Node::loadMultiple($nids);
+
+  foreach ($nodes as $node) {
+    $node->field_include_in_staff_catalog = TRUE;
+    $node->save();
+  }
+}

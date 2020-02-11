@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_include_in_staff_catalog
     - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
@@ -29,12 +30,11 @@ third_party_settings:
         - field_due_date
         - field_dates_effective
       parent_name: ''
-      weight: 14
+      weight: 15
       format_type: details_sidebar
       format_settings:
-        label: Dates
-        open: '1'
-        required_fields: '1'
+        open: true
+        required_fields: true
         id: ''
         classes: ''
       label: Dates
@@ -45,12 +45,11 @@ third_party_settings:
         - field_board_report
         - field_board_minutes
       parent_name: ''
-      weight: 13
+      weight: 14
       format_type: details_sidebar
       format_settings:
-        label: Board
-        open: '1'
-        required_fields: '1'
+        open: true
+        required_fields: true
         id: ''
         classes: ''
       label: Board
@@ -58,13 +57,13 @@ third_party_settings:
     group_awards:
       children: {  }
       parent_name: ''
-      weight: 15
+      weight: 16
       format_type: details_sidebar
       format_settings:
         id: ''
         classes: ''
-        open: 1
-        required_fields: 0
+        open: true
+        required_fields: false
       label: Awards
       region: content
 id: node.solicitation.default
@@ -79,7 +78,7 @@ content:
     third_party_settings: {  }
   body:
     type: text_textarea_with_summary
-    weight: 10
+    weight: 11
     settings:
       rows: 9
       summary_rows: 3
@@ -94,7 +93,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_bid_tabulation:
-    weight: 12
+    weight: 13
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -129,7 +128,7 @@ content:
     type: daterange_default
     region: content
   field_documentation:
-    weight: 11
+    weight: 12
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -148,6 +147,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_include_in_staff_catalog:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_presentation_to_the_board:
     weight: 101

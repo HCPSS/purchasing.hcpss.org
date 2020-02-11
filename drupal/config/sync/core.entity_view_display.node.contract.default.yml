@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.contract.field_category
     - field.field.node.contract.field_dates_effective
     - field.field.node.contract.field_identifier
+    - field.field.node.contract.field_include_in_staff_catalog
     - field.field.node.contract.field_presentation_to_the_board
     - node.type.contract
   module:
@@ -28,49 +29,49 @@ content:
     settings: {  }
     third_party_settings: {  }
   awards:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_board_minutes:
-    weight: 108
+    weight: 6
     label: hidden
     settings:
       link_text: 'Board Minutes'
       link_class: board-link
-      allow_override: 0
-      rel: 0
-      target: 0
-      trim_length: ''
-      url_only: ''
-      url_plain: ''
+      allow_override: false
+      rel: '0'
+      target: '0'
+      trim_length: null
+      url_only: false
+      url_plain: false
     third_party_settings: {  }
     type: fixed_text_link
     region: content
   field_board_report:
-    weight: 107
+    weight: 5
     label: hidden
     settings:
       link_text: 'Board Report'
       link_class: board-link
-      allow_override: 0
-      rel: 0
-      target: 0
-      trim_length: ''
-      url_only: ''
-      url_plain: ''
+      allow_override: false
+      rel: '0'
+      target: '0'
+      trim_length: null
+      url_only: false
+      url_plain: false
     third_party_settings: {  }
     type: fixed_text_link
     region: content
   field_category:
-    weight: 105
+    weight: 4
     label: inline
     settings:
       link: true
@@ -78,7 +79,7 @@ content:
     type: entity_reference_label
     region: content
   field_dates_effective:
-    weight: 104
+    weight: 3
     label: inline
     settings:
       timezone_override: ''
@@ -88,7 +89,7 @@ content:
     type: daterange_default
     region: content
   field_identifier:
-    weight: 109
+    weight: 7
     label: inline
     settings:
       link_to_entity: false
@@ -96,7 +97,7 @@ content:
     type: string
     region: content
   field_presentation_to_the_board:
-    weight: 110
+    weight: 8
     label: hidden
     settings:
       timezone_override: ''
@@ -105,7 +106,7 @@ content:
     type: datetime_default
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -115,4 +116,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_include_in_staff_catalog: true
   langcode: true

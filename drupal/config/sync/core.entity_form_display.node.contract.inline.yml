@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.contract.field_category
     - field.field.node.contract.field_dates_effective
     - field.field.node.contract.field_identifier
+    - field.field.node.contract.field_include_in_staff_catalog
     - field.field.node.contract.field_presentation_to_the_board
     - node.type.contract
   module:
@@ -23,7 +24,7 @@ mode: inline
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 5
     settings:
       rows: 9
       summary_rows: 3
@@ -32,7 +33,7 @@ content:
     third_party_settings: {  }
     region: content
   field_board_minutes:
-    weight: 6
+    weight: 7
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -40,7 +41,7 @@ content:
     type: link_default
     region: content
   field_board_report:
-    weight: 5
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -54,14 +55,21 @@ content:
     type: options_select
     region: content
   field_dates_effective:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: daterange_default
     region: content
+  field_include_in_staff_catalog:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true

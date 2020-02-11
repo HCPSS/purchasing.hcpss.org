@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_include_in_staff_catalog
     - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
@@ -27,7 +28,7 @@ mode: inline
 content:
   body:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -36,7 +37,7 @@ content:
     third_party_settings: {  }
     region: content
   field_bid_tabulation:
-    weight: 6
+    weight: 7
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -53,20 +54,20 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_dates_effective:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: daterange_default
     region: content
   field_documentation:
-    weight: 7
+    weight: 8
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_due_date:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -79,6 +80,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_include_in_staff_catalog:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.quote.field_category
     - field.field.node.quote.field_dates_effective
     - field.field.node.quote.field_identifier
+    - field.field.node.quote.field_include_in_staff_catalog
     - node.type.quote
   module:
     - text
@@ -50,4 +51,5 @@ hidden:
   field_category: true
   field_dates_effective: true
   field_identifier: true
+  field_include_in_staff_catalog: true
   langcode: true

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.solicitation.field_documentation
     - field.field.node.solicitation.field_due_date
     - field.field.node.solicitation.field_identifier
+    - field.field.node.solicitation.field_include_in_staff_catalog
     - field.field.node.solicitation.field_presentation_to_the_board
     - node.type.solicitation
   module:
@@ -55,12 +56,12 @@ content:
     settings:
       link_text: 'Board Minutes'
       link_class: board-link
-      allow_override: 0
-      rel: 0
-      target: 0
-      trim_length: ''
-      url_only: ''
-      url_plain: ''
+      allow_override: false
+      rel: '0'
+      target: '0'
+      trim_length: null
+      url_only: false
+      url_plain: false
     third_party_settings: {  }
   field_board_report:
     type: fixed_text_link
@@ -70,12 +71,12 @@ content:
     settings:
       link_text: 'Board Report'
       link_class: board-link
-      allow_override: 0
-      rel: 0
-      target: 0
-      trim_length: ''
-      url_only: ''
-      url_plain: ''
+      allow_override: false
+      rel: '0'
+      target: '0'
+      trim_length: null
+      url_only: false
+      url_plain: false
     third_party_settings: {  }
   field_category:
     weight: 2
@@ -128,5 +129,6 @@ content:
 hidden:
   award_notes: true
   field_due_date: true
+  field_include_in_staff_catalog: true
   langcode: true
   ordering_instructions: true

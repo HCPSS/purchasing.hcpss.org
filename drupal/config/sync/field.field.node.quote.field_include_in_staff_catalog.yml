@@ -1,0 +1,23 @@
+uuid: f908cf0a-6c83-47c0-b158-aa134514320f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_include_in_staff_catalog
+    - node.type.quote
+id: node.quote.field_include_in_staff_catalog
+field_name: field_include_in_staff_catalog
+entity_type: node
+bundle: quote
+label: 'Include in Staff Catalog'
+description: 'Contains items that staff members can order.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
