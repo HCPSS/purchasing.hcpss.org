@@ -17,8 +17,8 @@ while ! mysqladmin ping -h"$MYSQL_HOSTNAME" --silent; do
 done
 
 drush --root=/var/www/drupal/web cr
-drush --root=/var/www/drupal/web updatedb -y
 drush --root=/var/www/drupal/web cim -y
+drush --root=/var/www/drupal/web updatedb -y
 drush --root=/var/www/drupal/web cr
 
 exec "$@"
