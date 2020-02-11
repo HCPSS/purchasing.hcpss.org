@@ -76,6 +76,7 @@
         "drupal/search_api_solr": "^2.0@beta",
         "drupal/simplesamlphp_auth": "^3.0",
         "drupal/token": "^1.1",
+        "drupal/views_data_export": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "hcpss/parity": "dev-master",
         "phpoffice/phpspreadsheet": "^1.4",
@@ -131,10 +132,7 @@
         "patches": {
         	"drupal/core": {
         		"3056234": "https://www.drupal.org/files/issues/2019-05-22/3056234-test-fix-4.patch"
-        	},
-            "drupal/field_group": {
-                "Allow advanced placement": "https://www.drupal.org/files/issues/2019-05-13/2652642-80.patch"
-            }
+        	}
         }
     }
 }
