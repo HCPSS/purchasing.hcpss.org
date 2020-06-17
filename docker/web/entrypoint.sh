@@ -16,9 +16,13 @@ while ! mysqladmin ping -h"$MYSQL_HOSTNAME" --silent; do
     sleep 5
 done
 
+drush --root=/var/www/drupal/web cc drush
 drush --root=/var/www/drupal/web cr
-drush --root=/var/www/drupal/web updatedb -y
-drush --root=/var/www/drupal/web cim -y
+drush --root=/var/www/drupal/web csim -y
+drush --root=/var/www/drupal/web cr
+drush --root=/var/www/drupal/web updb -y
+drush --root=/var/www/drupal/web search-api:clear
+drush --root=/var/www/drupal/web search-api:index
 drush --root=/var/www/drupal/web cr
 
 exec "$@"

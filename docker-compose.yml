@@ -16,31 +16,17 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     command: --max-allowed-packet=128M
 
-  search:
-    container_name: purchasing_search
-    image: reg.hcpss.org/purchasing/search
-    build: docker/search
-    restart: always
-    entrypoint:
-      - docker-entrypoint.sh
-      - solr-precreate
-      - mycore
-    ports:
-      - 8983:8983
-
   drupal:
     container_name: purchasing_web
     image: reg.hcpss.org/purchasing/web
     restart: always
     depends_on:
       - db
-      - search
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
     links:
       - db:drupal_db
-      - search:search
     ports:
       - 8086:80
     volumes:

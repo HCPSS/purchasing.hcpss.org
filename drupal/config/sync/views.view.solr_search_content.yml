@@ -84,18 +84,20 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: and
+          operator: or
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: search_op
-            label: Search
+            operator_id: search_api_fulltext_op
+            label: ''
             description: ''
             use_operator: false
-            operator: search_op
-            identifier: keys
-            required: true
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
             remember: false
             multiple: false
             remember_roles:
@@ -104,8 +106,6 @@ display:
               purchaser: '0'
               administrator: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -118,8 +118,8 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
-          min_length: 3
+          parse_mode: phrase
+          min_length: null
           fields: {  }
           plugin_id: search_api_fulltext
       sorts: {  }
@@ -145,9 +145,11 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
       cacheable: false
       max-age: -1
-      tags: {  }
+      tags:
+        - 'config:search_api.index.default_solr_index'
   page_1:
     display_plugin: page
     id: page_1
@@ -170,6 +172,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
       cacheable: false
       max-age: -1
-      tags: {  }
+      tags:
+        - 'config:search_api.index.default_solr_index'
