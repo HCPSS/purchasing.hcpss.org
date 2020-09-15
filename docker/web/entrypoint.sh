@@ -16,7 +16,6 @@ while ! mysqladmin ping -h"$MYSQL_HOSTNAME" --silent; do
     sleep 5
 done
 
-drush --root=/var/www/drupal/web pmu file_entity -y
 drush --root=/var/www/drupal/web cc drush
 drush --root=/var/www/drupal/web cr
 drush --root=/var/www/drupal/web csim -y
