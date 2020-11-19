@@ -15,12 +15,6 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     command: --max-allowed-packet=128M
-  d9:
-    container_name: purchasing_d9
-    image: banderson/drupal:9
-    volumes:
-      - ./d9:/var/www/drupal
-    command: tail -f /dev/null
   drupal:
     container_name: purchasing_web
     image: reg.hcpss.org/purchasing/web

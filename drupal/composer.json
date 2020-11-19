@@ -132,10 +132,10 @@
         },
         "patches": {
         	"drupal/core": {
-        		"3056234": "https://www.drupal.org/files/issues/2019-05-22/3056234-test-fix-4.patch"
+        		"Issue 3056234": "https://www.drupal.org/files/issues/2019-05-22/3056234-test-fix-4.patch"
           },
-          "drupal/node_title_validation": {
-            "3151840": "https://www.drupal.org/files/issues/2020-06-15/3103884-4.patch"
+          "drupal/search_api": {
+            "Issue 790418": "https://www.drupal.org/files/issues/2020-10-26/search_api-use-entity-type-manager-interface-790418-1.patch"
           }
         }
     }
