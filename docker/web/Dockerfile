@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /srv/sqlite
 
+# Down grade composer until 2.0 has better compatibility.
+RUN composer self-update 1.10.17
+
 COPY docker/web/config/php/php.ini /etc/php/7.2/apache2/
 COPY docker/web/config/php/php.cli.ini /etc/php/7.2/cli/php.ini
 COPY docker/web/config/simplesaml /srv/simplesaml_config
