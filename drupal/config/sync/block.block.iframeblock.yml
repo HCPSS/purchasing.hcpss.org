@@ -1,27 +1,27 @@
-uuid: 322ae752-53d7-4250-a6fd-f870f28eb857
+uuid: 0e21358b-63d3-442f-b2df-ecb1621a0d9a
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.bid_tabs
   module:
+    - purchasing
     - system
-    - views
   theme:
     - purchasing_parity
-id: views_block__bid_tabs_block_1
+id: iframeblock
 theme: purchasing_parity
 region: content
-weight: 1
+weight: 0
 provider: null
-plugin: 'views_block:bid_tabs-block_1'
+plugin: iframe_block
 settings:
-  id: 'views_block:bid_tabs-block_1'
-  label: ''
-  provider: views
+  id: iframe_block
+  label: 'Open Bids'
+  provider: purchasing
   label_display: visible
-  views_label: ''
-  items_per_page: none
+  title: 'Open Bids'
+  source: 'https://hcpss.contractexperience.com/static/external/sourcingportal.jsp'
+  width: 100%
+  height: '500'
 visibility:
   request_path:
     id: request_path
