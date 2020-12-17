@@ -4,6 +4,8 @@ LABEL maintainer="Brendan Anderson <brendan_anderson@hcpss.org>"
 LABEL vendor="Howard County Public School System"
 LABEL org.hcpss.purchasing.web.version="0.1.4"
 
+ENV DRUPAL_ENV="dev"
+
 # SQLite for storing SimpleSAMLphp sessions.
 RUN apt-get update && apt-get install -y \
         sqlite3 \
