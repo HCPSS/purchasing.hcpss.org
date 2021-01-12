@@ -1,4 +1,4 @@
-FROM banderson/drupal
+FROM banderson/drupal:base
 
 LABEL maintainer="Brendan Anderson <brendan_anderson@hcpss.org>"
 LABEL vendor="Howard County Public School System"
@@ -9,8 +9,6 @@ ENV DRUPAL_ENV="dev"
 # SQLite for storing SimpleSAMLphp sessions.
 RUN apt-get update && apt-get install -y \
         sqlite3 \
-        php-sqlite3 \
-        php-zip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /srv/sqlite
@@ -18,9 +16,9 @@ RUN apt-get update && apt-get install -y \
 # Down grade composer until 2.0 has better compatibility.
 RUN composer self-update 1.10.17
 
-COPY docker/web/config/php/php.ini /etc/php/7.2/apache2/
-COPY docker/web/config/php/php.cli.ini /etc/php/7.2/cli/php.ini
-COPY docker/web/config/simplesaml /srv/simplesaml_config
+COPY docker/web/config/php/php.ini             /usr/local/etc/php/php.ini
+COPY docker/web/config/php/php.cli.ini         /usr/local/etc/php/php-cli.ini
+COPY docker/web/config/simplesaml              /srv/simplesaml_config
 COPY docker/web/config/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Create the Drupal structure.
