@@ -1,6 +1,6 @@
 uuid: 0e21358b-63d3-442f-b2df-ecb1621a0d9a
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - purchasing

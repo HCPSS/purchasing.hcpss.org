@@ -17,7 +17,7 @@ services:
     command: --max-allowed-packet=128M
   drupal:
     container_name: purchasing_web
-    image: reg.hcpss.org/purchasing/web:0.1.5
+    image: reg.hcpss.org/purchasing/web:0.1.6
     restart: always
     depends_on:
       - db
