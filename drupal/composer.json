@@ -60,6 +60,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.2",
         "drupal/date_range_formatter": "^3.1",
+        "drupal/drd_agent": "^4.0",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/editor_file": "^1.2",
         "drupal/events_log_track": "^1.1",
