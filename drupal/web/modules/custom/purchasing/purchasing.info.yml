@@ -2,5 +2,5 @@ name: 'HCPSS Purchasing'
 description: 'Purchasing functionality.'
 package: HCPSS
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 version: 0.1

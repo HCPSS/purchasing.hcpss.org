@@ -1,5 +1,5 @@
 <a href="{{ url }}">
-  {{ node.bundle|replace('_', ' ')|title }} 
-  #{{ content.field_identifier.0 }} 
+  {{ node.bundle|replace({'_': ' '})|title }}
+  #{{ content.field_identifier.0 }}
   ({% spaceless %}{{ label }}{% endspaceless %})
 </a>

@@ -805,7 +805,7 @@ $settings['trusted_host_patterns'] = array(
   '^purchasing\.hcpss\.localhost$',
   '^10\.216\.209\.84$',
 );
-$config_directories['sync'] = '/var/www/drupal/config/sync';
+$settings["config_sync_directory"] = '/var/www/drupal/config/sync';
 $settings["file_private_path"] = "/var/www/drupal/files";
 $databases['default']['default'] = [
   'database' => getenv('MYSQL_DATABASE'),
